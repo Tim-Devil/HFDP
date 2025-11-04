@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2025-11-03</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-11-03 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：23</li>
+<li>热门领域：RL, LLM, MultiModal</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. OS-Sentinel：通过现实工作流中的混合验证实现安全增强型移动GUI智能体</h3>
+<p><strong>原文标题：</strong> OS-Sentinel: Towards Safety-Enhanced Mobile GUI Agents via Hybrid
+  Validation in Realistic Workflows</p>
+<p><strong>摘要：</strong>
+基于视觉语言模型的计算机操作智能体在移动平台等数字环境中已展现出类人的操作能力。尽管这些智能体在推动数字化自动化方面前景广阔，但其潜在的不安全操作（如系统入侵和隐私泄露）正引发重大关切。在移动环境广阔而复杂的操作空间中检测这些安全隐患，仍是一个亟待深入探索的重大挑战。为奠定移动智能体安全研究基础，我们推出MobileRisk-Live动态沙箱环境及配套安全检测基准，该基准包含带有细粒度标注的真实操作轨迹。基于此，我们提出OS-Sentinel——一种新型混合安全检测框架，通过将检测显式系统级违规的形式化验证器与评估情境风险及智能体操作的基于VLM的情境判定器相协同，实现优势互补。实验表明，OS-Sentinel在多项指标上较现有方法提升10%-30%。进一步的分析提供了关键洞见，有助于推动更安全可靠的自主移动智能体发展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.24411">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.24411">arXiv</a></p>
+<hr />
+<h3>2. ThinkMorph：多模态交错思维链推理中的涌现特性</h3>
+<p><strong>原文标题：</strong> ThinkMorph: Emergent Properties in Multimodal Interleaved
+  Chain-of-Thought Reasoning</p>
+<p><strong>摘要：</strong>
+多模态推理需要语言与视觉的迭代协调，然而目前尚不清楚何种交错思维链具有实质意义。我们提出文本与图像思维应作为互补而非同构的模态，共同推进推理进程。基于此原则，我们构建了ThinkMorph模型——通过在涵盖不同视觉参与度的24,000条高质量交错推理轨迹上进行微调的统一模型。该模型能够生成渐进式的文本-图像推理步骤，在保持连贯语言逻辑的同时实现对视觉内容的具体操控。在视觉中心基准测试中取得显著提升（较基础模型平均提高34.7%），并展现出对领域外任务的泛化能力，其表现媲美或超越规模更大、参数专有的大规模视觉语言模型。除性能提升外，ThinkMorph展现出涌现的多模态智能特性，包括未经训练的视觉操控技能、推理模式的自适应切换，以及通过多样化多模态思维实现更优的测试时扩展能力。这些发现为表征统一多模态推理模型的涌现能力指明了富有前景的研究方向。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.27492">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.27492">arXiv</a></p>
+<hr />
+<h3>3. INT与FP对比：细粒度低比特量化格式的综合性研究</h3>
+<p><strong>原文标题：</strong> INT v.s. FP: A Comprehensive Study of Fine-Grained Low-bit Quantization
+  Formats</p>
+<p><strong>摘要：</strong>
+随着现代AI硬件（如英伟达Blackwell架构）日益采用低精度浮点格式来处理大语言模型中普遍存在的激活值异常值，学术界与工业界亟需对不同粒度下浮点与整数量化方法进行系统对比。本文首次填补了这一空白，通过系统研究FP与INT格式的权衡关系，揭示了一个关键的性能分界点：虽然FP格式在粗粒度量化中表现优异，但在细粒度（块级）量化中的优劣对比更为复杂。我们的全面实验表明：对于主流的8位细粒度格式（如块大小为32的MX格式），MXINT8在算法精度和硬件效率上均优于其FP对应格式；然而在4位格式中，FP（如MXFP4、NVFP4）通常保持精度优势，不过当应用哈达玛变换等异常值抑制技术后，NVINT4能够超越NVFP4。我们还提出了一种对称裁剪方法，解决了细粒度低比特INT训练中的梯度偏差问题，使MXINT8训练实现近乎无损的性能。这些发现对当前硬件发展路径提出了挑战，证明一刀切的FP方案并非最优解，并论证了细粒度INT格式（特别是MXINT8）能为未来AI加速器提供更优的精度、功耗与效率平衡。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25602">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25602">arXiv</a></p>
+<hr />
+<h3>4. π_RL：基于流式的视觉-语言-动作模型在线强化学习微调框架</h3>
+<p><strong>原文标题：</strong> π_RL: Online RL Fine-tuning for Flow-based
+  Vision-Language-Action Models</p>
+<p><strong>摘要：</strong>
+视觉-语言-动作模型使机器人能够通过多模态输入理解并执行复杂任务。尽管近期研究探索使用强化学习替代繁重的数据收集过程以扩展监督微调，但由于基于流式的VLA模型（如π_0、π_{0.5}）在迭代去噪过程中存在难以处理的动作对数似然，将大规模强化学习应用于此类模型仍具挑战性。我们提出π_RL这一开源框架，通过并行仿真训练基于流式的VLA模型来应对该挑战。该框架实现两种强化学习算法：（1）Flow-Noise将去噪过程建模为离散时间马尔可夫决策过程，通过可学习的噪声网络实现精确对数似然计算；（2）Flow-SDE将去噪过程与智能体-环境交互相结合，构建双层马尔可夫决策过程，采用常微分方程至随机微分方程转换以实现高效强化学习探索。我们在LIBERO和ManiSkill基准测试中评估π_RL框架：在LIBERO上，π_RL将少样本监督微调模型π_0和π_{0.5}的性能分别从57.6%提升至97.6%、从77.1%提升至98.3%；在ManiSkill中，通过在320个并行环境中训练，π_RL将π_0在4352项抓取放置任务中的性能从41.6%提升至85.7%，π_{0.5}从40.0%提升至84.8%，证明了异构仿真环境下可扩展的多任务强化学习能力。总体而言，π_RL相较监督微调模型实现了显著性能提升和更强泛化能力，验证了在线强化学习在基于流式的VLA模型中的有效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25889">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25889">arXiv</a></p>
+<hr />
+<h3>5. 连续自回归语言模型</h3>
+<p><strong>原文标题：</strong> Continuous Autoregressive Language Models</p>
+<p><strong>摘要：</strong>
+大型语言模型的效率从根本上受限于其顺序、逐令牌的生成过程。我们认为要突破这一瓶颈，需要为LLM扩展开辟新的设计维度：提升每个生成步骤的语义带宽。为此，我们提出连续自回归语言模型（CALM），实现从离散下一令牌预测到连续下一向量预测的范式转变。CALM采用高保真自编码器将包含K个令牌的文本块压缩为单个连续向量，并能够以超过99.9%的准确率重建原始令牌。这使得我们可以将语言建模为连续向量序列而非离散令牌序列，从而将生成步骤数量减少至原来的1/K。这种范式转变需要新的建模工具，因此我们开发了完整的无似然框架，支持在连续域中进行稳健训练、评估和可控采样。实验表明，CALM显著改善了性能与计算量的权衡关系，以显著更低的计算成本实现了强离散基线的性能。更重要的是，这些发现确立了下一向量预测作为实现超高效语言模型的有效可扩展路径。代码：https://github.com/shaochenze/calm 项目：https://shaochenze.github.io/blog/2025/CALM</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.27688">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.27688">arXiv</a></p>
+<hr />
+<h3>6. Spatial-SSRL：通过自监督强化学习增强空间认知能力</h3>
+<p><strong>原文标题：</strong> Spatial-SSRL: Enhancing Spatial Understanding via Self-Supervised
+  Reinforcement Learning</p>
+<p><strong>摘要：</strong>
+空间认知能力始终是大型视觉语言模型（LVLMs）的薄弱环节。现有监督微调（SFT）和近期带有可验证奖励的强化学习（RLVR）流程依赖成本高昂的人工标注、专用工具或受限环境，制约了规模化应用。我们提出Spatial-SSRL——一种自监督强化学习范式，可直接从普通RGB或RGB-D图像中获取可验证信号。该框架自动构建了五项捕捉二维与三维空间结构的预训练任务：乱序图像块重组、翻转图像块识别、裁剪图像块修复、区域深度排序和相对三维位置预测。这些任务提供的真值答案易于验证，且无需人工或LVLM标注。基于本任务的训练在保持通用视觉能力的同时，显著提升了空间推理性能。在涵盖图像与视频场景的七项空间理解基准测试中，Spatial-SSRL相较Qwen2.5-VL基线模型分别实现平均准确率提升4.63%（30亿参数）和3.89%（70亿参数）。实验结果表明，简单的内在监督机制即可实现规模化RLVR，为增强LVLMs空间智能提供了实用路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.27606">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.27606">arXiv</a></p>
+<hr />
+<h3>7. 通过FP16解决训练与推理不匹配问题</h3>
+<p><strong>原文标题：</strong> Defeating the Training-Inference Mismatch via FP16</p>
+<p><strong>摘要：</strong>
+大型语言模型（LLM）的强化学习（RL）微调常因训练策略与推理策略间的数值不匹配而面临稳定性问题。尽管先前研究尝试通过算法修正或工程对齐来缓解此问题，但我们发现其根本原因在于浮点精度本身。广泛采用的BF16格式虽具有较大动态范围，却会引入显著舍入误差，破坏训练与推理间的一致性。本研究证明，仅需恢复使用FP16格式即可有效消除这种不匹配。该方法实现简单，现代框架可完全支持且仅需数行代码修改，无需改变模型架构或学习算法。实验结果表明，统一使用FP16能在不同任务、算法和框架中实现更稳定的优化、更快的收敛速度以及更强的性能表现。我们希望这些发现能推动学界对RL微调中精度权衡问题进行更广泛的重新审视。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26788">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26788">arXiv</a></p>
+<hr />
+<h3>8. 分阶段DMD：基于子区间内分数匹配的少步数分布匹配蒸馏</h3>
+<p><strong>原文标题：</strong> Phased DMD: Few-step Distribution Matching Distillation via Score
+  Matching within Subintervals</p>
+<p><strong>摘要：</strong>
+分布匹配蒸馏（DMD）将基于分数的生成模型提炼为高效的单步生成器，无需与教师模型的采样轨迹保持一一对应。然而受限的模型容量导致单步蒸馏模型在复杂生成任务中表现欠佳，例如文本到视频生成中合成复杂物体运动。直接将DMD扩展至多步蒸馏会显著增加内存消耗和计算深度，导致训练不稳定与效率下降。虽然现有研究提出随机梯度截断作为潜在解决方案，但我们发现这会大幅降低多步蒸馏模型的生成多样性，使其退化至单步模型水平。为解决这些局限，我们提出分阶段DMD——一种融合分阶段蒸馏与专家混合（MoE）思想的多步蒸馏框架，在降低学习难度的同时增强模型容量。该框架基于两个核心设计：渐进式分布匹配与子区间内分数匹配。首先，模型将信噪比范围划分为若干子区间，通过逐步向更高信噪比层级精炼模型来更好地捕捉复杂分布。其次，为确保每个子区间内训练目标的准确性，我们进行了严谨的数学推导。通过蒸馏包括千问图像（200亿参数）和万2.2（280亿参数）在内的前沿图像与视频生成模型，我们验证了分阶段DMD的有效性。实验结果表明，该方案在保持关键生成能力的同时，比传统DMD能更好地维持输出多样性。我们将公开相关代码与模型。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.27684">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.27684">arXiv</a></p>
+<hr />
+<h3>9. HyperClick：基于不确定性校准提升图形用户界面定位可靠性</h3>
+<p><strong>原文标题：</strong> HyperClick: Advancing Reliable GUI Grounding via Uncertainty Calibration</p>
+<p><strong>摘要：</strong>
+自主图形用户界面（GUI）智能体依赖精准的界面定位技术——即将语言指令映射至屏幕坐标——来执行用户指令。然而，当前无论是通过监督微调（SFT）还是强化微调（RFT）训练的模型，均缺乏对自身能力边界的认知，导致预测结果存在过度自信与不可靠问题。我们首次系统评估了通用模型与GUI专用模型中的概率化与言语化置信度，揭示了置信度与实际准确率之间的错位现象。这种错位在动态GUI自动化任务中尤为关键，因为单次错误即可导致任务失败。为此，我们提出HyperClick这一创新框架，通过不确定性校准来增强GUI定位的可靠性。该框架引入双重奖励机制，将正确动作的二元奖励与基于截断高斯分布的空间置信度建模相结合，并采用Brier分数进行校准。该方法联合优化定位精度与置信度可靠性，促进内省式自我修正。在七大挑战基准上的大量实验表明，HyperClick在实现最先进性能的同时，能提供精准校准的置信度。通过实现显式置信度校准与内省式自我批判，HyperClick有效降低了过度自信问题，为GUI自动化提供了更可靠的技术支撑。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.27266">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.27266">arXiv</a></p>
+<hr />
+<h3>10. SemCoT：基于语义对齐隐式标记的思维链推理加速框架</h3>
+<p><strong>原文标题：</strong> SemCoT: Accelerating Chain-of-Thought Reasoning through
+  Semantically-Aligned Implicit Tokens</p>
+<p><strong>摘要：</strong>
+思维链推理的冗长特性阻碍了其在效率敏感场景中的大规模部署。近期出现的隐式思维链方法将推理步骤编码于大语言模型的隐藏嵌入空间（称为“隐式推理”）而非显式标记，通过缩短推理长度与绕过部分模型组件来加速推理过程。然而现有隐式思维链方法面临两大挑战：（1）未能保持隐式推理（转化为自然语言时）与真实推理之间的语义对齐，导致思维链性能显著下降；（2）仅关注缩减隐式推理长度，却忽略了大语言模型生成单个隐式推理标记的显著时间成本。为解决这些问题，我们提出新型语义对齐隐式思维链框架SemCoT。针对首个挑战，我们设计了基于对比训练的语句转换器来评估隐式与显式推理的语义对齐度，该组件在隐式推理优化过程中用于保障语义保真性。针对第二项挑战，我们通过知识蒸馏微调轻量级语言模型，构建高效隐式推理生成器。该生成器在语句转换器指导下将真实推理蒸馏为语义对齐的隐式推理，同时优化准确率。SemCoT是首个通过联合优化标记级生成速度与保持真实推理语义对齐来提升思维链效率的方法。大量实验证明，SemCoT在效率与效能方面均优于现有最优方法。代码已开源于：https://github.com/YinhanHe123/SemCoT/。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.24940">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.24940">arXiv</a></p>
+<hr />
+<h3>11. 视觉语言模型中多模态位置编码的再审视</h3>
+<p><strong>原文标题：</strong> Revisiting Multimodal Positional Encoding in Vision-Language Models</p>
+<p><strong>摘要：</strong>
+多模态位置编码对视觉语言模型至关重要，然而目前对多模态位置编码的系统性研究仍较为缺乏。本文通过研究旋转位置嵌入的两个核心组件——位置设计与频率分配，对多模态旋转位置编码进行了全面分析。通过大量实验，我们总结出三个关键准则：位置连贯性、全频段利用率及文本先验保持——确保明确的布局表征、丰富的表示能力以及预训练大语言模型的忠实迁移。基于这些发现，我们提出了多头旋转位置编码和交错式多模态旋转位置编码，这两种即插即用型变体无需改变模型架构。在多样化基准测试中，我们的方法始终优于现有方案，在通用多模态理解和细粒度多模态理解任务上均取得了显著提升。代码将在https://github.com/JJJYmmm/Multimodal-RoPEs发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.23095">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.23095">arXiv</a></p>
+<hr />
+<h3>12. 基于对比触发学习的多模态大语言模型具身决策视觉后门攻击</h3>
+<p><strong>原文标题：</strong> Visual Backdoor Attacks on MLLM Embodied Decision Making via Contrastive
+  Trigger Learning</p>
+<p><strong>摘要：</strong>
+多模态大语言模型（MLLMs）通过实现直接感知、推理和面向任务的动作规划，显著推动了具身智能体的发展。然而，这种视觉驱动的具身智能体也带来了新的攻击面：视觉后门攻击。在此类攻击中，智能体在场景未出现视觉触发器时表现正常，而一旦触发器出现，便会持续执行攻击者预设的多步策略。我们提出BEAT框架，首次实现基于环境物体作为触发器的MLLM具身智能体视觉后门注入。与文本触发器不同，物体触发器在不同视角和光照条件下存在显著差异，导致其难以可靠植入。BEAT通过以下方式解决这一挑战：（1）构建涵盖多样化场景、任务及触发器布局的训练集，使智能体充分接触触发器变异；（2）引入两阶段训练方案，先进行监督微调（SFT），再采用新型的对比触发学习（CTL）。CTL将触发器判别建模为含触发器与无触发器输入间的偏好学习，通过显式锐化决策边界确保精准的后门激活。在多种具身智能体基准测试和MLLM模型上的实验表明，BEAT可实现高达80%的攻击成功率，同时保持优异的正常任务性能，并能可靠泛化至分布外触发器布局。值得注意的是，在有限后门数据条件下，相较于传统SFT方法，CTL将后门激活准确率最高提升39%。这些发现揭示了基于MLLM的具身智能体中存在关键且尚未被探索的安全风险，强调了实际部署前需建立鲁棒防御机制的必要性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.27623">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.27623">arXiv</a></p>
+<hr />
+<h3>13. 高阶线性注意力机制</h3>
+<p><strong>原文标题：</strong> Higher-order Linear Attention</p>
+<p><strong>摘要：</strong>
+缩放点积注意力机制存在的二次计算成本，是阻碍自回归语言模型扩展到长上下文的核心障碍。线性时间注意力与状态空间模型虽能提供可扩展的替代方案，但通常受限于一阶或基于核函数的近似，这可能限制其表达能力。我们提出高阶线性注意力机制（HLA），这是一种因果性流式处理机制，通过紧凑的前缀充分统计量实现高阶交互。在二阶场景下，HLA保持恒定大小的状态并以线性时间计算每个词元的输出，且无需实例化任何n×n矩阵。我们给出了闭式流式计算恒等式、使用两个附加摘要向量的严格因果掩码变体，以及基于关联扫描的块并行训练方案——该方案能精确复现串行递归的激活状态。我们进一步阐述了向三阶及更高阶的扩展方案。这些研究成果共同确立了HLA作为原则化、可扩展的基础模块，既具备类注意力机制的数据依赖混合特性，又兼具现代循环架构的高效性。项目页面：https://github.com/yifanzhang-pro/HLA。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.27258">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.27258">arXiv</a></p>
+<hr />
+<h3>14. 面向世界模型增强的视觉-语言-动作模型的双流扩散方法</h3>
+<p><strong>原文标题：</strong> Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action
+  Model</p>
+<p><strong>摘要：</strong>
+近期研究表明，通过世界模型增强视觉-语言-动作模型（VLA）可有效提升机器人策略学习性能。然而，由于观测状态与动作序列在模态上存在本质差异，联合预测下一状态观测与动作序列仍面临挑战。为此，我们提出双流扩散框架DUST，该世界模型增强的VLA框架通过处理模态冲突显著提升了模型在多样化任务中的表现。具体而言，我们设计了一种多模态扩散变换器架构，在保持独立模态流的同时实现跨模态知识共享。此外，我们引入针对各模态的独立噪声扰动机制与解耦流匹配损失函数。该设计使模型能够以双向方式学习联合分布，同时避免构建统一潜在空间的需求。基于训练阶段的模态解耦特性，我们进一步提出支持测试时缩放策略的联合采样方法，实现动作与视觉令牌以不同速率异步演化。在RoboCasa和GR-1等仿真基准测试中，DUST相较基线方法最高可获得6%的性能提升，而测试时缩放策略可额外带来2-5%的增益。在Franka Research 3机器人实体实验中，DUST将任务成功率提高13%，证实其超越仿真环境的有效性。此外，基于BridgeV2无动作视频数据的预训练在RoboCasa任务中产生显著迁移增益，彰显DUST在大规模VLA预训练领域的应用潜力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.27607">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.27607">arXiv</a></p>
+<hr />
+<h3>15. Denario项目：面向科学发现的深度知识人工智能体</h3>
+<p><strong>原文标题：</strong> The Denario project: Deep knowledge AI agents for scientific discovery</p>
+<p><strong>摘要：</strong>
+本文介绍Denario——一个作为科研助手设计的AI多智能体系统。该系统能够执行多种科研任务，包括生成研究思路、文献调研、制定研究计划、编写执行代码、绘制图表以及起草和审阅科学论文。该系统采用模块化架构设计，既可处理特定任务（如生成研究构想），也能通过Cmbagent深度研究后端实现端到端的科学分析。本研究详细阐述了Denario系统及其模块构成，并通过展示该系统在多个学科领域（包括天体物理学、生物学、生物物理学、生物医学信息学、化学、材料科学、数学物理、医学、神经科学和行星科学）生成的AI论文来论证其能力。该系统特别擅长跨学科思维整合，我们通过展示一篇将量子物理学与机器学习方法应用于天体物理数据的论文予以佐证。我们报告了领域专家对这些论文的评估结果，包括量化评分和类同行评议反馈，进而指出当前系统的优势、不足与局限。最后，我们探讨了AI驱动科研的伦理影响，并反思该技术与科学哲学的关联。代码已公开发布于https://github.com/AstroPilot-AI/Denario，网页版演示可通过https://huggingface.co/spaces/astropilot-ai/Denario直接运行，完整应用将部署于云端平台。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26887">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26887">arXiv</a></p>
+<hr />
+<h3>16. 高效视觉-语言-动作模型研究综述</h3>
+<p><strong>原文标题：</strong> A Survey on Efficient Vision-Language-Action Models</p>
+<p><strong>摘要：</strong>
+视觉-语言-动作模型（VLAs）作为具身智能的重要前沿领域，致力于实现数字知识与物理世界交互的深度融合。尽管这类模型已展现出卓越的通用能力，但其底层大规模基础模型固有的巨大计算与数据需求严重制约了实际部署。为应对这些紧迫挑战，本文首次从数据-模型-训练全流程视角对高效视觉-语言-动作模型（Efficient VLAs）进行系统综述。我们提出统一分类法以整合该领域的研究成果，将现有技术归纳为三大核心支柱：（1）聚焦高效架构与模型压缩的高效模型设计；（2）降低模型学习过程计算负荷的高效训练方法；（3）解决机器人数据采集与应用瓶颈的高效数据收集。通过对该框架下前沿方法的批判性审视，本综述不仅为学界建立基础性参考基准，还总结了代表性应用场景，厘清关键挑战，并绘制未来研究发展路线图。我们持续维护的项目页面将同步最新进展：https://evla-survey.github.io/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.24795">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.24795">arXiv</a></p>
+<hr />
+<h3>17. RLVR泛化能力的局限：数学推理中的两项案例研究</h3>
+<p><strong>原文标题：</strong> Limits of Generalization in RLVR: Two Case Studies in Mathematical
+  Reasoning</p>
+<p><strong>摘要：</strong>
+数学推理是大型语言模型面临的核心挑战，不仅要求获得正确答案，更需要忠实可信的推理过程。基于可验证奖励的强化学习（RLVR）已成为增强此类能力的重要方法，但其能否真正培养推理能力尚不明确。我们针对两个具有完全可验证解的组合问题——活动调度与最长递增子序列，使用包含唯一最优解的精心构建数据集展开研究。通过多种奖励设计方案的测试，发现RLVR虽能提升评估指标，但往往是通过强化表面启发式方法而非获得新的推理策略。这些发现揭示了RLVR泛化能力的局限性，强调需要建立能够区分真实数学推理与捷径利用的基准测试，并提供对进展过程的可靠衡量。代码详见https://github.com/xashru/rlvr-seq-generalization。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.27044">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.27044">arXiv</a></p>
+<hr />
+<h3>18. 价值漂移：大语言模型后训练期间的价值对齐轨迹追踪</h3>
+<p><strong>原文标题：</strong> Value Drifts: Tracing Value Alignment During LLM Post-Training</p>
+<p><strong>摘要：</strong>
+随着大语言模型在社会中扮演日益重要的角色，它们越来越多地面临不仅需要调用通用知识，还必须与特定人类价值体系保持一致的复杂问题。因此，研究大语言模型与人类价值观的对齐已成为关键研究领域。然而既有研究多聚焦于评估完全训练模型的对齐表现，忽视了模型学习表达人类价值观的训练动态过程。本研究通过探究模型后训练过程中价值对齐的产生机制与发展阶段，解析了后训练算法与数据集的影响效应，量化了训练期间价值漂移的幅度与时机。基于不同规模的Llama-3和Qwen-3模型，结合主流监督微调及偏好优化数据集与算法进行实验，我们发现监督微调阶段通常确立模型的价值取向，而后续的偏好优化很少重新调整这些价值基准。此外，通过使用可精确调控价值取向的合成偏好数据集，我们发现即使保持偏好数据不变，不同的偏好优化算法仍会导致相异的价值对齐结果。本研究为理解后训练过程中的价值学习机制提供了可操作的见解，不仅为数据策展提供指导，更有助于优选模型与偏好优化算法以提升模型与人类价值观的对齐程度。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26707">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26707">arXiv</a></p>
+<hr />
+<h3>19. Rank-GRPO：基于强化学习的LLM对话推荐系统训练方法</h3>
+<p><strong>原文标题：</strong> Rank-GRPO: Training LLM-based Conversational Recommender Systems with
+  Reinforcement Learning</p>
+<p><strong>摘要：</strong>
+大型语言模型正在重塑推荐系统范式，使用户能够通过对话表达偏好并获取推荐。然而将语言模型与推荐任务对齐仍面临挑战：预训练模型常生成目录外项目、违反输出格式要求，且其推荐列表末端的排序质量显著下降。为此，我们提出ConvRec-R1——一个用于端到端训练基于LLM的对话推荐系统的双阶段框架。第一阶段通过重构-反思-调整流程构建行为克隆数据集，从强大的黑盒LLM中生成高质量的目录锚定示范数据，为强化学习训练提供预热初始化。第二阶段提出Rank-GRPO，这是针对排序式输出任务对群组相对策略优化（GRPO）的原则性扩展。该方法将推荐列表中的每个排序位置作为基本单元（而非过于细粒度的词元或过于粗粒度的序列），通过重新定义奖励函数消除非因果信用分配，并基于按序词元概率的几何平均数引入排序层级重要性比率以稳定策略更新。在公开Reddit-v2数据集上的实验表明，ConvRec-R1相比GRPO风格基线方法收敛更快，并在召回率和归一化折损累计增益指标上表现更优。代码与数据集已发布于https://github.com/yaochenzhu/Rank-GRPO。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.20150">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.20150">arXiv</a></p>
+<hr />
+<h3>20. Mask-to-Height：基于YOLOv11的卫星影像建筑物实例分割与高度分类联合提取架构</h3>
+<p><strong>原文标题：</strong> Mask-to-Height: A YOLOv11-Based Architecture for Joint Building Instance
+  Segmentation and Height Classification from Satellite Imagery</p>
+<p><strong>摘要：</strong>
+精确的建筑物实例分割与高度分类对于城市规划、三维城市建模和基础设施监测至关重要。本文深入分析了YOLO系列深度学习模型的最新进展YOLOv11，重点探讨其在卫星影像建筑物提取与离散高度分类联合任务中的应用。YOLOv11通过引入更高效的网络架构，改进了多尺度特征融合机制，提升了目标定位精度，并显著增强了复杂城市场景下的性能表现。基于DFC2023 Track 2数据集（涵盖12个城市超过12.5万栋标注建筑），我们采用精确率、召回率、F1分数和平均精度均值等指标评估模型性能。实验结果表明，YOLOv11在实例分割任务中取得60.4% mAP@50和38.3% mAP@50-95的优异表现，同时在五个预定义高度层级中保持稳健的分类精度。该模型在处理遮挡、复杂建筑形态和类别不平衡（特别是罕见高层建筑）方面表现突出。对比分析证实，YOLOv11在检测精度和推理速度上均优于早期多任务框架，适用于实时大规模城市测绘。本研究通过简化的分类高度建模，彰显了YOLOv11推动语义化城市重建的潜力，为遥感与地理空间智能的后续发展提供了可操作的见解。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.27224">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.27224">arXiv</a></p>
+<hr />
+<h3>21. MisSynth：利用合成数据提升MISSCI逻辑谬误分类性能</h3>
+<p><strong>原文标题：</strong> MisSynth: Improving MISSCI Logical Fallacies Classification with
+  Synthetic Data</p>
+<p><strong>摘要：</strong>
+健康相关错误信息极为普遍且具有潜在危害性，尤其当这些言论曲解或误读科学发现时更难以识别。本研究基于MISSCI数据集与框架，系统探究合成数据生成与轻量化微调技术对大型语言模型识别谬误论证能力的影响。我们提出MisSynth技术方案，该流程采用检索增强生成技术构建合成谬误样本，继而用于大语言模型的微调训练。实验结果表明，经过微调的模型相较原始基线模型取得显著准确率提升。以LLaMA 3.1 8B模型为例，其在MISSCI测试集上的F1分数较基线模型实现超过35%的绝对提升。本研究证实，通过引入合成谬误数据来扩充有限标注资源，即使仅使用有限计算资源，也能显著增强大语言模型在真实场景科学错误信息分类任务中的零样本性能。相关代码与合成数据集已发布于https://github.com/mxpoliakov/MisSynth。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.26345">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.26345">arXiv</a></p>
+<hr />
+<h3>22. 垄断交易：有限单边响应博弈的基准环境研究</h3>
+<p><strong>原文标题：</strong> Monopoly Deal: A Benchmark Environment for Bounded One-Sided Response
+  Games</p>
+<p><strong>摘要：</strong>
+卡牌游戏常被用于研究不确定性下的序贯决策问题，在谈判、金融和网络安全等领域具有现实对应模型。根据控制流模式，这类游戏通常分为三类：严格序贯（玩家轮替执行单动作）、确定性响应（特定动作触发固定结果）以及无限制互惠响应（允许交替反制）。有限单边响应作为一种研究较少但策略丰富的结构，其特点是当玩家执行动作后会短暂转移控制权，对手需通过一个或多个操作满足固定条件才能结束回合。我们将具有该机制的游戏称为有限单边响应博弈（BORGs）。本研究通过改进版《垄断交易》构建隔离该动态的基准环境，其中租金行动会强制对手选择支付资产。采用反事实遗憾最小化（CFR）这一黄金标准算法，无需新增算法扩展即可收敛至有效策略。我们开发了轻量级全栈研究平台，集成游戏环境、并行化CFR运行时及可人机对战的网页界面。经训练的CFR智能体及源代码已发布于https://monopolydeal.ai。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25080">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25080">arXiv</a></p>
+<hr />
+<h3>23. 超越对象：面向细粒度分类的上下文感知合成数据生成</h3>
+<p><strong>原文标题：</strong> Beyond Objects: Contextual Synthetic Data Generation for Fine-Grained
+  Classification</p>
+<p><strong>摘要：</strong>
+文本到图像模型正日益广泛应用于合成数据集生成，但为分类任务生成有效的合成训练数据仍具挑战性。虽然通过少量真实样本对T2I模型进行微调可提升合成训练数据的质量，但可能导致过拟合并降低生成样本的多样性。本文提出BOB微调策略以缓解细粒度分类中的这些问题。基于少量真实样本，我们首先提取类别无关属性（如场景背景和物体姿态），随后在T2I模型微调过程中显式约束这些属性，并在生成阶段对其进行边缘化处理。该设计能有效抑制过拟合，保留T2I模型的生成先验，降低估计误差，并进一步消除非预期的类间关联。通过在多个T2I模型、骨干网络和数据集上的广泛实验表明，本方法在使用合成数据增强的低样本细粒度分类任务中达到了最优性能。具体而言，在Aircraft数据集上，BOF相较DataDream提升7.4%（当使用5张真实图像和100张合成图像微调CLIP分类器时，准确率从50.0%提升至57.4%）。在四项基准测试中，有三项使用5张真实图像配合BOB增强数据微调下游模型的性能优于直接使用10张真实图像微调。总体而言，BOF在24组实验设置中有18组超越现有技术，其中14组实现准确率提升超过2%。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.24078">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.24078">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2025-11-03_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
