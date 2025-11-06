@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2025-11-05</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-11-05 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：25</li>
+<li>热门领域：LLM, Audio, Transformer, RL</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. 勿使视觉语言动作模型失明：面向分布外泛化的视觉表征对齐</h3>
+<p><strong>原文标题：</strong> Don't Blind Your VLA: Aligning Visual Representations for OOD
+  Generalization</p>
+<p><strong>摘要：</strong>
+视觉-语言-动作（VLA）模型日益成功的根源在于，经过预训练的视觉语言模型（VLM）能够赋予智能体可迁移的世界知识与视觉语言 grounding 能力，为具有更广泛泛化能力的动作模型奠定基础。然而当这些VLM适配至动作模态时，其原始视觉语言表征与知识保留程度仍不明确。本研究系统探讨了VLA微调过程中的表征保持问题，发现原始的动作微调方法会导致视觉表征退化。为量化表征变化，我们通过探测VLA隐藏表征与解析注意力图谱，设计了一套针对性任务与方法，将VLA模型与其对应VLM进行对比分析，从而分离出动作微调引发的视觉语言能力变化。我们进一步评估了多种视觉表征对齐策略，提出一种简单有效的方法来缓解表征退化，并在分布外（OOD）场景中实现更优的泛化性能。综合而言，本文阐明了动作微调与视觉语言表征退化之间的权衡关系，并提出了恢复继承性视觉语言能力的实用方法。代码已公开：https://blind-vla-paper.github.io</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25616">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25616">arXiv</a></p>
+<hr />
+<h3>2. VCode：以SVG作为符号化视觉表征的多模态编程基准</h3>
+<p><strong>原文标题：</strong> VCode: a Multimodal Coding Benchmark with SVG as Symbolic Visual
+  Representation</p>
+<p><strong>摘要：</strong>
+在智能体时代，代码已成为一种精确且可执行的推理与行动媒介。然而当前进展主要集中于以语言为中心的任务（如程序合成与调试），致使以视觉为中心的编程研究探索不足。受人类通过草图进行推理的启发，我们主张将SVG代码作为紧凑、可解释且可执行的视觉表征。本文提出VCode基准，将多模态理解重新定义为代码生成任务：给定图像，模型需生成能保持符号意义以供下游推理的SVG代码。VCode涵盖三大领域——通用常识（MM-Vet）、专业学科（MMMU）及视觉中心感知（CV-Bench）。为评估符号保真度，我们提出CodeVQA创新评估协议：策略模型在渲染后的SVG上回答问题，正确答案表明符号得到了忠实保留。实验表明，前沿视觉语言模型在生成忠实SVG方面存在困难，揭示了以语言为中心和以视觉为中心的编程之间存在持续差距。为弥合这一差距，我们提出VCoder智能体框架，从两个维度增强视觉语言模型：（1）修订思维：迭代分析差异并优化SVG代码；（2）视觉工具行动：通过检测器和解析器提供模型内在能力之外的结构化线索（如物体、形状和文本）。跨基准测试显示，具有强推理能力的前沿视觉语言模型总体得分良好，但在专业知识和三维推理方面仍存在局限。VCoder相较性能最优的Claude-4-Opus实现12.3分的综合提升。人类研究表明，人类与视觉语言模型在渲染SVG上的表现均有所下降，但二者表现的一致性揭示了符号化视觉表征的潜力。基准与代码已发布于https://github.com/CSU-JPG/VCode。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02778">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02778">arXiv</a></p>
+<hr />
+<h3>3. 当可视化成为推理的第一步：MIRA——视觉思维链基准测试</h3>
+<p><strong>原文标题：</strong> When Visualizing is the First Step to Reasoning: MIRA, a Benchmark for
+  Visual Chain-of-Thought</p>
+<p><strong>摘要：</strong>
+我们提出MIRA这一新型基准测试，旨在评估需要生成中间视觉图像以完成有效推理的场景下的模型性能。与传统仅依赖文本的思维链方法不同，MIRA中的任务要求模型生成并利用中间图像——如草图、结构图或路径示意图——来引导推理过程。这种设置高度模拟了人类通过“绘图思考”解决复杂问题的方式。为此，MIRA聚焦于本质上具有挑战性、涉及复杂结构、空间关系或难以仅用语言表达的推理步骤的任务。为确保评估数据质量，我们收录了546个多模态问题，并标注了中间视觉图像与最终答案。我们还为MIRA设计了跨三个评估层级的统一协议：仅含图像与问题的直接输入、附带图像与思维提示的纯文本思维链输入、以及同时包含标注图像线索与文本思维提示的视觉思维链输入。为探索模型在本基准测试中的能力上限，我们还报告了不同k值设置下的pass@k和多数投票准确率。实验结果表明，现有包括最强私有模型和优秀开源权重在内的多模态大语言模型，在仅依赖文本提示时表现欠佳；但当提供中间视觉线索后，模型性能获得持续提升，在所有模型和任务中平均相对增益达33.7%。我们通过扩展搜索空间和设计对齐视觉思维链的文本提示来探索性能上限，但这两者相较我们的视觉思维链设置仅能带来有限改进。这些发现凸显了想象视觉信息在MIRA基准测试中实现成功推理的关键作用。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02779">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02779">arXiv</a></p>
+<hr />
+<h3>4. 模态冲突的解决机制：多模态大语言模型中单模态推理不确定性如何主导偏好动态</h3>
+<p><strong>原文标题：</strong> When Modalities Conflict: How Unimodal Reasoning Uncertainty Governs
+  Preference Dynamics in MLLMs</p>
+<p><strong>摘要：</strong>
+当不同模态提供相互矛盾的信息时，多模态大语言模型（MLLMs）必须进行冲突消解，这一过程我们称之为模态追随。现有研究仅通过粗糙的数据集级统计量衡量该行为，忽略了模型在单模态推理中置信度的影响。本文提出全新分析框架，将模态追随解构为两个基本要素：相对推理不确定性（单模态预测在具体案例中的置信度差异）与内在模态偏好（不确定性平衡时模型的稳定倾向）。为验证该框架，我们构建了可控制系统性调节视觉与文本输入推理难度的数据集。通过以熵作为细粒度不确定性度量，发现了普适性规律：模型追随某一模态的概率随其相对不确定性的增加呈单调递减。在模型以相近概率追随双模态的相对难度水平——即平衡点处，可有效度量模型的内在偏好。与传统宏观比率不同，该方法能够从单模态能力与数据集伪影中分离出模态偏差，提供更具原则性且更少混杂的量化特征。进一步通过分层预测探测，我们揭示了决策振荡的内在机制：在平衡点附近的模糊区域中，模型会在不同层级间切换主导模态，这解释了外部观察到的决策犹豫现象。本研究确立了相对不确定性与内在偏好作为模态追随的双重支配原则，不仅为MLLMs如何解决信息冲突提供了量化框架，更揭示了其内在运作机制。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02243">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02243">arXiv</a></p>
+<hr />
+<h3>5. 协作鸿沟</h3>
+<p><strong>原文标题：</strong> The Collaboration Gap</p>
+<p><strong>摘要：</strong>
+人工智能的发展轨迹表明，我们将日益依赖由具有不同信息、权限和工具的独立智能体构成的基于代理的系统。这些系统的成功关键取决于异构智能体在部分可观测环境下的有效协作。尽管备受关注，但目前鲜有大规模评估此类智能体间协作的实证研究。我们提出一个协作式迷宫求解基准测试框架，其具备以下特征：（1）隔离协作能力评估；（2）可调节问题复杂度；（3）支持可扩展的自动化评分；（4）不设输出格式限制，保持生态合理性。基于该框架，我们评估了32个领先的开源与闭源模型在独立运行、同构配对及异构配对三种模式下的表现。研究结果揭示了“协作鸿沟”现象：独立表现优异的模型在需要协作时性能显著下降。协作可能严重失效，例如在特定配对中，独立求解迷宫表现优异的小型蒸馏模型几乎完全失效。研究发现，由较强智能体主导协作往往能改善结果，这启发了“接力推理”方法——较强智能体先导处理后再移交较弱智能体，从而大幅弥合协作鸿沟。我们的研究主张：（1）建立协作感知的评估体系；（2）开发增强协作能力的训练策略；（3）设计能可靠激发智能体潜在技能的交互机制，这些指导原则同时适用于AI-AI及人机协作场景。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02687">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02687">arXiv</a></p>
+<hr />
+<h3>6. Step-Audio-EditX技术报告</h3>
+<p><strong>原文标题：</strong> Step-Audio-EditX Technical Report</p>
+<p><strong>摘要：</strong>
+本文提出Step-Audio-EditX——首个基于大语言模型的开源音频处理系统，在保持强大零样本文本转语音能力的同时，擅长执行包含情感、说话风格及副语言特征的表现力音频编辑与迭代编辑。我们的核心创新在于仅采用大间隔合成数据进行训练，无需依赖基于嵌入的先验知识或辅助模块。这种大间隔学习方法既实现了对语音的迭代控制，又保障了声音表现力的高度还原，标志着从传统表征级解耦研究范式的根本性转变。评估结果表明，在情感编辑及其他细粒度控制任务中，Step-Audio-EditX的性能均超越MiniMax-2.6-hd与Doubao-Seed-TTS-2.0系统。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.03601">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.03601">arXiv</a></p>
+<hr />
+<h3>7. Brain-IT：基于脑交互Transformer的功能磁共振成像图像重建</h3>
+<p><strong>原文标题：</strong> Brain-IT: Image Reconstruction from fMRI via Brain-Interaction
+  Transformer</p>
+<p><strong>摘要：</strong>
+通过功能磁共振成像（fMRI）脑记录重建人眼所见图像，为研究人脑认知提供了非侵入式观测窗口。尽管扩散模型推动了该领域的发展，现有方法仍难以准确还原真实视觉图像。本文提出受脑启发的"Brain-IT"方法，通过脑交互Transformer（BIT）实现功能相似脑体素簇间的有效交互。这些功能簇作为跨被试共享的基础单元，支撑脑内与跨脑信息的整合。所有模型组件均采用跨簇群与跨被试的共享机制，实现了有限数据条件下的高效训练。为引导图像重建，BIT预测两种互补的局部块级图像特征：（1）高层语义特征——引导扩散模型生成正确的图像语义内容；（2）低层结构特征——为扩散过程提供准确的图像粗粒度布局初始化。BIT的设计实现了从脑体素簇到局部图像特征的直接信息流通。基于这些原理，我们的方法实现了对视觉图像的高保真重建，在视觉评估和客观指标上均超越当前最优方法。值得注意的是，仅需新被试1小时的fMRI数据，即可达到现有方法使用40小时完整训练数据才能取得的重建效果。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.25976">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.25976">arXiv</a></p>
+<hr />
+<h3>8. 视觉输入能否被压缩？面向大型多模态模型的视觉令牌压缩基准</h3>
+<p><strong>原文标题：</strong> Can Visual Input Be Compressed? A Visual Token Compression Benchmark for
+  Large Multimodal Models</p>
+<p><strong>摘要：</strong>
+大型多模态模型常因图像编码器生成的海量视觉令牌而面临严重的推理效率问题。尽管剪枝、融合等新兴令牌压缩方法在减少冗余方面展现出潜力，但其评估体系仍存在碎片化与不一致性。本研究提出UniPruneBench——一个统一且可扩展的多模态大模型视觉令牌剪枝基准。该基准在六大能力维度与十大数据集上建立标准化评估协议，涵盖十种代表性压缩算法及三类主流LMM架构（LLaVA-v1.5、Intern-VL与Qwen2.5-VL）。除任务精度外，基准创新性地引入运行时长与前填充延迟等系统级指标，形成全景评估体系。实验揭示关键发现：（1）随机剪枝作为基线方法表现出意料之外的强韧性；（2）尚无任一方法能在所有场景中持续领先；（3）不同任务对剪枝的敏感度差异显著，其中OCR任务最易受损；（4）压缩比率是影响性能衰退的主导因素。我们相信UniPruneBench将为高效多模态建模的未来研究提供可靠基础。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02650">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02650">arXiv</a></p>
+<hr />
+<h3>9. LTD-Bench：通过绘图能力评估大语言模型</h3>
+<p><strong>原文标题：</strong> LTD-Bench: Evaluating Large Language Models by Letting Them Draw</p>
+<p><strong>摘要：</strong>
+当前大语言模型的评估范式存在关键盲点——依赖不透明的数值指标，既掩盖了空间推理的根本缺陷，又无法直观呈现模型能力。这种缺陷导致报告性能与实际应用能力间产生危险脱节，在需要物理世界理解的应用场景中尤为明显。我们提出突破性基准LTD-Bench，通过要求模型通过点阵或可执行代码生成绘图，将LLM评估从抽象分数转化为可直接观察的可视化输出。该方法即使对非专业人士也能即时呈现空间推理缺陷，弥合了统计性能与直觉评估间的根本差距。LTD-Bench采用包含互补生成任务（测试空间想象力）与识别任务（评估空间感知力）的完整方法体系，通过三个渐进难度级别，系统化评估关键语言-空间映射的双向能力。我们对前沿模型的大规模实验揭示了令人警醒的能力断层：即使在传统基准测试中表现优异的LLM，在建立语言与空间概念的双向映射方面仍存在严重缺陷——这一根本局限削弱了其成为真实世界模型的潜力。此外，LTD-Bench的可视化输出支持强大的诊断分析，为研究模型相似性提供了潜在路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02347">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02347">arXiv</a></p>
+<hr />
+<h3>10. 短而非劣：基于简易样本的节俭推理作为数学RLVR中的长度正则化器</h3>
+<p><strong>原文标题：</strong> Shorter but not Worse: Frugal Reasoning via Easy Samples as Length
+  Regularizers in Math RLVR</p>
+<p><strong>摘要：</strong>
+针对逐步推理训练的大语言模型常产生过度冗长的输出，导致推理成本增加。标准的可验证奖励强化学习流程为提升训练效率会过滤"简易"问题，使模型主要训练于需要更长推理链的难题。这种做法使输出长度分布向上偏移，导致模型混淆"更长思考"与"更好思考"。本研究表明，保留并适度加权中等难度问题可充当隐式长度正则化器。让模型接触可解决的短链任务能够约束其输出分布，防止冗长失控。由此实现无需代价的涌现性简洁：尽管未采用任何显式长度惩罚，模型仍能学会解决难题而不增加输出长度。在Qwen3-4B-Thinking-2507模型上进行的可验证奖励强化学习实验表明，该方法在保持基准AIME25通过率的同时，生成解决方案平均缩短近一半。代码详见https://github.com/MBZUAI-Paris/Frugal-AI{GitHub}，数据集与模型发布于https://huggingface.co/collections/MBZUAI-Paris/k2-think-mini-68dcfa8b114686a4bd3dc2bc{抱抱脸}。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.01937">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.01937">arXiv</a></p>
+<hr />
+<h3>11. CodeClash：面向目标的软件工程基准测试框架</h3>
+<p><strong>原文标题：</strong> CodeClash: Benchmarking Goal-Oriented Software Engineering</p>
+<p><strong>摘要：</strong>
+现有的代码生成基准测试主要针对具体明确的任务评估语言模型，例如修复特定错误或编写针对性测试用例。然而人类程序员并非终日处理孤立任务，真实软件开发始终围绕高层次目标展开，如提升用户留存率或降低运营成本。如何评估语言模型在无明确指导的情况下，通过迭代式代码开发达成开放性目标仍属前沿挑战。为此我们提出CodeClash基准测试框架，通过多轮锦标赛形式使语言模型围绕竞争性目标展开代码库优化竞赛。每轮比赛包含两个阶段：智能体编辑代码后，其代码库将在竞技场中展开对决，根据得分最大化、资源获取或生存时长等目标判定胜负。无论是编写注释、研读文档、分析对战记录还是创建测试套件，模型需要自主决策如何从绝对水平和相对优势两个维度优化代码库。我们通过1680场锦标赛（总计25200轮）对8个语言模型在6类竞技场中进行评估。结果表明：虽然模型展现出多样化的开发风格，但在策略推理方面存在根本性局限；随着代码库逐渐变得混乱冗余，模型在长期维护方面也表现不佳。这些缺陷十分显著：顶尖模型在与人类程序专家的对战中全数落败。我们开源CodeClash框架以推动自主化、目标导向的代码开发研究。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.00839">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.00839">arXiv</a></p>
+<hr />
+<h3>12. TWIST2：可扩展、便携式、整体化的人形机器人数据采集系统</h3>
+<p><strong>原文标题：</strong> TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System</p>
+<p><strong>摘要：</strong>
+大规模数据推动了机器人技术领域的突破，从语言模型到双手操作中的视觉-语言-动作模型。然而，人形机器人领域仍缺乏同等高效的数据采集框架。现有的人形遥操作系统要么采用解耦控制，要么依赖昂贵的动作捕捉设备。我们推出TWIST2——一种无需动作捕捉的便携式人形遥操作与数据采集系统，在保持完整全身控制的同时实现了可扩展性突破。该系统利用PICO4U VR设备实时获取人体全身运动数据，通过定制化的2自由度机器人颈部装置（成本约250美元）实现以自我为中心的视觉感知，最终达成人机联动的整体化控制。我们成功演示了长时序的灵巧移动操作技能，在15分钟内可采集100组演示数据且成功率接近100%。基于此技术路径，我们提出分层视觉运动策略框架，能够基于第一视角视觉自主控制人形机器人全身。该视觉运动策略成功展示了全身精细操作与动态踢球任务。整个系统具备完全可复现性，已在https://yanjieze.com/TWIST2 开源。采集的数据集同步开放于https://twist-data.github.io。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02832">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02832">arXiv</a></p>
+<hr />
+<h3>13. iFlyBot-VLA技术报告</h3>
+<p><strong>原文标题：</strong> iFlyBot-VLA Technical Report</p>
+<p><strong>摘要：</strong>
+本文提出iFlyBot-VLA——基于创新框架训练的大规模视觉-语言-动作模型。主要贡献包括：(1) 基于海量人类与机器人操作视频完整训练的潜在动作模型；(2) 在训练过程中同时监督视觉语言模型与动作专家的双层级动作表征框架；(3) 融合机器人轨迹数据与通用问答及空间问答数据集的混合训练策略，有效增强VLM骨干网络的三维感知与推理能力。具体而言，该框架训练视觉语言模型预测两种互补动作形式：基于跨具身操作数据预训练的潜在动作模型所推导的潜在动作（捕捉隐含高层意图），以及通过连续控制信号频域转换获得的结构化离散动作标记（编码显式底层动力学）。这种双重监督机制实现了语言、视觉与动作表征空间的对齐，使VLM能直接参与动作生成。在LIBERO Franka基准测试中的实验结果表明本框架的优越性，真实环境评估进一步显示iFlyBot-VLA在多样化复杂操作任务中均达到具有竞争力的成功率。此外，我们计划开源部分自建数据集以支持学界后续研究。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.01914">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.01914">arXiv</a></p>
+<hr />
+<h3>14. BRAINS：用于阿尔茨海默病检测与监测的检索增强系统</h3>
+<p><strong>原文标题：</strong> BRAINS: A Retrieval-Augmented System for Alzheimer's Detection and
+  Monitoring</p>
+<p><strong>摘要：</strong>
+随着阿尔茨海默病（AD）的全球负担持续加重，早期精准检测变得尤为关键，特别是在缺乏先进诊断工具的地区。我们提出BRAINS系统（面向神经退行性疾病筛查的生物医学检索增强智能）以应对这一挑战。该创新系统利用大语言模型（LLMs）强大的推理能力进行阿尔茨海默病的检测与监测。BRAINS采用双模块架构：认知诊断模块和病例检索模块。诊断模块运用基于认知与神经影像数据集（包括MMSE量表、CDR评分及脑容量指标）微调的大语言模型，对阿尔茨海默病风险进行结构化评估。与此同时，病例检索模块将患者档案编码为潜在表征，并从经过筛选的知识库中检索相似病例。这些辅助病例通过病例融合层与输入档案进行整合，以增强上下文理解。最终结合临床提示词对融合表征进行推理分析。真实世界数据集上的评估表明，BRAINS在疾病严重程度分类和认知衰退早期迹象识别方面具有显著效能。该系统不仅展现了作为可扩展、可解释的早期阿尔茨海默病检测辅助工具的强劲潜力，更为该领域的未来应用提供了新的希望。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02490">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02490">arXiv</a></p>
+<hr />
+<h3>15. ChartM^3：用于构建图表理解中多维多步视觉推理数据的多阶段代码驱动流程</h3>
+<p><strong>原文标题：</strong> ChartM^3: A Multi-Stage Code-Driven Pipeline for Constructing
+  Multi-Dimensional and Multi-Step Visual Reasoning Data in Chart Comprehension</p>
+<p><strong>摘要：</strong>
+复杂图表理解任务要求多模态大语言模型具备先进的视觉识别与推理能力。然而当前研究对实际应用中普遍存在的复杂图表场景及计算密集型推理任务的覆盖范围有限。本研究提出一种自动化多阶段代码驱动流程，通过系统生成视觉推理数据集以解决这些局限。该流程集成检索增强生成技术获取专业图表模板，并采用思维链策略生成模拟真实数据分布的推理代码，从而驱动图表渲染及问题相关统计计算。通过基于模型的评估，该流程有效提升了图表多样性与数据质量。基于此框架，我们构建了ChartM^3数据集——包含3.8万张图表和14.2万组问答对的训练集，以及2871个高质量评估样本，为实际性能评估提供支持。监督微调与强化学习实验表明，我们的数据集显著提升了模型的推理能力和跨领域泛化性能，使较小模型在复杂图表理解任务中能达到与大规模模型相当的表现。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02415">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02415">arXiv</a></p>
+<hr />
+<h3>16. 告别比特，聚焦词元：构建面向大语言模型的语义信息理论</h3>
+<p><strong>原文标题：</strong> Forget BIT, It is All about TOKEN: Towards Semantic Information Theory
+  for LLMs</p>
+<p><strong>摘要：</strong>
+大语言模型在众多实际应用中展现出卓越能力。尽管从实验视角开展的研究进展迅速，但其需要消耗大量算力、数据等资源。因此，如何从理论层面破解大语言模型的黑箱已成为关键挑战。本文以率失真函数、定向信息与格兰杰因果理论为出发点，探究大语言模型背后的信息论原理，进而构建以词元为基本单元（而非缺乏语义的比特）的大语言模型语义信息理论。通过定义大语言模型的概率模型，我们探讨了结构无关的信息论度量方法，包括预训练中的定向率失真函数、后训练中的定向率奖励函数，以及推理阶段的语义信息流。本文还深入研究了词元级语义嵌入理论及其信息论最优向量化方法。在此基础上，我们提出自回归大语言模型的通用定义，从理论上推导出Transformer架构及其相关性能指标（包括证据下界、泛化误差界、记忆容量和语义信息度量）。其他架构如Mamba/Mamba2和LLaDA也在本框架中得到讨论。最终，本文构建了从语义信息理论视角理解大语言模型的理论框架，为后续深入研究提供了必要的理论工具。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.01202">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.01202">arXiv</a></p>
+<hr />
+<h3>17. RoboChallenge：具身策略的大规模实体机器人评估</h3>
+<p><strong>原文标题：</strong> RoboChallenge: Large-scale Real-robot Evaluation of Embodied Policies</p>
+<p><strong>摘要：</strong>
+在机器人控制算法研究中，实体机器测试具有不可替代的价值。针对基于学习的算法（尤其是视觉语言动作模型），开展大规模评估——即在大量任务中测试大量模型——的需求日益迫切。然而，实现兼具可扩展性与可复现性的高质量评估仍面临巨大挑战。本报告阐述了构建RoboChallenge在线机器人控制算法评估系统的方法论，并基于初始基准测试集Table30对当前最先进的视觉语言动作模型进行了系统性评估。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.17950">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.17950">arXiv</a></p>
+<hr />
+<h3>18. VidEmo：面向情感中心化视频基础模型的情感树推理框架</h3>
+<p><strong>原文标题：</strong> VidEmo: Affective-Tree Reasoning for Emotion-Centric Video Foundation
+  Models</p>
+<p><strong>摘要：</strong>
+随着视频大语言模型的快速发展，视频情感理解与预测在近期研究中受到广泛关注。尽管现有方法在视频情感分析方面取得进展，但情感固有的动态性和线索依赖性特质仍带来重大挑战——难以通过合理推理解读复杂且持续演化的情绪状态。为解决这些问题，我们提出一种新颖的情感线索引导推理框架，以分阶段方式统一基础属性感知、表情分析与高层情感理解。该方案的核心是视频情感基础模型系列（VidEmo），专为情感推理与指令跟随任务设计。这些模型经历两阶段调优：首先通过课程式情感学习注入情感知识，随后采用情感树强化学习进行推理训练。此外，我们构建了基础数据基础设施，推出包含210万条多样化指令样本的情感中心化细粒度数据集（Emo-CFG）。该数据集涵盖可解释的情感问答、细粒度描述及相关推理依据，为推进情感理解任务提供关键资源。实验结果表明，我们的方法在15项面部感知任务中展现出竞争优势，确立了新的性能里程碑。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02712">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02712">arXiv</a></p>
+<hr />
+<h3>19. AyurParam：面向阿育吠陀医学的尖端双语语言模型</h3>
+<p><strong>原文标题：</strong> AyurParam: A State-of-the-Art Bilingual Language Model for Ayurveda</p>
+<p><strong>摘要：</strong>
+当前主流大语言模型在通用领域表现出色，但在需要深厚文化背景、语言专业知识和学科专长的垂直领域始终表现欠佳。以阿育吠陀为代表的传统医学体系蕴含数百年来积淀的文献典籍与临床经验，主流大语言模型难以准确解析与应用这些专业知识。我们推出AyurParam-2.9B模型——基于Param-1-2.9B架构进行领域专业化微调的双语模型，其训练数据涵盖经过专家严格筛选的阿育吠陀经典文献与临床指南。该数据集融合了语境感知、推理判断及客观题型等要素，提供印地语与英语双语的问答对，并通过严谨的标注流程确保知识准确性与指导明晰性。在BhashaBench-Ayur基准测试中，AyurParam不仅显著超越同参数规模（1.5-30亿）的所有开源指令微调模型，更在多项指标上媲美或超越参数量更大的模型。本研究证实：要实现专业医学领域可靠且文化适配的人工智能，必须进行真正的领域适应与高质量监督训练。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02374">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02374">arXiv</a></p>
+<hr />
+<h3>20. LiveSecBench：面向中文语境大语言模型的动态文化适配型AI安全基准测试</h3>
+<p><strong>原文标题：</strong> LiveSecBench: A Dynamic and Culturally-Relevant AI Safety Benchmark for
+  LLMs in Chinese Context</p>
+<p><strong>摘要：</strong>
+本研究提出LiveSecBench——一个专为中文场景大语言模型应用设计的动态持续更新的安全基准测试体系。该基准基于中国法律与社会框架，从合法性、伦理道德、事实准确性、隐私保护、对抗鲁棒性和推理安全性六大核心维度对模型进行综合评估。通过动态更新机制，本基准持续纳入新型威胁向量（如下一版本计划增加的文生图安全性与智能体安全性评估），始终保持评估体系的前沿性。当前发布的LiveSecBench（v251030）已完成对18个大语言模型的评估，清晰呈现了中文语境下AI安全能力版图。评估排行榜可通过https://livesecbench.intokentech.cn/ 公开访问。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02366">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02366">arXiv</a></p>
+<hr />
+<h3>21. TabDSR：面向表格数据复杂数值推理的分解、清理与推理框架</h3>
+<p><strong>原文标题：</strong> TabDSR: Decompose, Sanitize, and Reason for Complex Numerical Reasoning
+  in Tabular Data</p>
+<p><strong>摘要：</strong>
+表格数据的复杂推理在现实世界数据分析中至关重要，然而大型语言模型因复杂查询、噪声数据和有限数值能力往往表现不佳。为解决这些问题，我们提出TabDSR框架，包含三个核心组件：（1）查询分解器：将复杂问题拆解为子问题；（2）表格清理器：对含噪表格进行清洗过滤；（3）基于程序化思维（PoT）的推理器：通过生成可执行代码从净化表格中推导最终答案。为确保无偏评估并防止数据泄露，我们专门构建了CalTab151数据集，针对表格复杂数值推理任务设计。实验结果表明，本方法在TAT-QA、TableBench及内部测试集上分别实现8.79%、6.08%和19.87%的准确率提升，持续超越现有方法并达到最优性能。该框架可与主流大语言模型无缝集成，为复杂表格数值推理提供稳健解决方案。这些发现凸显了本框架在增强大语言模型表格数值推理能力方面的有效性。数据与代码可根据需求提供。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.02219">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.02219">arXiv</a></p>
+<hr />
+<h3>22. Reg-DPO：基于GT-Pair的SFT正则化直接偏好优化方法及其在视频生成质量提升中的应用</h3>
+<p><strong>原文标题：</strong> Reg-DPO: SFT-Regularized Direct Preference Optimization with GT-Pair for
+  Improving Video Generation</p>
+<p><strong>摘要：</strong>
+近期研究表明，直接偏好优化（DPO）作为一种无需奖励机制的高效方法，可有效提升视频生成质量。然而现有方法主要沿袭图像领域范式，且多基于小规模模型（约20亿参数）开发，难以应对视频任务特有的三大挑战：高昂的数据构建成本、训练过程不稳定及显存占用过大。为此，我们提出GT-Pair方法，通过将真实视频作为正样本、模型生成视频作为负样本，自动构建高质量偏好对，无需任何外部标注。进一步提出Reg-DPO算法，将监督微调（SFT）损失作为正则化项融入DPO目标函数，有效增强训练稳定性与生成保真度。通过将完全分片数据并行（FSDP）框架与多重显存优化技术相结合，我们的方法相比单独使用FSDP实现了近三倍的训练容量提升。在多个数据集上进行的图像到视频与文本到视频任务实验表明，本方法持续超越现有方案，展现出更优越的视频生成质量。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.01450">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.01450">arXiv</a></p>
+<hr />
+<h3>23. RiddleBench：面向大语言模型的新型生成式推理基准测试</h3>
+<p><strong>原文标题：</strong> RiddleBench: A New Generative Reasoning Benchmark for LLMs</p>
+<p><strong>摘要：</strong>
+大语言模型在现有推理基准测试中展现出强劲性能，但这些基准主要评估定量问题求解等结构化技能，对衡量人类智能核心的灵活多维度推理能力存在明显不足。这类能力需要将逻辑演绎与空间感知、约束满足进行有机结合，而当前评估体系尚无法有效测度。为此，我们推出RiddleBench基准测试集，包含1,737道精心设计的英文谜题，旨在深入探究这些核心推理能力。在RiddleBench上对前沿模型的评估揭示了根本性缺陷：即便是Gemini 2.5 Pro、o3和Claude 4 Sonnet等顶级闭源模型，其准确率也仅略超60%（分别为60.30%、63.37%和63.16%）。深度分析进一步暴露出模型存在幻觉级联（盲目接受其他模型的错误推理）和因强烈自我确认偏误导致的纠错能力薄弱等深层问题。这些模型的推理过程也表现出脆弱性，当约束条件重排或引入无关信息时，性能会出现显著下滑。RiddleBench既可作为诊断这些问题的检测工具，也能为开发更稳健可靠的语言模型提供指引资源。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.24932">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.24932">arXiv</a></p>
+<hr />
+<h3>24. D2D：基于检测器至可微分评判器的文本到图像生成数值能力提升方法</h3>
+<p><strong>原文标题：</strong> D2D: Detector-to-Differentiable Critic for Improved Numeracy in
+  Text-to-Image Generation</p>
+<p><strong>摘要：</strong>
+文本到图像扩散模型在语义对齐方面已取得显著成效，但在生成符合提示词中指定数量对象时仍存在困难。现有方法通常引入辅助计数网络作为外部评判器以提升数值生成能力。然而由于这些评判器需在生成过程中提供梯度指导，其设计被限制在本质可微分的回归模型范畴，从而排除了具备更强计数能力但基于枚举计数机制而不可微分的检测器模型。为突破这一局限，我们提出检测器至可微分框架（D2D），通过将不可微分的检测模型转化为可微分评判器，有效利用其卓越的计数能力来指导数值生成。具体而言，我们设计了定制化激活函数将检测器逻辑值转换为软二元指示器，进而结合预训练文本到图像模型在推理阶段优化噪声先验。通过在SDXL-Turbo、SD-Turbo和Pixart-DMD模型上的系统实验，覆盖从低密度、高密度到多对象场景的四类不同复杂度基准测试，结果表明该方法在物体计数准确率上获得持续显著提升（如在包含400条提示词的低密度基准测试D2D-Small上最高提升13.7%），同时图像整体质量损失与计算开销均控制在最小范围。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.19278">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.19278">arXiv</a></p>
+<hr />
+<h3>25. 区分性处理运动分量推动深度与自运动联合学习演进</h3>
+<p><strong>原文标题：</strong> Discriminately Treating Motion Components Evolves Joint Depth and
+  Ego-Motion Learning</p>
+<p><strong>摘要：</strong>
+深度与自运动这两个基础三维感知任务的非监督学习近年来取得显著进展。然而现有方法大多将自运动视为辅助任务，或在监督中混合所有运动类型，或排除与深度无关的旋转运动。此类设计限制了强几何约束的引入，降低了算法在多变条件下的可靠性与鲁棒性。本研究提出对运动分量进行区分性处理，利用其各自刚性光流的几何规律性来提升深度与自运动估计性能。给定连续视频帧，网络输出首先对齐源相机与目标相机的光轴及成像平面。通过该对齐变换将帧间光流进行转换，并量化偏差以分别对每个自运动分量施加几何约束，从而实现更具针对性的优化。这些对齐操作进一步将联合学习过程重构为共轴与共面形式，其中深度与各平移分量可通过闭式几何关系相互推导，引入的互补约束有效提升了深度鲁棒性。集成这些设计的通用深度与自运动联合学习框架DiMoDE，在多个公开数据集及新采集的多样化真实场景数据集上均实现了最先进性能，尤其在挑战性条件下表现突出。我们的源代码将在论文发表后公开于mias.group/DiMoDE。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.01502">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.01502">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2025-11-05_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
