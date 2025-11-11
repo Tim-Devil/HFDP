@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2025-11-10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-11-10 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：10</li>
+<li>热门领域：LLM, GPT</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. 过于良善难以为恶：大型语言模型在反派角色扮演中的失效研究</h3>
+<p><strong>原文标题：</strong> Too Good to be Bad: On the Failure of LLMs to Role-Play Villains</p>
+<p><strong>摘要：</strong>
+大型语言模型正被日益应用于创造性生成任务，包括模拟虚构角色。然而，其在塑造非亲社会性对抗角色方面的能力仍待深入探究。我们提出假设：现代LLMs的安全对齐机制与真实扮演道德模糊或反派角色的任务存在根本性冲突。为此，我们引入道德角色扮演基准测试，该数据集包含四级道德对齐量表和平衡测试集以进行严格评估。我们要求前沿LLMs扮演从道德典范到纯粹反派的不同角色。大规模评估显示，随着角色道德水平的降低，角色扮演保真度呈现持续单调下降趋势。研究发现模型在表现与安全原则直接对立的特质（如“欺诈性”和“操纵性”）时最为困难，往往以浅层攻击性替代复杂的恶意刻画。此外，我们证明通用聊天机器人能力无法有效预测反派扮演表现，高度安全对齐的模型在此方面表现尤为不佳。本研究首次系统论证了这一关键局限性，揭示了模型安全性与创作保真度之间的核心矛盾。我们提出的基准测试与研究发现在开发更精细化、情境感知的对齐方法方面具有开创性意义。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.04962">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.04962">arXiv</a></p>
+<hr />
+<h3>2. DeepEyesV2：迈向具身化多模态模型</h3>
+<p><strong>原文标题：</strong> DeepEyesV2: Toward Agentic Multimodal Model</p>
+<p><strong>摘要：</strong>
+具身化多模态模型不仅需要理解文本与图像，更应主动调用外部工具（如代码执行环境与网络搜索），并将这些操作融入推理过程。本研究提出DeepEyesV2，从数据构建、训练方法与模型评估三个维度系统探索具身化多模态模型的构建路径。我们发现单纯使用强化学习难以形成稳定的工具使用行为，这一现象促使我们设计两阶段训练流程：通过冷启动阶段建立工具使用范式，再经由强化学习阶段优化工具调用机制。我们构建了兼具多样性与适度挑战性的训练数据集，特别纳入工具使用具有显著效益的实例。同时提出RealX-Bench综合评估基准，该基准针对现实场景中的多模态推理任务设计，天然要求模型融合感知、搜索与推理等多元能力。在RealX-Bench及代表性基准测试中，DeepEyesV2在现实场景理解、数学推理及搜索密集型任务中均展现卓越性能。值得注意的是，该模型表现出任务自适应的工具调用特性：在感知任务中倾向使用图像操作，在推理任务中偏好数值计算。强化学习进一步促成了复杂工具组合能力，使模型能根据语境选择性调用工具。本研究期望为学界开发具身化多模态模型提供系统性参考。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.05271">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.05271">arXiv</a></p>
+<hr />
+<h3>3. 视觉空间调优</h3>
+<p><strong>原文标题：</strong> Visual Spatial Tuning</p>
+<p><strong>摘要：</strong>
+从视觉输入中捕捉空间关系是实现类人通用智能的基石。先前研究多通过引入额外专家编码器来增强视觉语言模型的空间感知能力，但这不仅增加了计算开销，往往还会损害模型的通用性能。为在通用架构中提升空间能力，我们提出视觉空间调优（VST）——一个培育视觉语言模型具备从空间感知到推理的类人视觉空间能力的完整框架。我们首先通过构建包含410万样本的大规模数据集VST-P来增强视觉语言模型的空间感知能力，该数据集涵盖单视图、多图像和视频三大范畴的19项空间技能。继而推出VST-R数据集，其13.5万条样本可指导模型进行空间推理。我们特别采用渐进式训练流程：先通过监督微调建立基础空间知识，再通过强化学习进一步提升空间推理能力。在保持通用性能不受影响的前提下，所提出的VST框架在多项空间基准测试中持续取得最优结果，包括在MMSI-Bench达到34.8%的准确率，在VSIBench达到61.2%的准确率。研究表明，通过本文提出的空间调优范式可显著增强视觉-语言-动作模型的能力，为开发更具物理现实感的人工智能铺平道路。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.05491">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.05491">arXiv</a></p>
+<hr />
+<h3>4. VeriCoT：基于逻辑一致性检验的神经符号思维链验证方法</h3>
+<p><strong>原文标题：</strong> VeriCoT: Neuro-symbolic Chain-of-Thought Validation via Logical
+  Consistency Checks</p>
+<p><strong>摘要：</strong>
+大型语言模型能够通过思维链进行多步推理，但其无法可靠地验证自身逻辑。即使在获得正确答案的情况下，底层推理过程仍可能存在缺陷，这在高风险场景中会削弱可信度。为缓解该问题，我们提出VeriCoT——一种从思维链推理中提取并验证形式逻辑论证的神经符号方法。该方法将思维链的每个推理步骤形式化为一阶逻辑，并识别使论证植根于源语境、常识知识或先前推理步骤的前提条件。符号化表征支持自动化求解器验证逻辑有效性，而自然语言前提则允许人类和系统识别未扎根或存在谬误的推理步骤。在ProofWriter、LegalBench和BioASQ数据集上的实验表明，VeriCoT能有效识别缺陷推理，并作为最终答案正确性的强预测指标。我们进一步利用VeriCoT的验证信号实现：(1) 推理时自反思机制，(2) 基于VeriCoT蒸馏数据集的监督微调，以及(3) 采用带验证导向配对奖励的直接偏好优化进行偏好微调，从而持续提升推理的有效性与准确性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.04662">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.04662">arXiv</a></p>
+<hr />
+<h3>5. 稠密运动描述生成</h3>
+<p><strong>原文标题：</strong> Dense Motion Captioning</p>
+<p><strong>摘要：</strong>
+当前三维人体运动与语言融合的研究主要集中在文本到动作生成任务，而对运动理解任务的探索相对不足。本文提出稠密运动描述生成这一新型任务，旨在对三维人体运动序列中的动作进行时序定位与描述。现有数据集普遍存在时序标注细节不足的问题，且主要包含动作数量有限的短序列。为突破这些局限，我们构建了复杂运动数据集——首个包含精确时序边界标注的大规模复杂运动序列数据集。通过精心设计的数据生成流程，该数据集包含60,000个运动序列，每个序列由至少2个至多10个动作组合而成，并配有精确的时序范围标注。我们进一步提出DEMO模型，该模型通过简易运动适配器整合大语言模型，经过训练可生成具有时序锚点的稠密描述。实验结果表明，DEMO在CompMo数据集及经适配的基准测试中均显著优于现有方法，为三维运动理解与描述任务的后续研究建立了坚实的基准。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.05369">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.05369">arXiv</a></p>
+<hr />
+<h3>6. 通过优化文本嵌入缓解大型视觉语言模型中的幻觉现象</h3>
+<p><strong>原文标题：</strong> Towards Mitigating Hallucinations in Large Vision-Language Models by
+  Refining Textual Embeddings</p>
+<p><strong>摘要：</strong>
+本研究揭示了主流LVLM架构中存在的对语言模态的内在偏好，这主要源于当前普遍将视觉嵌入简单附加到输入文本序列的做法。针对这一问题，我们提出了一种简单而有效的方法，通过整合平均池化后的视觉特征来优化文本嵌入。实验证明，我们的方法能显著提升视觉基础能力，并在权威基准测试中有效减少幻觉现象。虽然平均池化提供了简单、稳健且高效的视觉信息融合方式，但我们认为更复杂的融合方法有望进一步强化视觉基础与跨模态对齐。鉴于本研究的核心目标是揭示模态不平衡及其对幻觉现象的影响，并论证通过视觉信息优化文本嵌入能够缓解此问题，我们将更先进的融合策略探索留待未来研究。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.05017">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.05017">arXiv</a></p>
+<hr />
+<h3>7. 动态环境中的实时推理智能体</h3>
+<p><strong>原文标题：</strong> Real-Time Reasoning Agents in Evolving Environments</p>
+<p><strong>摘要：</strong>
+现实世界中的智能体不仅需要做出符合逻辑的判断，更需确保决策的时效性。这要求智能体持续感知动态环境的变化：危险可能突然出现，机遇转瞬即逝，其他智能体也在同时行动，而智能体自身的推理过程仍在进行。尽管语言模型推理技术已取得显著进展，现有方法仍未能充分考虑这种动态特性。我们提出了实时推理这一针对动态环境智能体的新问题框架，并构建了实时推理验证平台予以实证。我们研究了两种在智能体中部署语言模型的范式：（1）反应式智能体——采用有限计算资源的语言模型实现快速响应；（2）规划式智能体——允许消耗更多计算资源以解决复杂问题。实验表明，即使最先进的模型在两种范式下都难以同时保证逻辑正确性与时效性。为此，我们提出AgileThinker框架，通过并行运行双重推理范式来突破这一局限。随着任务难度和时间压力的提升，AgileThinker始终优于单一推理范式的智能体，有效实现了推理深度与响应延迟的平衡。本研究将实时推理确立为开发实用智能体的关键测试基准，为时间约束下人工智能系统的研究奠定基础，指明了实现实时智能体的发展路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.04898">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.04898">arXiv</a></p>
+<hr />
+<h3>8. 大海捞针式越狱攻击</h3>
+<p><strong>原文标题：</strong> Jailbreaking in the Haystack</p>
+<p><strong>摘要：</strong>
+长上下文语言模型的最新进展已支持百万级令牌输入，显著提升了其在计算机使用代理等复杂任务中的能力。然而，这种扩展上下文的安全影响尚不明确。为填补这一空白，我们提出NINJA（"大海捞针"越狱攻击的简称），该方法通过将模型生成的良性内容附加到恶意用户目标上，实现对对齐语言模型的越狱。我们方法的关键在于发现恶意目标在上下文中的位置对安全性具有重要影响。在标准安全基准测试HarmBench上的实验表明，NINJA显著提升了包括LLaMA、Qwen、Mistral和Gemini在内的前沿开源与专有模型的攻击成功率。与现有越狱方法不同，本方法具有低资源消耗、强可迁移性和低可检测性的特点。此外，我们证明NINJA具有计算最优性——在固定计算预算下，增加上下文长度优于增加N次尝试中的最优越狱次数。这些发现表明，即便是良性长上下文——若经过精心的目标位置设计——也会在现代语言模型中引发根本性安全漏洞。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.04707">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.04707">arXiv</a></p>
+<hr />
+<h3>9. HAFixAgent：具备历史感知能力的自动化程序修复智能体</h3>
+<p><strong>原文标题：</strong> HAFixAgent: History-Aware Automated Program Repair Agent</p>
+<p><strong>摘要：</strong>
+自动化程序修复领域近期正朝着大语言模型与智能体系统方向发展，但现有系统大多依赖本地快照上下文，忽视了代码仓库的历史信息。已有研究表明，仓库历史有助于修复单行缺陷，因为最近一次修改缺陷代码的提交往往就是引入该缺陷的提交。本文系统性地探究仓库历史能否在更大范围内提升智能体式APR系统的修复能力，特别是针对复杂的多代码块缺陷。我们提出HAFixAgent——一种具备历史感知能力的缺陷修复智能体，该智能体将基于代码溯源信息的仓库启发式规则注入其修复循环。通过对Defects4J数据集中854个真实缺陷的初步研究，我们发现与缺陷相关的历史信息不仅广泛存在且高度集中，这一发现为系统设计提供了理论依据。HAFixAgent与两种最先进基准系统的实证对比表明：（1）有效性：相较基于智能体的基准系统提升212.3%，针对多代码块缺陷的基准系统提升29.9%；（2）效率：历史信息未显著增加智能体执行步骤，且保持相当的令牌成本，对于复杂的多文件-多代码块缺陷其中位数成本显著更低；（3）实用性：结合不同历史启发式规则可修复更多缺陷，形成明确的成本效益权衡。HAFixAgent为构建历史感知的智能体式APR系统提供了实用方案：将智能体锚定于版本控制历史，优先采用基于差异对比的历史上下文，并在需要时整合互补性启发式规则。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.01047">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.01047">arXiv</a></p>
+<hr />
+<h3>10. CritiCal：批判性反馈能否提升大语言模型的不确定性或置信度校准？</h3>
+<p><strong>原文标题：</strong> CritiCal: Can Critique Help LLM Uncertainty or Confidence Calibration?</p>
+<p><strong>摘要：</strong>
+大语言模型（LLM）的精确置信度校准对其在高风险领域的安全应用至关重要，清晰的言语化置信度能有效增强用户信任。传统方法通过模仿参考置信度表达往往难以捕捉准确置信评估所需的推理过程。我们提出采用自然语言批判作为解决方案，该方法特别适合置信度校准——由于精确的黄金置信标签难以获取且常需多次生成。本文研究自然语言批判如何增强言语化置信度，重点探讨：（1）批判对象：应针对不确定性（问题导向）还是置信度（答案特定）？分析表明置信度适用于多项选择题任务，而不确定性在开放式场景中表现更优；（2）批判方式：采用自我批判还是批判校准训练？我们提出自我批判方法使LLM能超越准确率指标对自身置信度进行批判优化，同时创新性地提出CritiCal——一种基于自然语言批判的校准训练方法，突破直接数值优化的局限。实验表明，CritiCal在复杂推理任务中显著优于自我批判及其他竞争基线，甚至超越其教师模型GPT-4o。在分布外场景中，CritiCal也展现出强大的泛化能力，为提升LLM可靠性提供了新路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2510.24505">HuggingFace</a> | <a href="https://arxiv.org/abs/2510.24505">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2025-11-10_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
