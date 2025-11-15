@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2025-11-14</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-11-14 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：18</li>
+<li>热门领域：GPT, LLM, Transformer, Audio</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. 潜在空间一小步，像素生成大飞跃：面向扩散模型的快速潜在上采样适配器</h3>
+<p><strong>原文标题：</strong> One Small Step in Latent, One Giant Leap for Pixels: Fast Latent Upscale Adapter for Your Diffusion Models</p>
+<p><strong>摘要：</strong>
+扩散模型难以超越其训练分辨率进行扩展，因为直接高分辨率采样速度缓慢且成本高昂，而事后图像超分辨率（ISR）在解码后操作会引入伪影和额外延迟。我们提出潜在上采样适配器（LUA），这是一种轻量级模块，可在最终VAE解码步骤之前直接在生成器的潜在代码上执行超分辨率。LUA作为即插即用组件集成，无需修改基础模型或增加额外扩散阶段，通过潜在空间中的单次前向传播即可实现高分辨率合成。采用共享的Swin风格主干网络搭配尺度特异性像素重组头，支持2倍和4倍缩放因子，并保持与图像空间SR基线的兼容性，在实现相当感知质量的同时将解码和上采样时间降低近3倍（从512px生成1024px仅增加+0.42秒，而使用相同SwinIR架构的像素空间SR需1.87秒）。此外，LUA在不同VAE的潜在空间中展现出强大泛化能力，无需为每个新解码器从头开始重新训练即可轻松部署。大量实验表明，LUA在忠实度方面接近原生高分辨率生成效果，同时为现代扩散管道中的可扩展高保真图像合成提供了实用高效路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.10629">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.10629">arXiv</a></p>
+<hr />
+<h3>2. PAN：一种通用、可交互且长时域的世界仿真世界模型</h3>
+<p><strong>原文标题：</strong> PAN: A World Model for General, Interactable, and Long-Horizon World Simulation</p>
+<p><strong>摘要：</strong>
+世界模型使智能体能够通过想象、预测和推理来理解世界如何响应其行为而演变，并据此进行规划与策略制定。尽管近期视频生成模型能生成逼真的视觉序列，但它们通常采用提示到完整视频的生成模式，缺乏因果控制、交互性以及目标导向推理所需的长时域一致性。而现有的世界建模研究往往局限于特定领域（如物理系统、游戏或三维场景动态），其深度与可控性有限，且难以泛化至多样化环境与交互形式。本文提出PAN模型——一种通用、可交互且长时域的世界模型，能够基于历史状态与自然语言指令，通过高质量视频仿真预测未来世界状态。PAN采用生成式潜在预测架构，将基于大语言模型的自回归潜在动态主干网络（该网络依托海量文本知识实现仿真基础，并支持语言指令条件生成）与视频扩散解码器（可重建感知细节丰富且时序连贯的视觉观测）相结合，实现了潜在空间推理（想象）与可实现世界动态（现实）的统一。通过在大规模跨领域视频-行为配对数据上进行训练，PAN支持具有长期动态一致性的开放领域行为条件仿真。大量实验表明，相较于现有视频生成器与世界模型，PAN在行为条件世界仿真、长时域预测和仿真推理方面均表现出卓越性能，为构建能够通过未来状态预测仿真进行推理与决策的通用世界模型迈出了关键一步。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.09057">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.09057">arXiv</a></p>
+<hr />
+<h3>3. UniVA：面向开源的新一代视频通用智能体的通用视频智能体框架</h3>
+<p><strong>原文标题：</strong> UniVA: Universal Video Agent towards Open-Source Next-Generation Video Generalist</p>
+<p><strong>摘要：</strong>
+尽管专业人工智能模型在视频生成或理解等独立任务中表现出色，但实际应用需要结合这些能力的复杂迭代工作流。为弥补这一鸿沟，我们提出UniVA——一个面向新一代视频通用智能体的开源全能力多智能体框架，将视频理解、分割、编辑与生成统一为连贯的工作流。UniVA采用规划-执行双智能体架构驱动高度自动化的工作流：规划智能体解析用户意图并分解为结构化视频处理步骤，执行智能体则通过基于MCP的模块化工具服务器（支持分析、生成、编辑、追踪等功能）实施操作。通过分层多级记忆系统（全局知识、任务上下文与用户特定偏好），UniVA维持长周期推理、上下文连续性及智能体间通信，实现具有全流程可追溯性的交互式自反思视频创作。该设计支持迭代式任意条件视频工作流（例如文本/图像/视频条件生成→多轮编辑→对象分割→组合合成），这些流程以往使用单功能模型或单体视频语言模型难以实现。我们还推出UniVA-Bench基准测试套件，涵盖理解、编辑、分割与生成的多步骤视频任务，用于严格评估此类智能视频系统。UniVA与UniVA-Bench均已全面开源，旨在推动面向新一代多模态AI系统的交互式、智能化通用视频智能研究。(https://univa.online/)</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.08521">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.08521">arXiv</a></p>
+<hr />
+<h3>4. 大语言模型的黑盒同策略蒸馏</h3>
+<p><strong>原文标题：</strong> Black-Box On-Policy Distillation of Large Language Models</p>
+<p><strong>摘要：</strong>
+黑盒蒸馏技术仅通过习得专有教师模型的文本输出即可创建学生大语言模型，而无需访问其内部逻辑值或参数。本研究提出生成对抗蒸馏方法，实现了同策略的黑盒蒸馏。该方法将学生大语言模型构建为生成器，并训练判别器来区分其响应与教师大语言模型的响应，从而形成极小极大博弈框架。该判别器作为与学生模型协同演进的同策略奖励模型，可提供稳定自适应的反馈机制。实验结果表明，生成对抗蒸馏方法持续优于常用的序列级知识蒸馏。特别值得注意的是，采用该方法训练的Qwen2.5-14B-Instruct（学生模型）在LMSYS-Chat自动评估中达到了与教师模型GPT-5-Chat相当的性能。这些研究成果确立了生成对抗蒸馏作为黑盒大语言模型蒸馏领域具有前景且有效的范式。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.10643">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.10643">arXiv</a></p>
+<hr />
+<h3>5. 致敬窃贼：探索去中心化GRPO中的攻击与防御策略</h3>
+<p><strong>原文标题：</strong> Hail to the Thief: Exploring Attacks and Defenses in Decentralised GRPO</p>
+<p><strong>摘要：</strong>
+群组相对策略优化（GRPO）在大语言模型（LLM）后训练阶段展现出显著应用价值。该机制通过模型对提示词生成响应，并借助强化学习掌握优选完成模式。由于通信量小，GRPO天然适用于去中心化训练——多个节点可并行响应提示词，随后以字符串形式交换数据。本研究首次揭示了去中心化GRPO中的对抗攻击漏洞：恶意参与方可通过上下文无关和上下文相关两种攻击模式，在良性模型中植入任意恶意标记。基于数学运算与代码编写任务的实证研究表明，对抗攻击能轻易污染良性节点，破坏其本地LLM后训练过程，仅需50次迭代即可实现高达100%的攻击成功率。我们针对同模型与异模型训练场景提出两种防御方案，实验证明这些防御措施可实现最高100%的攻击阻断率，有效瓦解攻击行为。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.09780">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.09780">arXiv</a></p>
+<hr />
+<h3>6. Depth Anything 3：从任意视角重建视觉空间</h3>
+<p><strong>原文标题：</strong> Depth Anything 3: Recovering the Visual Space from Any Views</p>
+<p><strong>摘要：</strong>
+本文提出Depth Anything 3（DA3）模型，该模型能够基于任意数量的视觉输入（无论是否已知相机位姿）预测具有空间一致性的几何结构。为实现极简建模，DA3带来两项关键发现：采用单一标准Transformer（如原始DINO编码器）作为主干网络即已足够，无需专门架构设计；采用单一深度射线预测目标即可避免复杂的多任务学习。通过师生训练范式，该模型在细节还原与泛化能力方面达到与Depth Anything 2（DA2）相当的水平。我们建立了涵盖相机位姿估计、任意视角几何重建与视觉渲染的新视觉几何基准测试集。在该基准测试中，DA3在所有任务中均创下最新性能纪录，相机位姿估计精度较先前最优方法VGGT平均提升44.3%，几何精度平均提升25.1%。此外，该模型在单目深度估计任务中也优于DA2。所有模型均仅使用公开学术数据集进行训练。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.10647">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.10647">arXiv</a></p>
+<hr />
+<h3>7. 叠加梯度下降法：运用量子原理优化模型训练</h3>
+<p><strong>原文标题：</strong> Superpositional Gradient Descent: Harnessing Quantum Principles for
+  Model Training</p>
+<p><strong>摘要：</strong>
+当前大规模语言模型普遍采用AdamW等经典优化技术进行训练以提升收敛性与泛化能力，然而量子启发性方法增强经典训练的内在机制仍待深入探索。本文提出叠加梯度下降法——一种通过注入量子电路扰动将梯度更新与量子叠加态相关联的新型优化器。我们建立了完整的数学框架，并在PyTorch和Qiskit平台上实现了混合量子-经典电路。在合成序列分类任务和大规模语言模型微调实验中，该方法相较AdamW实现了更快的收敛速度与更低的最终损失值。尽管取得积极成果，可扩展性与硬件限制仍是实际应用的瓶颈。本研究为量子计算与深度学习的交叉领域提供了新见解，指出了利用量子原理调控模型行为的可行路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.01918">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.01918">arXiv</a></p>
+<hr />
+<h3>8. 零误差完成百万步大语言模型任务的实现方案</h3>
+<p><strong>原文标题：</strong> Solving a Million-Step LLM Task with Zero Errors</p>
+<p><strong>摘要：</strong>
+大语言模型在推理、洞察与工具使用方面已取得显著突破，但将这些能力串联成人类、组织及社会日常执行的大规模延伸流程仍难以实现。模型存在的持续错误率阻碍了规模扩展：例如近期在汉诺塔基准领域的实验表明，该流程在最多数百步后必然失控。因此，尽管大语言模型研究仍常以逻辑依赖步骤较少的任务作为基准，学界对其执行长程任务的能力（或缺陷）的关注正日益增强。本文提出MAKER系统——首个成功以零误差完成超百万步大语言模型任务，且理论上可远超该规模的技术方案。该方法通过对任务进行极致分解，使每个子任务可由专注的微智能体处理。分解产生的高度模块化特性，使得通过高效多智能体投票机制在每一步实施误差修正成为可能。这种极致分解与误差修正的结合实现了规模扩展。研究结果表明，相较于持续改进现有大语言模型，采用大规模分解智能体流程或可为解决组织与社会层级问题提供有效路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.09030">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.09030">arXiv</a></p>
+<hr />
+<h3>9. AlphaResearch：利用语言模型加速新算法发现的探索</h3>
+<p><strong>原文标题：</strong> AlphaResearch: Accelerating New Algorithm Discovery with Language Models</p>
+<p><strong>摘要：</strong>
+大型语言模型在复杂但易于验证的问题上已取得显著进展，但在探索未知领域方面仍面临挑战。本文提出AlphaResearch——一个面向开放性问题自主探索新算法的研究智能体。为兼顾发现过程的可行性与创新性，我们通过结合基于执行的验证系统与模拟现实同行评审环境，构建了新型双重研究环境。该系统的算法发现流程通过以下步骤迭代执行：(1) 提出新构想 (2) 在双重研究环境中验证构想 (3) 优化研究方案以提升性能。为建立透明评估机制，我们开发了AlphaResearchComp评估基准，包含八个开放性算法问题的竞赛集，每个问题均通过可执行流程、客观指标与可复现性检验进行严格设计。在与人类研究者的直接对比中，AlphaResearch取得了2/8的胜率，证明了利用大语言模型加速算法发现的可行性。值得注意的是，在"圆形填充"问题上发现的算法取得了当前最佳性能，超越了人类研究者及现有强基线方法（如AlphaEvolve）的结果。此外，我们对剩余6/8失败案例进行了全面归因分析，为后续研究提供了重要参考依据。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.08522">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.08522">arXiv</a></p>
+<hr />
+<h3>10. Music Flamingo：音频语言模型中音乐理解能力的规模化拓展</h3>
+<p><strong>原文标题：</strong> Music Flamingo: Scaling Music Understanding in Audio Language Models</p>
+<p><strong>摘要：</strong>
+本文提出Music Flamingo——一种新型大规模音频语言模型，旨在提升基础音频模型对音乐（含歌曲）的理解能力。尽管音频语言研究发展迅速，但由于音乐具有动态性、层次性和信息密集性等特点，其理解仍面临挑战。开放音频理解模型的规模化进展更因高质量音乐数据与标注的稀缺而受限，导致现有模型仅能生成简短的高层描述、回答浅层问题，且在不同音乐文化间的泛化能力有限。为应对这些挑战，我们构建了MF-Skills数据集，通过多阶段标注流程获得涵盖和声、曲式、音色、歌词及文化背景的丰富描述与问答对。基于该数据集，我们对增强版Audio Flamingo 3主干网络进行微调，并强化多项音乐理解相关技能。为提升模型推理能力，我们提出后训练方案：首先基于音乐理论构建的链式思维数据集MF-Think进行冷启动，随后采用定制奖励的GRPO强化学习进行优化。Music Flamingo在10余项音乐理解与推理基准测试中达到最先进水平，确立了其作为通用型音乐智能音频语言模型的地位。除卓越的实验结果外，该模型通过实现从表层识别到多层次类人歌曲感知的跨越，为高级音乐理解设立了新标准。我们相信这项工作既为学界提供了基准参照，也为构建能像人类一样深度理解音乐的新一代模型奠定了基石。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.10289">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.10289">arXiv</a></p>
+<hr />
+<h3>11. 基于量规的基准测试与强化学习在提升大语言模型指令遵循能力中的应用</h3>
+<p><strong>原文标题：</strong> Rubric-Based Benchmarking and Reinforcement Learning for Advancing LLM Instruction Following</p>
+<p><strong>摘要：</strong>
+大语言模型虽已在多项任务中展现卓越性能，但在复杂、多轮及系统提示的指令遵循方面仍面临重大挑战。当前缺乏高质量人工标注的基准数据集和可靠可解释的奖励信号，严重制约了对此类能力的严格评估与有效训练。本研究推出AdvancedIF基准（即将发布），该数据集包含1,600余条提示及专家制定的评估量规，系统评估大语言模型对复杂多轮系统级指令的遵循能力。我们进一步提出RIFL（基于量规的指令遵循学习）方法——一种创新的后训练流程，通过量规生成、微调的量规验证器和奖励塑造技术，为指令遵循任务构建有效的强化学习框架。实验表明，RIFL能显著提升大语言模型的指令遵循能力，在AdvancedIF基准上实现6.7%的绝对性能提升，并在公开基准测试中表现优异。消融研究验证了RIFL各组成部分的有效性。本工作确立了量规体系作为大语言模型高级指令遵循能力训练与评估的强大工具，为构建更具能力与可靠性的AI系统开辟了新路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.10507">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.10507">arXiv</a></p>
+<hr />
+<h3>12. 基于属性条件人工评估的图像生成多样性基准测试</h3>
+<p><strong>原文标题：</strong> Benchmarking Diversity in Image Generation via Attribute-Conditional Human Evaluation</p>
+<p><strong>摘要：</strong>
+尽管生成质量不断提升，当前文本到图像（T2I）模型仍普遍存在多样性缺失问题，往往生成同质化输出。本研究提出了一个系统性框架来解决T2I模型鲁棒性多样性评估的需求。该框架通过评估独立概念及其相关变异要素来实现对多样性的系统化度量，主要贡献包括：（1）创新的细粒度多样性人工评估模板；（2）精心构建的提示词集合，涵盖多样化概念及其已识别的变异要素（例如提示词："苹果图像"，变异要素：颜色）；（3）通过二项检验比较模型人工标注结果的方法论。此外，我们严格比较了多种用于多样性测量的图像嵌入方法。值得注意的是，这种原理性方法能够实现T2I模型的多样性排序，并识别模型表现显著不足的类别。本研究提供了可靠的方法论与深刻见解，为提升T2I模型多样性及度量标准的发展开辟了新路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.10547">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.10547">arXiv</a></p>
+<hr />
+<h3>13. ResearchRubrics：深度研究智能体评估的提示与评分标准基准</h3>
+<p><strong>原文标题：</strong> ResearchRubrics: A Benchmark of Prompts and Rubrics For Evaluating Deep Research Agents</p>
+<p><strong>摘要：</strong>
+深度研究是一种新兴的智能体应用，通过利用大语言模型来处理开放式查询。该技术需要整合多项能力，包括多步推理、跨文档综合以及生成有证据支撑的长篇回答。由于回答内容冗长多样、允许多种有效解决方案且常依赖动态信息源，深度研究的评估仍面临挑战。我们推出ResearchRubrics——一个基于2,800多小时人工标注构建的标准化深度研究基准，将涵盖多领域的真实提示与2,500多条专家编写的细粒度评分标准相结合，用于评估事实依据、推理严谨性和表述清晰度。同时提出新型复杂度框架，从概念广度、逻辑嵌套度和探索深度三个维度对深度研究任务进行分类。此外，我们开发了人工与模型相结合的评估方案，用以衡量深度研究智能体对评分标准的遵循程度。通过对多个前沿深度研究系统的评估，发现即使是Gemini DR和OpenAI DR等领先智能体，其平均标准符合度也不足68%，主要问题在于对隐含语境的遗漏以及对检索信息推理不足。研究结果凸显了对深度研究能力进行稳健、可扩展评估的必要性。为此我们开源ResearchRubrics（包含全部提示语、评分标准和评估代码），以推动具有充分论证能力的研究助手的发展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.07685">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.07685">arXiv</a></p>
+<hr />
+<h3>14. MuSc-V2：基于无标签样本互评的零样本多模态工业异常分类与分割方法</h3>
+<p><strong>原文标题：</strong> MuSc-V2: Zero-Shot Multimodal Industrial Anomaly Classification and Segmentation with Mutual Scoring of Unlabeled Samples</p>
+<p><strong>摘要：</strong>
+零样本异常分类与分割方法旨在无需任何标注样本的情况下实现缺陷识别与轮廓定位。本文揭示了现有方法忽视的关键特性：工业产品中的正常图像块通常能在二维外观和三维形状维度找到大量相似样本，而异常样本则保持多样性与孤立性。为显式利用这一判别特性，我们提出用于零样本异常分类与分割的互评框架MuSc-V2，该框架灵活支持单模态（2D/3D）或多模态操作。具体而言，本方法首先通过迭代点分组技术提升三维表征质量，有效降低因表面不连续性导致的误判；继而采用多维度相似邻域聚合算法，将二维与三维邻域信息融合为具有更强判别力的多尺度图像块特征以进行互评。核心机制包含两部分：模态内互评机制——允许同模态样本相互评分；跨模态异常增强模块——融合二维与三维评分以恢复各模态特有缺失异常。最终通过带约束邻域的再评分机制，依据与更具代表性样本的相似度来抑制误分类。本框架可灵活应用于完整数据集及较小规模子集，始终保持稳定性能，确保跨产品线的无缝适配。基于该创新框架，MuSc-V2取得显著性能提升：在MVTec 3D-AD数据集上平均精度提升23.7%，在Eyecandies数据集上提升19.3%，超越现有零样本基准方法，甚至优于多数少样本方法。代码将在https://github.com/HUST-SLOW/MuSc-V2 发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.10047">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.10047">arXiv</a></p>
+<hr />
+<h3>15. AffordBot：基于多模态大语言模型的3D细粒度具身推理</h3>
+<p><strong>原文标题：</strong> AffordBot: 3D Fine-grained Embodied Reasoning via Multimodal Large Language Models</p>
+<p><strong>摘要：</strong>
+在物理环境中实现有效的人机协作，不仅需要理解操作对象，还需精确定位可操作元素的位置及其交互方式。现有方法多停留在物体层面，或割裂地处理细粒度功能推理，缺乏基于指令的连贯性 grounding 与推理机制。本研究提出“细粒度3D具身推理”新任务，要求智能体根据任务指令，为三维场景中每个被引用的功能元素预测包含空间位置、运动类型与运动轴的结构化三元组。为解决该任务，我们提出AffordBot创新框架，将多模态大语言模型与定制化的思维链推理范式相结合。为弥合3D输入与兼容2D的MLLMs之间的鸿沟，我们渲染场景环视图并将3D候选元素投影至这些视图，构建与场景几何对齐的丰富视觉表征。我们的思维链流程始于主动感知阶段：先引导MLLM根据指令选择最具信息量的视角，再通过逐步推理实现功能元素定位及合理交互动作推断。在SceneFun3D数据集上的评估表明，AffordBot仅凭3D点云输入与MLLMs即达到最先进性能，展现出强大的泛化能力与物理 grounded 推理能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.10017">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.10017">arXiv</a></p>
+<hr />
+<h3>16. SliderEdit：基于细粒度指令控制的连续图像编辑</h3>
+<p><strong>原文标题：</strong> SliderEdit: Continuous Image Editing with Fine-Grained Instruction Control</p>
+<p><strong>摘要：</strong>
+基于指令的图像编辑模型近期取得了显著进展，能够通过多指令提示对输入图像进行复杂编辑。然而，现有模型通常以固定强度执行提示中的每条指令，限制了用户对单次编辑强度进行精确连续控制的能力。我们提出SliderEdit框架，通过细粒度可解释的指令控制实现连续图像编辑。面对复合编辑指令，SliderEdit能够解耦各独立指令并将其转化为全局训练的调节滑块，实现对编辑强度的平滑调控。与文本生成图像领域中需要为每个属性或概念单独训练滑块控件的方法不同，我们的方法仅需学习一组低秩适配矩阵，即可泛化应用于多样化编辑任务、属性调整和组合指令。该框架支持沿单个编辑维度的连续插值，同时保持空间局部特征与全局语义一致性。我们将SliderEdit应用于FLUX-Kontext和Qwen-Image-Edit等前沿图像编辑模型，在编辑可控性、视觉一致性和用户导向性方面观察到显著提升。据我们所知，这是首个在基于指令的图像编辑模型中实现连续细粒度指令控制的框架。我们的研究成果为实现具有连续复合控制能力的交互式指令驱动图像处理开辟了新路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.09715">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.09715">arXiv</a></p>
+<hr />
+<h3>17. MM-CRITIC：大型多模态模型多维度批判能力的系统性评估</h3>
+<p><strong>原文标题：</strong> MM-CRITIC: A Holistic Evaluation of Large Multimodal Models as Multimodal Critique</p>
+<p><strong>摘要：</strong>
+批判能力对模型实现自我提升及成为可靠AI助手至关重要。尽管在纯语言环境中已得到广泛研究，但大型多模态模型的批判能力——尽管其在图像描述、视觉推理等任务中表现日益增强——仍缺乏系统性探索。本研究提出MM-CRITIC评估框架，从基础批判、修正批判与比较批判三个维度系统评估LMMs的批判能力。该基准覆盖8类主要任务逾500个子任务，收集了不同参数规模LMMs的响应数据，共构成4471个评估样本。为提升评估信度，我们融合专家知识构建标准答案评分体系，指导GPT-4o完成响应标注并生成基准批判意见，为可信评估提供锚点。大规模实验验证了MM-CRITIC的有效性，并对主流LMMs的批判能力进行了多维度全景评估。深度分析揭示了若干关键发现：包括模型响应质量与批判能力的关联性，以及不同评估维度间批判难度的差异性。代码已开源：https://github.com/MichealZeng0420/MM-Critic。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.09067">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.09067">arXiv</a></p>
+<hr />
+<h3>18. CC30k：面向可复现性情感分析的引文上下文数据集</h3>
+<p><strong>原文标题：</strong> CC30k: A Citation Contexts Dataset for Reproducibility-Oriented Sentiment Analysis</p>
+<p><strong>摘要：</strong>
+下游文献中对被引论文可复现性的情感态度反映了学术共同体的观点，并已被证明是预测已发表研究成果实际可复现性的有效指标。为训练能有效预测可复现性情感并系统研究其与可复现性关联的模型，我们构建了CC30k数据集，包含机器学习领域论文中的30,734条引文上下文。每条引文上下文均被标注为三种面向可复现性的情感标签之一：积极、消极或中立，以反映对被引论文可复现性的感知评价。其中25,829条通过众包标注完成，并采用受控流程生成负样本以缓解负面标签稀缺问题。与传统情感分析数据集不同，CC30k专注于可复现性情感分析，填补了计算可复现性研究领域的资源空白。该数据集通过包含数据清洗、严格众包筛选和多重验证的标准化流程构建，最终标注准确率达94%。实验表明，基于本数据集微调后的三大语言模型在可复现性情感分类任务上性能显著提升。该数据集为开展机器学习论文可复现性的大规模评估奠定了基础。CC30k数据集及相关的数据生成分析代码已公开于https://github.com/lamps-lab/CC30k。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.07790">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.07790">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2025-11-14_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
