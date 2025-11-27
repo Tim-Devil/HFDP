@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2025-11-26</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-11-26 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：33</li>
+<li>热门领域：LLM, RL, Transformer, GPT, AIGC</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. GigaEvo：基于大语言模型与进化算法的开源优化框架</h3>
+<p><strong>原文标题：</strong> GigaEvo: An Open Source Optimization Framework Powered By LLMs And Evolution Algorithms</p>
+<p><strong>摘要：</strong>
+以大语言模型引导的进化计算领域近期取得重要进展，特别是AlphaEvolve（Novikov等人，2025；Georgiev等人，2025）在发现新颖数学构造与解决复杂优化问题方面展现出卓越成效。然而现有文献中的高层描述未明确诸多实现细节，阻碍了研究的可复现性与深入探索。本报告提出GigaEvo——一个受AlphaEvolve启发的可扩展开源框架，支持研究者对混合式LLM-进化方法进行系统研究与实验。该框架提供核心组件的模块化实现：MAP-Elites质量多样性算法、基于有向无环图的异步评估流水线、具备洞察生成与双向谱系追踪的LLM驱动变异算子，以及灵活的多岛进化策略。为评估可复现性并验证实现效果，我们在AlphaEvolve论文涉及的挑战性问题上对GigaEvo进行测试：海伦布伦三角布局、正方形内圆填充及高维接吻数问题。本框架强调模块化、并发性与实验便捷性，支持通过声明式配置实现快速原型验证。我们详细阐述了系统架构、实现决策与实验方法，以促进LLM驱动进化方法的后续研究。GigaEvo框架及全部实验代码已发布于https://github.com/AIRI-Institute/gigaevo-core。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.17592">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.17592">arXiv</a></p>
+<hr />
+<h3>2. MedSAM3：基于医学概念的可分割万物模型探究</h3>
+<p><strong>原文标题：</strong> MedSAM3: Delving into Segment Anything with Medical Concepts</p>
+<p><strong>摘要：</strong>
+医学图像分割是生物医学发现的基础。现有方法普遍缺乏泛化能力，且在新的临床应用场景中需要大量耗时的人工标注。本文提出MedSAM-3——一个支持文本提示的医学图像与视频分割模型。通过在配对医学图像与语义概念标签上对Segment Anything Model (SAM) 3架构进行微调，我们的MedSAM-3实现了医学可提示概念分割功能，能够通过开放词汇的文本描述（而非仅依赖几何提示）精确定位解剖结构。我们进一步提出MedSAM-3智能体框架，通过集成多模态大语言模型，在智能体参与的工作流中执行复杂推理与迭代优化。涵盖X射线、磁共振、超声、CT及视频等多种医学影像模式的综合实验表明，本方法显著优于现有专业模型与基础模型。代码与模型将在https://github.com/Joey-S-Liu/MedSAM3发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19046">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19046">arXiv</a></p>
+<hr />
+<h3>3. Agent0-VL：面向工具集成视觉语言推理的自演进智能体探索</h3>
+<p><strong>原文标题：</strong> Agent0-VL: Exploring Self-Evolving Agent for Tool-Integrated Vision-Language Reasoning</p>
+<p><strong>摘要：</strong>
+视觉语言智能体在多模态推理任务中取得了显著进展，但其学习过程仍受限于人工标注监督的约束。近期自奖励方法尝试通过让模型充当自身评判者或奖励提供者来突破这一限制。然而，纯文本的自评估难以验证复杂的视觉推理步骤，且常出现评估幻觉问题。为应对这些挑战，受工具集成推理最新进展的启发，我们提出Agent0-VL——一种通过工具集成推理实现持续进化的自演进视觉语言智能体。该框架将工具使用不仅融入推理过程，更整合至自我评估与自我修正环节，使模型能够通过证据驱动的分析实现推理过程的反思、验证与优化。我们在单个大视觉语言模型中统一了两种协同角色：执行多轮工具集成推理的求解器，以及通过工具化批判生成结构化反馈与细粒度自奖励的验证器。这些角色通过“自演进推理循环”进行交互，其中基于工具的验证与强化学习共同对齐推理与评估分布，实现稳定的自我提升。通过这种零外部奖励的演进机制，Agent0-VL在无需人工标注或外部奖励模型的情况下，成功对齐其推理与验证行为，实现持续自我改进。在几何问题求解和视觉科学分析任务上的实验表明，Agent0-VL相较基线模型性能提升12.5%。代码已开源：https://github.com/aiming-lab/Agent0/Agent0-VL{此https链接}。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19900">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19900">arXiv</a></p>
+<hr />
+<h3>4. SteadyDancer：基于首帧保持的协调连贯人体图像动画生成框架</h3>
+<p><strong>原文标题：</strong> SteadyDancer: Harmonized and Coherent Human Image Animation with First-Frame Preservation</p>
+<p><strong>摘要：</strong>
+在人体图像动画生成中，保持首帧身份特征同时实现精准运动控制是一项核心挑战。当前主流的参考视频生成范式存在图像-运动绑定过程的时空错位问题，这在实际应用中常导致身份特征漂移和视觉伪影。本研究提出SteadyDancer——基于图像到视频生成范式的创新框架，该框架不仅能实现协调连贯的动画效果，更是首个能稳定保持首帧特征的解决方案。首先，我们提出条件调和机制来协调两个相互冲突的控制条件，在保证保真度的同时实现精确运动控制。其次，设计协同姿态调制模块来生成与参考图像高度兼容的自适应连贯姿态表征。最后，采用阶段式解耦目标训练流程，通过分层优化策略全面提升模型的运动保真度、视觉质量与时序连贯性。实验表明，SteadyDancer在外观保真度与运动控制方面均达到最先进水平，且所需训练资源显著低于同类方法。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19320">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19320">arXiv</a></p>
+<hr />
+<h3>5. iMontage：统一、通用、高动态性的多对多图像生成框架</h3>
+<p><strong>原文标题：</strong> iMontage: Unified, Versatile, Highly Dynamic Many-to-many Image Generation</p>
+<p><strong>摘要：</strong>
+预训练视频模型通过学习强大的先验知识，能够生成高质量且时序连贯的内容。尽管这些模型在时序连贯性方面表现卓越，但其动态范围常受训练数据连续性质的限制。我们提出假设：通过将图像数据中丰富且无约束的内容多样性注入这一连贯时序框架，可生成兼具自然过渡效果与更广阔动态范围的图像集合。为此，我们推出iMontage——一个将强大视频模型重构为一体化图像生成器的统一框架。该框架能够处理并生成可变长度的图像集合，统一整合了多种图像生成与编辑任务。为实现这一目标，我们提出了一种精巧且侵入性最低的适配策略，并辅以定制化的数据筛选流程与训练范式。该方法使模型在保持原有宝贵运动先验不受损害的前提下，获得广泛的图像处理能力。iMontage在多项主流多输入多输出任务中表现卓越，不仅保持了强大的跨图像上下文一致性，更能生成超越传统范围的具有非凡动态效果的场景。项目主页详见：https://kr1sjfu.github.io/iMontage-web/。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20635">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20635">arXiv</a></p>
+<hr />
+<h3>6. 理解能力是否促进统一多模态模型的生成能力？从分析到发展路径</h3>
+<p><strong>原文标题：</strong> Does Understanding Inform Generation in Unified Multimodal Models? From Analysis to Path Forward</p>
+<p><strong>摘要：</strong>
+近年来统一多模态模型取得了显著进展，但一个根本性问题依然存在：理解能力是否真正促进生成能力？为探究此问题，我们提出UniSandbox——一个结合受控合成数据的解耦评估框架，可有效避免数据泄露并实现细粒度分析。研究发现了显著的理解-生成能力差距，主要体现在推理生成与知识迁移两个维度。具体而言，在推理生成任务中，我们发现理解模块中显式的思维链能有效弥合这一差距，并进一步证明自训练方法可成功内化这种能力，实现生成过程中的隐式推理。在知识迁移任务中，我们发现思维链通过帮助检索新习得的知识来辅助生成过程，同时发现基于查询的架构本身具有影响知识迁移的潜在类思维链特性。UniSandbox为设计真正实现理解与生成协同发展的统一架构与训练策略提供了重要洞见。代码与数据详见：https://github.com/PKU-YuanGroup/UniSandBox</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20561">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20561">arXiv</a></p>
+<hr />
+<h3>7. GigaWorld-0：将世界模型作为数据引擎赋能具身智能体</h3>
+<p><strong>原文标题：</strong> GigaWorld-0: World Models as Data Engine to Empower Embodied AI</p>
+<p><strong>摘要：</strong>
+世界模型正逐渐成为可扩展、数据高效型具身智能体的基础范式。本研究提出GigaWorld-0——一个明确作为视觉-语言-动作学习数据引擎设计的统一世界模型框架。该框架包含两个协同组件：GigaWorld-0-Video通过大规模视频生成，在外观、摄像机视角和动作语义的细粒度控制下，生成多样化、纹理丰富且时序连贯的具身交互序列；GigaWorld-0-3D则融合三维生成建模、三维高斯溅射重建、物理可微系统辨识与可执行运动规划，确保几何一致性与物理真实性。二者的联合优化实现了视觉吸引力、空间连贯性、物理合理性与指令对齐的具身交互数据规模化合成。通过我们研发的高效GigaTrain训练框架——利用FP8精度与稀疏注意力显著降低内存与计算需求——实现了大规模可行训练。综合评估表明，GigaWorld-0能在多维度生成高质量、多样化且可控的数据。关键突破在于：基于GigaWorld-0生成数据训练的视觉-语言-动作模型（如GigaBrain-0）在现实场景中表现卓越，在训练阶段未接触真实交互的情况下，显著提升了物理机器人的泛化能力与任务成功率。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19861">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19861">arXiv</a></p>
+<hr />
+<h3>8. 柔性自适应策略优化</h3>
+<p><strong>原文标题：</strong> Soft Adaptive Policy Optimization</p>
+<p><strong>摘要：</strong>
+强化学习在提升大语言模型推理能力方面发挥着日益重要的作用，然而实现稳定高效的政策优化仍面临挑战。令牌级别的重要性比率往往呈现高方差特性——这一现象在混合专家模型中尤为显著——导致策略更新不稳定。现有基于分组的策略优化方法（如GSPO和GRPO）通过硬截断缓解该问题，但难以兼顾稳定性与有效学习。本文提出柔性自适应策略优化方法（SAPO），采用平滑的温度控制门机制替代硬截断，在保留有效学习信号的同时自适应衰减离策略更新。相较于GSPO与GRPO，SAPO兼具序列连贯性与令牌自适应性：与GSPO类似，SAPO保持序列级连贯性，但其柔性门控形成连续信任区域，避免了GSPO采用的脆弱硬截断带；当序列包含少量高度离策略令牌时，GSPO会抑制整个序列梯度，而SAPO能选择性降权异常令牌并保留近策略令牌的学习信号，从而提升样本效率。相对于GRPO，SAPO以平滑的温度控制缩放替代硬令牌截断，实现信息量更丰富且更稳定的更新。数学推理基准测试表明，在相同训练预算下，SAPO展现出更优的训练稳定性与Pass@1性能。此外，我们应用SAPO训练Qwen3-VL模型系列，证明该方法能在不同任务和模型规模下获得持续性能提升。总体而言，SAPO为大语言模型的强化学习训练提供了更可靠、可扩展且高效的优化策略。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20347">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20347">arXiv</a></p>
+<hr />
+<h3>9. SSA：通过特征空间中对齐全注意力和稀疏注意力输出的稀疏稀疏注意力机制</h3>
+<p><strong>原文标题：</strong> SSA: Sparse Sparse Attention by Aligning Full and Sparse Attention Outputs in Feature Space</p>
+<p><strong>摘要：</strong>
+全注意力的二次计算复杂度限制了大语言模型（LLM）中长上下文的高效处理。稀疏注意力通过限制每个查询仅关注先前标记的子集来降低计算成本，但无需训练的方法通常会导致严重的性能下降。原生稀疏注意力方法（如NSA、MoBA）虽能缓解此问题，却存在关键悖论：尽管旨在逼近全注意力，其产生的注意力稀疏度反而低于全注意力模型，这可能制约其有效性。我们将此悖论归因于梯度更新缺陷：在稀疏训练期间被排除的低秩键值对既无前向贡献也无反向梯度，因而无法学习有效抑制。为突破此局限，我们提出SSA（稀疏稀疏注意力）——一种同时考虑稀疏与全注意力的统一训练框架，通过在每层强制实现双向对齐。该设计在保持所有标记梯度流动的同时，显式推动稀疏注意力输出与其全注意力对应项对齐，从而增强稀疏性。实验表明，SSA在多个常识推理基准测试中，无论采用稀疏还是全注意力推理，均达到最先进性能。此外，SSA使模型能平滑适应不同稀疏度预算：随着可关注标记数增加，性能持续提升，支持推理阶段灵活的计算-性能权衡。最后，我们发现原生稀疏注意力训练通过缓解注意力值在汇聚区的过度分配，意外提升了长上下文外推能力，其中SSA展现出最强的外推性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20102">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20102">arXiv</a></p>
+<hr />
+<h3>10. UltraViCo：突破视频扩散变换器的外推极限</h3>
+<p><strong>原文标题：</strong> UltraViCo: Breaking Extrapolation Limits in Video Diffusion Transformers</p>
+<p><strong>摘要：</strong>
+尽管技术不断进步，视频扩散变换器仍难以泛化至超出训练时长的序列，这一挑战我们称之为视频长度外推问题。我们识别出两种失效模式：模型特定的周期性内容重复和普遍存在的质量退化。先前研究尝试通过位置编码解决重复问题，但忽视了质量退化且仅实现有限的外推能力。本文从更本质的角度——直接控制上下文如何影响输出的注意力图——重新审视这一挑战。我们发现两种失效模式源于统一原因：注意力分散，即超出训练时长的令牌会稀释已学习的注意力模式。这导致质量下降，而当位置编码的谐波特性诱导这种分散形成周期性注意力模式时，内容重复便作为特例出现。基于此洞见，我们提出UltraViCo，一种无需训练即插即用的方法，通过恒定衰减因子抑制训练窗口外令牌的注意力。通过同时解决两种失效模式，我们在多种模型和外推比例下显著超越现有基线方法，将外推极限从2倍提升至4倍。值得注意的是，在4倍外推时，我们的方法在动态程度和成像质量指标上分别较先前最佳方法提升233%和40.5%。此外，本方法可无缝泛化至可控视频生成与编辑等下游任务。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20123">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20123">arXiv</a></p>
+<hr />
+<h3>11. ROOT：面向神经网络训练的鲁棒正交化优化器</h3>
+<p><strong>原文标题：</strong> ROOT: Robust Orthogonalized Optimizer for Neural Network Training</p>
+<p><strong>摘要：</strong>
+大语言模型的优化仍是关键挑战，尤其在模型规模扩大加剧算法不精确性与训练不稳定性的背景下。当前优化器虽通过动量正交化提升了收敛效率，但存在两大鲁棒性缺陷：正交化精度的维度敏感性及异常值引发噪声的脆弱性。为解决这些鲁棒性问题，本文提出ROOT优化器，通过双重鲁棒机制增强训练稳定性。首先，我们设计了维度鲁棒的正交化方案，采用自适应牛顿迭代法配合针对特定矩阵尺寸设计的细粒度系数，确保在不同架构配置下保持稳定精度。其次，我们通过近端优化构建优化鲁棒框架，在保留有效梯度方向的同时抑制异常值噪声。大量实验表明，相较于Muon和Adam类优化器，ROOT在噪声环境与非凸场景中表现出显著提升的鲁棒性，收敛速度更快且最终性能更优。本研究为开发能够应对现代大规模模型训练复杂性的鲁棒精确优化器确立了新范式。代码发布于https://github.com/huawei-noah/noah-research/tree/master/ROOT。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20626">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20626">arXiv</a></p>
+<hr />
+<h3>12. MagicWorld：基于几何驱动的交互式视频世界探索系统</h3>
+<p><strong>原文标题：</strong> MagicWorld: Interactive Geometry-driven Video World Exploration</p>
+<p><strong>摘要：</strong>
+现有交互式视频世界建模方法能够根据用户指令生成场景演化内容，虽取得显著成果，但仍存在两个关键局限：其一，未能充分挖掘指令驱动场景运动与底层三维几何的对应关系，导致视角变换下的结构失稳；其二，在多步交互过程中易丢失历史信息，引发场景语义与结构的误差累积及渐进漂移。为此，我们提出MagicWorld——融合三维几何先验与历史检索的交互式视频世界模型。该系统从单帧场景图像出发，通过用户操作驱动动态场景演化，以自回归方式连续合成场景序列。我们创新性地提出动作引导三维几何模块（AG3D），通过每轮交互首帧及其对应动作构建点云数据，为视角转换提供显式几何约束，从而增强结构一致性。进一步设计历史缓存检索（HCR）机制，在生成过程中检索相关历史帧并将其作为条件信号注入，辅助模型利用过往场景信息以抑制误差累积。实验结果表明，MagicWorld在连续交互迭代中显著提升了场景稳定性与连贯性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.18886">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.18886">arXiv</a></p>
+<hr />
+<h3>13. STARFlow-V：基于标准化流的端到端视频生成建模</h3>
+<p><strong>原文标题：</strong> STARFlow-V: End-to-End Video Generative Modeling with Normalizing Flow</p>
+<p><strong>摘要：</strong>
+标准化流（NFs）是面向连续数据的端到端基于似然的生成模型，近期在图像生成领域取得的突破性进展使其重获关注。然而在时空复杂度和计算成本显著更高的视频生成领域，最先进的系统几乎完全依赖于基于扩散的模型。本研究通过提出STARFlow-V重新审视这一设计空间，该基于标准化流的视频生成器具备端到端学习、强健的因果预测和原生似然估计等显著优势。基于近期提出的STARFlow架构，STARFlow-V在时空隐空间中进行操作，采用全局-局部结构将因果依赖限制在全局隐空间，同时保留帧内丰富的局部交互。这种设计缓解了时间维度上的误差累积问题——这是标准自回归扩散模型生成中常见的缺陷。此外，我们提出流-得分匹配方法，为模型配备轻量级因果去噪器，以自回归方式提升视频生成的一致性。为提升采样效率，STARFlow-V采用视频感知的雅可比迭代方案，在不破坏因果性的前提下将内部更新重构为可并行化的迭代过程。得益于可逆结构，该模型可原生支持文本到视频、图像到视频及视频到视频的生成任务。实证研究表明，相较于基于扩散的基线模型，STARFlow-V在实现卓越视觉保真度和时序一致性的同时，具备实用化的采样吞吐量。据我们所知，这些结果首次证明了标准化流能够实现高质量的自回归视频生成，为构建世界模型指明了一个前景广阔的研究方向。代码及生成样本详见https://github.com/apple/ml-starflow。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20462">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20462">arXiv</a></p>
+<hr />
+<h3>14. OmniAlpha：面向统一多任务RGBA生成的序列到序列框架</h3>
+<p><strong>原文标题：</strong> OmniAlpha: A Sequence-to-Sequence Framework for Unified Multi-Task RGBA Generation</p>
+<p><strong>摘要：</strong>
+生成模型在RGB合成领域已取得显著成就，但实际应用场景往往需要对RGBA通道进行联合操控。当前研究领域呈现割裂态势：专门化的单任务模型虽能处理Alpha通道但缺乏通用性，而统一的多任务框架又局限于RGB域。为填补这一关键空白，我们提出OmniAlpha——首个面向序列到序列RGBA图像生成与编辑的统一多任务生成框架。其核心架构采用MSRoPE-BiL，这是一种创新的RoPE方法，在扩散变换器（DiT）骨干网络中引入双向可扩展层轴，实现了多输入/输出RGBA图层的并行处理。为支撑该框架，我们构建了AlphaLayers数据集，包含1,000组高质量多层三元组数据，通过创新的自动化合成与过滤流程创建。在该数据集上对21项多样化任务进行联合训练后，大量实验表明我们的统一方法持续超越各类强专业化基线模型。尤为突出的是，OmniAlpha在AIM-500数据集上实现无蒙版抠图的SAD指标相对降低84.8%，在图层条件补全任务中赢得超过90%的人类偏好评估。本研究证实了统一多任务模型能够学习更优的RGBA共享表征，为开发更强大的图层感知生成系统开辟了新路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20211">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20211">arXiv</a></p>
+<hr />
+<h3>15. ReDirector：利用旋转相机编码生成任意长度的视频重拍</h3>
+<p><strong>原文标题：</strong> ReDirector: Creating Any-Length Video Retakes with Rotary Camera Encoding</p>
+<p><strong>摘要：</strong>
+本文提出ReDirector，一种面向动态拍摄可变长度视频的新型相机控制重拍生成方法。我们通过对齐输入视频与目标重拍的时空位置，纠正了先前研究中旋转位置编码的误用问题。进一步提出旋转相机编码，这是一种相机条件化的旋转位置编码相位偏移技术，能够捕捉并整合输入与目标视频内部及之间的多视角关系。通过将相机条件融入旋转位置编码，本方法可泛化至分布外的相机轨迹与视频长度，显著提升动态目标定位能力与静态背景保持效果。大量实验证明，该方法在不同轨迹与长度条件下，相机可控性、几何一致性与视频质量均取得显著提升。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19827">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19827">arXiv</a></p>
+<hr />
+<h3>16. 混元OCR技术报告</h3>
+<p><strong>原文标题：</strong> HunyuanOCR Technical Report</p>
+<p><strong>摘要：</strong>
+本文提出混元OCR——一个商用级、开源轻量化的视觉语言模型（参数量10亿），专门用于光学字符识别任务。该架构包含原生视觉Transformer与轻量化大语言模型，通过多层感知机适配器进行连接。混元OCR展现出卓越性能，在感知任务（文本检测与解析）中超越当前公开解决方案，在语义任务（信息提取、图文翻译）中表现优异，荣获ICDAR 2025 DIMT挑战赛小模型赛道冠军。在参数量小于30亿的视觉语言模型中，该模型于OCRBench评测体系取得最先进水平。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19575">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19575">arXiv</a></p>
+<hr />
+<h3>17. VQ-VA世界：迈向高质量视觉问答-视觉应答新境界</h3>
+<p><strong>原文标题：</strong> VQ-VA World: Towards High-Quality Visual Question-Visual Answering</p>
+<p><strong>摘要：</strong>
+本文研究视觉问答-视觉应答（VQ-VA）任务：针对视觉问题生成图像而非文本回答——这种能力最近在NanoBanana和GPT-Image等专有系统中初现端倪。为使开源模型也具备此能力，我们提出VQ-VA世界，这是一个以数据为中心的框架，基于智能代理流程实现大规模定向数据构建。该框架通过网络级部署，爬取了约180万条高质量图文交错样本用于模型训练。为进行评估，我们进一步发布IntelligentBench——人工精心策划的评测基准，从世界知识、设计知识和推理能力三个维度系统评估VQ-VA性能。采用VQ-VA世界数据训练带来显著效益：助力LightFusion模型在IntelligentBench上获得53.06分，大幅超越先前最佳开源基线（原始LightFusion的7.78分；UniWorld-V1的1.94分），并显著缩小与领先专有系统的差距（如NanoBanana的81.67分；GPT-Image的82.64分）。通过完整发布模型权重、数据集及处理流程，我们期望推动VQ-VA领域的未来研究。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20573">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20573">arXiv</a></p>
+<hr />
+<h3>18. Fara-7B：一种高效的计算机操作智能体模型</h3>
+<p><strong>原文标题：</strong> Fara-7B: An Efficient Agentic Model for Computer Use</p>
+<p><strong>摘要：</strong>
+由于缺乏记录人类与计算机交互的大型高质量数据集，计算机操作智能体（CUA）的发展一直受到制约。尽管大语言模型在丰富文本数据上取得了显著进展，但目前仍缺乏与之相当的CUA轨迹语料库。为填补这一空白，我们推出了FaraGen——一个面向多步骤网络任务的新型合成数据生成系统。该系统能够基于常用网站生成多样化任务，产生多种解决尝试方案，并通过多重验证器筛选成功轨迹。该方案在多步骤网络任务中实现了高吞吐量、高产出率和高多样性，每条验证轨迹的生成成本约为1美元。基于此数据，我们训练出Fara-7B原生CUA模型：该模型仅通过屏幕截图感知计算机状态，通过预测坐标执行操作，且体积小巧足以在终端设备运行。实验表明，在WebVoyager、Online-Mind2Web及我们新提出的WebTailBench（该基准能更好捕捉现有基准中代表性不足的网络任务）等基准测试中，Fara-7B性能优于同类规模CUA模型。值得注意的是，该模型与规模更大的前沿模型相比仍具竞争力，这印证了可扩展数据生成系统在推进小型高效智能体模型发展中的关键价值。我们将通过Microsoft Foundry和HuggingFace平台开源Fara-7B模型权重，并同步发布WebTailBench基准测试集。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19663">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19663">arXiv</a></p>
+<hr />
+<h3>19. MajutsuCity：基于语言驱动与美学自适应、具备可控三维资产与布局的城市生成方法</h3>
+<p><strong>原文标题：</strong> MajutsuCity: Language-driven Aesthetic-adaptive City Generation with Controllable 3D Assets and Layouts</p>
+<p><strong>摘要：</strong>
+生成逼真的三维城市是世界建模、虚拟现实和游戏开发的基础任务，理想的城市场景需同时满足风格多样性、细粒度控制与结构可控性。然而现有方法难以平衡基于文本生成的创意自由度与显式结构表征提供的对象级编辑能力。本文提出MajutsuCity，一种基于自然语言驱动且具备美学自适应能力的框架，用于合成结构一致且风格多样的三维城市场景。该框架将城市表征为可控布局、资产与材质的组合，通过四阶段流程实现生成。为突破初始生成的限制，我们进一步集成MajutsuAgent——支持五种对象级操作的交互式语言编辑代理。为实现高真实度可定制场景合成，我们构建了MajutsuDataset高质量多模态数据集，包含二维语义布局与高度图、多样化三维建筑资产、精选PBR材质与天空盒，所有数据均附带详细标注。同时开发了一套实用评估指标，涵盖结构一致性、场景复杂度、材质保真度与光照氛围等关键维度。大量实验表明，MajutsuCity相较于CityDreamer将布局FID降低83.7%，较CityCraft降低20.1%。本方法在全部AQS与RDR指标中均位列第一，显著优于现有方法。这些结果证实MajutsuCity在三维城市生成的几何保真度、风格适应性与语义可控性方面达到最新技术水平。我们期待该框架能为三维城市生成研究开辟新途径。数据集与代码将在https://github.com/LongHZ140516/MajutsuCity 发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20415">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20415">arXiv</a></p>
+<hr />
+<h3>20. 面向视觉语言模型工具集成推理的可扩展智能体强化学习</h3>
+<p><strong>原文标题：</strong> Scaling Agentic Reinforcement Learning for Tool-Integrated Reasoning in VLMs</p>
+<p><strong>摘要：</strong>
+尽管当前视觉语言模型（VLMs）展现出强大的图像理解能力，但其"基于图像的思考"能力——即通过多步骤视觉交互进行推理的能力——仍存在局限。我们提出VISTA-Gym这一可扩展的训练环境，旨在增强VLMs中工具集成的视觉推理能力。该环境通过标准化视觉工具接口（如目标定位、图像解析）、可执行交互循环、可验证反馈信号和高效轨迹记录，统一了多样化的现实世界多模态推理任务（总计涵盖13个数据集的7类任务），实现了大规模视觉智能体强化学习。虽然现有VLMs在纯文本推理方面表现优异，但无论是专有模型还是开源模型，在工具选择、调用与协同方面仍存在困难。基于VISTA-Gym平台，我们通过多轮轨迹采样和端到端强化学习，训练出VISTA-R1模型以实现工具使用与智能推理的交替执行。在11个公开推理密集型视觉问答基准测试中的广泛实验表明，VISTA-R1-8B模型以9.51%-18.72%的优势超越同规模最先进基线模型，证明VISTA-Gym可作为有效训练平台，释放VLMs的工具集成推理潜能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19773">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19773">arXiv</a></p>
+<hr />
+<h3>21. 协同烹饪与清洁：面向并行任务执行的具身智能体教学研究</h3>
+<p><strong>原文标题：</strong> Cook and Clean Together: Teaching Embodied Agents for Parallel Task Execution</p>
+<p><strong>摘要：</strong>
+任务调度在具身人工智能领域具有关键意义，它使智能体能够遵循自然语言指令并在三维物理世界中高效执行动作。然而现有数据集常因忽略运筹学知识与三维空间 grounding 而简化任务规划。本研究提出基于运筹学知识的三维 grounded 任务调度（ORS3D），该新型任务需要语言理解、三维 grounding 与效率优化的协同作用。与现有设定不同，ORS3D要求智能体通过利用可并行子任务（如在微波炉运行期间同步清洗水槽）来最小化总完成时间。为促进ORS3D研究，我们构建了ORS3D-60K大规模数据集，涵盖4,000个真实场景中的6万项复合任务。此外，我们提出GRANT模型——配备简单高效调度令牌机制的具身多模态大语言模型，可生成优化任务调度与 grounded 动作。在ORS3D-60K上的大量实验验证了GRANT在语言理解、三维 grounding 与调度效率方面的卓越性能。代码已开源：https://github.com/H-EmbodVis/GRANT</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19430">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19430">arXiv</a></p>
+<hr />
+<h3>22. PhysChoreo：基于部件感知语义关联的物理可控视频生成</h3>
+<p><strong>原文标题：</strong> PhysChoreo: Physics-Controllable Video Generation with Part-Aware Semantic Grounding</p>
+<p><strong>摘要：</strong>
+尽管当前视频生成模型已实现显著的视觉保真度，但其往往缺乏显式的物理可控性与合理性。为解决此问题，近期研究尝试通过基于物理的渲染技术指导视频生成。然而，这些方法在精确建模复杂物理属性及有效控制长时序物理行为方面面临固有挑战。本研究提出PhysChoreo创新框架，能够从单张图像生成具有多样化可控性与物理真实感的视频。该方法包含两个阶段：首先通过部件感知的物理属性重建技术估算图像中所有物体的静态初始物理属性；随后通过时序引导与物理可编辑的仿真，合成具有丰富动态行为与物理真实感的高质量视频。实验结果表明，PhysChoreo能够生成具备丰富行为表现与物理真实感的视频，在多项评估指标上均优于现有先进方法。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20562">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20562">arXiv</a></p>
+<hr />
+<h3>23. 视觉思维与文本推理：ARC中的视觉-语言协同机制</h3>
+<p><strong>原文标题：</strong> Think Visually, Reason Textually: Vision-Language Synergy in ARC</p>
+<p><strong>摘要：</strong>
+基于少量样本的抽象推理始终是GPT-5、Grok-4等前沿基础模型尚未解决的核心难题。这些模型仍无法从有限示例中推断结构化转换规则——这正是人类智能的关键特征。面向通用人工智能的抽象与推理语料库（ARC-AGI）为此能力提供了严格测试平台，要求实现概念规则归纳及向新任务的迁移。现有方法大多将ARC-AGI视为纯文本推理任务，却忽略了人类在解决此类难题时高度依赖视觉抽象的特性。然而初步实验揭示了一个悖论：简单将ARC-AGI网格转换为图像会因规则执行不精确而导致性能下降。由此我们提出核心假设：视觉与语言在不同推理阶段具有互补优势——视觉支持全局模式抽象与验证，而语言擅长符号化规则构建与精确执行。基于此洞见，我们提出两种协同策略：（1）视觉-语言协同推理（VLSR），将ARC-AGI分解为模态对齐的子任务；（2）模态切换自校正（MSSC），利用视觉验证文本推理以实现内在误差修正。大量实验表明，该方法在多种旗舰模型和多项ARC-AGI任务中相较纯文本基线最高提升4.33%。我们的研究结果表明，将视觉抽象与语言推理相统一，是未来基础模型实现可泛化、类人智能的关键步骤。源代码即将发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.15703">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.15703">arXiv</a></p>
+<hr />
+<h3>24. DiffSeg30k：面向局部AIGC检测的多轮扩散编辑基准数据集</h3>
+<p><strong>原文标题：</strong> DiffSeg30k: A Multi-Turn Diffusion Editing Benchmark for Localized AIGC Detection</p>
+<p><strong>摘要：</strong>
+基于扩散模型的编辑技术能够对图像局部区域进行逼真修改，使得人工智能生成内容（AIGC）的检测面临更大挑战。现有AIGC检测基准主要关注整图分类，忽视了基于扩散编辑的局部定位能力。本文提出DiffSeg30k——一个包含3万张扩散编辑图像且具有像素级标注的公开数据集，旨在支持细粒度检测研究。该数据集具备四大特征：1）真实场景图像：从COCO数据集采集图像或图像提示词以反映现实内容多样性；2）多样化扩散模型：采用八种前沿扩散模型进行局部编辑；3）多轮次编辑：每张图像最多经历三次连续编辑以模拟实际序列编辑过程；4）真实编辑场景：基于视觉语言模型（VLM）的流程自动识别语义区域，并生成涵盖添加、移除与属性变化的上下文感知提示词。DiffSeg30k将AIGC检测从二值分类推进至语义分割层面，实现了编辑区域定位与编辑模型识别的同步进行。通过对三种基线分割方法的基准测试，揭示了语义分割任务面临的重大挑战，特别是在图像失真鲁棒性方面。实验还表明，尽管分割模型接受的是像素级定位训练，却能成为高度可靠的扩散编辑整图分类器，其性能优于现有伪造分类器，并在跨生成器泛化方面展现出巨大潜力。我们相信DiffSeg30k将通过揭示基于分割方法的潜力与局限，推动AI生成内容细粒度定位研究的发展。数据集发布于：https://huggingface.co/datasets/Chaos2629/Diffseg30k</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19111">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19111">arXiv</a></p>
+<hr />
+<h3>25. Yo'City：基于自批判扩展的个性化无边界3D真实城市场景生成</h3>
+<p><strong>原文标题：</strong> Yo'City: Personalized and Boundless 3D Realistic City Scene Generation via Self-Critic Expansion</p>
+<p><strong>摘要：</strong>
+真实感三维城市生成在虚拟现实、数字孪生等众多应用领域具有基础性意义。然而现有方法大多依赖训练单一扩散模型，限制了生成个性化、无边界城市场景的能力。本文提出Yo'City——一种新型智能体框架，通过利用现成大模型的推理与组合能力，实现用户自定义且可无限扩展的三维城市生成。具体而言，Yo'City首先通过自上而下的规划策略构建城市概念框架，定义“城市-区域-网格”的层级结构：全局规划器确定整体布局与潜在功能分区，局部设计器则进一步细化各分区的网格级详细描述。随后通过“生成-优化-评估”的等距图像合成循环实现网格级三维生成，并经由图像转三维流程完成建模。为模拟持续城市演进，Yo'City进一步引入用户交互的关系引导扩展机制，执行基于场景图的距离与语义感知布局优化，确保空间连贯的城市生长。为全面评估本方法，我们构建了多样化基准数据集，设计了涵盖语义、几何、纹理与布局视角的六维评估指标。大量实验表明，Yo'City在所有评估维度上均持续优于现有先进方法。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.18734">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.18734">arXiv</a></p>
+<hr />
+<h3>26. 推理的认知基础及其在大语言模型中的体现</h3>
+<p><strong>原文标题：</strong> Cognitive Foundations for Reasoning and Their Manifestation in LLMs</p>
+<p><strong>摘要：</strong>
+大语言模型能够解决复杂问题，却在简单变体任务上表现不佳，这表明其获得正确输出的机制与人类推理存在本质差异。为探究这一差异，我们整合认知科学研究成果，构建了包含28个认知要素的分类体系，涵盖推理恒常性、元认知控制、组织推理与知识的表征方式以及转换操作等维度。我们提出细粒度评估框架，首次对来自18个模型的192K条跨文本、视觉和音频的推理轨迹进行大规模实证分析，并辅以54条人类有声思维记录（已公开）。研究发现：模型未能充分利用与成功相关的认知要素，面对非良构问题时处理模式趋于僵化的序列化，而此类问题恰恰需要多样化表征和元认知监控。人类轨迹展现出更强的抽象化和概念化处理能力，而模型则倾向于表层枚举。对1.6K篇大语言模型推理研究的元分析显示，学界过度关注易量化要素（序列化组织：55%，问题分解：60%），却忽视与成功密切相关的元认知控制（自我监控：16%）。模型虽具备与成功相关的行为模式库，却无法自主调用。基于这些发现，我们开发了测试时推理引导机制，通过自动构建成功推理结构，在复杂问题上的性能提升最高达66.7%。通过建立认知科学与大语言模型研究的共同话语体系，本框架既能系统诊断推理失败根源，推动模型基于稳健认知机制而非伪相关性捷径发展，又为大规模验证人类认知理论提供了工具支持。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.16660">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.16660">arXiv</a></p>
+<hr />
+<h3>27. 基于行列式点过程引导策略优化的多样化视频生成</h3>
+<p><strong>原文标题：</strong> Diverse Video Generation with Determinantal Point Process-Guided Policy Optimization</p>
+<p><strong>摘要：</strong>
+尽管当前基于文本到视频（T2V）的扩散模型已实现了出色的生成质量与文本对齐效果，但在从单一文本提示生成多个视频时，其输出结果往往缺乏多样性。为解决这一问题，我们将该任务构建为集合级策略优化问题，旨在训练能够覆盖给定提示对应多种合理结果的策略。为此，我们提出DPP-GRPO——一种结合行列式点过程（DPPs）与群组相对策略优化（GRPO）理论的创新框架，通过显式奖励机制促进生成多样性。该目标函数通过对冗余样本施加收益递减约束（经由DPP实现），并在候选集上提供分组反馈（经由GRPO实现），将多样性转化为显式优化信号。我们的框架具备即插即用和模型无关特性，能够在保持提示忠实度与感知质量的前提下，有效提升视频在外观、摄像机运动和场景结构等方面的多样性。我们在WAN与CogVideoX平台上实现了该方法，实验表明其在VBench、VideoScore等前沿基准测试及人类偏好研究中持续提升视频多样性。此外，我们开源了代码并发布了包含30,000条多样化提示的新基准数据集，以支持后续研究。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20647">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20647">arXiv</a></p>
+<hr />
+<h3>28. 基于神经场的统一全原子分子生成方法</h3>
+<p><strong>原文标题：</strong> Unified all-atom molecule generation with neural fields</p>
+<p><strong>摘要：</strong>
+基于结构的药物设计生成模型通常受限于特定模态，制约了其广泛应用潜力。为解决这一难题，我们提出FuncBind框架——基于计算机视觉技术构建的靶向条件化全原子分子生成系统。该框架采用神经场将分子表示为连续原子密度，并运用基于分数的生成模型，其现代架构源自计算机视觉领域的创新成果。这种模态无关的表征方式使单一统一模型能够训练于从小分子到大分子的多样化原子体系，处理可变原子/残基数量（包括非经典氨基酸）。在计算机模拟实验中，FuncBind在靶向结构条件下生成小分子、大环肽及抗体互补决定区环结构方面展现出卓越性能。通过重新设计两种选定共晶结构的互补决定区H3环，FuncBind还在体外实验中成功生成新型抗体结合剂。作为最终贡献，我们建立了面向结构条件化大环肽生成的新数据集与基准测试平台。代码已发布于https://github.com/prescient-design/funcbind。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.15906">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.15906">arXiv</a></p>
+<hr />
+<h3>29. 概念感知批量采样提升语言-图像预训练效果</h3>
+<p><strong>原文标题：</strong> Concept-Aware Batch Sampling Improves Language-Image Pretraining</p>
+<p><strong>摘要：</strong>
+视觉语言模型应使用何种数据进行训练？针对该问题，当前多数数据筛选方法聚焦于数据集质量，但存在两大局限：(i) 离线性——依赖预设过滤标准生成静态数据集；(ii) 概念无关性——采用基于模型的过滤器会引入额外数据偏差。本研究突破传统离线式、概念无关方法的限制，提出更具灵活性的任务自适应在线概念化筛选方案。我们首先构建DataConcept数据集，包含1.28亿网络爬取的图文对，并标注其细粒度概念构成。基于此，我们提出概念感知批量采样框架（CABS），该动态批构建方法能根据特定目标分布灵活组织批次数据。我们开发两种变体：(i) 多样性最大化（CABS-DM）——确保批次覆盖广泛概念；(ii) 频率最大化（CABS-FM）——提升批次内对象重复度。通过在28个基准测试中的广泛评估，证明CABS方法显著提升CLIP/SigLIP模型性能，生成高效能模型。总体而言，CABS为专有在线数据筛选算法提供了强大的开源替代方案，使实践者能通过自定义概念分布优化特定下游任务。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20643">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20643">arXiv</a></p>
+<hr />
+<h3>30. 提升乒乓球技术：一种鲁棒的三维轨迹与旋转估计现实应用方案</h3>
+<p><strong>原文标题：</strong> Uplifting Table Tennis: A Robust, Real-World Application for 3D Trajectory and Spin Estimation</p>
+<p><strong>摘要：</strong>
+从标准单目视频中精确获取乒乓球的三维运动轨迹存在显著挑战，由于现有基于合成数据训练的方法难以适应现实场景中噪声干扰及不完美的球体与球台检测。这主要源于现实视频中三维真实轨迹与旋转标注数据的固有缺失。为解决此问题，我们提出一种新颖的两阶段处理流程，将问题分解为前端感知任务与后端二维转三维提升任务。这种分离设计使我们能够利用新构建的TTHQ数据集中的海量二维标注数据训练前端组件，而后端提升网络则完全基于物理正确的合成数据进行训练。我们特别对提升模型进行重新设计，使其对现实场景中常见的检测缺失、帧率波动等干扰因素具有鲁棒性。通过整合球体检测器与球台关键点检测器，本方法将概念验证性的提升技术转化为实用性强、鲁棒性高、性能优异的端到端三维乒乓球轨迹与旋转分析应用。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20250">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20250">arXiv</a></p>
+<hr />
+<h3>31. CLaRa：通过连续潜在推理桥接检索与生成任务</h3>
+<p><strong>原文标题：</strong> CLaRa: Bridging Retrieval and Generation with Continuous Latent Reasoning</p>
+<p><strong>摘要：</strong>
+检索增强生成（RAG）通过外部知识增强大语言模型（LLM）的能力，但仍面临长上下文处理及检索-生成优化割裂的问题。本研究提出CLaRa（连续潜在推理）框架，在共享连续空间内实现基于嵌入的压缩与联合优化。为获得语义丰富且可检索的压缩向量，我们开发了SCP框架——通过问答与复述监督实现关键信息保留的数据合成方法。CLaRa通过单一语言建模损失函数端到端训练重排序器与生成器，并借助可微分top-k估计器实现双模块梯度传导。理论分析表明，该联合优化机制使检索相关性与答案质量达成对齐。在多问答基准测试上的实验表明，CLaRa在压缩与重排序性能方面达到最优水平，其表现甚至超越基于文本的微调基线模型。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.18659">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.18659">arXiv</a></p>
+<hr />
+<h3>32. 未来并非均匀分布：大语言模型的预测能力取决于提问内容</h3>
+<p><strong>原文标题：</strong> Future Is Unevenly Distributed: Forecasting Ability of LLMs Depends on What We're Asking</p>
+<p><strong>摘要：</strong>
+大语言模型在社会、政治和经济事件中展现出局部预测能力，但其预测性能会随领域结构和提示框架产生显著差异。本研究针对模型截止日期后发生的真实事件，探究不同模型家族在现实问题中的预测表现变化。我们系统分析了语境设置、问题类型与外部知识如何影响预测准确度与校准效果，并探讨事实性新闻背景的引入如何改变信念形成机制与错误模式。研究结果表明：预测能力具有高度可变性，其表现取决于我们提问的内容与方式。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.18394">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.18394">arXiv</a></p>
+<hr />
+<h3>33. SciEducator：基于戴明环多智能体系统的科学视频理解与教育框架</h3>
+<p><strong>原文标题：</strong> SciEducator: Scientific Video Understanding and Educating via Deming-Cycle Multi-Agent System</p>
+<p><strong>摘要：</strong>
+多模态大语言模型与视频智能体系统的最新进展显著提升了通用视频理解能力。然而在需要融合外部专业知识并进行严谨分步推理的科学视频理解与教育领域，现有方法仍存在明显局限。为此，我们提出SciEducator——首个面向科学视频解析与教育的迭代式自演进多智能体系统。该系统植根于管理学的经典戴明环理论，将其“计划-执行-研究-改进”核心理念重构为自演进推理与反馈机制，有效支撑视频中复杂科学活动的解析。此外，SciEducator能针对特定科学过程生成多模态教育内容，包括文本指令、可视化导引、音频解说及交互式参考资料。为推进评估标准化，我们构建了SciVBench基准数据集，包含经专家验证和文献支持的500组科学问答对，涵盖物理、化学及日常现象五大类别。大量实验表明，SciEducator在基准测试中显著优于主流闭源多模态大模型（如Gemini、GPT-4o）及最先进的视频智能体，为该领域确立了新范式。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.17943">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.17943">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2025-11-26_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
