@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2025-12-01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-12-01 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：32</li>
+<li>热门领域：Transformer, GPT, LLM</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. Z-Image：一种基于单流扩散Transformer的高效图像生成基础模型</h3>
+<p><strong>原文标题：</strong> Z-Image: An Efficient Image Generation Foundation Model with Single-Stream Diffusion Transformer</p>
+<p><strong>摘要：</strong>
+当前高性能图像生成模型领域主要由Nano Banana Pro和Seedream 4.0等专有系统主导。领先的开源替代方案，如Qwen-Image、HunYuan-Image-3.0和FLUX.2，普遍具有庞大的参数量（200亿至800亿），导致其在消费级硬件上难以进行推理和微调。为填补这一空白，我们提出Z-Image——一种基于可扩展单流扩散Transformer（S3-DiT）架构的高效60亿参数生成式基础模型，该模型对“不计代价追求规模”的范式提出了挑战。通过系统优化从精选数据基础设施到精简训练流程的完整模型生命周期，我们仅用31.4万H800 GPU小时（约合63万美元）即完成了全流程训练。结合奖励式后训练的少步蒸馏方案进一步产生了Z-Image-Turbo，该版本既能在企业级H800 GPU上实现亚秒级推理延迟，又兼容消费级硬件（显存&lt;16GB）。此外，我们的全预训练范式还高效训练出Z-Image-Edit——一个具备出色指令跟随能力的图像编辑模型。定性与定量实验表明，我们的模型在多个维度上达到或超越了主流竞争模型的性能。尤为突出的是，Z-Image在逼真图像生成与双语文本渲染方面展现出卓越能力，其效果可与顶级商业模型媲美，这证明显著降低计算开销同样能实现尖端性能。我们公开了代码、模型权重及在线演示，以促进可访问、低成本且性能领先的生成式模型的发展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22699">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22699">arXiv</a></p>
+<hr />
+<h3>2. REASONEDIT：迈向推理增强型图像编辑模型</h3>
+<p><strong>原文标题：</strong> REASONEDIT: Towards Reasoning-Enhanced Image Editing Models</p>
+<p><strong>摘要：</strong>
+近期图像编辑模型取得了显著进展。一种常见的架构设计将多模态大语言模型编码器与扩散解码器相结合，例如Step1X-Edit和Qwen-Image-Edit等系统：其中多模态大语言模型负责编码参考图像和编辑指令，但在训练过程中保持冻结状态。本研究证明，释放多模态大语言模型的推理能力能够进一步拓展编辑模型的边界。具体而言，我们探索了思维与反思两种推理机制，以增强指令理解与编辑精度。基于此，我们提出的框架实现了“思维-编辑-反思”循环的图像编辑流程：思维机制利用多模态大语言模型的世界知识解析抽象指令，而反思机制则评估编辑结果、自动修正非预期操作并确定迭代终止时机。大量实验表明，我们的推理方法取得了显著的性能提升：当基于Step1X-Edit初始化我们的DiT模型时（ReasonEdit-S），在ImgEdit（+4.3%）、GEdit（+4.7%）和Kris（+8.2%）指标上均获得改进；当与Qwen-Image-Edit集成时（ReasonEdit-Q），在GEdit和Kris基准上也超越了所有现有开源方法。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22625">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22625">arXiv</a></p>
+<hr />
+<h3>3. AnyTalker：通过交互性优化实现多人对话视频生成的可扩展化</h3>
+<p><strong>原文标题：</strong> AnyTalker: Scaling Multi-Person Talking Video Generation with Interactivity Refinement</p>
+<p><strong>摘要：</strong>
+近年来，多人视频生成技术逐渐受到关注。尽管已有初步研究探索音频驱动的多人对话视频生成，但由于多样化多人数据采集成本高昂，以及驱动多个身份实现连贯交互的难度，现有方法仍面临挑战。为应对这些挑战，本文提出AnyTalker——一个具备可扩展多流处理架构的多人视频生成框架。具体而言，我们通过引入新颖的身份感知注意力机制对扩散变换器的注意力模块进行扩展，该机制可迭代处理身份-音频对，从而实现可驱动身份数量的任意扩展。此外，训练多人生成模型需要海量多人数据。本文提出的训练流程仅依赖单人视频学习多人对话模式，并仅需少量真实多人视频片段即可优化交互表现。我们还构建了专项评估指标与数据集，用于量化生成视频的自然度与交互协调性。大量实验表明，AnyTalker在唇部同步精度、视觉质量与自然交互性方面表现卓越，在数据成本与身份可扩展性之间实现了良好平衡。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.23475">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.23475">arXiv</a></p>
+<hr />
+<h3>4. 大规模视觉桥接变换器</h3>
+<p><strong>原文标题：</strong> Vision Bridge Transformer at Scale</p>
+<p><strong>摘要：</strong>
+本文提出视觉桥接变换器（ViBT），这是一种专为条件生成设计的大规模布朗桥模型实现。与传统将噪声转化为数据的扩散模型不同，桥接模型直接建模输入与输出之间的轨迹，构建了高效的数据到数据转换范式。通过将模型参数量扩展至200亿和13亿级别，我们验证了其在图像与视频转换任务中的有效性。为支撑此规模，我们采用变换器架构，并提出方差稳定的速度匹配目标函数以实现鲁棒训练。这些进展共同彰显了桥接模型在基于指令的图像编辑和复杂视频转换任务中通过规模化所展现的强大能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.23199">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.23199">arXiv</a></p>
+<hr />
+<h3>5. DeepSeekMath-V2：迈向可自我验证的数学推理</h3>
+<p><strong>原文标题：</strong> DeepSeekMath-V2: Towards Self-Verifiable Mathematical Reasoning</p>
+<p><strong>摘要：</strong>
+大型语言模型在数学推理方面已取得显著进展，这不仅是人工智能的重要测试平台，其进一步发展还可能对科学研究产生影响。通过采用强化学习对最终正确答案进行奖励以扩展推理规模，大型语言模型在一年内实现了从性能不佳到在AIME、HMMT等定量推理竞赛中达到饱和水平的跨越。然而，该方法面临根本性局限：追求更高的最终答案准确率并未解决一个关键问题——正确答案并不能保证推理过程的正确性。此外，许多数学任务（如定理证明）需要严格的逐步推导而非数值答案，这使得基于最终答案的奖励机制不再适用。为突破深度推理的极限，我们认为必须对数学推理的完备性与严谨性进行验证。自我验证对于扩展测试时计算规模尤为重要，特别是针对尚无已知解的开放性问题。为实现可自我验证的数学推理，本研究探索如何训练一个精准可靠、基于大型语言模型的定理证明验证器。随后，我们以该验证器作为奖励模型训练证明生成器，并激励生成器在最终确定证明前，尽可能识别并解决自身证明中的问题。为在生成器能力增强时保持生成与验证之间的差距，我们提出通过扩展验证计算来自动标注新的难验证证明，从而创建训练数据以持续改进验证器。最终得到的模型DeepSeekMath-V2展现出强大的定理证明能力，在扩展测试时计算条件下，于IMO 2025和CMO 2024中获得金奖级评分，并在Putnam 2024中取得接近满分的118/120分。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22570">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22570">arXiv</a></p>
+<hr />
+<h3>6. 架构解耦并非统一多模态模型的全部所需</h3>
+<p><strong>原文标题：</strong> Architecture Decoupling Is Not All You Need For Unified Multimodal Model</p>
+<p><strong>摘要：</strong>
+面向图像生成与理解的统一多模态模型是迈向通用人工智能的重要一步，已引起研究者的广泛关注。该任务的主要挑战在于，由于理解与生成任务内在的目标冲突，难以建立最优的训练范式。为缓解这些冲突并追求更高性能，许多研究者采用不同程度的模型解耦策略（例如双图像编码器、MOE/MOT架构或冻结多模态大语言模型）。然而，过度的模型解耦可能导致交错生成能力丧失，背离统一模型的初衷。本研究旨在探索如何在不依赖模型解耦的前提下缓解任务冲突。首先，我们通过分析模型的跨模态注意力行为，探究解耦策略缓解冲突的机理。研究发现，模型解耦本质上驱动模型形成任务特定的多模态交互模式（如Qwen-VL与HunyuanImage所示），且解耦越彻底，行为一致性越强。基于此发现，我们提出注意力交互对齐损失函数，在训练过程中显式学习任务特定的多模态交互模式。为验证该损失函数的泛化能力，我们分别将其应用于Emu3和Janus-Pro模型的监督微调与后训练阶段。实验表明，该损失函数不仅优化了跨模态注意力模式，同时显著提升了生成与理解任务的性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22663">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22663">arXiv</a></p>
+<hr />
+<h3>7. CaptionQA：图像描述能否与图像本身同等有效？</h3>
+<p><strong>原文标题：</strong> CaptionQA: Is Your Caption as Useful as the Image Itself?</p>
+<p><strong>摘要：</strong>
+在多模态系统（如检索、推荐和多步骤智能体推理流程）中，图像描述作为视觉内容的高效替代品被广泛使用。然而，当前的评估方法忽略了一个根本性问题：在实际下游任务中，图像描述能否真正替代图像？为此，我们提出了一个基于实用性的基准测试——CaptionQA，用于评估模型生成的图像描述，其质量通过描述对下游任务的支持程度来衡量。CaptionQA是一个可扩展的领域相关基准，涵盖自然图像、文档图像、电子商务图像和具身人工智能四大领域，每个领域均包含细粒度分类体系（25个顶级类别和69个子类别），以识别领域特定任务所需的有效信息。该基准构建了33,027道密集标注的多选题（平均每幅图像对应50.3题），这些问题明确需要视觉信息才能解答，从而全面检验图像描述的实用性。在我们的评估框架中，大语言模型仅依据图像描述回答这些问题，直接衡量描述是否保留了图像层面的实用性且能被下游大语言模型有效利用。通过对前沿多模态大模型的评估，我们发现图像与其描述在实用性上存在显著差距。值得注意的是，在传统图像问答基准上表现相近的模型，其描述实用性评分最大可降低32%。我们开源了CaptionQA基准及相关扩展工具链，支持新领域的拓展应用。代码发布于：https://github.com/bronyayang/CaptionQA。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.21025">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.21025">arXiv</a></p>
+<hr />
+<h3>8. DualVLA：通过部分解耦推理与行动构建可泛化的具身智能体</h3>
+<p><strong>原文标题：</strong> DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action</p>
+<p><strong>摘要：</strong>
+为构建具有强大推理能力的可泛化视觉-语言-行动（VLA）模型，常见策略是先在机器人演示数据上训练专用VLA模型以掌握可靠操作技能，再融合标注机器人数据与多模态数据以恢复广泛推理能力。然而，我们发现由此获得的推理型VLA模型相较于微调前的专用模型常出现行动性能退化现象，称之为“行动退化”。为解决此问题，我们提出DualVLA方法，通过精心设计的后训练机制提升行动性能，同时保持推理能力。我们首先提出双层数据筛选方法，剔除冗余的具身推理数据以避免其对行动学习产生负面影响。为进一步强化行动生成能力，我们设计了双教师自适应蒸馏策略，针对不同数据域分配差异化的监督信号，同时维持模型推理能力。为填补通用型VLA模型的评估空白，我们还提出VLA评分体系，将VLA能力解耦为推理、意图、行动与对齐四个维度进行细粒度评估。实验表明，DualVLA在SimplerEnv环境中取得61.0%的平均成功率，在八个竞争性多模态基准测试中平均得分达65.4分，展现出在精确行动执行与多模态理解之间更优的平衡能力。项目网站：https://costaliya.github.io/DualVLA/。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22134">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22134">arXiv</a></p>
+<hr />
+<h3>9. DiP：像素空间扩散模型的高效调控框架</h3>
+<p><strong>原文标题：</strong> DiP: Taming Diffusion Models in Pixel Space</p>
+<p><strong>摘要：</strong>
+扩散模型在生成质量与计算效率之间存在固有权衡。潜在扩散模型（LDMs）虽提供高效解决方案，但存在潜在信息丢失与非端到端训练的局限性。相比之下，现有像素空间模型虽绕过变分自编码器，却因计算成本过高而难以实现高分辨率合成。为解决这一困境，本文提出DiP——一种高效的像素空间扩散框架。DiP将生成过程解耦为全局与局部两阶段：采用扩散Transformer（DiT）主干网络对大尺寸图像块进行高效全局结构建模，同时通过协同训练的轻量化局部细节增强头，利用上下文特征恢复细粒度细节。这种协同设计在不依赖变分自编码器的前提下，实现了与潜在扩散模型相当的计算效率。DiP在仅增加0.3%参数总量的情况下，推理速度较现有方法提升最高达10倍，并在ImageNet 256×256数据集上取得1.79的FID分数。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.18822">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.18822">arXiv</a></p>
+<hr />
+<h3>10. 每个标记都重要：大语言模型中1600万超长上下文的泛化能力研究</h3>
+<p><strong>原文标题：</strong> Every Token Counts: Generalizing 16M Ultra-Long Context in Large Language Models</p>
+<p><strong>摘要：</strong>
+本研究探讨构建“具备记忆能力的机器”所面临的挑战，将长期记忆问题定义为高效超长上下文建模任务。我们认为这需要具备三个关键特性：稀疏性、随机访问灵活性和长度泛化能力。为解决超长上下文建模问题，我们提出分层稀疏注意力机制——一种满足所有三项特性的新型注意力机制。通过将该机制集成至Transformer架构中，我们构建了HSA-UltraLong模型。该模型为包含80亿参数的混合专家模型，基于超过8万亿标记进行训练，并在领域内外不同长度的上下文任务中接受严格评估，以验证其处理超长上下文的能力。实验结果表明：在领域内长度任务上，本模型性能与全注意力基线模型相当；在长度达1600万标记的上下文检索任务中，大多数任务准确率超过90%。本报告系统阐述了实验发现与待解难题，为超长上下文建模的未来研究奠定了理论基础。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.23319">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.23319">arXiv</a></p>
+<hr />
+<h3>11. 对抗流模型</h3>
+<p><strong>原文标题：</strong> Adversarial Flow Models</p>
+<p><strong>摘要：</strong>
+本文提出对抗流模型，这是一种将对抗模型与流模型相统一的生成模型类别。我们的方法支持原生单步或多步生成，并采用对抗目标进行训练。与传统生成对抗网络（GAN）中生成器学习噪声分布与数据分布之间的任意传输方案不同，我们的生成器学习确定性的噪声到数据映射，该映射与流匹配模型中的最优传输方案一致。这一特性显著提升了对抗训练的稳定性。此外，与基于一致性的方法相比，我们的模型直接学习单步或少步生成，无需学习概率流传播的中间时间步。这节省了模型容量、减少了训练迭代次数，并避免了误差累积。在ImageNet-256px数据集相同的1NFE设置下，我们的B/2模型性能接近基于一致性的XL/2模型，而我们的XL/2模型创造了2.38的最新最优FID指标。我们还展示了通过深度重复实现56层和112层模型端到端训练的可能性，在单次前向传播中分别达到2.08和1.94的FID，超越了对应模型的2NFE和4NFE性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22475">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22475">arXiv</a></p>
+<hr />
+<h3>12. 解耦DMD：以CFG增强为矛，以分布匹配为盾</h3>
+<p><strong>原文标题：</strong> Decoupled DMD: CFG Augmentation as the Spear, Distribution Matching as the Shield</p>
+<p><strong>摘要：</strong>
+扩散模型蒸馏已成为创建高效少步与单步生成器的强大技术。其中，分布匹配蒸馏（DMD）及其变体凭借卓越性能脱颖而出，其核心机制通常被归因于将学生模型的输出分布与预训练教师模型相匹配。本研究挑战了这一传统认知。通过对DMD训练目标的严格分解，我们揭示在如文生图等复杂任务中（此类任务通常需借助分类器无关引导以获得理想的少步生成效果），少步蒸馏的主要驱动力并非分布匹配，而是一个先前被忽视的、我们定义为“CFG增强”的组件。我们证明该组件充当了蒸馏过程的“核心引擎”，而分布匹配项则作为“正则化器”发挥确保训练稳定性、减轻生成伪影的作用。我们进一步通过实验验证了这种解耦关系：尽管分布匹配项是高效的正则化器，但它并非唯一选择；更简单的非参数约束或基于生成对抗网络的目标函数也能实现相同的稳定效果，尽管存在不同的权衡。这种职责分离促使我们对两项组件的性质进行更原理性的分析，从而获得更系统深入的理解。基于这一新认知，我们进一步提出了对蒸馏过程的原理性改进，例如为“引擎”与“正则化器”解耦噪声调度策略，从而实现了额外的性能提升。值得注意的是，我们的方法已被Z-Image项目（https://github.com/Tongyi-MAI/Z-Image）采纳，用于开发顶尖的8步图像生成模型，这从实证角度验证了我们发现的普适性与鲁棒性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22677">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22677">arXiv</a></p>
+<hr />
+<h3>13. RefineBench：基于检查表的语言模型精炼能力评估框架</h3>
+<p><strong>原文标题：</strong> RefineBench: Evaluating Refinement Capability of Language Models via Checklists</p>
+<p><strong>摘要：</strong>
+语言模型能否对其自身生成的回答进行自我精炼？随着现实世界中大量用户交互涉及精炼需求，这一问题日益凸显。然而，现有研究主要在可验证任务（如竞赛数学或带有简化框架的符号推理）上测试语言模型的精炼能力，而用户往往提出开放式查询，并对其期望结果提供不同程度的反馈。近期展现出思维链中自我反思模式的推理模型的出现，进一步激发了对此问题的探讨。为此，我们提出RefineBench——一个包含11个领域共1000个挑战性问题的基准测试集，并配套基于检查表的评估框架。我们评估了两种精炼模式：（1）引导式精炼，即向语言模型提供自然语言反馈；（2）自我精炼，即语言模型在无引导情况下尝试改进。在自我精炼场景中，即使是前沿模型如Gemini 2.5 Pro和GPT-5，其基线得分也仅分别为31.3%和29.1%，且多数模型无法在多次迭代中持续改进（例如Gemini-2.5-Pro仅提升+1.8%，而DeepSeek-R1反而下降-0.1%）。相比之下，在引导式精炼中，无论是专有模型还是大型开放权重模型（&gt;700亿参数），均能利用针对性反馈在五轮对话内将回答精炼至接近完美的水平。这些发现表明，前沿语言模型要实现对其错误回答的自我精炼仍需突破性进展，而RefineBench为追踪相关进展提供了重要的测试平台。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22173">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22173">arXiv</a></p>
+<hr />
+<h3>14. Nemotron-Flash：面向延迟最优的混合型小语言模型</h3>
+<p><strong>原文标题：</strong> Nemotron-Flash: Towards Latency-Optimal Hybrid Small Language Models</p>
+<p><strong>摘要：</strong>
+在众多具有严格延迟约束的实际应用中，小语言模型的高效部署至关重要。以往关于小语言模型设计的研究主要集中于减少参数量以实现参数最优模型，但参数效率的提升未必能按比例转化为实际设备上的速度提升。本研究旨在识别影响小语言模型实际设备延迟的关键因素，并为以实际设备延迟为首要考虑的小语言模型设计与训练提供可推广的原则与方法。具体而言，我们聚焦于两个核心架构因素：深度-宽度比例与算子选择。前者对小批量处理延迟至关重要，而后者同时影响延迟与大批量处理吞吐量。基于此，我们首先研究了延迟最优的深度-宽度比例，关键发现是：尽管在相同参数量预算下，深窄型模型通常能获得更好的精度，但它们可能并不处于精度-延迟权衡的前沿边界。其次，我们探索了新兴的高效注意力替代方案，以评估其作为候选构建算子的潜力。利用识别出的潜力算子，我们构建了一个进化搜索框架，以自动发现混合型小语言模型中这些算子的延迟最优组合，从而推进精度-延迟前沿边界。除架构改进外，我们进一步采用权重归一化技术增强小语言模型的训练，该技术能实现更有效的权重更新并改善最终收敛性。综合这些方法，我们提出了一个名为Nemotron-Flash的新型混合小语言模型系列。该系列显著推进了当前先进小语言模型的精度-效率前沿边界，例如与Qwen3-1.7B/0.6B相比，平均精度提升超过5.5%，延迟降低至1/1.3倍与1/1.9倍，吞吐量分别提升18.7倍与45.6倍。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.18890">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.18890">arXiv</a></p>
+<hr />
+<h3>15. Captain Safari：一种世界引擎系统</h3>
+<p><strong>原文标题：</strong> Captain Safari: A World Engine</p>
+<p><strong>摘要：</strong>
+世界引擎旨在合成支持用户控制相机运动下场景交互式探索的长时、三维一致视频。然而，现有系统在剧烈六自由度轨迹和复杂户外场景中表现不佳：它们会丧失长程几何一致性、偏离目标路径或陷入过度保守的运动模式。为此，我们提出Captain Safari——一种基于位姿条件的世界引擎，通过从持久世界记忆中检索来生成视频。给定相机路径，我们的方法维护动态局部记忆，并利用检索器获取位姿对齐的世界标记，进而沿轨迹条件化视频生成。该设计使模型能在保持稳定三维结构的同时，精确执行具有挑战性的相机操控。为评估此设定，我们构建了OpenSafari数据集，这是一个包含经过多阶段几何与运动学验证流程校准的无人机高动态第一视角视频的野外实测数据集。在视频质量、三维一致性与轨迹跟随性方面，Captain Safari显著优于当前最先进的相机控制生成方法：它将MEt3R指标从0.3703降至0.3690，将AUC@30从0.181提升至0.200，并产生远低于所有相机控制基线的FVD值。更重要的是，在50人参与的五模型匿名对比实验中，评估者在所有维度上对本文方法的选择偏好达到67.6%。我们的结果表明，位姿条件化世界记忆是实现长时序可控视频生成的有效机制，同时OpenSafari数据集为未来世界引擎研究提供了具有挑战性的新基准。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22815">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22815">arXiv</a></p>
+<hr />
+<h3>16. 框架中的世界：理解文化混合作为视觉语言模型的新挑战</h3>
+<p><strong>原文标题：</strong> World in a Frame: Understanding Culture Mixing as a New Challenge for Vision-Language Models</p>
+<p><strong>摘要：</strong>
+在全球化世界中，源自不同文化的元素频繁地出现在同一视觉场景中。我们将此类现象称为文化混合场景，然而大型视觉语言模型（LVLMs）如何感知这些场景仍缺乏深入研究。本文探讨文化混合作为LVLMs面临的关键挑战，并检验当多地区文化元素共存时现有模型的表现。为系统分析这些行为，我们构建了CultureMix——一个包含2.3万张扩散生成、经人工验证的文化混合图像的食品视觉问答（VQA）基准数据集，涵盖四个子任务：（1）纯食品，（2）食品+食品，（3）食品+背景，（4）食品+食品+背景。通过对10个LVLMs的评估，我们发现模型在混合场景中持续无法保持个体文化特征。模型表现出强烈的背景依赖性，当在纯食品基线中添加文化背景时准确率下降14%，且对同一食品在不同语境中产生不一致的预测。为应对这些局限，我们探索了三种鲁棒性策略。研究发现，使用多样化文化混合数据集进行监督微调能显著提升模型一致性并降低背景敏感性。我们呼吁学界加强对文化混合场景的关注，将其作为开发能够可靠运用于多元文化现实环境的LVLMs的关键步骤。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22787">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22787">arXiv</a></p>
+<hr />
+<h3>17. 图像块坍缩现象研究</h3>
+<p><strong>原文标题：</strong> The Collapse of Patches</p>
+<p><strong>摘要：</strong>
+观测图像中的特定块会降低其他块的不确定性，其实例化过程会减少每个剩余块特征的分布熵，类似于量子力学中粒子波函数的坍缩现象。这一过程可直观地称为图像块坍缩。为识别目标区域坍缩过程中最依赖的块，我们训练了一种自编码器，通过软选择块子集来重建每个目标块。通过绘制每个块基于PageRank分数的学习依赖关系图，可揭示实现图像重构的最优块处理顺序。实验表明，遵循该顺序能提升多种掩码图像建模方法的性能：首先，通过重新训练最先进的自回归模型MAR可显著增强图像生成效果；其次，我们提出一种新的图像分类范式，仅向视觉Transformer模型暴露坍缩顺序中高排序的块，实验证明仅需观测22%的高排序块即可实现高精度分类。基于这些实验，我们提出图像块坍缩作为一种新的图像建模视角，可有效提升视觉任务效率。本项目开源地址：https://github.com/wguo-ai/CoP。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22281">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22281">arXiv</a></p>
+<hr />
+<h3>18. OralGPT-Omni：一种多功能口腔医学多模态大语言模型</h3>
+<p><strong>原文标题：</strong> OralGPT-Omni: A Versatile Dental Multimodal Large Language Model</p>
+<p><strong>摘要：</strong>
+多模态大语言模型（MLLMs）已在众多医学专科领域展现出巨大潜力，然而口腔医学领域的研究仍显不足，部分原因在于领域特定数据有限、口腔专家标注稀缺、模态特异性建模不充分以及可靠性方面的挑战。本文提出OralGPT-Omni，这是首个面向口腔医学的专业化多模态大语言模型，旨在实现对多种口腔影像模态和临床任务的全面可靠分析。为显式捕捉口腔医师的诊断推理逻辑，我们构建了TRACE-CoT——一个基于临床实践的思维链数据集，该数据集模拟了口腔放射科医师的决策过程。这种推理监督机制与我们提出的四阶段训练范式相结合，显著增强了模型对口腔影像的理解与分析能力。同时，我们推出了MMOral-Uni，这是首个统一的口腔影像多模态评估基准，包含涵盖五种影像模态和五类临床任务的2,809组开放式问答对，为数字口腔医学领域的多模态大语言模型提供了迄今最全面的评估体系。OralGPT-Omni在MMOral-Uni基准测试中获得51.84的综合得分，在MMOral-OPG基准测试中获得45.31分，显著超越GPT-5的表现。本研究成果将推动智能口腔医学发展，并为口腔影像分析的未来进步奠定基础。所有代码、基准数据集及模型将公开发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22055">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22055">arXiv</a></p>
+<hr />
+<h3>19. 基于流映射的扩散模型测试时缩放</h3>
+<p><strong>原文标题：</strong> Test-time scaling of diffusions with flow maps</p>
+<p><strong>摘要：</strong>
+在测试阶段提升扩散模型性能的常用方法是将用户指定奖励函数的梯度引入扩散动力学过程，以使生成样本获得更高的奖励评分。然而这一过程往往存在理论缺陷，因为用户定义的奖励函数通常仅在生成过程结束时的数据分布上具有明确定义。虽然现有解决方案多采用去噪器估计样本在生成结束时的状态，本文提出通过直接运用流映射解决该问题。通过利用流映射与主导瞬时传输的速度场之间的数学关系，我们构建了流映射轨迹倾斜算法（FMTT），该算法在理论上比依赖奖励梯度的标准测试时方法能实现更优的奖励上升效果。该方法可通过重要性加权实现精确采样，亦可进行原则性搜索以定位奖励倾斜分布的局部极大值点。实验证明，相较于其他前瞻性技术，本方法在复杂奖励函数处理方面具有显著优势，流映射的运用使得与视觉语言模型等系统交互成为可能，从而实现了新型图像编辑功能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22688">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22688">arXiv</a></p>
+<hr />
+<h3>20. 几何约束智能体在空间推理中的应用</h3>
+<p><strong>原文标题：</strong> Geometrically-Constrained Agent for Spatial Reasoning</p>
+<p><strong>摘要：</strong>
+视觉语言模型在空间推理中存在本质性的语义-几何鸿沟：其擅长定性语义推断，但推理过程运行于有损语义空间，与高保真几何表征存在错位。现有范式未能弥合这一鸿沟：基于训练的方法陷入"预言悖论"，从不完善的预言数据中习得有缺陷的空间逻辑；工具集成方法虽约束最终计算，却未对视觉语言模型的规划过程施加约束，导致产生几何错误的规划方案。本研究提出几何约束智能体——一种无需训练的智能体范式，通过引入形式化任务约束解决该问题。具体而言，我们策略性地将视觉语言模型角色解耦为两个阶段：首先作为语义分析器，将用户模糊查询转化为可验证的形式化任务约束，该约束明确定义参考系与目标任务；其次作为任务求解器，在约束确定的边界内严格生成并执行工具调用。这种几何约束推理策略成功解决了语义-几何鸿沟，为空间推理构建了鲁棒且可验证的推理路径。综合实验表明，几何约束智能体在多项空间推理基准测试中达到最先进性能，较现有基于训练和工具集成的方法提升约27%。项目主页详见：https://gca-spatial-reasoning.github.io。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22659">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22659">arXiv</a></p>
+<hr />
+<h3>21. 聚焦思维链：通过结构化输入信息实现高效大语言模型推理</h3>
+<p><strong>原文标题：</strong> Focused Chain-of-Thought: Efficient LLM Reasoning via Structured Input Information</p>
+<p><strong>摘要：</strong>
+近期大型语言模型通过生成详细的思维链轨迹实现了强大的推理性能，但这往往导致令牌使用量过大和推理延迟过高。现有效率优化方法通常侧重于模型中心干预，例如强化学习或有监督微调，以减少冗余表述。与此相反，我们提出一种无需训练、以输入为中心的方法。受认知心理学启发，我们引入聚焦思维链方法，将信息提取与推理过程分离。该方法首先将查询中的关键信息组织成简洁的结构化上下文，随后引导模型仅在此上下文中进行推理。通过避免关注无关细节，聚焦思维链自然产生更简短的推理路径。在算术文字题测试中，该方法在保持与标准零样本思维链相当准确度的同时，将生成令牌数量减少至原有量的1/2至1/3。这些结果表明，结构化输入是实现更高效大语言模型推理的简单而有效的途径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22176">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22176">arXiv</a></p>
+<hr />
+<h3>22. SO-Bench：多模态大语言模型的结构化输出评估基准</h3>
+<p><strong>原文标题：</strong> SO-Bench: A Structural Output Evaluation of Multimodal LLMs</p>
+<p><strong>摘要：</strong>
+多模态大语言模型（MLLMs）正日益应用于现实世界的智能体场景中，其输出不仅需要准确，还必须符合预定义的数据模式。尽管文本领域在结构化生成方面已取得进展，但目前仍缺乏系统评估基于视觉输入的模式化信息抽取与推理能力的基准。本研究通过精心设计的SO-Bench基准，对MLLMs的视觉结构化输出能力进行了全面评估。该基准涵盖用户界面屏幕、自然图像、文档和图表四大视觉领域，基于超过6500个多样化JSON模式与1800组经人工质量核验的图像-模式配对数据构建。对开源模型与前沿商业模型的基准测试表明，现有模型在生成准确且符合模式规范的输出方面仍存在明显差距，凸显了提升多模态结构化推理能力的必要性。除基准测试外，我们进一步通过训练实验显著提升了模型的结构化输出能力。我们计划向学术界开放该基准资源。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.21750">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.21750">arXiv</a></p>
+<hr />
+<h3>23. 从像素到情感：对齐多模态大语言模型与人类图像认知感知</h3>
+<p><strong>原文标题：</strong> From Pixels to Feelings: Aligning MLLMs with Human Cognitive Perception of Images</p>
+<p><strong>摘要：</strong>
+尽管多模态大语言模型（MLLMs）擅长回答图像内容——识别物体和描述场景——但它们通常缺乏理解人类观察者对图像感受的能力。这一差距在考虑主观认知属性时尤为明显，例如图像为何令人难忘、有趣、具有美学吸引力或能引发情感共鸣。为系统性地应对这一挑战，我们提出了CogIP-Bench，这是一个用于评估MLLMs在图像认知属性上的综合基准。我们的评估揭示了一个显著差距：当前模型与人类对这些细微属性的感知存在严重错位。我们随后证明，通过后训练阶段可以有效弥合这一差距，显著提升模型与人类判断的对齐程度。此外，我们发现这种习得的认知对齐不仅具有预测性，还能迁移至下游创意任务。通过将认知对齐的MLLM集成到图像生成流程中，我们可以引导合成过程生成更能体现期望特质（如更令人难忘或更具视觉吸引力）的图像。本研究提供了一个衡量此类类人感知的基准、一个增强对齐效果的后训练流程，并证明了这种对齐能够实现更以人为本的人工智能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22805">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22805">arXiv</a></p>
+<hr />
+<h3>24. 基于分割-合并的层感知视频合成方法</h3>
+<p><strong>原文标题：</strong> Layer-Aware Video Composition via Split-then-Merge</p>
+<p><strong>摘要：</strong>
+本文提出分割-合并框架，这是一种旨在增强生成式视频合成控制能力并解决其数据稀缺问题的新型框架。与传统依赖标注数据集或人工规则的方法不同，该框架将大规模无标注视频分割为动态前景层与背景层，继而通过自组合学习动态主体与多样化场景的交互机制。该过程使模型能够学习逼真视频生成所需的复杂组合动态特性。本框架创新性地引入感知变换的训练流程，通过多层融合与增强技术实现可供性感知的合成，同时结合身份保持损失函数以确保前景元素在融合过程中的保真度。实验表明，该框架在定量基准测试及基于人类/大语言模型的定性评估中均优于当前最优方法。更多细节详见项目页面：https://split-then-merge.github.io</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20809">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20809">arXiv</a></p>
+<hr />
+<h3>25. OmniRefiner：基于强化学习的局部扩散细化模型</h3>
+<p><strong>原文标题：</strong> OmniRefiner: Reinforcement-Guided Local Diffusion Refinement</p>
+<p><strong>摘要：</strong>
+参考引导的图像生成技术发展迅速，但当前扩散模型在使用参考图像对生成图像进行细化时，仍难以保持细粒度的视觉细节。这一局限源于基于VAE的潜在压缩本质上会丢失细微的纹理信息，导致身份特征与属性相关的视觉线索消失。此外，基于现有方法的局部细节增强后处理方案，常常会在光照、纹理或形状方面产生与原始图像不一致的结果。为解决这一问题，我们提出了OmniRefiner——一个具备细节感知能力的细化框架，通过连续两阶段的参考驱动校正来提升像素级一致性。我们首先对单图像扩散编辑器进行适配，通过微调使其能够同时接收草图图像与参考图像，在保持结构保真度的同时实现全局协调的细化。随后，我们应用强化学习进一步强化局部编辑能力，显式优化细节精度与语义一致性。大量实验表明，OmniRefiner在参考对齐与细粒度细节保留方面均有显著提升，能够生成忠实且视觉连贯的编辑结果，在具有挑战性的参考引导修复基准测试中超越了开源模型与商业模型的表现。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19990">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19990">arXiv</a></p>
+<hr />
+<h3>26. YOLO与专家混合模型：面向鲁棒目标检测的自适应专家路由机制</h3>
+<p><strong>原文标题：</strong> YOLO Meets Mixture-of-Experts: Adaptive Expert Routing for Robust Object Detection</p>
+<p><strong>摘要：</strong>
+本文提出了一种新颖的专家混合目标检测框架，通过在多组YOLOv9-T专家模型间引入自适应路由机制，实现了动态特征特化处理。相较于单一YOLOv9-T模型，该框架在平均精度均值（mAP）与平均召回率（AR）指标上均取得了显著提升。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.13344">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.13344">arXiv</a></p>
+<hr />
+<h3>27. Fast3Dcache：免训练的3D几何合成加速方法</h3>
+<p><strong>原文标题：</strong> Fast3Dcache: Training-free 3D Geometry Synthesis Acceleration</p>
+<p><strong>摘要：</strong>
+扩散模型在二维图像、视频和三维形状等多种模态上已展现出卓越的生成质量，但其迭代去噪过程导致推理计算成本高昂。尽管近期基于缓存的方法通过复用冗余计算有效加速了二维与视频生成，但将这些技术直接应用于三维扩散模型会严重破坏几何一致性。在三维合成中，缓存潜在特征的微小数值误差会不断累积，导致结构伪影和拓扑不一致。为克服此限制，我们提出了Fast3Dcache——一种免训练的几何感知缓存框架，可在保持几何保真度的同时加速三维扩散推理。该方法引入了预测性缓存调度约束，根据体素稳定模式动态确定缓存配额；同时提出时空稳定性准则，依据速度幅度与加速度标准选择稳定特征进行复用。综合实验表明，Fast3Dcache能显著加速推理，实现高达27.12%的速度提升和54.8%的浮点运算量减少，且通过倒角距离（2.48%）与F-Score（1.95%）测得的几何质量损失极小。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22533">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22533">arXiv</a></p>
+<hr />
+<h3>28. FedRE：一种面向模型异构联邦学习的表示纠缠框架</h3>
+<p><strong>原文标题：</strong> FedRE: A Representation Entanglement Framework for Model-Heterogeneous Federated Learning</p>
+<p><strong>摘要：</strong>
+联邦学习（FL）能够在保护隐私的前提下实现跨客户端的协同训练。现有大多数联邦学习方法假设客户端采用同构模型架构，然而数据与资源的异构性使得这一假设难以成立，从而催生了模型异构联邦学习的研究。为解决该问题，本文提出联邦表示纠缠（FedRE）框架，其核心在于一种称为“纠缠表示”的新型客户端知识形式。在FedRE中，每个客户端使用归一化随机权重将本地表示聚合成单一纠缠表示，并采用相同权重将对应的独热标签编码整合为纠缠标签编码。随后，这些信息被上传至服务器以训练全局分类器。训练过程中，每个纠缠表示通过其对应的纠缠标签编码进行跨类别监督，而每轮训练重新采样的随机权重则引入多样性，有效缓解全局分类器的过度自信问题并促进更平滑的决策边界。此外，每个客户端仅需上传单个跨类别纠缠表示及其纠缠标签编码，这既降低了表示反转攻击的风险，也减少了通信开销。大量实验表明，FedRE在模型性能、隐私保护与通信开销之间实现了有效平衡。代码已开源：https://github.com/AIResearch-Group/FedRE。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22265">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22265">arXiv</a></p>
+<hr />
+<h3>29. Xmodel-2.5：13亿参数的数据高效推理小型语言模型</h3>
+<p><strong>原文标题：</strong> Xmodel-2.5: 1.3B Data-Efficient Reasoning SLM</p>
+<p><strong>摘要：</strong>
+大语言模型展现出强大的推理与工具使用能力，但其计算需求使其难以在边缘设备或成本敏感场景中部署。本文提出Xmodel-2.5，这是一个13亿参数的小型语言模型，设计为即插即用的智能体核心。通过采用最大更新参数化（μP）方法进行训练，使得在2000万参数代理模型上调优的超参数能够直接迁移至完整模型，即使在参数绑定、词嵌入绑定的架构下亦然。模型训练采用1.4万亿词元的“预热-稳定-衰减”课程学习策略，并进一步证明在衰减阶段将优化器从AdamW切换为Muon，可在保持其他所有超参数不变的情况下，将13项推理任务的平均性能提升4.58%，这验证了早期AdamW的稳定性与后期Muon的锐化能力相结合可提升下游任务表现。采用FP8混合精度训练在精度与吞吐量之间取得了平衡。所有模型检查点、训练方案及评估代码均以Apache-2.0协议开源发布：模型地址 https://huggingface.co/XiaoduoAILab/Xmodel-2.5 与 https://huggingface.co/XiaoduoAILab/Xmodel-2.5-history（训练检查点）；训练代码与评估工具：https://github.com/XiaoduoAILab/Xmodel-2.5。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.19496">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.19496">arXiv</a></p>
+<hr />
+<h3>30. 基于深度学习的磁共振成像超分辨率技术综述</h3>
+<p><strong>原文标题：</strong> MRI Super-Resolution with Deep Learning: A Comprehensive Survey</p>
+<p><strong>摘要：</strong>
+高分辨率磁共振成像在临床诊疗与科学研究中具有关键作用，但其实现仍受限于高昂成本、技术权衡与实验条件约束。超分辨率技术通过从更易获取的低分辨率扫描数据重建高分辨率图像，为突破这些限制提供了具有前景的计算解决方案，有望在不增加硬件负担的前提下提升诊断准确性与效率。本文系统综述了磁共振成像超分辨率技术的最新进展，重点探讨基于深度学习的方法。研究从计算机视觉、计算成像、逆问题求解及磁共振物理特性等多维度剖析深度学习驱动的磁共振超分辨率技术，涵盖理论基础、架构设计、学习策略、基准数据集与性能评估体系。我们提出系统性分类框架以归纳现有方法，并结合临床与科研场景中的特殊挑战，对适用于磁共振成像的经典及新兴超分辨率技术进行深入解析。同时，本文指出该领域亟待解决的关键问题与发展方向。此外，我们整合了开源资源、工具及教程集，可通过GitHub项目获取：https://github.com/mkhateri/Awesome-MRI-Super-Resolution。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.16854">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.16854">arXiv</a></p>
+<hr />
+<h3>31. 查找泄漏，修复分割：基于聚类的视频衍生数据集防泄漏方法</h3>
+<p><strong>原文标题：</strong> Find the Leak, Fix the Split: Cluster-Based Method to Prevent Leakage in Video-Derived Datasets</p>
+<p><strong>摘要：</strong>
+本文提出一种基于聚类的帧选择策略，以缓解视频衍生帧数据集中的信息泄漏问题。该方法通过在数据划分为训练集、验证集和测试集之前对视觉相似帧进行聚类分组，从而生成更具代表性、更平衡且更可靠的数据集划分。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.13944">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.13944">arXiv</a></p>
+<hr />
+<h3>32. 基于弱监督双编码器模型的监控视频异常事件识别</h3>
+<p><strong>原文标题：</strong> Recognition of Abnormal Events in Surveillance Videos using Weakly Supervised Dual-Encoder Models</p>
+<p><strong>摘要：</strong>
+本文针对仅使用视频级监督信息检测监控视频中罕见且多样异常事件的挑战，提出一种双主干网络框架。该框架通过Top-K池化策略融合卷积神经网络与Transformer的特征表示，在UCF-Crime数据集上实现了90.7%的曲线下面积（AUC）检测性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.13276">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.13276">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2025-12-01_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
