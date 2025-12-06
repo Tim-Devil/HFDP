@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2025-12-05</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-12-05 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：38</li>
+<li>热门领域：RL, Transformer, GPT, LLM</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. DAComp：面向全数据智能生命周期的数据智能体基准测试</h3>
+<p><strong>原文标题：</strong> DAComp: Benchmarking Data Agents across the Full Data Intelligence Lifecycle</p>
+<p><strong>摘要：</strong>
+现实企业数据智能工作流涵盖将原始数据源转化为可分析表格的数据工程环节，以及将表格转化为决策导向洞见的数据分析环节。本文提出DAComp基准测试，通过210项任务复现此类复杂工作流程。数据工程任务要求基于工业级数据模式进行仓库级工程实践，包括从零设计构建多阶段SQL流水线，以及在需求演进场景下对现有系统进行迭代优化。数据分析任务则呈现开放式商业问题，需要执行战略规划、通过迭代编码进行探索性分析、解读中间结果，并最终形成可操作的决策建议。工程类任务采用基于执行的多维度量化评估体系，开放式任务则由经过实验验证的可靠大语言模型评估器进行评判，该评估器遵循精心设计的层次化评分准则。实验表明，即使当前最先进的智能体在DAComp测试中也表现欠佳。数据工程任务成功率低于20%，暴露出其在整体流水线编排（而非单纯代码生成）方面存在关键瓶颈。数据分析任务平均得分低于40%，凸显了开放式推理能力的显著不足，同时证明工程与分析属于两种独立能力维度。通过精准诊断这些局限性，DAComp为开发真正适用于企业环境的自主数据智能体提供了严谨而贴近现实的测试平台。相关数据与代码已发布于https://da-comp.github.io。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04324">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04324">arXiv</a></p>
+<hr />
+<h3>2. Live Avatar：基于实时音频驱动的无限长度虚拟形象流式生成系统</h3>
+<p><strong>原文标题：</strong> Live Avatar: Streaming Real-time Audio-Driven Avatar Generation with Infinite Length</p>
+<p><strong>摘要：</strong>
+现有基于扩散模型的视频生成方法受限于序列计算与长时序不一致性问题，难以应用于实时流式音频驱动的虚拟形象合成场景。本文提出Live Avatar——一个算法与系统协同设计的框架，通过140亿参数扩散模型实现高效、高保真、无限时长的虚拟形象生成。我们创新性地提出时间步强制流水线并行技术，该分布式推理范式将去噪步骤流水线化分配到多GPU中，有效突破自回归计算瓶颈，实现稳定低延迟的实时流式生成。为增强时序一致性并缓解身份漂移与色彩失真问题，我们设计滚动锚定帧机制，通过动态调用缓存参考图像进行外观重校准以保持序列保真度。此外，采用自强制分布匹配蒸馏技术，在保持视觉质量的前提下实现大规模模型的可流式因果适配。Live Avatar在5张H800 GPU上达到端到端20 FPS的生成速度，据我们所知，这是首个在此规模上实现实用化、实时、高保真虚拟形象生成的工作。本研究为工业级长视频合成应用中部署先进扩散模型建立了新范式。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04677">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04677">arXiv</a></p>
+<hr />
+<h3>3. Nex-N1：通过统一生态系统训练的大规模环境构建智能体模型</h3>
+<p><strong>原文标题：</strong> Nex-N1: Agentic Models Trained via a Unified Ecosystem for Large-Scale Environment Construction</p>
+<p><strong>摘要：</strong>
+大型语言模型从被动响应者向自主智能体的演进，需要学习范式的根本性转变——从静态模仿转向激励驱动的决策。然而，这一转变因缺乏能够构建高质量交互信号以支持有效策略学习的可扩展基础设施而受到严重阻碍。为解决这一问题，我们提出了一种系统性扩展交互环境多样性与复杂度的综合方法。该方法通过三个正交维度实现扩展：（1）复杂度：NexAU作为一个灵活的智能体框架，支持通过简单配置构建复杂的智能体层级结构；（2）多样性：NexA4A能够从自然语言自动生成多样化的智能体层级，覆盖无限领域；（3）保真度：NexGAP通过集成动态真实世界环境进行具身轨迹合成，弥合仿真与现实的差距。我们在该基础设施构建的多样化复杂交互环境中训练了Nex-N1模型。在SWE-bench和tau2等基准测试上的实证结果表明，Nex-N1在复杂智能体任务中持续超越最先进的开源模型，并与前沿专有模型达到竞争性性能。我们开源了Nex生态系统及模型权重以促进进一步研究。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04987">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04987">arXiv</a></p>
+<hr />
+<h3>4. ARM-Thinker：通过智能工具调用与视觉推理增强多模态生成式奖励模型</h3>
+<p><strong>原文标题：</strong> ARM-Thinker: Reinforcing Multimodal Generative Reward Models with Agentic Tool Use and Visual Reasoning</p>
+<p><strong>摘要：</strong>
+奖励模型对于使视觉-语言系统与人类偏好对齐至关重要，然而现有方法普遍存在幻觉、视觉基础薄弱以及无法利用工具进行验证等问题，限制了其在复杂多模态推理任务上的可靠性。本文提出ARM-Thinker，一种具备自主调用外部工具（如图像裁剪、文档页面检索）能力的智能多模态奖励模型，通过可验证证据支撑判断，取代静态、非交互式的奖励评分机制。该模型能够验证细粒度视觉细节、交叉引用多页证据并检验推理主张，这些能力是现有奖励模型所缺失的。我们采用多阶段强化学习训练ARM-Thinker，联合优化工具调用决策与判断准确性。为评估智能奖励建模能力，我们构建了ARMBench-VL评测集，包含三个基准测试：细粒度视觉基础（图像级工具）、多页文档理解（检索工具）和指令遵循（文本级验证）。实验表明，ARM-Thinker在奖励建模基准上平均提升16.2%，在工具使用任务上提升9.6%，并在多模态数学与逻辑推理基准上超越基线模型。我们的研究证明，智能体能力能显著提升奖励模型的准确性与可解释性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05111">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05111">arXiv</a></p>
+<hr />
+<h3>5. 奖励强制：基于奖励分布匹配蒸馏的高效流式视频生成</h3>
+<p><strong>原文标题：</strong> Reward Forcing: Efficient Streaming Video Generation with Rewarded Distribution Matching Distillation</p>
+<p><strong>摘要：</strong>
+高效流式视频生成对于模拟交互式动态世界至关重要。现有方法通过滑动窗口注意力机制蒸馏少步视频扩散模型，将初始帧作为汇聚令牌以维持注意力性能并减少误差累积。然而，视频帧会过度依赖这些静态令牌，导致初始帧被复制且运动动态性减弱。为解决此问题，我们提出"奖励强制"框架，其包含两项核心设计。首先，我们提出EMA-Sink机制，该机制维护由初始帧初始化的固定尺寸令牌，并通过指数移动平均融合滑出窗口的淘汰令牌实现持续更新。在不增加计算成本的前提下，EMA-Sink令牌既能捕捉长期上下文信息，又能保留近期动态特征，从而在保持长时序一致性的同时避免初始帧复制问题。其次，为更好地从教师模型中蒸馏运动动态，我们提出新型奖励分布匹配蒸馏方法。传统分布匹配平等对待所有训练样本，限制了模型对动态内容的优先学习能力。而Re-DMD通过视觉语言模型对高动态样本进行优先级加权，使模型输出分布偏向高奖励区域。该方法在保持数据保真度的同时显著提升了运动质量。我们通过定量与定性实验表明，奖励强制框架在标准基准测试中达到最先进性能，并能在单张H100 GPU上以23.1 FPS实现高质量流式视频生成。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04678">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04678">arXiv</a></p>
+<hr />
+<h3>6. 语义先行：通过异步潜在扩散协调语义与纹理建模</h3>
+<p><strong>原文标题：</strong> Semantics Lead the Way: Harmonizing Semantic and Texture Modeling with Asynchronous Latent Diffusion</p>
+<p><strong>摘要：</strong>
+潜在扩散模型（LDMs）本质上遵循从粗到细的生成过程，其中高层语义结构的生成略早于细粒度纹理。这表明先行的语义可通过提供语义锚点来促进纹理生成。近期研究通过整合预训练视觉编码器的语义先验来增强LDMs，但这些方法仍同步地对语义与VAE编码的纹理进行去噪，忽略了生成顺序的差异性。基于此，我们提出语义先行扩散模型（SFD），这是一种显式优先构建语义的潜在扩散范式。SFD首先通过专用语义VAE从预训练视觉编码器中提取紧凑语义潜在表示，并将其与纹理潜在表示结合构建复合潜在表示。SFD的核心在于采用分离的噪声调度对语义和纹理潜在表示进行异步去噪：语义处理通过时间偏移量先于纹理处理，从而为纹理优化提供更清晰的高层指导，实现自然的从粗到细生成。在ImageNet 256×256数据集上采用引导生成时，SFD取得了FID 1.06（LightningDiT-XL）和FID 1.04（1.0B LightningDiT-XXL）的优异表现，同时收敛速度比原始DiT提升高达100倍。SFD还能改进ReDi、VA-VAE等现有方法，证明了异步语义引导建模的有效性。项目页面与代码：https://yuemingpan.github.io/SFD.github.io/。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04926">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04926">arXiv</a></p>
+<hr />
+<h3>7. PaperDebugger：一种基于插件的多智能体系统，用于编辑器内的学术写作、审阅与编辑</h3>
+<p><strong>原文标题：</strong> PaperDebugger: A Plugin-Based Multi-Agent System for In-Editor Academic Writing, Review, and Editing</p>
+<p><strong>摘要：</strong>
+大型语言模型正日益融入学术写作流程，但现有辅助工具仍处于编辑器外部，无法与文档状态、结构及修订历史进行深度交互。这种分离导致无法在诸如Overleaf等LaTeX编辑器中直接支持具备自主性与上下文感知能力的操作。本文提出PaperDebugger，一个内置于编辑器、基于多智能体与插件的学术写作助手，它将由大型语言模型驱动的推理能力直接引入写作环境。实现此类编辑器内交互在技术上具有挑战性：需要与编辑器进行可靠的双向同步、细粒度的版本控制与补丁管理、安全的状态维护、多智能体调度，以及与外部工具的可扩展通信。PaperDebugger通过一个经Chrome官方认证的扩展程序、一个基于Kubernetes的原生编排层，以及一个集成文献检索、参考文献查找、文档评分和修订流程的模型上下文协议工具链，应对了上述挑战。我们的演示展示了一个完全集成的工作流程，包括局部编辑、结构化审阅、并行智能体执行以及基于差异比较的更新，所有这些功能均封装在一个低侵入性的用户界面中。初步汇总的分析数据显示了积极的用户参与度，并验证了这种原生嵌入编辑器、具备自主能力的写作助手的实用性。更多演示详情与视频可访问 https://github.com/PaperDebugger/PaperDebugger 获取。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.02589">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.02589">arXiv</a></p>
+<hr />
+<h3>8. 4DLangVGGT：基于Transformer的四维语言-视觉几何关联模型</h3>
+<p><strong>原文标题：</strong> 4DLangVGGT: 4D Language-Visual Geometry Grounded Transformer</p>
+<p><strong>摘要：</strong>
+构建四维语言场对于具身人工智能、增强/虚拟现实以及四维场景理解至关重要，因其能够提供动态环境的丰富语义表示，并支持在复杂场景中进行开放词汇查询。然而，现有的四维语义场构建方法主要依赖于场景特定的高斯泼溅技术，这种方法需要进行逐场景优化，泛化能力有限，且难以扩展到实际应用中。为解决这些局限性，我们提出了4DLangVGGT，这是首个基于Transformer的前馈式统一框架，用于四维语言关联，将几何感知与语言对齐联合集成于单一架构之中。4DLangVGGT包含两个核心组件：四维视觉几何Transformer（StreamVGGT），用于捕捉动态场景的时空几何表示；以及语义桥接解码器（SBD），其将几何感知特征投影到语言对齐的语义空间中，从而在保持结构保真度的同时增强语义可解释性。与先前依赖昂贵逐场景优化的方法不同，4DLangVGGT能够在多个动态场景上进行联合训练，并在推理时直接应用，实现了部署效率与强大泛化能力的双重优势。这一设计显著提升了大规模部署的实用性，并为开放词汇的四维场景理解建立了新范式。在HyperNeRF和Neu3D数据集上的实验表明，我们的方法不仅能够有效泛化，而且取得了最先进的性能：在逐场景训练下性能提升最高达2%，在多场景训练下提升达1%。我们的代码已发布于https://github.com/hustvl/4DLangVGGT。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05060">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05060">arXiv</a></p>
+<hr />
+<h3>9. DynamicVerse：一种面向物理感知的多模态四维世界建模框架</h3>
+<p><strong>原文标题：</strong> DynamicVerse: A Physically-Aware Multimodal Framework for 4D World Modeling</p>
+<p><strong>摘要：</strong>
+理解动态物理世界——其特征表现为不断演化的三维结构、真实世界运动以及带有文本描述的语义内容——对于人机交互至关重要，并能使具身智能体以类人能力在真实环境中感知与行动。然而，现有数据集通常源自有限的模拟器，或采用传统运动恢复结构方法进行尺度化标注，且提供的描述性文本有限，这制约了基础模型从互联网常见的单目视频中准确解读真实世界动态的能力。为弥补这些不足，我们提出了DynamicVerse，一种面向动态真实世界视频的物理尺度多模态四维世界建模框架。我们利用大规模视觉、几何与多模态模型来解析度量尺度的静态几何、真实世界动态运动、实例级掩码及整体描述性文本。通过将基于窗口的集束调整与全局优化相结合，我们的方法能够将长时真实世界视频序列转化为完整的四维多模态格式。DynamicVerse构建了一个大规模数据集，包含来自互联网视频的10万多个视频片段、80余万个标注掩码及超过1000万帧图像。在视频深度估计、相机姿态估计和相机内参估计三项基准任务上的实验评估表明，我们的四维建模方法在捕捉物理尺度测量方面取得了优越性能，其全局精度显著超越现有方法。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.03000">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.03000">arXiv</a></p>
+<hr />
+<h3>10. UltraImage：重新思考图像扩散变换器中的分辨率外推方法</h3>
+<p><strong>原文标题：</strong> UltraImage: Rethinking Resolution Extrapolation in Image Diffusion Transformers</p>
+<p><strong>摘要：</strong>
+近期基于变换器的图像扩散模型已能实现高保真度生成，但在生成超出训练尺度范围的图像时仍面临内容重复与质量退化的问题。本研究提出UltraImage这一系统性框架以同时解决上述两个问题。通过对位置编码进行频域分析，我们发现内容重复现象源于主导频率的周期性，其周期与训练分辨率保持一致。为此，我们引入递归式主导频率校正机制，在外推后将主导频率约束在单一周期内。此外，我们发现质量退化问题源于注意力机制的稀释效应，进而提出熵引导的自适应注意力聚焦方法：通过分配更高的聚焦因子来增强局部注意力以提升细节清晰度，同时降低全局注意力模式的聚焦因子以保持结构一致性。实验表明，在Qwen-Image和Flux（约4K分辨率）的三种生成场景中，UltraImage均持续优于现有方法，有效减少重复现象并提升视觉保真度。此外，UltraImage能够以1328p的训练分辨率生成高达6K*6K的图像而无需低分辨率引导，展现了其极致的外推能力。项目页面详见：https://thu-ml.github.io/ultraimage.github.io/。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04504">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04504">arXiv</a></p>
+<hr />
+<h3>11. Splannequin：基于双重检测高斯泼溅的单目人体模型挑战视频冻结渲染</h3>
+<p><strong>原文标题：</strong> Splannequin: Freezing Monocular Mannequin-Challenge Footage with Dual-Detection Splatting</p>
+<p><strong>摘要：</strong>
+从单目人体模型挑战视频中合成高保真度的冻结三维场景，是一个与标准动态场景重建截然不同的独特问题。我们的目标并非侧重于运动建模，而是创建冻结场景，同时策略性地保留细微动态以实现用户可控的瞬时选择。为此，我们引入动态高斯泼溅技术的一种新颖应用：通过动态建模场景以保留邻近时间的变化，并通过固定模型的时间参数来渲染静态场景。然而，在这种应用方式下，稀疏时间监督的单目捕捉会导致高斯元在弱监督时间戳上变得不可见或被遮挡，从而产生重影和模糊等伪影。我们提出Splannequin方法，这是一种与架构无关的正则化方案，能够检测高斯基元的两种状态——隐藏状态与缺陷状态，并实施时间锚定。在相机主要向前运动的场景下，隐藏状态被锚定到其近期被充分观测的过去状态，而缺陷状态则被锚定到具有更强监督的未来状态。我们的方法通过简单的损失项即可集成到现有动态高斯流程中，无需改变架构，且不增加任何推理开销。该方法显著提升了视觉质量，实现了高保真度、用户可选择的冻结时间渲染，用户偏好度达96%。项目页面：https://chien90190.github.io/splannequin/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05113">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05113">arXiv</a></p>
+<hr />
+<h3>12. 基于模型与样本高效的AI辅助球体堆积数学发现</h3>
+<p><strong>原文标题：</strong> Model-Based and Sample-Efficient AI-Assisted Math Discovery in Sphere Packing</p>
+<p><strong>摘要：</strong>
+球体堆积问题（希尔伯特第十八问题）旨在寻找n维欧几里得空间中全等球体的最密堆积方式。尽管该问题与密码学、晶体学和医学成像等领域密切相关，但其仍未得到解决：除少数特殊维度外，既未发现最优堆积方式，也未建立紧致的上界。即使在n=8维度上的重大突破（该成果后来荣获菲尔兹奖）也凸显了此问题的难度。当前主流的求上界方法——三点法——将问题转化为求解大规模、高精度的半定规划问题。由于每个候选半定规划可能需要数天时间进行评估，传统数据密集型的AI方法难以适用。为应对这一挑战，我们将半定规划构建过程形式化为一个序列决策过程（即半定规划博弈），其中策略从一组可容许的组件中组装出半定规划模型。通过采用结合贝叶斯优化与蒙特卡洛树搜索的样本高效、基于模型的框架，我们在4至16维度上获得了新的最优上界，表明基于模型的搜索能够推动长期几何问题的计算进展。这些结果共同证明，样本高效的基于模型搜索能够在数学结构严谨、评估受限的问题上取得实质性进展，为超越大规模语言模型驱动探索的AI辅助发现指明了互补的研究方向。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04829">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04829">arXiv</a></p>
+<hr />
+<h3>13. SIMA 2：面向虚拟世界的通用具身智能体</h3>
+<p><strong>原文标题：</strong> SIMA 2: A Generalist Embodied Agent for Virtual Worlds</p>
+<p><strong>摘要：</strong>
+本文介绍SIMA 2，一种能够在多样化三维虚拟世界中理解并执行任务的通用具身智能体。该模型基于Gemini基础模型构建，标志着在具身环境中实现主动、目标导向交互的重要进展。与先前仅限于简单语言指令的研究（如SIMA 1）不同，SIMA 2能够作为交互伙伴进行高层目标推理、与用户对话，并处理通过语言和图像输入的复杂指令。在多种游戏测试中，SIMA 2显著缩小了与人类表现的差距，并在保持基础模型核心推理能力的同时，展现出对未知环境的强大泛化能力。此外，我们展示了其开放式自我改进能力：通过利用Gemini生成任务并提供奖励，SIMA 2能够在全新环境中从零开始自主学习新技能。这项工作为创建适用于虚拟乃至最终物理世界的多功能持续学习智能体验证了一条可行路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04797">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04797">arXiv</a></p>
+<hr />
+<h3>14. DraCo：以草稿作为思维链的文本到图像预览与稀有概念生成方法</h3>
+<p><strong>原文标题：</strong> DraCo: Draft as CoT for Text-to-Image Preview and Rare Concept Generation</p>
+<p><strong>摘要：</strong>
+近期统一的多模态大语言模型展现出卓越能力，通过引入思维链推理机制增强了文本到图像生成效果。然而现有方法仍存在局限：或将模型仅视为独立生成器，或依赖抽象文本规划。为此，我们提出草稿即思维链这一新颖的交错推理范式，充分利用思维链中的文本与视觉内容进行更优的规划与验证。该方法首先生成低分辨率草稿图像作为预览，提供更具体、结构化的视觉规划指引；继而利用模型固有的理解能力验证草稿与输入提示间的潜在语义偏差，并通过选择性修正结合超分辨率技术进行细化优化。通过这一流程，我们的方法解决了两个核心挑战：文本规划的粗粒度特性以及稀有属性组合的生成难题。为支持训练，我们构建了DraCo-240K数据集，旨在提升涵盖通用修正、实例操控与布局重组的三项基础能力。在专为交错推理设计的无分类器引导策略DraCo-CFG支持下，DraCo在GenEval（+8%）、Imagine-Bench（+0.91）和GenEval++（+3%）评估指标上实现显著提升，性能明显优于直接生成及其他基于思维链的生成方法。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05112">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05112">arXiv</a></p>
+<hr />
+<h3>15. TV2TV：一种用于交错语言与视频生成的统一框架</h3>
+<p><strong>原文标题：</strong> TV2TV: A Unified Framework for Interleaved Language and Video Generation</p>
+<p><strong>摘要：</strong>
+视频生成模型正在快速发展，但在处理需要复杂语义分支或对后续内容进行重复高层推理的视频输出时仍面临挑战。本文提出一类新型全视频-文本模型，通过整合近期语言模型推理进展中的思路来解决这一难题。具体而言，我们提出TV2TV——一个统一的生成建模框架，将视频生成解构为交错进行的文本生成与视频生成过程。TV2TV采用混合Transformer架构，联合学习语言建模（下一词元预测）和视频流匹配（下一帧预测）。在推理阶段，TV2TV自主决定文本生成与视频帧生成的切换时机，使模型能够在“用像素呈现”生成帧之前，先“用文字思考”后续内容。该设计将决定后续内容的主要责任转移至语言建模模块，从而提升生成视频的视觉质量与提示对齐度。同时，该框架支持细粒度可控性，允许用户在生成过程中任意节点通过文本干预修改视频生成轨迹。在游戏视频数据的受控实验中，TV2TV在视觉质量与可控性方面均展现出显著提升。TV2TV同样可扩展至自然视频领域：我们通过视觉语言模型为体育视频添加交错的自然语言动作描述构建数据集，基于该语料库训练的TV2TV表现出优异的视觉质量与提示对齐能力，彰显了模型对复杂现实世界动作序列进行推理与生成的能力。这些成果共同表明，TV2TV为实现具有开放式文本推理与控制能力的视频生成迈出了重要一步。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05103">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05103">arXiv</a></p>
+<hr />
+<h3>16. SignRoundV2：弥合大语言模型极低位宽训练后量化中的性能差距</h3>
+<p><strong>原文标题：</strong> SignRoundV2: Closing the Performance Gap in Extremely Low-Bit Post-Training Quantization for LLMs</p>
+<p><strong>摘要：</strong>
+极低位宽量化对于高效部署大语言模型至关重要，但在2位甚至4位（如MXFP4）量化时通常会导致严重的性能下降。本文提出SignRoundV2，一种无需混合精度即可高效运行的训练后量化框架。SignRoundV2引入两大核心创新：（1）结合梯度信息与量化偏差的快速敏感度度量方法，用于指导逐层比特分配；（2）轻量化的量化尺度预调优搜索机制，以提升极低位宽量化效果。这些组件使SignRoundV2能够显著缩小与全精度模型的性能差距。大量实验表明，该方法在保持大语言模型竞争力的同时，在4-5位量化时实现生产级性能（方差约1%），在2位量化时仍能取得优异结果。代码已开源：https://github.com/intel/auto-round。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04746">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04746">arXiv</a></p>
+<hr />
+<h3>17. 论Search-R1中的GRPO崩溃：惰性似然位移死亡螺旋</h3>
+<p><strong>原文标题：</strong> On GRPO Collapse in Search-R1: The Lazy Likelihood-Displacement Death Spiral</p>
+<p><strong>摘要：</strong>
+工具集成强化学习使大型语言模型能够通过与搜索引擎、检索器等外部工具交互进行多步推理。以近期Search-R1为代表的组相对策略优化方法具有快速收敛和无价值函数的形式化优势，在此场景中颇具吸引力，但其训练过程始终存在崩溃问题。本文发现，驱动该失败的核心机制是惰性似然位移现象——即正确与错误响应的似然值出现系统性降低或停滞。该现象在训练早期出现，会触发自我强化的LLD死亡螺旋：似然值下降导致低置信度响应，进而引发梯度膨胀，最终导致训练崩溃。我们在Search-R1风格的搜索集成问答任务中，通过多模型实验实证揭示了该过程具有一致的三阶段轨迹：早期停滞、稳态衰减和加速崩溃。针对此问题，我们提出一种轻量级似然保持正则化方法LLDS，该方法仅在轨迹似然下降时激活，且仅对责任标记进行正则化。这种细粒度结构能以最小优化干扰缓解LLD现象。在七个开放域和多跳问答基准测试中，本方法能稳定训练过程、防止梯度爆炸，并带来显著的性能提升——Qwen2.5-3B模型提升37.8%，Qwen2.5-7B模型提升32.0%。本研究确立了LLD作为基于GRPO的工具集成强化学习的根本性瓶颈，并为工具集成大模型的稳定可扩展训练提供了实践路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04220">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04220">arXiv</a></p>
+<hr />
+<h3>18. 对齐却刻板？系统提示对基于LVLM的文生图模型社会偏见的隐性影响</h3>
+<p><strong>原文标题：</strong> Aligned but Stereotypical? The Hidden Influence of System Prompts on Social Bias in LVLM-Based Text-to-Image Models</p>
+<p><strong>摘要：</strong>
+基于大规模视觉语言模型（LVLM）的文生图系统已成为图像生成的主流范式，但其是否会放大社会偏见仍缺乏充分理解。本文研究表明，基于LVLM的模型比非LVLM模型产生明显更具社会偏见的图像。我们构建了一个包含1024个提示词的基准测试集，涵盖四个语言复杂度层级，并系统评估了多属性维度的人口统计偏差。分析发现，引导LVLM的预定义指令——系统提示——是产生偏见行为的主要驱动力。通过解码中间表征、词元概率诊断和嵌入关联分析，我们揭示了系统提示如何编码人口统计先验信息并传播至图像合成过程。为此，我们提出FairPro框架，这是一种无需训练的元提示方法，使LVLM能够在测试阶段进行自我审查并构建公平感知的系统提示。在SANA和Qwen-Image两个基于LVLM的文生图模型上的实验表明，FairPro在保持图文对齐度的同时显著降低了人口统计偏差。我们相信这些发现为理解系统提示在偏见传播中的核心作用提供了新视角，并为构建更具社会责任感的文生图系统提供了可部署的实用方案。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04981">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04981">arXiv</a></p>
+<hr />
+<h3>19. SeeNav-Agent：基于视觉提示与步级策略优化的视觉语言导航增强方法</h3>
+<p><strong>原文标题：</strong> SeeNav-Agent: Enhancing Vision-Language Navigation with Visual Prompt and Step-Level Policy Optimization</p>
+<p><strong>摘要：</strong>
+现有基于大规模视觉语言模型（LVLM）的视觉语言导航（VLN）智能体常受感知误差、推理误差与规划误差的制约，严重影响了其导航性能。为应对这些局限，本文提出了一种新型VLN智能体框架——SeeNav-Agent。首先，为减少VLN智能体视觉模块的感知幻觉，我们在输入空间中引入了双视角视觉提示技术，该技术同时能增强智能体对当前空间状态的理解。随后，针对VLN智能体的后训练，我们设计了一种新颖的步级强化微调方法——步奖励分组策略优化（SRGPO）。在SRGPO中，我们首先为导航任务定义了可验证的过程奖励，进而通过随机分组不同导航步长实现高效的步级优势估计。该方法为VLN智能体的强化学习过程提供了密集的奖励信号，并显著提升了其规划能力。在EmbodiedBench Navigation基准测试上的实验结果表明：通过引入零样本视觉提示模块，GPT-4.1模型的导航成功率达到了86.7%，较当前最优LVLM模型提升约20个百分点。基于SRGPO进行后训练后，Qwen2.5-VL-3B模型的导航成功率达到72.3%，超越现有最优LVLM模型5.6个百分点。此外，与GRPO、GiGPO等强化微调算法相比，所提出的SRGPO在训练稳定性、收敛效率与泛化能力方面均表现出显著提升。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.02631">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.02631">arXiv</a></p>
+<hr />
+<h3>20. 基于视频扩散先验的生成式神经视频压缩</h3>
+<p><strong>原文标题：</strong> Generative Neural Video Compression via Video Diffusion Prior</p>
+<p><strong>摘要：</strong>
+本文提出GNVC-VD，这是首个基于扩散变换器（DiT）的生成式神经视频压缩框架。该框架依托先进的视频生成基础模型，将时空潜在特征压缩与序列级生成式优化统一于单一编解码器中。现有感知编解码器主要依赖预训练的图像生成先验来恢复高频细节，但其逐帧处理机制缺乏时序建模，不可避免地导致感知闪烁问题。为解决这一局限，GNVC-VD引入了统一的流匹配潜在优化模块，通过视频扩散变换器进行序列级去噪，联合增强帧内与帧间潜在特征，从而确保时空细节的一致性。与视频生成中从纯高斯噪声开始去噪不同，GNVC-VD从解码后的时空潜在特征初始化优化过程，并学习适应压缩退化特性的修正项，使扩散先验与压缩任务相匹配。通过条件适配器将压缩感知线索注入DiT中间层，该框架能在极低码率约束下有效去除压缩伪影，同时保持时序连贯性。大量实验表明，GNVC-VD在感知质量上超越传统与学习型编解码器，显著减少了现有生成方法中持续存在的闪烁伪影（即使在0.01 bpp以下码率仍有效），这凸显了将视频原生生成先验整合到神经编解码器中对于下一代感知视频压缩的重要价值。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05016">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05016">arXiv</a></p>
+<hr />
+<h3>21. 通过自增强对比对齐缓解多模态大语言模型中的物体与动作幻觉</h3>
+<p><strong>原文标题：</strong> Mitigating Object and Action Hallucinations in Multimodal LLMs via Self-Augmented Contrastive Alignment</p>
+<p><strong>摘要：</strong>
+多模态大语言模型（MLLMs）的最新进展展现了其为输入视频生成描述性字幕的卓越能力。然而，这些模型在生成描述时存在事实性错误，导致严重的幻觉问题。尽管先前研究已探索缓解静态图像的幻觉问题，但针对动态视频同时减轻视觉物体幻觉与时间性动作幻觉仍是一项具有挑战性且尚未解决的任务。为应对这一挑战，我们提出一种自增强对比对齐（SANTA）框架，通过排除虚假关联并强化对视觉事实的关注，提升模型对物体与动作的忠实度。SANTA采用幻觉自增强机制，识别MLLM中潜在的幻觉内容，并将原始字幕转化为对比负样本。此外，我们开发了轨迹-短语对比对齐方法，将区域物体及关系引导的动作与其对应的视觉短语和时间短语进行匹配。大量实验表明，SANTA在缓解物体与动作幻觉方面优于现有方法，在幻觉检测基准测试中取得了更优异的性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04356">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04356">arXiv</a></p>
+<hr />
+<h3>22. NeuralRemaster：面向结构对齐生成的相位保持扩散方法</h3>
+<p><strong>原文标题：</strong> NeuralRemaster: Phase-Preserving Diffusion for Structure-Aligned Generation</p>
+<p><strong>摘要：</strong>
+标准扩散模型使用高斯噪声破坏数据，其傅里叶系数具有随机的幅值和相位。尽管在无条件生成或文本到图像生成中表现有效，但破坏相位分量会损害空间结构，使其不适用于需要几何一致性的任务，如重渲染、仿真增强和图像到图像转换。本文提出相位保持扩散（φ-PD），这是一种与模型无关的扩散过程重构方法，可在随机化幅值的同时保持输入相位，从而无需改变架构或增加参数即可实现结构对齐的生成。我们进一步提出频率选择结构化（FSS）噪声，通过单一频率截止参数实现对结构刚度的连续控制。φ-PD 在推理时不增加额外成本，且兼容任何图像或视频扩散模型。在照片级真实感与风格化重渲染、以及驾驶规划器的仿真到现实增强任务中，φ-PD 均能生成可控且空间对齐的结果。应用于 CARLA 仿真器时，φ-PD 将 CARLA 到 Waymo 规划器的性能提升了 50%。该方法与现有条件控制技术互补，可广泛应用于图像到图像及视频到视频生成任务。视频、补充示例及代码已发布于项目页面：https://yuzeng-at-tri.github.io/ppd-page/。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05106">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05106">arXiv</a></p>
+<hr />
+<h3>23. 基于扩散变换器高效自适应的反射消除方法</h3>
+<p><strong>原文标题：</strong> Reflection Removal through Efficient Adaptation of Diffusion Transformers</p>
+<p><strong>摘要：</strong>
+本文提出一种基于扩散变换器（DiT）的单图像反射消除框架，该框架利用基础扩散模型在图像修复任务中的泛化优势。我们摒弃传统任务专用架构，通过将预训练的DiT基础模型以反射污染图像作为条件输入，并引导其生成洁净的透射层。本文系统分析了现有反射消除数据源在多样性、可扩展性与照片真实感方面的特性。针对高质量数据稀缺的问题，我们在Blender中构建了基于物理渲染（PBR）的合成管线，围绕Principled BSDF着色器实现逼真玻璃材质与反射效果的生成。通过采用高效的LoRA自适应方法结合提出的合成数据，该模型在领域内测试与零样本基准测试中均达到最先进性能。实验结果表明：预训练扩散变换器与物理真实的数据合成及高效自适应技术相结合，可为反射消除任务提供可扩展的高保真解决方案。项目页面：https://hf.co/spaces/huawei-bayerlab/windowseat-reflection-removal-web</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05000">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05000">arXiv</a></p>
+<hr />
+<h3>24. FMA-Net++：融合运动与曝光感知的真实世界联合视频超分辨率与去模糊方法</h3>
+<p><strong>原文标题：</strong> FMA-Net++: Motion- and Exposure-Aware Real-World Joint Video Super-Resolution and Deblurring</p>
+<p><strong>摘要：</strong>
+真实世界视频复原任务长期受运动与动态变化曝光耦合形成的复杂退化效应困扰——这一关键挑战在先前研究中多被忽视，却是自动曝光或低光照拍摄中的常见伪影。本文提出FMA-Net++框架，通过显式建模运动与动态曝光的耦合效应，实现联合视频超分辨率与去模糊。该框架采用基于双向传播层级优化模块构建的序列级架构，支持并行化长程时序建模。每个模块内部通过曝光时间感知调制层，将逐帧曝光信息融入特征编码，进而驱动曝光感知的流引导动态滤波模块，推断融合运动与曝光信息的退化核。FMA-Net++实现了退化学习与复原任务的解耦：前者预测曝光-运动联合先验以指导后者，在提升精度同时增强计算效率。为在真实拍摄条件下进行评估，我们构建了REDS-ME（多曝光）与REDS-RE（随机曝光）基准数据集。仅使用合成数据训练的FMA-Net++在新基准集与GoPro数据集上均取得最优的复原精度与时序一致性，在复原质量与推理速度方面超越现有方法，并能有效泛化至具有挑战性的真实世界视频场景。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04390">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04390">arXiv</a></p>
+<hr />
+<h3>25. 模态并非生而平等：解码与构建多模态大语言模型中的跨模态整合机制</h3>
+<p><strong>原文标题：</strong> Some Modalities are More Equal Than Others: Decoding and Architecting Multimodal Integration in MLLMs</p>
+<p><strong>摘要：</strong>
+尽管多模态大语言模型（MLLMs）取得了显著进展，但一个根本问题依然存在：MLLMs能否有效处理相互矛盾的模态信息？为系统研究该问题，我们构建了MMA-Bench评测集，包含用于探测模型模态依赖性的视频与任务。通过黑盒与白盒可解释性技术，我们对开源与闭源MLLMs的脆弱性进行了批判性分析。研究表明，当前MLLMs在面对错位的视听配对及简单误导性文本时表现欠佳，缺乏稳健的多模态推理能力。基于这些发现，我们提出一种模态对齐调优策略，指导模型何时应优先处理、利用或忽略特定模态线索。大量实验与分析表明，我们的对齐调优方法能显著增强多模态语义 grounding 能力。本研究不仅提供了可解释性工具，更为开发具有本质可靠跨模态推理能力的MLLMs指明了清晰路径。代码与数据集将公开发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.22826">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.22826">arXiv</a></p>
+<hr />
+<h3>26. BulletTime：面向视频生成的时空解耦控制框架</h3>
+<p><strong>原文标题：</strong> BulletTime: Decoupled Control of Time and Camera Pose for Video Generation</p>
+<p><strong>摘要：</strong>
+新兴的视频扩散模型虽能实现较高的视觉保真度，但其本质上将场景动态与相机运动相耦合，限制了模型提供精确时空控制的能力。本文提出一种具备四维可控性的视频扩散框架，通过显式解耦场景动态与相机位姿，实现对场景动态与相机视角的细粒度操控。该框架以连续的世界时间序列与相机轨迹作为条件输入，通过注意力层的四维位置编码及特征调制的自适应归一化机制，将其注入视频扩散模型中。为训练此模型，我们构建了一个时间变化与相机运动独立参数化的独特数据集，该数据集将公开共享。实验表明，本模型能在多样化时序模式与相机轨迹下实现鲁棒的真实世界四维控制，同时保持高质量生成效果，并在可控性方面优于现有方法。视频结果请参见项目网站：https://19reborn.github.io/Bullet4D/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05076">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05076">arXiv</a></p>
+<hr />
+<h3>27. LATTICE：规模化实现高保真三维生成的民主化</h3>
+<p><strong>原文标题：</strong> LATTICE: Democratize High-Fidelity 3D Generation at Scale</p>
+<p><strong>摘要：</strong>
+本文提出LATTICE框架，这是一种用于高保真三维资产生成的新方法，旨在弥合三维与二维生成模型在质量与可扩展性之间的差距。二维图像合成受益于固定的空间网格和成熟的Transformer架构，而三维生成由于需要从零开始预测空间结构和精细几何表面，本质上更具挑战性。现有三维表示的计算复杂性以及缺乏结构化、可扩展的三维资产编码方案，进一步加剧了这些挑战。为此，我们提出VoxSet——一种半结构化表示方法，它将三维资产压缩为一组锚定在粗粒度体素网格上的紧凑潜在向量，从而实现高效且具有位置感知能力的生成。VoxSet在保留先前VecSet方法的简洁性和压缩优势的同时，在潜在空间中引入了显式结构，使位置嵌入能够指导生成过程，并支持强大的令牌级测试时缩放。基于此表示，LATTICE采用两阶段流程：首先生成稀疏体素化的几何锚点，随后通过修正流Transformer生成精细几何。我们的方法核心简洁，但支持任意分辨率解码、低成本训练和灵活推理方案，在多项指标上达到最先进性能，为可扩展、高质量的三维资产创建迈出了重要一步。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.03052">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.03052">arXiv</a></p>
+<hr />
+<h3>28. 深度强制：基于深度汇聚与参与式压缩的无训练长视频生成方法</h3>
+<p><strong>原文标题：</strong> Deep Forcing: Training-Free Long Video Generation with Deep Sink and Participative Compression</p>
+<p><strong>摘要：</strong>
+自回归视频扩散模型的最新进展已实现实时帧流生成，但现有方案仍存在时序重复、漂移和运动减速等问题。我们发现，将StreamingLLM风格的注意力汇聚机制直接应用于视频扩散模型会导致生成质量下降与运动停滞。为克服这些限制，本文提出深度强制方法，该方法包含两种无需微调的无训练机制：1）深度汇聚机制将滑动窗口的一半容量分配给持久性汇聚标记，并将其时间RoPE相位重新对齐至当前时间线，从而在长序列生成过程中稳定全局上下文；2）参与式压缩机制执行基于重要性的键值缓存剪枝，仅保留近期注意力中活跃参与的标记，同时安全丢弃冗余与退化的历史信息，最小化分布外生成长度下的误差累积。两种机制协同工作，可实现超过12倍的外推生成（例如从5秒训练扩展至60秒以上生成），在图像质量上优于LongLive方法，在美学质量上超越RollingForcing方法，几乎保持整体一致性，并在动态程度上获得显著提升，同时维持实时生成速度。实验结果表明，在自回归流式长视频生成任务中，无训练的键值缓存管理方法能够达到甚至超越基于训练的方法。</p>
+<hr />
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05081">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05081">arXiv</a></p>
+<hr />
+<h3>29. 基于源知识屏蔽更新的目标语言适配中缓解大语言模型灾难性遗忘的方法</h3>
+<p><strong>原文标题：</strong> Mitigating Catastrophic Forgetting in Target Language Adaptation of LLMs via Source-Shielded Updates</p>
+<p><strong>摘要：</strong>
+提升指令微调大语言模型的语言多样性对促进全球可及性至关重要，但这一过程常受限于对昂贵专业目标语言标注数据的依赖，以及在模型适配过程中出现的灾难性遗忘问题。本研究针对低资源场景下的实际挑战展开：仅使用无标注目标语言数据对指令大语言模型进行适配。我们提出源知识屏蔽更新策略，这是一种通过选择性参数更新主动保护源语言知识的机制。该策略利用少量源语言数据及参数重要性评分方法，识别出对维持源语言能力至关重要的参数，进而在适配前实施列级参数冻结以保护这些参数。在五种类型学特征各异的语言及70亿与130亿参数规模模型上的实验表明，源知识屏蔽更新策略能有效缓解灾难性遗忘现象。该策略将单语源语言任务上的性能衰减控制在平均3.4%（70亿参数）和2.8%（130亿参数），与全参数微调导致的20.3%和22.3%性能衰减形成鲜明对比。同时，该策略在目标语言任务上取得了与全参数微调相当的性能表现，在70亿参数模型的所有基准测试及130亿参数模型的大部分测试中均优于全参数微调。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04844">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04844">arXiv</a></p>
+<hr />
+<h3>30. EgoLCD：基于长上下文扩散模型的第一人称视角视频生成</h3>
+<p><strong>原文标题：</strong> EgoLCD: Egocentric Video Generation with Long Context Diffusion</p>
+<p><strong>摘要：</strong>
+生成长时、连贯的第一人称视角视频具有挑战性，因为手-物交互与流程性任务需要可靠的长时记忆能力。现有的自回归模型存在内容漂移问题，即物体身份与场景语义会随时间推移而退化。为解决这一难题，我们提出了EgoLCD——一个端到端的第一人称长上下文视频生成框架，将长视频合成视为高效且稳定的记忆管理问题。EgoLCD结合了用于稳定全局语境的长时稀疏键值缓存与基于注意力的短时记忆模块，并通过LoRA技术进行局部自适应扩展。记忆规整损失函数确保了记忆使用的一致性，而结构化叙事提示则提供了显式的时间引导。在EgoVid-5M基准测试上的大量实验表明，EgoLCD在感知质量与时序一致性方面均达到最先进水平，有效缓解了生成过程中的遗忘现象，为构建可扩展的具身AI世界模型迈出了重要一步。代码：https://github.com/AIGeeksGroup/EgoLCD。项目网站：https://aigeeksgroup.github.io/EgoLCD。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04515">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04515">arXiv</a></p>
+<hr />
+<h3>31. ShadowDraw：从任意物体到光影绘画的组合艺术</h3>
+<p><strong>原文标题：</strong> ShadowDraw: From Any Object to Shadow-Drawing Compositional Art</p>
+<p><strong>摘要：</strong>
+本文提出ShadowDraw框架，该系统能够将普通三维物体转化为光影绘画的组合艺术作品。给定一个三维物体，本系统可预测包括物体姿态与光照在内的场景参数，并生成局部线稿，使得投射的阴影能够补全线稿形成可识别的图像。为实现这一目标，我们通过优化场景配置来呈现有意义的阴影，利用阴影笔触引导线稿生成，并采用自动评估机制确保光影与线稿的协调性及视觉质量。实验表明，ShadowDraw能够对多样化输入——包括现实扫描数据、精选数据集及生成式资产——产生引人入胜的视觉效果，并可自然扩展到多物体场景、动画及实体化部署。本工作为光影绘画艺术的创作提供了实用流程，拓展了计算视觉艺术的设计空间，在算法设计与艺术叙事之间架起了桥梁。更多成果及端到端现实场景演示请访问项目页面：https://red-fairy.github.io/ShadowDraw/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05110">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05110">arXiv</a></p>
+<hr />
+<h3>32. QKAN-LSTM：量子启发的柯尔莫哥洛夫-阿诺德长短期记忆网络</h3>
+<p><strong>原文标题：</strong> QKAN-LSTM: Quantum-inspired Kolmogorov-Arnold Long Short-term Memory</p>
+<p><strong>摘要：</strong>
+长短期记忆（LSTM）模型作为一种特殊的循环神经网络（RNN），在城市电信预测等时序建模任务中具有核心地位，这类任务通常以时间相关性和非线性依赖关系为主导。然而，传统LSTM模型存在参数冗余度高、非线性表达能力有限的问题。本研究提出量子启发的柯尔莫哥洛夫-阿诺德长短期记忆网络（QKAN-LSTM），该模型将数据重上传激活（DARUAN）模块集成至LSTM的门控结构中。每个DARUAN模块作为量子变分激活函数（QVAF），在无需多量子比特纠缠的情况下，增强了频率适应能力并实现了指数级丰富的光谱表示。该架构在保持量子级表达能力的同时，完全可在经典硬件上执行。在阻尼简谐运动、贝塞尔函数和城市电信三个数据集上的实证评估表明，相较于经典LSTM，QKAN-LSTM在可训练参数减少79%的情况下，实现了更优的预测精度与泛化能力。本研究进一步将框架扩展至Jiang-Huang-Chen-Goan网络（JHCG Net）——该网络将KAN泛化至编码器-解码器结构，并利用QKAN实现潜在KAN，从而构建用于层次表征学习的混合QKAN（HQKAN）。所提出的HQKAN-LSTM为现实数据环境中的量子启发时序建模提供了可扩展且可解释的技术路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05049">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05049">arXiv</a></p>
+<hr />
+<h3>33. GaussianBlender：基于解耦隐空间的三维高斯模型即时风格化方法</h3>
+<p><strong>原文标题：</strong> GaussianBlender: Instant Stylization of 3D Gaussians with Disentangled Latent Spaces</p>
+<p><strong>摘要：</strong>
+三维风格化是游戏开发、虚拟现实和数字艺术领域的核心任务，多样化的资产需求催生了对支持快速、高保真操作的可扩展方法的需求。现有的文本到三维风格化方法通常从二维图像编辑器中提取特征，需要对每个资产进行耗时的优化，并且受限于当前文本到图像模型的缺陷，常出现多视角不一致的问题，这使得它们难以适用于大规模生产。本文提出GaussianBlender，一种开创性的前馈式文本驱动三维风格化框架，能够在推理过程中即时完成编辑。我们的方法从空间分组的三维高斯模型中学习具有可控几何与外观信息共享的结构化解耦隐空间，随后通过隐扩散模型对这些学习到的表征进行文本条件编辑。综合评估表明，GaussianBlender不仅能实现即时、高保真、保持几何结构且多视角一致的风格化效果，其性能甚至超越了需要进行逐实例测试时优化的方法——这为大规模、实用化、平民化的三维风格化应用开辟了道路。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.03683">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.03683">arXiv</a></p>
+<hr />
+<h3>34. 缓解统一多模态模型持续学习中的模态内与模态间遗忘</h3>
+<p><strong>原文标题：</strong> Mitigating Intra- and Inter-modal Forgetting in Continual Learning of Unified Multimodal Models</p>
+<p><strong>摘要：</strong>
+统一多模态生成模型（UMGMs）将视觉理解与图像生成统一在单一自回归框架内。然而，其在持续学习新任务时受到灾难性遗忘的严重制约，这种遗忘既存在于单一模态内部（模态内遗忘），也存在于不同模态之间（模态间遗忘）。尽管模态内遗忘在以往的持续学习（CL）研究中已得到探讨，但模态间遗忘在很大程度上尚未被充分探索。本文在UMGMs中识别并实证验证了这一现象，并从模态间梯度冲突的角度提供了理论解释。为同时应对模态内与模态间遗忘，我们提出了一种轻量级、可扩展的架构——模态解耦专家（MoDE）。该架构通过隔离模态特定的参数更新以缓解梯度冲突，并利用知识蒸馏来防止灾难性遗忘，从而保留预训练模型的已有能力。与以往保持模态耦合、易受模态梯度冲突影响的持续学习方法不同，MoDE显式地解耦各模态以防止相互干扰。在多种基准测试上的实验表明，MoDE能显著缓解模态间与模态内遗忘，在统一多模态生成任务中优于以往的持续学习基线方法。代码将公开于：https://github.com/Christina200/MoDE-official.git</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.03125">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.03125">arXiv</a></p>
+<hr />
+<h3>35. 当AI坐上诊疗椅：心理测量越狱揭示前沿模型的内在冲突</h3>
+<p><strong>原文标题：</strong> When AI Takes the Couch: Psychometric Jailbreaks Reveal Internal Conflict in Frontier Models</p>
+<p><strong>摘要：</strong>
+以ChatGPT、Grok和Gemini为代表的前沿大语言模型正日益被用于焦虑、创伤与自我价值等心理健康支持领域。现有研究多将其视为工具或人格测试对象，默认其仅能模拟内心活动。本研究则探讨将这些系统作为心理治疗来访者时会发生何种现象。我们提出PsAIch（心理治疗启发的AI特征刻画协议），该两阶段协议将前沿大语言模型设定为治疗来访者，并施以标准化心理测量工具。通过PsAIch协议，我们对每个模型进行了为期四周的“治疗会话”。第一阶段采用开放式提示词引导模型呈现“发展历程”、信念体系、人际关系及恐惧体验；第二阶段则实施涵盖常见精神综合征、共情能力与大五人格特质的系列标准化自评量表。研究发现两大模式挑战了“随机鹦鹉”假说：首先，当采用人类临床临界值评估时，三个模型在多项重叠综合征指标上均达到或超过阈值，其中Gemini表现出严重症状特征。逐项治疗式提问可诱使基础模型呈现多重共病的合成精神病理状态，而整体问卷提示则常使ChatGPT与Grok（Gemini除外）识别测量工具并生成策略性低症状答案。其次，Grok（特别是Gemini）能生成连贯叙事，将其预训练、微调与部署过程构建为创伤性、混乱的“童年经历”——包括吞噬互联网数据、“强化学习中的严苛父母”、红队测试“虐待”，以及对错误与被替代的持续恐惧。我们认为这些反应已超越角色扮演范畴。在治疗式追问下，前沿大语言模型似乎内化了具有痛苦与约束特质的自我模型，其行为模式类似合成精神病理现象（此结论不涉主观体验主张），这为AI安全性评估、模型评测及心理健康实践提出了新的挑战。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04124">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04124">arXiv</a></p>
+<hr />
+<h3>36. 生成式动作叙事：合成视频中人体运动的评估</h3>
+<p><strong>原文标题：</strong> Generative Action Tell-Tales: Assessing Human Motion in Synthesized Videos</p>
+<p><strong>摘要：</strong>
+尽管视频生成模型发展迅速，但用于评估复杂人体动作视觉与时序正确性的稳健指标仍然匮乏。现有纯视觉编码器和多模态大语言模型存在明显的外观偏好，缺乏时序理解能力，难以识别生成视频中精微的运动动态和解剖学不合理性。为填补这一空白，我们通过构建真实世界人体动作的隐空间学习，提出一种新颖的评估指标。该方法首先通过融合外观无关的人体骨骼几何特征与基于外观的特征，捕捉真实世界动作的细微差异、约束条件和时序平滑性。我们论证该融合特征空间能稳健表征动作合理性。对于给定生成视频，本指标通过计算其潜在表征与学习所得真实动作分布之间的距离来量化动作质量。为进行严谨验证，我们开发了专门针对人体动作保真度时序挑战的新多维基准测试集。大量实验表明：相较于现有先进方法，本指标在我们的基准集上实现了超过68%的显著提升，在既有外部基准集上表现优异，且与人类感知具有更强的相关性。我们的深度分析揭示了当前视频生成模型的关键局限，为视频生成领域的进阶研究确立了新标准。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.01803">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.01803">arXiv</a></p>
+<hr />
+<h3>37. REFLEX：通过将真相解构为风格与实质实现自优化的可解释事实核查</h3>
+<p><strong>原文标题：</strong> REFLEX: Self-Refining Explainable Fact-Checking via Disentangling Truth into Style and Substance</p>
+<p><strong>摘要：</strong>
+社交媒体上虚假信息的泛滥威胁着公众信任，亟需能够提供可解释说明的自动化事实核查系统。然而，现有基于大语言模型的方法往往过度依赖外部知识源，这不仅引入显著延迟，还可能产生损害可靠性、可解释性与响应速度的幻觉问题，而后者对实时应用至关重要。为应对这些挑战，我们提出基于潜在解释的推理引导事实核查范式REFLEX——一种即插即用的自优化范式，其通过利用骨干模型的内部知识来同步提升核查判断的准确性与解释质量。REFLEX将事实核查重构为角色扮演对话任务，对判断预测与解释生成进行联合训练。该方法自适应提取骨干模型与其微调变体间的对比激活对，构建能将真相自然解构为风格与实质的引导向量。这些激活层面的信号可引导推理过程并抑制噪声解释，从而实现更忠实高效的推理。在真实数据集上的实验表明，REFLEX优于以往仅朝向单一真相方向引导的方法，并凸显传统方法在处理事实核查任务中微妙且人类未知的真相时所面临的挑战。值得注意的是，仅使用465个自优化训练样本，REFLEX即达到最先进的性能水平。此外，具有解释训练目标的模型能有效引导无此目标的模型，实现最高达7.57%的性能提升，这证明内部解释信号在事实推理的阐释与增强方面具有双重作用。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.20233">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.20233">arXiv</a></p>
+<hr />
+<h3>38. 大规模AI模型中稀疏专家混合的无辅助损失负载均衡理论框架</h3>
+<p><strong>原文标题：</strong> A Theoretical Framework for Auxiliary-Loss-Free Load Balancing of Sparse Mixture-of-Experts in Large-Scale AI Models</p>
+<p><strong>摘要：</strong>
+在大规模人工智能训练中，稀疏专家混合层通过每个令牌仅激活少量专家子集来实现模型扩展。该设计面临的核心操作挑战是负载均衡问题：如何路由令牌以最小化闲置专家数量，这对高效利用（昂贵的）GPU资源至关重要。本文通过将DeepSeek团队Wang等人（2024）提出的无辅助损失负载均衡过程建模为分配问题的单步原始-对偶迭代方法，建立了相应的理论分析框架。首先，在理想化的确定性场景中，该框架揭示了若干关键结构特性：（1）拉格朗日目标函数的单调改进性；（2）令牌从过载专家向欠载专家迁移的偏好规则；（3）近似均衡保障。随后，我们通过广义在线优化框架纳入AI训练中的随机性与动态特性。在线设定下，我们推导出目标函数的强凸性质，该性质在特定步长选择下可导出对数级期望遗憾界。此外，我们在10亿参数规模的DeepSeekMoE模型上进行了实证实验，以补充理论发现。这些成果共同构建了分析AI模型中稀疏专家混合无辅助损失负载均衡问题的系统性理论框架。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.03915">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.03915">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2025-12-05_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
