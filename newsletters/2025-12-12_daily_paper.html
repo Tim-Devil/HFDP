@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2025-12-12</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-12-12 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：25</li>
+<li>热门领域：LLM, RL, Transformer, GPT</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. T-pro 2.0：一种高效的俄语混合推理模型与实验平台</h3>
+<p><strong>原文标题：</strong> T-pro 2.0: An Efficient Russian Hybrid-Reasoning Model and Playground</p>
+<p><strong>摘要：</strong>
+本文介绍T-pro 2.0，一个用于混合推理与高效推理的开源权重俄语大语言模型。该模型支持直接回答与推理轨迹生成，通过采用西里尔字母密集型分词器及适配的EAGLE推测解码流水线以降低推理延迟。为促进可复现与可扩展的研究，我们在Hugging Face平台公开了模型权重、T-Wix 50万条指令数据集、T-Math推理基准测试集及EAGLE权重。这些资源使用户能够深入研究俄语推理任务，并对模型及推理流水线进行扩展或适配。公开的网页演示展示了推理与非推理两种模式，并说明了我们的推理框架在多领域实现的加速效果。T-pro 2.0由此构建了一个易于使用的开放系统，可用于开发和评估高效、实用的俄语大语言模型应用。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10430">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10430">arXiv</a></p>
+<hr />
+<h3>2. 面向奥赛级数学解题的长程推理智能体</h3>
+<p><strong>原文标题：</strong> Long-horizon Reasoning Agent for Olympiad-Level Mathematical Problem Solving</p>
+<p><strong>摘要：</strong>
+大型语言模型（LLM）通过可验证奖励的强化学习（RLVR）在解决复杂推理任务方面取得了显著进展，这一进步同样离不开可靠验证器实现的自动化监督。然而，当前基于结果的验证器（OV）无法有效检测长链思维推理（CoT）中不可靠的中间步骤；而现有基于过程的验证器（PV）受限于高昂人工标注成本导致的高质量标注稀缺，难以可靠地识别复杂长链CoT中的错误。为此，我们提出基于结果的过程验证器（OPV），该验证器通过检验长链CoT中总结性结果的推理过程，实现精准高效的验证并支持大规模标注。为增强该验证器的能力，我们采用结合专家标注的迭代式主动学习框架，以较低标注成本逐步提升OPV的验证性能。具体而言，在每轮迭代中，当前最优OPV预测最不确定的案例将由专家标注，随后通过拒绝微调（RFT）和RLVR训练新一代OPV用于后续轮次。大量实验证明了OPV的卓越性能与广泛适用性：其在保留测试集\thisbench上取得了最新最优结果，以83.1的F1分数超越Qwen3-Max-Preview等更大规模开源模型（其分数为76.3）；同时，OPV能有效检测合成数据集中的误判案例，其结果与专家评估高度吻合。在与策略模型协同工作时，OPV持续带来性能提升，例如在计算资源扩展时，将DeepSeek-R1-Distill-Qwen-32B在AIME2025上的准确率从55.2%提升至73.3%。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10739">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10739">arXiv</a></p>
+<hr />
+<h3>3. 文本到三维生成是否已为强化学习做好准备？一项渐进式探究</h3>
+<p><strong>原文标题：</strong> Are We Ready for RL in Text-to-3D Generation? A Progressive Investigation</p>
+<p><strong>摘要：</strong>
+强化学习（RL）先前已被证明在大语言模型和多模态模型中具有显著效果，近期已成功扩展至增强二维图像生成领域。然而，由于三维对象具有更高的空间复杂性——需要全局一致的几何结构与细粒度局部纹理——将强化学习应用于三维生成的研究仍处于探索阶段。这使得三维生成对奖励设计与强化学习算法尤为敏感。为应对这些挑战，我们首次从多个维度对文本到三维自回归生成中的强化学习进行了系统性研究：（1）奖励设计：通过评估奖励维度与模型选择，我们发现与人类偏好对齐至关重要，且通用多模态模型能为三维属性提供稳健的信号反馈；（2）强化学习算法：我们研究了GRPO算法的变体，证明了词元级优化的有效性，并进一步探索了训练数据与迭代次数的规模化影响；（3）文本到三维基准测试：针对现有基准无法有效衡量三维生成模型隐含推理能力的问题，我们提出了MME-3DR基准；（4）先进强化学习范式：基于三维生成固有的层次化特性，我们提出Hi-GRPO方法，通过定制化奖励组合优化从全局到局部的层次化三维生成。基于以上发现，我们开发了首个强化学习增强的文本到三维模型AR3D-R1，实现了从粗糙形状到纹理细化的全流程生成。本研究旨在为强化学习驱动的三维生成推理提供新的见解。代码已发布于https://github.com/Ivan-Tang-3D/3DGen-R1。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10949">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10949">arXiv</a></p>
+<hr />
+<h3>4. OPV：基于结果的过程验证器——面向高效长链思维验证的新方法</h3>
+<p><strong>原文标题：</strong> OPV: Outcome-based Process Verifier for Efficient Long Chain-of-Thought Verification</p>
+<p><strong>摘要：</strong>
+大型语言模型（LLM）通过基于可验证奖励的强化学习（RLVR）在解决复杂推理任务方面取得了显著进展。这一进步同样离不开可靠验证器的自动化监督。然而，当前基于结果的验证器（OV）无法有效检测长链思维（CoT）推理过程中不可靠的中间步骤；而基于过程的验证器（PV）由于人工标注成本高昂导致高质量标注稀缺，难以可靠识别复杂长链思维中的错误。为此，我们提出基于结果的过程验证器（OPV），该验证器通过对长链思维生成的总结性结果进行推理过程验证，实现精准高效的验证并支持大规模标注。为增强验证器性能，我们采用结合专家标注的迭代式主动学习框架，以较低标注成本逐步提升OPV的验证能力。具体而言，在每轮迭代中，当前最优OPV预测置信度最低的样本由专家标注，随后通过拒绝微调（RFT）和RLVR训练新一代OPV用于下一轮迭代。大量实验证明OPV具有卓越性能和广泛适用性：在我们构建的OPV-Bench测试集上取得最新最优结果，F1分数达83.1，显著优于Qwen3-Max-Preview等更大规模开源模型（76.3分）；同时OPV能有效识别合成数据集中的误判案例，其评估结果与专家判断高度一致。在与策略模型协同工作时，OPV持续带来性能提升，例如在计算资源扩展条件下，将DeepSeek-R1-Distill-Qwen-32B模型在AIME2025数据集上的准确率从55.2%提升至73.3%。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10756">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10756">arXiv</a></p>
+<hr />
+<h3>5. 通过复杂度提升强化学习实现奥林匹克级别的几何大语言模型智能体</h3>
+<p><strong>原文标题：</strong> Achieving Olympia-Level Geometry Large Language Model Agent via Complexity Boosting Reinforcement Learning</p>
+<p><strong>摘要：</strong>
+大语言模型智能体展现出强大的数学问题解决能力，甚至能够在形式化证明系统的辅助下解决国际数学奥林匹克竞赛级别的几何问题。然而，由于在辅助构造方面的启发式能力较弱，几何问题求解领域目前仍由专家模型主导，例如AlphaGeometry 2，这类模型在训练和评估过程中严重依赖大规模数据合成与搜索。本研究首次尝试构建一个达到奖牌获得者水平的几何大语言模型智能体，并提出了InternGeometry。该模型通过迭代提出命题与辅助构造、利用符号引擎进行验证，并基于引擎反馈进行反思以指导后续提议，从而克服了几何问题中的启发式局限。动态记忆机制使得InternGeometry能够在每个问题上与符号引擎进行超过两百次交互。为进一步加速学习过程，我们引入了复杂度提升强化学习方法，该方法在训练阶段逐步增加合成问题的复杂度。基于InternThinker-32B构建的InternGeometry，仅使用1.3万个训练样本（仅为AlphaGeometry 2所用数据量的0.004%），便成功解决了2000年至2024年间50道国际数学奥林匹克几何问题中的44道，超过了金牌获得者的平均得分（40.9分），这证明了大语言模型智能体在专家级几何任务上的潜力。此外，InternGeometry能够为国际数学奥林匹克问题提出人类解答中未曾出现的新颖辅助构造。我们将公开模型、数据及符号引擎，以支持后续研究。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10534">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10534">arXiv</a></p>
+<hr />
+<h3>6. MoCapAnything：基于单目视频的任意骨架统一三维运动捕捉</h3>
+<p><strong>原文标题：</strong> MoCapAnything: Unified 3D Motion Capture for Arbitrary Skeletons from Monocular Videos</p>
+<p><strong>摘要：</strong>
+运动捕捉技术如今已支撑起远超数字人范畴的内容创作，但现有流程大多仍局限于特定物种或预设模板。本文将这一局限形式化为类别无关运动捕捉（CAMoCap）：给定单目视频与任意绑定三维资产作为提示，其目标是重建可直接驱动该特定资产的基于旋转的动画（如BVH格式）。我们提出MoCapAnything——一个参考引导的因子化框架，首先生成三维关节轨迹，再通过约束感知逆向运动学恢复资产专属旋转。该系统包含三个可学习模块与一个轻量级逆向运动学阶段：（1）参考提示编码器：从资产骨架、网格及渲染图像中提取逐关节查询；（2）视频特征提取器：计算稠密视觉描述符并重建粗糙四维变形网格，以弥合视频与关节空间之间的鸿沟；（3）统一运动解码器：融合多模态线索以生成时序连贯的轨迹。我们还构建了包含1038个动作片段的Truebones Zoo数据集，每个片段均提供标准化的骨架-网格-渲染三元组。在领域内基准测试与真实场景视频上的实验表明，MoCapAnything能生成高质量骨骼动画，并在异构绑定资产间实现有效的跨物种动作重定向，为任意资产提供了可扩展的提示驱动三维运动捕捉方案。项目页面：https://animotionlab.github.io/MoCapAnything/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10881">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10881">arXiv</a></p>
+<hr />
+<h3>7. BEAVER：一种高效的大语言模型确定性验证器</h3>
+<p><strong>原文标题：</strong> BEAVER: An Efficient Deterministic LLM Verifier</p>
+<p><strong>摘要：</strong>
+随着大语言模型从研究原型转向生产系统，实践者通常需要可靠的方法来验证模型输出是否满足特定约束。虽然基于采样的估计方法能够提供模型行为的直观认知，但其无法提供严格的理论保证。本文提出BEAVER，这是首个用于计算大语言模型约束满足的确定性、严格概率边界的实用框架。针对任意前缀封闭的语义约束，BEAVER通过创新的词汇树和边界数据结构系统性地探索生成空间，并在每次迭代中保持可证明的严格边界。我们形式化了验证问题，证明了方法的可靠性，并在多个前沿大语言模型上对BEAVER进行了正确性验证、隐私验证和安全代码生成任务的评估。在相同计算资源下，BEAVER获得的概率边界比基线方法紧缩6至8倍，识别出的高风险实例数量增加3至4倍，从而实现了宽松边界或经验评估无法提供的精确特性刻画与风险评估能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.05439">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.05439">arXiv</a></p>
+<hr />
+<h3>8. 从宏观到微观：基于视觉语言模型的分子微观空间智能基准测试</h3>
+<p><strong>原文标题：</strong> From Macro to Micro: Benchmarking Microscopic Spatial Intelligence on Molecules via Vision-Language Models</p>
+<p><strong>摘要：</strong>
+本文提出微观空间智能（MiSI）的概念，即感知和推理不可见微观实体空间关系的能力，这是科学发现的基础。为评估视觉语言模型（VLMs）在该领域的潜力，我们提出系统性基准框架MiSI-Bench。该框架包含超过16.3万个问答对和58.7万张图像，数据源自约4000个分子结构，涵盖九项互补任务，评估能力范围从基础空间变换到复杂关系识别。实验结果表明，当前最先进的VLMs在此基准测试中的表现显著低于人类水平。然而，经过微调的70亿参数模型展现出巨大潜力，甚至在空间变换任务中超越人类表现，而其在氢键识别等科学基础任务中的薄弱表现，凸显了整合显式领域知识对于实现科学通用人工智能的必要性。数据集发布于https://huggingface.co/datasets/zongzhao/MiSI-bench。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10867">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10867">arXiv</a></p>
+<hr />
+<h3>9. VQRAE：面向多模态理解、生成与重建的表征量化自编码器</h3>
+<p><strong>原文标题：</strong> VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction</p>
+<p><strong>摘要：</strong>
+在单一标记器中统一多模态理解、生成与重建表征，仍是构建统一模型的核心挑战。现有研究主要尝试在双编码器范式下解决此问题，例如分别使用独立编码器进行理解与生成，或通过对比损失平衡语义表征与低级特征。本文提出VQRAE（表征自编码器的向量量化版本），首次在统一标记器框架内探索联合表征，以生成用于图像理解的连续语义特征和用于视觉生成的离散标记。具体而言，我们基于预训练视觉基础模型构建对称ViT解码器，并采用两阶段训练策略：首先冻结编码器，以像素重建为目标学习高维语义向量量化码本；随后通过自蒸馏约束联合优化编码器。该设计在保持多模态理解能力的同时，仅引入可忽略的语义信息损失，并产生兼容生成任务与细粒度重建的离散标记。此外，我们发现语义编码器量化需依赖高维码本，这与图像重建中普遍采用低维码本的常见实践形成对比。实验表明，语义向量量化码本在1536维度下可实现100%的利用率。凭借其离散化优势，VQRAE在视觉理解、生成与重建的多个基准测试中展现出竞争力，并在自回归范式中表现出良好的扩展特性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2511.23386">HuggingFace</a> | <a href="https://arxiv.org/abs/2511.23386">arXiv</a></p>
+<hr />
+<h3>10. 在Veo世界模拟器中评估Gemini机器人策略</h3>
+<p><strong>原文标题：</strong> Evaluating Gemini Robotics Policies in a Veo World Simulator</p>
+<p><strong>摘要：</strong>
+生成式世界模型在模拟不同环境中视觉运动策略的交互方面具有巨大潜力。前沿视频模型能够以可扩展且通用的方式生成逼真的观测结果与环境交互。然而，视频模型在机器人领域的应用主要局限于分布内评估，即评估与训练策略或微调基础视频模型时所用场景相似的场景。本报告证明，视频模型可应用于机器人策略评估的全场景：从评估基准性能到分布外泛化能力，再到探究物理安全与语义安全约束。我们提出了一种基于前沿视频基础模型（Veo）构建的生成式评估系统。该系统经优化可支持机器人动作条件控制与多视角一致性，同时集成生成式图像编辑与多视角补全技术，能够沿多个泛化维度合成真实场景的逼真变体。实验表明，该系统保留了基础视频模型的核心能力，能够精确模拟经过编辑的场景——包括添加新型交互物体、新颖视觉背景及干扰物体。这种高保真特性使得系统能够准确预测不同策略在基准条件与分布外条件下的相对性能，确定不同泛化维度对策略性能的影响程度，并对策略进行红队测试以暴露违反物理或语义安全约束的行为。我们通过对八种Gemini机器人策略检查点及双臂操作器的五项任务进行1600余次真实世界评估，验证了该系统的各项能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10675">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10675">arXiv</a></p>
+<hr />
+<h3>11. 基于自调用智能体的图像思维推理</h3>
+<p><strong>原文标题：</strong> Thinking with Images via Self-Calling Agent</p>
+<p><strong>摘要：</strong>
+图像思维推理范式通过将视觉信息作为动态元素整合至思维链中，已展现出卓越的视觉推理能力。然而，由于依赖稀缺的高质量推理数据，通过强化学习优化交错式多模态思维链仍面临挑战。本研究提出自调用思维链——一种创新的视觉推理范式，将交错式多模态思维链重构为具有自调用机制的单语言思维链。具体而言，主智能体将复杂视觉推理任务分解为原子子任务，并调用其虚拟副本（即参数共享子智能体）在隔离上下文中解决问题。该范式无需显式的模态交错处理，从而显著提升训练效能与效率。通过采用组相对策略优化方法强化有效推理行为，进一步提升了优化效果。在HR-Bench 4K数据集上的实验表明：相较于强基线方法，自调用思维链在减少约75%GPU计算时的同时，将整体推理性能提升最高达1.9%。代码已开源：https://github.com/YWenxi/think-with-images-through-self-calling。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.08511">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.08511">arXiv</a></p>
+<hr />
+<h3>12. StereoSpace：基于规范空间端到端扩散的无深度立体几何合成方法</h3>
+<p><strong>原文标题：</strong> StereoSpace: Depth-Free Synthesis of Stereo Geometry via End-to-End Diffusion in a Canonical Space</p>
+<p><strong>摘要：</strong>
+本文提出StereoSpace，一种基于扩散模型的单目到立体合成框架，该框架仅通过视角条件建模几何关系，无需显式深度估计或图像变形操作。通过构建规范矫正空间并结合条件引导，生成器能够端到端地推断对应关系并补全遮挡区域。为确保评估的公平性与无信息泄漏，我们设计了一种端到端评估协议，在测试阶段完全排除真实几何数据或代理几何估计的干扰。该协议重点关注反映下游应用价值的指标：感知舒适度指标iSQoE与几何一致性指标MEt3R。实验表明，StereoSpace在图像变形修复、潜在空间变形及变形条件引导等各类方法中均取得最优性能，在分层场景与非朗伯场景中实现了清晰的视差效果与强鲁棒性。这确立了视角条件扩散模型作为一种可扩展、无需深度信息的立体生成解决方案的有效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10959">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10959">arXiv</a></p>
+<hr />
+<h3>13. 更强无需归一化的Transformer模型</h3>
+<p><strong>原文标题：</strong> Stronger Normalization-Free Transformers</p>
+<p><strong>摘要：</strong>
+尽管归一化层长期以来被视为深度学习架构中不可或缺的组成部分，但近期提出的动态双曲正切（DyT）函数表明替代方案是存在的。该点态函数DyT通过约束极端值以实现稳定收敛，并达到了归一化级别的性能；本研究旨在进一步探索能够超越其性能的函数设计。我们首先研究了点态函数的内在特性如何影响训练与模型表现。基于这些发现，我们进行了大规模搜索以寻求更有效的函数设计。通过系统探索，我们提出了Derf(x) = erf(αx + s)函数（其中erf(x)为缩放后的高斯累积分布函数），并确认其为当前最优设计。Derf在视觉（图像识别与生成）、语音表征及DNA序列建模等多个领域均优于层归一化（LayerNorm）、均方根归一化（RMSNorm）及DyT。研究结果表明，Derf的性能提升主要源于其更强的泛化能力而非拟合能力。其简洁性与卓越性能使得Derf成为无需归一化的Transformer架构的理想选择。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10938">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10938">arXiv</a></p>
+<hr />
+<h3>14. FACTS排行榜：大型语言模型事实性综合评估基准</h3>
+<p><strong>原文标题：</strong> The FACTS Leaderboard: A Comprehensive Benchmark for Large Language Model Factuality</p>
+<p><strong>摘要：</strong>
+本文推出FACTS排行榜——一个在线综合评测体系及其关联基准，旨在全面评估语言模型在不同场景下生成事实准确文本的能力。该体系通过整合模型在四个独立子榜单的表现，提供对事实性的整体度量：(1) FACTS多模态榜单，通过图像问答任务评估响应的事实性；(2) FACTS参数化榜单，通过闭卷事实类问题测试模型基于内部参数的世界知识；(3) FACTS搜索榜单，在信息检索场景中评估模型使用搜索API时的事实准确性；(4) FACTS文本锚定榜单（v2版），评估长文本回答是否基于给定文档，其判定模型性能显著提升。各子榜单均采用自动化判定模型对输出进行评分，最终体系得分为四项得分的平均值，从而实现对模型整体事实性的稳健均衡评估。FACTS排行榜体系将动态维护，包含公开与私有数据分区，在保障体系完整性的同时支持外部参与。该平台可通过 https://www.kaggle.com/benchmarks/google/facts 访问。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10791">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10791">arXiv</a></p>
+<hr />
+<h3>15. 工具增强的时空推理：简化视频问答任务的框架</h3>
+<p><strong>原文标题：</strong> Tool-Augmented Spatiotemporal Reasoning for Streamlining Video Question Answering Task</p>
+<p><strong>摘要：</strong>
+视频问答任务作为评估基础模型能否有效感知、理解并推理动态现实场景的关键测试平台。然而，现有的多模态大语言模型在复杂且需要深度推理的视频问答任务中，难以同时建模视频帧内的空间关系并理解时间演化的因果动态。为此，本研究为多模态大语言模型配备了一套全面且可扩展的视频工具包，以增强其时空推理能力，并确保工具数量与多样性的协调。为更好地控制工具调用顺序并避免工具链捷径问题，我们提出了一种时空推理框架，该框架策略性地调度时间与空间工具，从而逐步定位视频中的关键区域。我们的时空推理框架通过轻量级工具增强了GPT-4o的性能，在VideoMME基准上实现了8.2%的性能提升，在LongVideoBench上提升了4.6%。我们相信，所提出的视频工具包与时空推理框架为构建自主智能的视频分析助手迈出了重要一步。代码已公开于https://github.com/fansunqi/VideoTool。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10359">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10359">arXiv</a></p>
+<hr />
+<h3>16. H2R-Grounder：一种无需配对数据的范式，用于将人类交互视频转化为物理接地的机器人视频</h3>
+<p><strong>原文标题：</strong> H2R-Grounder: A Paired-Data-Free Paradigm for Translating Human Interaction Videos into Physically Grounded Robot Videos</p>
+<p><strong>摘要：</strong>
+通过从日常人类视频中学习操作技能，机器人无需繁琐的机器人数据收集即可获得广泛的能力。我们提出了一种视频到视频的翻译框架，该框架将普通的人-物交互视频转换为具有真实、物理接地交互且运动一致的机器人操作视频。我们的方法在训练过程中不需要任何配对的人类-机器人视频，仅需一组未配对的机器人视频，这使得系统易于扩展。我们引入了一种可迁移的表征来弥合“具身鸿沟”：通过在训练视频中对机器人手臂进行修复以获取干净的背景，并叠加一个简单的视觉提示（指示夹爪位置和方向的标记与箭头），我们可以条件化一个生成模型，将机器人手臂重新插入场景中。在测试时，我们对人类视频应用相同的过程（修复人体并叠加人体姿态提示），从而生成模仿人类动作的高质量机器人视频。我们以情境学习的方式对最先进的视频扩散模型（Wan 2.2）进行微调，以确保时间一致性并利用其丰富的先验知识。实验结果表明，与基线方法相比，我们的方法能生成显著更真实、更接地的机器人运动，这为从无标签人类视频中扩展机器人学习指明了一个有前景的方向。项目页面：https://showlab.github.io/H2R-Grounder/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.09406">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.09406">arXiv</a></p>
+<hr />
+<h3>17. MoRel：基于锚点中继双向混合与分层致密化的长时程无闪烁四维运动建模</h3>
+<p><strong>原文标题：</strong> MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification</p>
+<p><strong>摘要：</strong>
+四维高斯泼溅（4DGS）技术的最新进展将三维高斯泼溅（3DGS）的高速渲染能力扩展至时间域，实现了动态场景的实时渲染。然而，当前仍面临的主要挑战之一在于对包含长时程运动的动态视频进行建模，现有方法的简单扩展会导致严重的内存爆炸、时间闪烁，并无法处理随时间出现或消失的遮挡。为解决这些挑战，我们提出了一种新颖的4DGS框架，其核心为基于锚点中继的双向混合（ARBB）机制，命名为MoRel。该框架能够以内存高效的方式对长时程动态场景进行时间一致性的建模。我们的方法在关键帧时间索引处逐步构建局部规范锚点空间，并在锚点层级建模帧间形变，从而增强时间连贯性。通过学习关键帧锚点之间的双向形变，并通过可学习的透明度控制进行自适应混合，我们的方法有效缓解了时间不连续性和闪烁伪影。我们进一步提出了一种基于特征方差指导的分层致密化（FHD）方案，该方案根据指定的特征方差级别，在保持渲染质量的同时有效致密化关键帧锚点。为有效评估模型处理真实世界长时程四维运动的能力，我们新构建了一个包含长时程四维运动的数据集，命名为SelfCap_{LR}。与先前的动态视频数据集相比，该数据集在空间更广的范围内捕获，具有更大的平均动态运动幅度。总体而言，我们的MoRel方法在保持有限内存使用的同时，实现了时间连贯且无闪烁的长时程四维重建，证明了基于高斯的动态表征兼具可扩展性与高效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.09270">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.09270">arXiv</a></p>
+<hr />
+<h3>18. Omni-Attribute：面向视觉概念个性化的开放词汇属性编码器</h3>
+<p><strong>原文标题：</strong> Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization</p>
+<p><strong>摘要：</strong>
+视觉概念个性化的目标在于仅将特定图像属性（如身份、表情、光照和风格）迁移至未见过的场景中。然而，现有方法依赖于通用图像编码器提取的整体嵌入表示，这些表示往往纠缠了多种视觉因素，导致难以分离单一属性，从而引发信息泄露与合成结果不连贯的问题。为克服这一局限，本文提出了Omni-Attribute——首个专为学习高保真、属性特异性表示而设计的开放词汇图像属性编码器。我们的方法从数据与模型两方面进行协同设计：（1）我们构建了带有正负属性标注的语义关联图像对数据集，以显式指导编码器学习应保留或抑制的特征；（2）采用双目标训练范式，在生成保真度与对比解耦能力之间取得平衡。实验表明，所得到的嵌入表示在开放词汇属性检索、个性化迁移及组合生成任务中均表现出色，在多个基准测试中达到了最先进的性能水平。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10955">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10955">arXiv</a></p>
+<hr />
+<h3>19. 孔子代码智能体：工业级开源人工智能软件工程师</h3>
+<p><strong>原文标题：</strong> Confucius Code Agent: An Open-sourced AI Software Engineer at Industrial Scale</p>
+<p><strong>摘要：</strong>
+现实世界的人工智能软件工程需要具备以下能力的编码智能体：能够对海量代码库进行推理、在长会话中保持持久记忆、并在测试阶段稳健协调复杂工具链。现有开源编码智能体虽具透明度，但在应对工业级工作负载时常显不足；而专有编码智能体虽实践性能较强，却在可扩展性、可解释性与可控性方面存在局限。本文提出孔子代码智能体——一个可在工业级规模运行的开源人工智能软件工程师。该智能体基于孔子软件开发工具包构建，该开源智能体开发平台围绕三个互补维度设计：智能体体验、用户体验与开发者体验。该工具包引入具备分层工作记忆的统一编排器以实现长上下文推理，通过持久化笔记系统支持跨会话持续学习，并采用模块化扩展机制保障工具调用的鲁棒性。此外，元智能体通过“构建-测试-优化”循环自动完成智能体配置的合成、评估与改进，使其能快速适应新任务、新环境与新工具栈。基于孔子软件开发工具包实例化的孔子代码智能体在真实软件工程任务中展现出卓越性能：在SWE-Bench-Pro基准测试中取得54.3%的最优Resolve@1指标，较现有编码智能体实现显著提升。孔子软件开发工具包与孔子代码智能体共同为人工智能智能体提供了透明、可扩展、可复现的基础框架，弥合了研究原型与生产级系统之间的鸿沟，为工业级智能体的开发与部署提供支撑。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10398">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10398">arXiv</a></p>
+<hr />
+<h3>20. ReViSE：基于自反思学习的统一模型推理感知视频编辑研究</h3>
+<p><strong>原文标题：</strong> ReViSE: Towards Reason-Informed Video Editing in Unified Models with Self-Reflective Learning</p>
+<p><strong>摘要：</strong>
+视频统一模型在内容理解与生成方面展现出强大能力，但即使配备高性能内部视觉语言模型，其在推理感知的视频编辑任务中仍存在明显局限。我们认为这一差距源于两个关键因素：1）现有数据集难以支撑推理感知视频编辑任务的训练与评估；2）模型推理能力与编辑能力之间存在固有割裂，导致丰富的语义理解无法有效指导编辑过程。弥合这一差距需要建立连接推理与视觉转换的集成化框架。为此，我们提出推理感知视频编辑任务，该任务要求编辑过程中兼顾物理合理性与因果动态推理。为建立系统化评估体系，我们构建了RVE-Bench综合基准数据集，包含两个互补子集：推理感知视频编辑与上下文视频生成。这些子集覆盖多维推理场景与现实编辑需求。基于此，我们提出ReViSE框架——一种融合生成与评估的自反思推理架构。该模型通过内部视觉语言模型对编辑后视频是否符合指令逻辑进行内在评估，其产生的差异化反馈在训练过程中持续优化生成器的推理行为。在RVE-Bench上的大量实验表明，ReViSE显著提升了编辑准确度与视觉保真度，在推理感知视频编辑子集上的综合得分较现有最优方法提升32%。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.09924">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.09924">arXiv</a></p>
+<hr />
+<h3>21. Fed-SE：面向隐私受限多环境大语言模型智能体的联邦自进化框架</h3>
+<p><strong>原文标题：</strong> Fed-SE: Federated Self-Evolution for Privacy-Constrained Multi-Environment LLM Agents</p>
+<p><strong>摘要：</strong>
+大语言模型智能体已广泛应用于复杂的交互式任务，然而隐私限制往往阻碍了跨动态环境的集中式优化与协同进化。尽管联邦学习在静态数据集上已被证明有效，但其在智能体开放式自进化场景中的扩展仍待深入探索。直接应用标准联邦学习面临挑战：异构任务以及稀疏的轨迹级奖励会引发严重的梯度冲突，从而破坏全局优化过程的稳定性。为弥合这一差距，本文提出Fed-SE——一种面向大语言模型智能体的联邦自进化框架。Fed-SE建立了局部进化-全局聚合的范式：在局部层面，智能体通过对筛选出的高回报轨迹进行参数高效微调，实现稳定的梯度更新；在全局层面，Fed-SE将更新聚合于解耦环境特定动态的低秩子空间内，有效减少了客户端间的负迁移效应。在五个异构环境中的实验表明，Fed-SE相较于联邦基线方法平均任务成功率提升约18%，验证了其在隐私受限部署场景下实现鲁棒跨环境知识迁移的有效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.08870">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.08870">arXiv</a></p>
+<hr />
+<h3>22. MOA：面向角色扮演智能体的多目标对齐框架</h3>
+<p><strong>原文标题：</strong> MOA: Multi-Objective Alignment for Role-Playing Agents</p>
+<p><strong>摘要：</strong>
+角色扮演智能体（RPAs）需同时掌握多项相互冲突的技能——遵循多轮次指令、展现领域知识并保持连贯的语言风格。现有方法要么依赖监督微调（SFT）导致对表面线索过拟合且生成多样性不足，要么采用强化学习（RL）难以实现多维度综合优化。本文提出MOA（多目标对齐），一种支持通用角色扮演智能体进行多维度细粒度指标优化的强化学习框架。MOA引入创新的多目标优化策略，可基于多个细粒度评估指标进行同步训练以提升优化性能。此外，为解决模型输出多样性与质量问题，我们采用思维增强推演与离轨策略引导机制。在PersonaGym和RoleMRC等挑战性基准测试中的大量实验表明，MOA能使80亿参数模型在多个维度上匹配甚至超越GPT-4o和Claude等强基线模型。这证明了MOA在构建同时满足角色知识、人物风格、多样化场景及复杂多轮对话需求的角色扮演智能体方面具有巨大潜力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.09756">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.09756">arXiv</a></p>
+<hr />
+<h3>23. X-Humanoid：规模化机器人化人类视频以生成仿人机器人视频</h3>
+<p><strong>原文标题：</strong> X-Humanoid: Robotize Human Videos to Generate Humanoid Videos at Scale</p>
+<p><strong>摘要：</strong>
+具身人工智能的发展为智能仿人机器人开辟了巨大潜力。然而，视觉-语言-动作模型与世界模型的进展均因缺乏大规模、多样化的训练数据而受到严重制约。一种可行的解决方案是对网络规模的人类视频进行“机器人化”处理，该方法已被证明对策略训练有效。但现有方案主要将机械臂“叠加”于第一人称视角视频中，无法处理第三人称视频中复杂的全身运动与场景遮挡问题，因而难以适用于人类动作的机器人化转换。为填补这一空白，我们提出X-Humanoid——一种生成式视频编辑方法，该方法将强大的Wan 2.2模型适配为视频到视频结构，并针对人类到仿人机器人的转换任务进行微调。微调过程需要成对的人类-仿人机器人视频数据，为此我们设计了一套可扩展的数据生成流程，利用虚幻引擎将社区资源转化为超过17小时的配对合成视频。随后，我们将训练好的模型应用于60小时的Ego-Exo4D视频数据集，生成并发布了包含超过360万帧“机器人化”仿人视频的大规模新数据集。定量分析与用户研究证实了本方法相较于现有基线的优越性：69%的用户认为其在运动连贯性方面表现最佳，62.1%的用户认可其具身形态的正确性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.04537">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.04537">arXiv</a></p>
+<hr />
+<h3>24. DuetSVG：基于内部视觉引导的统一多模态SVG生成方法</h3>
+<p><strong>原文标题：</strong> DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance</p>
+<p><strong>摘要：</strong>
+近期基于视觉语言模型的方法在SVG生成任务中取得了显著成果。然而，由于这些方法仅生成文本且在解码过程中缺乏视觉信号引导，它们往往难以处理复杂语义，且生成的SVG在视觉吸引力与几何一致性方面存在不足。本文提出DuetSVG，一种统一的多模态模型，能够以端到端方式联合生成图像标记与对应的SVG标记。该模型在图像与SVG数据集上进行训练。在推理阶段，我们采用一种新颖的测试时缩放策略，利用模型自身生成的视觉预测作为引导，以提升SVG解码质量。大量实验表明，本方法在多种应用场景中均优于现有方法，能够生成视觉逼真、语义对齐且语法简洁的SVG图形。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.10894">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.10894">arXiv</a></p>
+<hr />
+<h3>25. DragMesh：简易交互式三维生成</h3>
+<p><strong>原文标题：</strong> DragMesh: Interactive 3D Generation Made Easy</p>
+<p><strong>摘要：</strong>
+尽管生成模型在创建静态三维内容方面表现出色，但开发能够理解物体如何运动并响应交互的系统仍然是一个根本性挑战。当前关于关节运动的方法正处于十字路口：它们要么物理一致但速度过慢无法实时使用，要么具有生成能力却违背基本运动学约束。我们提出DragMesh，这是一个围绕轻量级运动生成核心构建的、用于实时交互式三维关节运动的鲁棒框架。我们的核心贡献是一种新颖的解耦式运动学推理与运动生成框架。首先，我们通过将语义意图推理（用于确定关节类型）与几何回归（使用我们的运动学预测网络（KPP-Net）确定轴线和原点）解耦来推断潜在关节参数。其次，为了利用对偶四元数表示刚体运动时紧凑、连续且无奇点的特性，我们开发了一种新颖的对偶四元数变分自编码器（DQ-VAE）。该DQ-VAE接收这些预测的先验信息以及原始用户拖拽输入，以生成完整、合理的运动轨迹。为确保严格遵循运动学约束，我们使用FiLM（特征级线性调制）条件化技术，在DQ-VAE非自回归Transformer解码器的每一层注入关节先验。这种持续、多尺度的指导辅以数值稳定的叉积损失，以保证轴线对齐。这种解耦设计使DragMesh能够实现实时性能，并在无需重新训练的情况下对新物体进行合理的生成式关节运动，为生成式三维智能迈出了实用的一步。代码：https://github.com/AIGeeksGroup/DragMesh。项目网站：https://aigeeksgroup.github.io/DragMesh。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.06424">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.06424">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2025-12-12_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
