@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2025-12-24</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2025-12-24 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：19</li>
+<li>热门领域：Transformer, LLM, RL, Audio, GPT</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. SemanticGen：语义空间中的视频生成</h3>
+<p><strong>原文标题：</strong> SemanticGen: Video Generation in Semantic Space</p>
+<p><strong>摘要：</strong>
+当前先进的视频生成模型通常学习视频在VAE潜在空间中的分布，并通过VAE解码器将其映射到像素空间。尽管这种方法能够生成高质量视频，但其收敛速度较慢，且在生成长视频时计算成本高昂。本文提出SemanticGen，通过在语义空间中生成视频来解决这些局限性。我们的核心观点是：由于视频本身存在冗余性，生成过程应从紧凑的高层语义空间开始进行全局规划，再逐步添加高频细节，而非直接使用双向注意力机制对大量低层视频标记进行建模。SemanticGen采用两阶段生成流程：第一阶段通过扩散模型生成紧凑的语义视频特征以定义视频的全局布局；第二阶段由另一个扩散模型基于这些语义特征生成VAE潜在表示，最终合成输出视频。我们发现，与VAE潜在空间相比，在语义空间中进行生成能实现更快的收敛速度。该方法在扩展至长视频生成时仍保持高效性与计算效率。大量实验表明，SemanticGen能够生成高质量视频，其性能优于当前最先进的方法及强基线模型。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.20619">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.20619">arXiv</a></p>
+<hr />
+<h3>2. 自底向上策略优化：语言模型策略中潜藏的内部策略</h3>
+<p><strong>原文标题：</strong> Bottom-up Policy Optimization: Your Language Model Policy Secretly Contains Internal Policies</p>
+<p><strong>摘要：</strong>
+现有强化学习方法将大语言模型视为单一整体策略，忽视了其内部机制。理解策略在不同层级与模块间的演化过程，对于实现更具针对性的优化及揭示复杂推理机制至关重要。本文通过利用Transformer残差流的内在分割特性，以及隐藏状态与解嵌入矩阵的组合等价于可采样策略的性质，对语言模型策略进行分解。该分解揭示了对应单层贡献的<strong>内部层级策略</strong>，以及对应每层内自注意力与前馈网络组件的<strong>内部模块化策略</strong>。通过分析内部策略的熵值变化，我们发现：（1）早期层级保持高熵以支持探索，顶层则收敛至近零熵以实现精细化调整，且收敛模式因模型系列而异；（2）LLama模型的预测空间在最终层快速收敛，而Qwen系列模型（尤其是Qwen3）展现出更接近人类、渐进结构化的推理模式。基于这些发现，我们提出<strong>自底向上策略优化</strong>——一种在早期训练阶段直接优化内部层级策略的新型强化学习范式。该方法通过对齐底层训练目标，重构基础推理能力，从而实现更优性能。在复杂推理基准测试上的大量实验验证了本方法的有效性。代码已开源：https://github.com/Trae1ounG/BuPO。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.19673">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.19673">arXiv</a></p>
+<hr />
+<h3>3. LongVideoAgent：基于多智能体推理的长视频理解框架</h3>
+<p><strong>原文标题：</strong> LongVideoAgent: Multi-Agent Reasoning with Long Videos</p>
+<p><strong>摘要：</strong>
+近年来，多模态大语言模型及借助工具进行长视频问答的系统取得了显著进展，为长达数小时的视频内容推理提供了可能。然而，现有方法往往通过有损压缩生成内容摘要，或依赖有限工具集，导致时序定位能力不足且易忽略细粒度视觉线索。为此，我们提出一种多智能体框架：主控大语言模型协调定位智能体以确定问题相关视频片段，并调度视觉智能体提取针对性文本化观测信息。主控智能体在步数限制下进行规划，并通过强化学习训练以促进简洁、准确且高效的多智能体协作。该设计使主控智能体能够借助定位机制聚焦相关片段，通过视觉细节补充字幕信息，并生成可解释的推理轨迹。在我们基于TVQA/TVQA+构建的剧集级数据集LongTVQA与LongTVQA+上，本多智能体系统显著优于现有非智能体基线模型。实验同时表明，强化学习能进一步提升训练后智能体的推理与规划能力。代码与数据将在https://longvideoagent.github.io/公开。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.20618">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.20618">arXiv</a></p>
+<hr />
+<h3>4. SpatialTree：空间能力在多模态大语言模型中的层级化发展探究</h3>
+<p><strong>原文标题：</strong> SpatialTree: How Spatial Abilities Branch Out in MLLMs</p>
+<p><strong>摘要：</strong>
+认知科学指出，空间能力的发展遵循从感知到推理再到交互的渐进过程。然而，在多模态大语言模型（MLLMs）中，这一能力层级结构尚未得到充分理解，现有研究多局限于少数特定任务。本文提出SpatialTree——一个受认知科学启发的层级化框架，将空间能力划分为四个层级：低阶感知（L1）、心理映射（L2）、情境模拟（L3）与具身交互（L4）。基于此分类体系，我们构建了首个以能力为中心的层级化评测基准，系统评估了主流MLLMs在27项子能力上的表现。评测结果揭示了清晰的能力结构：L1层能力呈现相对独立性，而高层级能力间存在强相关性，表明能力间的相互依赖性随层级提升而增强。通过定向监督微调实验，我们发现了有趣的迁移规律：L1层内存在负迁移现象，而从低层级到高层级则呈现显著的跨层正向迁移与协同效应。最后，我们探索了提升整体能力层级的路径。研究发现，简单鼓励模型“深度思考”的强化学习方法并不可靠：虽能提升复杂推理能力，却会损害直觉感知表现。为此，我们提出一种自适应思考抑制策略，通过规避冗余计算，使强化学习能够稳定提升所有层级的能力表现。SpatialTree的建立为理解并系统化拓展MLLMs的空间能力提供了概念验证框架。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.20617">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.20617">arXiv</a></p>
+<hr />
+<h3>5. MemEvolve：智能体记忆系统的元进化</h3>
+<p><strong>原文标题：</strong> MemEvolve: Meta-Evolution of Agent Memory Systems</p>
+<p><strong>摘要：</strong>
+自进化记忆系统正以前所未有的方式重塑基于大语言模型（LLM）的智能体的进化范式。现有研究主要依赖人工设计的记忆架构来存储轨迹、提炼经验并合成可重用工具，使智能体能够在环境交互中实时进化。然而，该范式从根本上受限于记忆系统本身的静态性：尽管记忆促进了智能体层面的进化，但其底层记忆架构无法针对多样化任务情境进行元适应。为弥补这一不足，我们提出MemEvolve——一个元进化框架，能够协同进化智能体的经验知识及其记忆架构，使智能体系统不仅能积累经验，还能持续优化其经验学习机制。为将MemEvolve建立在现有研究基础上并促进未来自进化系统的开放性，我们开发了EvolveLab：一个统一的自进化记忆代码库，将十二种代表性记忆系统提炼为模块化设计空间（编码、存储、检索、管理），既提供了标准化实现基础，也构建了公平的实验平台。在四个具有挑战性的智能体基准测试上的广泛评估表明，MemEvolve实现了：（I）显著的性能提升，将SmolAgent、Flash-Searcher等框架的性能最高提升17.06%；（II）强大的跨任务与跨LLM泛化能力，其设计的记忆架构能够有效迁移至不同基准测试与骨干模型。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.18746">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.18746">arXiv</a></p>
+<hr />
+<h3>6. Step-DeepResearch 技术报告</h3>
+<p><strong>原文标题：</strong> Step-DeepResearch Technical Report</p>
+<p><strong>摘要：</strong>
+随着大语言模型向自主智能体方向发展，深度研究能力已成为关键评估指标。然而，现有学术基准（如BrowseComp）往往难以满足开放域研究的实际需求，这类研究需要强大的意图识别、长程决策与跨源验证能力。为此，我们提出Step-DeepResearch——一个高性价比的端到端智能体系统。我们设计了基于原子能力的数据合成策略以强化规划与报告撰写能力，并结合从智能体中期训练到监督微调与强化学习的渐进式训练路径。通过引入清单式评判器增强机制，该方法显著提升了系统鲁棒性。此外，为填补中文领域评估空白，我们构建了面向真实深度研究场景的ADR-Bench评估基准。实验结果表明：Step-DeepResearch（32B参数）在Scale AI研究量表中获得61.4%评分；在ADR-Bench上，其表现显著超越同规模模型，并与OpenAI、Gemini DeepResearch等闭源前沿模型达到相当水平。这些发现证明，通过精细化训练可使中等规模模型以业界领先的性价比实现专家级研究能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.20491">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.20491">arXiv</a></p>
+<hr />
+<h3>7. 基于技能库的自进化智能体强化学习方法</h3>
+<p><strong>原文标题：</strong> Reinforcement Learning for Self-Improving Agent with Skill Library</p>
+<p><strong>摘要：</strong>
+基于大语言模型（LLM）的智能体在复杂推理与多轮交互中展现出卓越能力，但在部署至新环境时难以实现持续改进与适应。技能库作为一种有前景的解决方案，可使智能体学习、验证并应用新技能。然而，现有技能库方法主要依赖大语言模型提示机制，导致技能库的稳定实施面临挑战。为突破这些限制，本文提出一种基于强化学习（RL）的方法，通过技能库增强智能体的自我进化能力。具体而言，我们设计了面向自我进化的技能增强GRPO框架（SAGE），该创新强化学习框架系统性地将技能整合至学习过程中。其核心组件“顺序部署机制”通过在每轮训练中让智能体在任务链上迭代执行相似任务，使先前任务生成的技能持续积累至技能库，并为后续任务提供支持。此外，框架通过“技能融合奖励函数”增强技能生成与利用效率，该函数对基于原始结果的奖励机制形成有效补充。在AppWorld环境中的实验表明：当SAGE应用于具备专家经验的监督微调模型时，场景目标完成率提升8.9%，交互步骤减少26%，生成令牌数降低59%，在准确性与效率方面显著超越现有方法。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.17102">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.17102">arXiv</a></p>
+<hr />
+<h3>8. SAM Audio：音频任意分割模型</h3>
+<p><strong>原文标题：</strong> SAM Audio: Segment Anything in Audio</p>
+<p><strong>摘要：</strong>
+通用音频源分离是多模态人工智能系统感知与推理声音的关键能力。尽管近年来取得显著进展，现有分离模型仍存在局限：或局限于特定领域（如仅针对语音或音乐等固定类别），或可控性不足（仅支持文本等单一提示模态）。本研究提出SAM Audio——一个统一文本、视觉与时序跨度提示的通用音频分离基础模型。该模型基于扩散变换器架构，通过流匹配方法在涵盖语音、音乐及通用声音的大规模音频数据上进行训练，能够灵活分离通过语言描述、视觉掩码或时序跨度定义的目标声源。模型在多样化基准测试中均达到最先进性能，涵盖自然场景音频与专业制作音频中的通用声音、语音、音乐及乐器分离任务，显著优于现有通用系统与专用系统。此外，我们构建了包含人工标注多模态提示的真实场景分离基准数据集，并提出与人类判断高度相关的无参考评估模型。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.18099">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.18099">arXiv</a></p>
+<hr />
+<h3>9. INTELLECT-3：技术报告</h3>
+<p><strong>原文标题：</strong> INTELLECT-3: Technical Report</p>
+<p><strong>摘要：</strong>
+本文介绍INTELLECT-3，这是一个拥有1060亿参数（激活参数120亿）的专家混合模型，基于我们端到端的强化学习基础设施栈进行大规模强化学习训练。INTELLECT-3在其参数量级上，于数学、代码、科学和推理基准测试中实现了最先进的性能，超越了许多规模更大的前沿模型。我们开源了该模型及其完整的创建基础设施栈，包括强化学习框架、完整训练方案，以及通过验证器库构建的广泛环境集合，这些环境可通过我们的社区平台“环境中心”用于训练与评估。为此项目，我们推出了prime-rl——一个专为大规模异步强化学习设计的开源框架，该框架能够无缝地从单节点扩展至数千个GPU，并针对智能体式强化学习进行了优化，原生支持多轮交互与工具调用。基于此技术栈，我们在GLM-4.5-Air-Base模型基础上进行了监督微调与强化学习训练，并将强化学习训练规模扩展至512个H200 GPU，同时保持了较高的训练效率。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.16144">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.16144">arXiv</a></p>
+<hr />
+<h3>10. C2LLM技术报告：通过自适应交叉注意力池化实现代码检索的新前沿</h3>
+<p><strong>原文标题：</strong> C2LLM Technical Report: A New Frontier in Code Retrieval via Adaptive Cross-Attention Pooling</p>
+<p><strong>摘要：</strong>
+我们提出了C2LLM——对比性代码大语言模型，这是一个包含0.5B和7B两种规模的代码嵌入模型家族。基于Qwen-2.5-Coder主干网络，C2LLM采用多头注意力池化模块从词元嵌入生成序列嵌入，有效实现了以下三点：1）充分利用大语言模型在预训练阶段获得的因果表征；2）能够聚合序列中所有词元的信息，突破了基于EOS的序列嵌入存在的信息瓶颈；3）支持嵌入维度的灵活适配，可作为MRL方法的替代方案。通过在300万公开数据上进行训练，C2LLM模型在同等规模模型中于MTEB-Code基准测试上创造了新纪录，其中C2LLM-7B在总排行榜上位列第一。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.21332">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.21332">arXiv</a></p>
+<hr />
+<h3>11. FaithLens：检测与解释忠实性幻觉</h3>
+<p><strong>原文标题：</strong> FaithLens: Detecting and Explaining Faithfulness Hallucination</p>
+<p><strong>摘要：</strong>
+识别大型语言模型（LLM）输出是否包含忠实性幻觉对于实际应用（例如检索增强生成与文本摘要）至关重要。本文提出FaithLens，一种高效且有效的忠实性幻觉检测模型，能够同时提供二元预测及相应解释以增强可信度。为实现这一目标，我们首先通过先进的大型语言模型合成包含解释的训练数据，并采用严格的数据过滤策略以确保标签准确性、解释质量与数据多样性。随后，我们基于这些精心构建的训练数据对模型进行微调作为冷启动，并进一步通过基于规则的强化学习进行优化，该优化过程同时考虑预测正确性与解释质量的奖励。在12项多样化任务上的实验结果表明，参数量为80亿的FaithLens在性能上超越了GPT-4.1及o3等先进模型。此外，FaithLens能够生成高质量的解释，在可信度、效率与有效性之间实现了卓越的平衡。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.20182">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.20182">arXiv</a></p>
+<hr />
+<h3>12. 代码的缩放定律：每种编程语言都至关重要</h3>
+<p><strong>原文标题：</strong> Scaling Laws for Code: Every Programming Language Matters</p>
+<p><strong>摘要：</strong>
+代码大语言模型（Code LLMs）虽然强大，但训练成本高昂，其性能通常通过模型规模、数据量和计算资源的缩放定律进行预测。然而，不同编程语言在预训练阶段的影响存在显著差异，这会严重影响基础模型的性能表现，导致现有预测方法准确性不足。此外，现有研究多关注语言无关的设置，忽视了现代软件开发本质上具有的多语言特性。因此，首先需要探究不同编程语言的缩放规律，进而综合考虑其相互影响，以推导出最终的多语言缩放定律。本文首次对多语言代码预训练的缩放定律进行了系统性探索，通过超过1000次实验（相当于336,000+ H800 GPU小时），涵盖了多种编程语言、模型规模（0.2B至140亿参数）及数据集规模（1万亿标记）。我们建立了覆盖多种编程语言的代码大语言模型综合缩放定律，发现解释型语言（如Python）相较于编译型语言（如Rust）更能从模型规模与数据量的增长中获益。研究表明，多语言预训练能够产生协同增益，尤其在语法相似的编程语言之间效果显著。此外，采用并行配对预训练策略（将代码片段与其翻译版本拼接）能显著提升模型的跨语言能力，并展现出良好的缩放特性。最后，本文提出了一种基于比例依赖的多语言缩放定律，通过优先分配训练标记给高效用语言（如Python）、平衡高协同性语言对（如JavaScript与TypeScript），并减少对快速饱和语言（如Rust）的分配，在相同计算预算下实现了相较于均匀分配策略更优的全语言平均性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.13472">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.13472">arXiv</a></p>
+<hr />
+<h3>13. QuantiPhy：评估视觉语言模型物理推理能力的量化基准</h3>
+<p><strong>原文标题：</strong> QuantiPhy: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models</p>
+<p><strong>摘要：</strong>
+理解物理世界对于通用人工智能体至关重要。然而，当前最先进的视觉感知模型（例如大型视觉语言模型）是否能够进行定量物理推理仍不明确。现有评估主要基于视觉问答任务且多为定性分析，难以深入探究这些模型能否从视频观测中推断运动物体的运动学量值。为此，我们提出QuantiPhy——首个旨在量化评估视觉语言模型物理推理能力的基准测试。该基准包含超过3300个带有真实数值标注的视频-文本实例，通过将物体尺寸、速度或加速度中的某一属性作为先验输入，评估模型在给定时间戳下对其他运动属性的估算能力。基准采用标准化提示词与评分机制来检验数值准确性，确保模型间可比性。我们对前沿视觉语言模型的实验表明，其定性合理性与实际数值准确性之间存在系统性差距。进一步深度分析显示，在背景干扰、反事实先验和策略性提示等关键因素影响下，当前最先进的视觉语言模型在定量推理运动学属性时，严重依赖预训练的世界知识，而非忠实参考所提供的视觉与文本输入信息。QuantiPhy首次构建了严谨、可扩展的测试平台，推动视觉语言模型突破语言表面合理性，迈向基于数值计算的物理理解。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.19526">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.19526">arXiv</a></p>
+<hr />
+<h3>14. Simulstream：流式语音到文本翻译系统评估与演示的开源工具包</h3>
+<p><strong>原文标题：</strong> Simulstream: Open-Source Toolkit for Evaluation and Demonstration of Streaming Speech-to-Text Translation Systems</p>
+<p><strong>摘要：</strong>
+流式语音到文本翻译要求在与语音输入同步的过程中实时生成译文，这带来了严格的延迟限制，并需要模型在基于部分信息进行决策的同时保持较高的翻译质量。目前该领域的研究主要依赖于SimulEval代码库，但该库已停止维护，且不支持具有输出修正功能的系统。此外，其设计初衷是模拟短音频片段的处理，而非长音频流，也未提供便捷的系统演示方法。为解决这些问题，我们推出了simulstream——首个专用于流式语音到文本翻译系统统一评估与演示的开源框架。该框架针对长语音流处理设计，不仅支持增量解码方法，还兼容重翻译策略，使得不同系统可在同一框架内进行翻译质量与延迟性能的综合比较。同时，该工具还提供了交互式网页界面，可用于演示基于该工具构建的任何系统。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.17648">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.17648">arXiv</a></p>
+<hr />
+<h3>15. 基于闭环世界建模的视频数字人主动智能研究</h3>
+<p><strong>原文标题：</strong> Active Intelligence in Video Avatars via Closed-loop World Modeling</p>
+<p><strong>摘要：</strong>
+现有视频数字人生成方法虽在身份保持与动作对齐方面表现优异，但缺乏真正的自主决策能力，无法通过自适应环境交互实现长期目标自主规划。本研究提出L-IVA（长程交互视觉数字人）任务与评测基准，用于评估随机生成环境中目标导向的规划能力，并首次构建ORCA（在线推理与认知架构）框架实现视频数字人的主动智能。ORCA通过两项核心创新实现内部世界模型能力：（1）构建观察-思考-行动-反思的闭环OTAR循环，通过持续比对预测结果与实际生成内容，在生成不确定性条件下保持鲁棒的状态追踪；（2）设计分层双系统架构，其中系统2通过状态预测进行战略推理，系统1则将抽象计划转化为精确的模型特定动作描述。通过将数字人控制建模为部分可观测马尔可夫决策过程，并实施基于结果验证的持续信念更新，ORCA能够在开放域场景中实现自主多步骤任务完成。大量实验表明，ORCA在任务成功率和行为连贯性上显著优于开环与非反思基线方法，验证了受内部世界模型启发的设计能够推动视频数字人从被动动画向主动目标导向行为的智能演进。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.20615">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.20615">arXiv</a></p>
+<hr />
+<h3>16. 基于双重可靠性度量的多LLM主题分析：结合科恩卡帕与语义相似性验证质性研究</h3>
+<p><strong>原文标题：</strong> Multi-LLM Thematic Analysis with Dual Reliability Metrics: Combining Cohen's Kappa and Semantic Similarity for Qualitative Research Validation</p>
+<p><strong>摘要：</strong>
+质性研究面临关键的可靠性挑战：传统评分者间一致性方法需要多位人工编码员、耗时密集且通常仅能达到中等一致性水平。本研究提出一种基于大语言模型的多视角主题分析验证框架，该框架将集成验证与双重可靠性度量相结合：采用科恩卡帕系数（κ）衡量评分者间一致性，并运用余弦相似度评估语义一致性。本框架支持可配置的分析参数（1-6个随机种子，温度参数0.0-2.0），提供支持变量替换的自定义提示结构，并能够从任意JSON格式中提取共识主题。作为概念验证，我们使用致幻艺术治疗访谈转录文本对三种主流大语言模型（Gemini 2.5 Pro、GPT-4o、Claude 3.5 Sonnet）进行评估，每个模型独立运行六次。结果显示：Gemini达到最高可靠性（κ=0.907，余弦相似度95.3%），其次是GPT-4o（κ=0.853，余弦相似度92.6%）和Claude（κ=0.842，余弦相似度92.1%）。三种模型均实现高度一致性（κ&gt;0.80），验证了多轮集成方法的有效性。该框架成功提取跨轮次共识主题，其中Gemini识别出6个共识主题（一致性50-83%），GPT-4o识别5个主题，Claude识别4个主题。我们的开源实现为研究者提供透明的可靠性度量、灵活配置及结构无关的共识提取功能，为可靠的AI辅助质性研究奠定了方法论基础。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.20352">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.20352">arXiv</a></p>
+<hr />
+<h3>17. Memory-T1：基于强化学习的多会话智能体时序推理方法</h3>
+<p><strong>原文标题：</strong> Memory-T1: Reinforcement Learning for Temporal Reasoning in Multi-session Agents</p>
+<p><strong>摘要：</strong>
+在多轮、多会话的对话中进行时序推理是对话智能体的关键能力。然而，现有研究及我们的初步实验表明，随着对话历史的增长和噪声累积，当前的长上下文模型难以准确识别时序相关信息，严重影响了推理性能。为此，我们提出Memory-T1框架，该框架利用强化学习训练一种时间感知的记忆选择策略。该方法采用由粗到精的策略：首先使用时序过滤器与相关性过滤器将对话历史剪裁为候选集，随后通过强化学习智能体精确选择证据会话。强化学习训练由多级奖励函数引导，该函数优化（i）答案准确性、（ii）证据依据性以及（iii）时序一致性。特别地，时序一致性奖励通过评估会话层面（时序邻近性）和语句层面（时序保真度）与查询时间范围的匹配程度，提供了密集的监督信号，使智能体能够解决细微的时序歧义问题。在Time-Dialog基准测试中，Memory-T1将7B参数模型的总体得分提升至67.0%，创造了开源模型的新最优性能，较14B基线模型高出10.2%。消融实验表明，时序一致性与证据依据性奖励共同贡献了15.0%的性能提升。此外，Memory-T1在128k词元规模下仍保持稳健性能（此时基线模型已失效），证明了其对长对话历史噪声的有效处理能力。代码与数据集已公开于https://github.com/Elvin-Yiming-Du/Memory-T1/。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.20092">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.20092">arXiv</a></p>
+<hr />
+<h3>18. 毒性预警：GitHub对话脱轨预测</h3>
+<p><strong>原文标题：</strong> Toxicity Ahead: Forecasting Conversational Derailment on GitHub</p>
+<p><strong>摘要：</strong>
+开源软件社区中的毒性互动会降低贡献者参与度并威胁项目可持续性。在毒性互动发生前进行预防，需要清晰理解有害对话的演变过程。然而，当前大多数主动审核策略依赖人工操作，需要社区维护者投入大量时间和精力。为支持更具扩展性的方法，我们构建了一个包含159条脱轨毒性讨论串和207条非毒性讨论串的GitHub数据集。分析表明，毒性对话可通过紧张触发因素、情感转向及特定对话模式进行预测。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.15031">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.15031">arXiv</a></p>
+<hr />
+<h3>19. 基于视频扩散模型的图像重聚焦学习方法</h3>
+<p><strong>原文标题：</strong> Learning to Refocus with Video Diffusion Models</p>
+<p><strong>摘要：</strong>
+聚焦是摄影技术的基石，然而自动对焦系统常无法准确捕捉目标主体，用户往往需要在拍摄后调整焦点。本文提出一种利用视频扩散模型实现逼真后拍摄重聚焦的创新方法。该方法仅需单张失焦图像，即可生成感知准确的焦点堆栈（以视频序列形式呈现），从而实现交互式重聚焦并拓展下游应用场景。为支持本项研究及未来探索，我们发布了在多样化真实智能手机拍摄条件下采集的大规模焦点堆栈数据集。实验表明，在复杂拍摄场景中，本方法在感知质量与鲁棒性方面均持续优于现有技术，为日常摄影中更先进的焦点编辑功能开辟了新路径。相关代码与数据详见 www.learn2refocus.github.io</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.19823">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.19823">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2025-12-24_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
