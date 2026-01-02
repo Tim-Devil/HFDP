@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2026-01-01</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2026-01-01 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：20</li>
+<li>热门领域：LLM, Transformer, GPT, NLP</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. mHC：流形约束超连接架构</h3>
+<p><strong>原文标题：</strong> mHC: Manifold-Constrained Hyper-Connections</p>
+<p><strong>摘要：</strong>
+近年来，以超连接为代表的研究通过拓展残差流宽度与多样化连接模式，延伸了过去十年间建立的普适性残差连接范式。尽管这种多样化带来了显著的性能提升，但其本质上破坏了残差连接固有的恒等映射特性，导致严重的训练不稳定性与可扩展性受限，同时产生显著的内存访问开销。为解决这些挑战，我们提出流形约束超连接架构——一种将超连接的残差连接空间投影至特定流形以恢复恒等映射特性的通用框架，并通过严格的基础设施优化确保运行效率。实证研究表明，mHC在大规模训练中具有显著效果，能够实现切实的性能提升与卓越的可扩展性。我们预期mHC作为超连接架构的灵活实用拓展，将有助于深化对拓扑架构设计的理解，并为基础模型的演进提供具有前景的发展方向。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24880">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24880">arXiv</a></p>
+<hr />
+<h3>2. Youtu-LLM：解锁轻量级大语言模型的原生智能体潜力</h3>
+<p><strong>原文标题：</strong> Youtu-LLM: Unlocking the Native Agentic Potential for Lightweight Large Language Models</p>
+<p><strong>摘要：</strong>
+本文介绍Youtu-LLM——一个兼顾高计算效率与原生智能体能力的轻量级语言模型。区别于依赖知识蒸馏的典型小模型，Youtu-LLM（1.96B参数）通过从头预训练系统性地培育推理与规划能力。其关键技术进展包括：（1）支持长上下文的紧凑架构：基于稠密多潜在注意力（MLA）架构与面向STEM任务设计的新型词表，模型支持128K上下文窗口。该设计在极小内存占用量下实现了稳健的长程推理与状态追踪，使其特别适用于长周期智能体与推理任务。（2）结构化的“常识-STEM-智能体”渐进式训练课程：我们构建了约11T token的大规模语料库，并实施多阶段训练策略。通过将预训练数据分布从通用常识逐步转向复杂STEM任务及智能体任务，确保模型获得深层认知能力而非表面指令对齐。（3）可扩展的智能体中期训练：针对智能体中期训练阶段，我们采用多样化数据构建方案，在数学、编程与工具调用领域合成丰富多元的任务轨迹。高质量数据使模型能够有效内化规划与反思行为。大量实验表明，Youtu-LLM在20亿参数以下规模模型中取得了最优性能。在通用基准测试中，其表现与更大规模模型相当；在智能体专项任务中，则显著超越现有最优基线，证明轻量级模型同样可具备强大的内生智能体能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24618">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24618">arXiv</a></p>
+<hr />
+<h3>3. 顺势而为：摇滚乐中的能动性塑造——在开放能动学习生态系统中构建ROME模型</h3>
+<p><strong>原文标题：</strong> Let It Flow: Agentic Crafting on Rock and Roll, Building the ROME Model within an Open Agentic Learning Ecosystem</p>
+<p><strong>摘要：</strong>
+能动性塑造要求大语言模型在现实环境中通过多轮次执行动作、观察结果并迭代优化产物来运作。尽管其重要性日益凸显，开源社区目前仍缺乏一个系统化、端到端的生态系统来简化智能体开发流程。本研究提出能动学习生态系统（ALE），这是一个优化智能体大语言模型生产流程的基础设施框架。ALE包含三个核心组件：用于权重优化的后训练框架ROLL、用于轨迹生成的沙盒环境管理器ROCK，以及支持高效上下文工程的智能体框架iFlow CLI。基于ALE框架，我们发布了开源智能体ROME（ROME显然是一个能动性模型），该模型通过超过一百万条轨迹数据进行训练。我们的方法包含合成复杂行为的数据组合协议，以及创新的策略优化算法——基于交互的策略对齐（IPA）。该算法通过在语义交互片段而非单个词元上分配信用，显著提升了长周期训练的稳定性。在实证研究中，我们通过结构化环境对ROME进行评估，并引入具有更优规模与污染控制特性的基准测试集Terminal Bench Pro。实验表明，ROME在SWE-bench Verified和Terminal Bench等基准测试中均表现出色，验证了ALE基础设施的有效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24873">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24873">arXiv</a></p>
+<hr />
+<h3>4. GaMO：面向稀疏视图三维重建的几何感知多视角扩散外绘方法</h3>
+<p><strong>原文标题：</strong> GaMO: Geometry-aware Multi-view Diffusion Outpainting for Sparse-View 3D Reconstruction</p>
+<p><strong>摘要：</strong>
+三维重建领域的最新进展已在使用密集多视角图像实现高质量场景捕捉方面取得显著成果，但在输入视角有限时仍面临挑战。为应对此问题，现有研究采用了包括正则化技术、语义先验和几何约束在内的多种方法。基于扩散模型的最新方法通过从新相机位姿生成新颖视角以扩充训练数据，展现出显著改进，其性能已超越早期的正则化及基于先验的技术。尽管取得上述进展，我们发现当前先进方法存在三个关键局限：已知视角外围覆盖不足、生成视角间几何不一致性以及计算流程昂贵。本文提出GaMO（几何感知多视角外绘框架），该框架通过多视角外绘任务重新定义稀疏视图重建问题。GaMO不生成新视点，而是从现有相机位姿扩展视野范围，这种方法在提供更广场景覆盖的同时，本质上保持了几何一致性。我们的方法以零样本方式采用多视角条件化与几何感知去噪策略，无需额外训练。在Replica和ScanNet++数据集上的大量实验表明，该方法在3、6、9个输入视角下均达到最先进的重建质量，在PSNR和LPIPS指标上超越先前方法，同时相比基于扩散的先进方法实现25倍加速，处理时间低于10分钟。项目页面：https://yichuanh.github.io/GaMO/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.25073">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.25073">arXiv</a></p>
+<hr />
+<h3>5. 基于协同Transformer的操作系统日志点异常与集体异常统一检测框架</h3>
+<p><strong>原文标题：</strong> A unified framework for detecting point and collective anomalies in operating system logs via collaborative transformers</p>
+<p><strong>摘要：</strong>
+日志异常检测对维护操作系统安全至关重要。根据日志数据采集来源的不同，日志中记录着可被视为日志模态的多样化信息。基于这一认知，单模态方法常因忽略日志数据的多模态特性而存在局限，而多模态方法则未能有效处理模态间的交互关系。通过将多模态情感分析技术应用于日志异常检测，本文提出CoLog框架，该框架利用多模态信息对日志进行协同编码。CoLog采用协同Transformer架构与多头强化注意力机制，学习多种模态间的交互关系，确保异常检测的全面性。为处理模态交互导致的异构性问题，CoLog引入模态自适应层，对不同日志模态的表征进行适配处理。该方法使CoLog能够学习数据中细微的模式与依赖关系，从而提升异常检测能力。大量实验证明CoLog优于现有前沿方法。在七个日志异常检测基准数据集上，CoLog对点异常和集体异常的检测平均精确率达到99.63%，平均召回率为99.59%，平均F1分数达99.61%。CoLog的全面检测能力使其高度适用于网络安全、系统监控与运行效率优化领域。该框架通过统一架构实现了点异常与集体异常检测的精密解决方案，并为自动日志数据分析面临的复杂挑战提供了创新思路，标志着日志异常检测领域的重大进展。我们在https://github.com/NasirzadehMoh/CoLog公开了CoLog的实现代码。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.23380">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.23380">arXiv</a></p>
+<hr />
+<h3>6. 扩展开放式推理以预测未来</h3>
+<p><strong>原文标题：</strong> Scaling Open-Ended Reasoning to Predict the Future</p>
+<p><strong>摘要：</strong>
+高风险决策涉及在不确定性条件下对未来进行推理。本研究训练语言模型对开放式预测问题做出预测。为扩展训练数据规模，我们基于每日新闻报道的全球事件，采用全自动、精细化的构建方法，合成新型预测问题。我们在自建数据集OpenForesight上训练了Qwen3思维模型。为防止训练和评估过程中未来信息泄露，预测系统全程采用离线新闻语料库进行数据生成与检索。通过小规模验证集的指导，我们证明了检索机制的优势以及改进的强化学习奖励函数的有效性。最终预测系统构建完成后，我们在2025年5月至8月期间进行了封闭测试。专用模型OpenForecaster 8B的表现与规模更大的专有模型相当，其训练过程显著提升了预测的准确性、校准度和一致性。研究发现，预测训练带来的校准改进可泛化至多个主流基准测试。我们已开源全部模型、代码与数据，以推动语言模型预测研究的广泛开展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.25070">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.25070">arXiv</a></p>
+<hr />
+<h3>7. PhyGDPO：面向物理一致性文本到视频生成的物理感知分组直接偏好优化</h3>
+<p><strong>原文标题：</strong> PhyGDPO: Physics-Aware Groupwise Direct Preference Optimization for Physically Consistent Text-to-Video Generation</p>
+<p><strong>摘要：</strong>
+当前文本到视频（T2V）生成技术虽在视觉质量上取得了显著进展，但生成严格遵循物理规律的真实视频仍面临挑战。现有方法主要依赖图形学或提示扩展，难以在简单模拟环境之外实现泛化，或难以学习隐式的物理推理。同时，缺乏包含丰富物理交互与现象的训练数据也是关键瓶颈。本文首先提出一种物理增强视频数据构建流程（PhyAugPipe），该流程利用具备思维链推理能力的视觉语言模型（VLM）收集了大规模训练数据集PhyVidGen-135K。随后，我们构建了一种基于原理的物理感知分组直接偏好优化框架（PhyGDPO），该框架基于分组Plackett-Luce概率模型，能够捕捉超越成对比较的整体偏好关系。在PhyGDPO中，我们设计了物理引导奖励机制，通过嵌入基于VLM的物理奖励来引导优化过程朝向物理一致性方向。此外，我们提出LoRA切换参考方案，通过消除内存密集型的参考模型复制来实现高效训练。实验表明，我们的方法在PhyGenBench和VideoPhy2基准测试上显著优于当前最先进的开源方法。更多视频结果请访问项目页面：https://caiyuanhao1998.github.io/project/PhyGDPO。代码、模型与数据将在https://github.com/caiyuanhao1998/Open-PhyGDPO开源发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24551">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24551">arXiv</a></p>
+<hr />
+<h3>8. 人工智能与大脑的交汇：从认知神经科学到自主智能体的记忆系统</h3>
+<p><strong>原文标题：</strong> AI Meets Brain: Memory Systems from Cognitive Neuroscience to Autonomous Agents</p>
+<p><strong>摘要：</strong>
+记忆作为连接过去与未来的关键枢纽，为人类与人工智能系统提供了应对复杂任务所需的宝贵概念与经验。近年来，自主智能体的研究日益注重借鉴认知神经科学以设计高效记忆工作流。然而，受限于学科壁垒，现有研究往往难以深入融合人类记忆机制的本质。为弥合这一鸿沟，本文系统整合了跨学科的记忆知识，将认知神经科学的洞见与基于大语言模型的智能体相连接。具体而言，我们首先沿着从认知神经科学到大语言模型再到智能体的演进路径，阐明记忆的定义与功能。随后，我们从生物与人工双重视角出发，对记忆的分类体系、存储机制及完整管理生命周期进行了比较分析。接着，我们回顾了评估智能体记忆的主流基准测试框架。此外，我们还从攻击与防御的双重角度探讨了记忆安全问题。最后，我们展望了未来研究方向，重点关注多模态记忆系统与技能习得等领域。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.23343">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.23343">arXiv</a></p>
+<hr />
+<h3>9. GR-Dexter技术报告</h3>
+<p><strong>原文标题：</strong> GR-Dexter Technical Report</p>
+<p><strong>摘要：</strong>
+视觉-语言-动作模型已能实现基于语言指令的长时程机器人操控，但现有系统大多局限于夹爪式末端执行器。将此类策略扩展至配备高自由度灵巧手的双臂机器人仍面临诸多挑战，包括动作空间扩大、手-物体频繁遮挡以及真实机器人数据采集成本高昂。本研究提出GR-Dexter——一个面向双臂灵巧手机器人的全栈硬件-模型-数据框架，旨在实现基于视觉-语言-动作模型的通用操控。该框架整合了三项核心创新：紧凑型21自由度机械手设计、支持真实机器人数据采集的直观双臂遥操作系统，以及融合遥操作轨迹、大规模视觉-语言数据集与精细筛选的跨具身数据集的训练方案。在涵盖日常长时程操作与泛化抓放任务的实际评估中，GR-Dexter在领域内任务表现出色，并对未见物体与陌生指令展现出更强的鲁棒性。我们期待GR-Dexter能为通用灵巧手机器人操控研究提供切实可行的技术路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24210">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24210">arXiv</a></p>
+<hr />
+<h3>10. 利用扩散变换器内部动力学进行自引导</h3>
+<p><strong>原文标题：</strong> Guiding a Diffusion Transformer with the Internal Dynamics of Itself</p>
+<p><strong>摘要：</strong>
+扩散模型展现出强大的能力，能够捕捉完整的（条件）数据分布。然而，由于缺乏足够的训练和数据来覆盖低概率区域，模型在生成这些区域对应的高质量图像时会受到惩罚。为提升生成质量，可采用无分类器引导等策略在采样阶段将样本导向高概率区域。但标准无分类器引导常导致样本过度简化或失真。另一方面，基于退化版本引导扩散模型的替代方案受限于精心设计的退化策略、额外训练和附加采样步骤。本文提出一种简单而有效的内部引导策略，通过在训练过程中对中间层引入辅助监督，并在采样过程中外推中间层与深层输出来获得生成结果。该策略在多种基线模型上显著提升了训练效率和生成质量：在ImageNet 256×256数据集上，SiT-XL/2+IG在80和800训练周期分别达到FID=5.31和FID=1.75；更突出的是，LightningDiT-XL/1+IG实现了FID=1.34，显著优于现有方法。结合无分类器引导后，LightningDiT-XL/1+IG以FID=1.19达到当前最优性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24176">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24176">arXiv</a></p>
+<hr />
+<h3>11. 神奇推理行为及其发现：推理过程的无监督探索</h3>
+<p><strong>原文标题：</strong> Fantastic Reasoning Behaviors and Where to Find Them: Unsupervised Discovery of the Reasoning Process</p>
+<p><strong>摘要：</strong>
+尽管近期大语言模型（LLM）的推理能力不断提升，但其在推理过程中的内部机制仍缺乏深入探索。现有方法通常依赖于人工定义的概念（如过度思考、反思）在词汇层面以监督方式分析推理行为。然而，这类方法存在局限，因为难以全面捕捉潜在的推理行为谱系，其中许多行为在词元空间中难以明确定义。本研究提出一种无监督框架（称为RISE：基于稀疏自编码器的推理行为可解释性方法），用于发现推理向量——即编码特定推理行为的激活空间方向。通过将思维链轨迹分割为句子级“步骤”并在步骤级激活上训练稀疏自编码器（SAE），我们分离出对应可解释行为（如反思与回溯）的特征。可视化与聚类分析表明，这些行为在解码器列空间中占据可分离区域。进一步地，通过对SAE衍生向量进行定向干预，能够可控地增强或抑制特定推理行为，从而在不重新训练的情况下改变推理轨迹。除行为特异性解耦外，SAE还能捕捉响应长度等结构特征，揭示长推理轨迹与短推理轨迹的聚类分布。更有趣的是，SAE能够发现超越人工监督的新颖行为。我们通过识别SAE解码器空间中与置信度相关的向量，展示了调控响应置信度的能力。这些发现凸显了无监督潜在发现方法在解释与可控引导大语言模型推理方面的潜力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.23988">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.23988">arXiv</a></p>
+<hr />
+<h3>12. 自回归视频记忆压缩中的预训练帧保持技术</h3>
+<p><strong>原文标题：</strong> Pretraining Frame Preservation in Autoregressive Video Memory Compression</p>
+<p><strong>摘要：</strong>
+本文提出PFP神经网络架构，该架构能够将长视频压缩为短上下文表示，并通过明确的预训练目标保留任意时间位置上单帧图像的高频细节。基准模型可将20秒视频压缩至约5k长度的上下文表示，在此过程中随机帧的视觉外观仍能保持感知层面的完整性。此类预训练模型可直接微调为自回归视频模型的记忆编码器，实现以较低上下文成本存储长时历史信息，同时保持相对较低的保真度损失。我们通过消融实验评估该框架，并探讨不同神经网络架构设计在性能上的权衡关系。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.23851">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.23851">arXiv</a></p>
+<hr />
+<h3>13. SpaceTimePilot：跨时空动态场景的生成式渲染</h3>
+<p><strong>原文标题：</strong> SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time</p>
+<p><strong>摘要：</strong>
+本文提出SpaceTimePilot，一种能够解耦时空以实现可控生成式渲染的视频扩散模型。给定单目视频输入，SpaceTimePilot可在生成过程中独立调整摄像机视点与运动序列，实现跨时空连续任意探索的场景重渲染。为实现这一目标，我们在扩散过程中引入了一种高效的动画时间嵌入机制，使输出视频的运动序列能够相对于源视频进行显式控制。由于现有数据集缺乏包含连续时间变化的同一动态场景配对视频，我们提出了一种简单而有效的时间扭曲训练方案，通过改造现有多视角数据集来模拟时间差异。该策略有效监督模型学习时间控制，实现稳健的时空解耦。为提升双重控制的精确度，我们进一步引入两个关键组件：改进的摄像机条件机制（支持从首帧开始调整摄像机参数）以及首个合成时空全覆盖渲染数据集CamxTime（提供场景内完全自由的时空视频轨迹）。通过时间扭曲方案与CamxTime数据集的联合训练，模型获得了更精确的时间控制能力。我们在真实场景与合成数据上评估SpaceTimePilot，实验结果表明其相比现有方法具有更清晰的时空解耦特性和优越的生成效果。项目主页：https://zheninghuang.github.io/Space-Time-Pilot/ 代码仓库：https://github.com/ZheningHuang/spacetimepilot</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.25075">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.25075">arXiv</a></p>
+<hr />
+<h3>14. 锻造空间智能：面向自主系统的多模态数据预训练路线图</h3>
+<p><strong>原文标题：</strong> Forging Spatial Intelligence: A Roadmap of Multi-Modal Data Pre-Training for Autonomous Systems</p>
+<p><strong>摘要：</strong>
+自动驾驶汽车与无人机等自主系统的快速发展，亟需从多模态车载传感器数据中锻造出真正的空间智能。尽管基础模型在单模态任务中表现出色，但如何整合摄像头与激光雷达等异构传感器的能力以形成统一的环境感知，仍面临严峻挑战。本文提出一个系统的多模态预训练框架，梳理了推动该领域发展的核心技术体系。通过剖析基础传感器特性与学习策略的相互作用，评估了特定平台数据集对技术进步的支撑作用。本研究的核心贡献在于构建了统一的预训练范式分类体系：涵盖从单模态基线方法，到能够为三维目标检测与语义占据预测等高级任务学习整体表征的复杂统一框架。此外，我们探索了文本输入与占据表征的融合机制，以促进开放世界感知与路径规划能力。最后，本文指出现有技术面临计算效率与模型可扩展性等关键瓶颈，并提出面向现实部署的通用多模态基础模型发展路线图，为实现鲁棒的空间智能指明方向。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24385">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24385">arXiv</a></p>
+<hr />
+<h3>15. 图形化求解：通过主动视觉思维提升推理前沿性能</h3>
+<p><strong>原文标题：</strong> Figure It Out: Improving the Frontier of Reasoning with Active Visual Thinking</p>
+<p><strong>摘要：</strong>
+复杂推理问题通常涉及文本中未明确编码的隐含空间、几何与结构关系。尽管近期推理模型已在多领域取得优异表现，但纯文本推理在复杂场景中难以表征全局结构约束。本文提出FIGR模型，通过端到端强化学习将主动视觉思维融入多轮推理过程。该模型在问题求解过程中通过构建视觉表征外化中间结构假设，通过自适应调控视觉推理的触发时机与方式，实现对纯文本难以捕捉的全局结构特性进行更稳定、连贯的推理。在具有挑战性的数学推理基准测试中，FIGR显著优于强文本思维链基线模型，具体表现为：在AIME 2025数据集上提升基准模型13.12%，在BeyondAIME数据集上提升11.00%。实验结果凸显了图形引导多模态推理在增强复杂推理稳定性与可靠性方面的有效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24297">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24297">arXiv</a></p>
+<hr />
+<h3>16. JavisGPT：面向音视频理解与生成的统一多模态大语言模型</h3>
+<p><strong>原文标题：</strong> JavisGPT: A Unified Multi-modal LLM for Sounding-Video Comprehension and Generation</p>
+<p><strong>摘要：</strong>
+本文提出JavisGPT，这是首个面向音视频联合理解与生成任务的统一多模态大语言模型。该模型采用简洁的编码器-大语言模型-解码器架构，通过时空音视频融合模块与同步感知可学习查询机制，桥接预训练的音视频扩散变换生成器，实现了多模态指令驱动下时序连贯的音视频理解与生成。我们设计了一套高效的三阶段训练流程，包括多模态预训练、音视频微调与大规模指令调优，逐步基于现有视觉语言模型构建多模态理解与生成能力。为此，我们进一步构建了JavisInst-Omni高质量指令数据集，包含超过20万条由GPT-4o生成的音视频文本对话，涵盖多样化、多层次的理解与生成场景。在音视频理解与生成基准测试上的大量实验表明，JavisGPT性能优于现有多模态大语言模型，尤其在复杂时序同步任务中表现突出。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.22905">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.22905">arXiv</a></p>
+<hr />
+<h3>17. 面向呼吸音分类的几何感知优化：基于SAM优化的音频谱图Transformer提升灵敏度</h3>
+<p><strong>原文标题：</strong> Geometry-Aware Optimization for Respiratory Sound Classification: Enhancing Sensitivity with SAM-Optimized Audio Spectrogram Transformers</p>
+<p><strong>摘要：</strong>
+呼吸音分类任务受到ICBHI 2017等基准数据集规模有限、噪声水平高以及类别严重不平衡的制约。尽管基于Transformer的模型具备强大的特征提取能力，但在处理此类受限医疗数据时容易过拟合，且往往收敛至损失函数曲面的尖锐极小值。为解决这一问题，我们提出一种利用锐度感知最小化（SAM）增强音频谱图Transformer（AST）的框架。该方法不仅最小化训练损失，更通过优化损失曲面的几何形态，引导模型向更平坦的极小值收敛，从而提升对未见患者的泛化能力。同时，我们采用加权采样策略以有效处理类别不平衡问题。在ICBHI 2017数据集上，本方法取得了68.10%的当前最优性能，超越了现有CNN及混合基线模型。更重要的是，其灵敏度达到68.31%，这对可靠临床筛查具有重要意义。通过t-SNE降维可视化与注意力图谱的进一步分析证实，该模型能够学习具有判别力的鲁棒特征，而非记忆背景噪声。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.22564">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.22564">arXiv</a></p>
+<hr />
+<h3>18. BEDA：信念估计作为执行策略性对话行为的概率约束</h3>
+<p><strong>原文标题：</strong> BEDA: Belief Estimation as Probabilistic Constraints for Performing Strategic Dialogue Acts</p>
+<p><strong>摘要：</strong>
+策略性对话要求智能体执行特定的对话行为，其中信念估计至关重要。尽管先前研究常能准确估计信念，但缺乏在生成过程中运用这些信念的机制化方法。我们通过以下方式填补这一空白：首先形式化两种核心行为——对抗与对齐，进而通过概率约束对智能体生成内容进行可操作化建模。我们在BEDA框架中实现了这一理念，该框架包含世界状态集合、用于信念估计的信念估计器，以及根据推断信念选择行为并生成一致性话语的条件生成器。在条件型守护者-窃贼（CKBG，对抗性）、共同好友（MF，合作性）和CaSiNo（协商性）三种实验场景中，BEDA均持续优于强基线模型：在CKBG任务中，其成功率在不同骨干模型上提升至少5.0个百分点，使用GPT-4.1-nano时提升达20.6个百分点；在共同好友任务中平均提升9.3个百分点；在CaSiNo任务中达成了相较于所有基线模型的最优协商结果。这些结果表明，将信念估计转化为约束条件为可靠策略性对话提供了简洁通用的机制。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24885">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24885">arXiv</a></p>
+<hr />
+<h3>19. 面向时序定位视频-语言模型的因子化学习方法</h3>
+<p><strong>原文标题：</strong> Factorized Learning for Temporally Grounded Video-Language Models</p>
+<p><strong>摘要：</strong>
+当前视频-语言模型在视频理解方面展现出巨大潜力，但在事件级感知的精确时序定位方面仍存在局限。我们观察到视频理解中的两个核心要素（即时序定位与文本响应）构成逻辑层次：准确的时序证据定位是可靠文本响应的基础。然而，现有研究通常以耦合方式处理这两个任务，缺乏清晰的逻辑结构，导致优化目标未能达到最优。本文从因子化学习的视角解决这一问题：首先提出D²VLM框架，在解耦两项任务学习的同时强调其内在关联性。该框架采用"先定位后证据参照应答"范式，引入证据标记实现证据定位，其设计重点超越现有工作对时间戳表征的关注，更强调事件级视觉语义的捕捉。为进一步促进两项任务的学习，我们提出新型因子化偏好优化算法。与标准偏好优化不同，该算法将概率化时序定位建模显式纳入优化目标，实现对时序定位与文本响应的联合偏好学习。针对现有数据集缺乏显式时序定位标注的问题，我们构建了合成数据集以支持因子化偏好学习。在多任务实验中的结果表明，本方法具有显著优势。源代码已开源：https://github.com/nusnlp/d2vlm。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24097">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24097">arXiv</a></p>
+<hr />
+<h3>20. Valori：面向人工智能系统的确定性内存基板</h3>
+<p><strong>原文标题：</strong> Valori: A Deterministic Memory Substrate for AI Systems</p>
+<p><strong>摘要：</strong>
+现代人工智能系统依赖基于浮点运算存储与检索的向量嵌入。尽管该设计在近似相似性搜索中表现有效，但其引入了根本性的非确定性：即使在模型、输入和代码完全相同的条件下，不同硬件架构（如x86与ARM）可能产生不同的内存状态与检索结果。这导致系统无法实现状态复现与安全部署，引发难以追溯的数据静默分化问题，从而阻碍受监管领域的回溯验证与审计追踪。本文提出Valori——一种确定性人工智能内存基板，通过定点运算（Q16.16格式）替代浮点内存操作，并将内存建模为可复现的状态机。Valori确保跨平台实现比特级一致的内存状态、快照及搜索结果。我们论证了非确定性在索引与检索操作前即已产生，并阐明Valori如何在内存边界实施确定性保障。实验结果表明，确定性内存是构建可信人工智能系统的必要基础组件。该参考实现已开源，访问地址：https://github.com/varshith-Git/Valori-Kernel（存档于https://zenodo.org/records/18022660）。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.22280">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.22280">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2026-01-01_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
