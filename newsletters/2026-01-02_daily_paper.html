@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2026-01-02</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2026-01-02 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：7</li>
+<li>热门领域：LLM, GPT</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. 基于超图记忆的长上下文复杂关系建模多步检索增强生成方法改进</h3>
+<p><strong>原文标题：</strong> Improving Multi-step RAG with Hypergraph-based Memory for Long-Context Complex Relational Modeling</p>
+<p><strong>摘要：</strong>
+多步检索增强生成已成为增强大语言模型在需要全局理解和深度推理任务中性能的广泛采用策略。现有RAG系统通常引入工作记忆模块以整合检索信息，然而当前记忆设计主要作为被动存储机制，仅通过累积孤立事实来压缩长输入并通过演绎生成新子查询。这种静态特性忽视了原始事实间关键的高阶关联，而这些关联组合往往能为后续步骤提供更强指导。因此现有方法在表征能力及对多步推理与知识演化的影响方面存在局限，导致在扩展语境中出现碎片化推理与全局语义理解能力薄弱的问题。本文提出HGMem——一种基于超图的记忆机制，将记忆概念从简单存储扩展为支持复杂推理与全局理解的动态表达结构。该方法将记忆表征为超图结构，其超边对应不同的记忆单元，支持记忆内部高阶交互的渐进式形成。该机制围绕核心问题连接事实与思维，演化为集成化、情境化的知识结构，为后续步骤的深度推理提供强命题支持。我们在多个专为全局语义理解设计的挑战性数据集上评估HGMem。大量实验与深入分析表明，该方法能持续改进多步RAG性能，在多样化任务中显著超越现有基线系统。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.23959">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.23959">arXiv</a></p>
+<hr />
+<h3>2. 动态大概念模型：自适应语义空间中的潜在推理</h3>
+<p><strong>原文标题：</strong> Dynamic Large Concept Models: Latent Reasoning in an Adaptive Semantic Space</p>
+<p><strong>摘要：</strong>
+大型语言模型（LLM）对所有词元采用统一计算，然而语言信息密度本身具有高度非均匀性。这种词元统一计算机制将算力浪费在局部可预测的片段上，同时对语义关键转换处的计算分配不足。我们提出动态大概念模型（DLCM）——一种分层语言建模框架，该框架从潜在表示中学习语义边界，并将计算从词元空间转移到压缩后的概念空间，从而在更高语义层级实现更高效的推理。DLCM以端到端方式发现可变长度的概念，无需依赖预定义的语言单元。分层压缩从根本上改变了模型的缩放规律：我们首次提出具有压缩感知的缩放定律，该定律解耦了词元级容量、概念级推理容量与压缩率，使得在固定浮点运算量下实现有原则的计算分配成为可能。为稳定训练这种异构架构，我们进一步开发了解耦的μP参数化方法，支持在不同模型宽度和压缩机制间进行零样本超参数迁移。在典型配置（压缩率R=4，即每个概念平均对应四个词元）下，DLCM将约三分之一的推理计算重新分配到更高容量的推理主干中，在匹配推理浮点运算量的条件下，于12个零样本基准测试中平均获得+2.69%的性能提升。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24617">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24617">arXiv</a></p>
+<hr />
+<h3>3. DiffThinker：基于扩散模型的生成式多模态推理研究</h3>
+<p><strong>原文标题：</strong> DiffThinker: Towards Generative Multimodal Reasoning with Diffusion Models</p>
+<p><strong>摘要：</strong>
+尽管当前的多模态大语言模型在多模态推理方面取得了显著进展，但其推理过程仍主要围绕文本展开，导致在复杂、长周期且以视觉为中心的任务中表现欠佳。本文提出了一种新颖的生成式多模态推理范式，并引入了DiffThinker——一个基于扩散模型的推理框架。从概念上讲，DiffThinker将多模态推理重新定义为一种原生的生成式图像到图像任务，从而在以视觉为中心的任务中实现了更优的逻辑一致性与空间精确性。我们对DiffThinker与多模态大语言模型进行了系统性比较，首次深入探究了该范式的内在特性，揭示了其四个核心属性：高效性、可控性、原生并行性与协作性。在四个领域（序列规划、组合优化、约束满足与空间配置）上的大量实验表明，DiffThinker显著超越了包括GPT-5（提升314.2%）、Gemini-3-Flash（提升111.6%）在内的领先闭源模型，以及微调的Qwen3-VL-32B基线模型（提升39.0%），这凸显了生成式多模态推理作为以视觉为中心的推理方法具有广阔前景。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24165">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24165">arXiv</a></p>
+<hr />
+<h3>4. 论离散性在扩散大语言模型中的作用</h3>
+<p><strong>原文标题：</strong> On the Role of Discreteness in Diffusion LLMs</p>
+<p><strong>摘要：</strong>
+扩散模型为语言生成提供了并行解码与迭代优化等吸引人的特性，但文本的离散性与高度结构化特征对扩散原理的直接应用构成了挑战。本文从扩散过程与语言建模的视角重新审视扩散语言建模，并提炼出区分扩散机制与语言特定需求的五项基本属性。我们首先将现有方法归类为嵌入空间的连续扩散与词元层面的离散扩散，进而证明每种方法仅能满足五项关键属性中的部分要求，从而体现出结构性的权衡。通过对近期大型扩散语言模型的分析，我们揭示出两个核心问题：（一）均匀噪声干扰未能充分考虑信息在文本序列中的分布特性；（二）基于词元边缘分布的训练模式难以捕捉并行解码过程中的多词元依赖关系。这些发现启示我们应当构建更贴合文本结构的扩散过程，并推动未来研究朝着构建更连贯的扩散语言模型方向发展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.22630">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.22630">arXiv</a></p>
+<hr />
+<h3>5. FlowBlending：面向快速高保真视频生成的阶段感知多模型采样方法</h3>
+<p><strong>原文标题：</strong> FlowBlending: Stage-Aware Multi-Model Sampling for Fast and High-Fidelity Video Generation</p>
+<p><strong>摘要：</strong>
+本研究揭示了模型容量在不同时间步中的影响存在差异：在生成过程的早期与后期阶段，模型容量至关重要；而在中间阶段，其影响基本可忽略。基于此，我们提出FlowBlending——一种阶段感知的多模型采样策略，分别在容量敏感阶段与中间阶段采用大模型与小模型进行协同生成。我们进一步提出了简单的阶段边界判定准则，并通过速度散度分析作为识别容量敏感区域的有效代理指标。在LTX-Video（2B/13B）和WAN 2.1（1.3B/14B）数据集上的实验表明，FlowBlending在保持大模型视觉保真度、时序连贯性与语义对齐能力的同时，可实现最高1.65倍的推理加速，并减少57.35%的浮点运算量。该方法还能与现有采样加速技术兼容，实现额外最高2倍的加速效果。项目页面详见：https://jibin86.github.io/flowblending_project_page。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24724">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24724">arXiv</a></p>
+<hr />
+<h3>6. Dream2Flow：通过三维物体流连接视频生成与开放世界操作</h3>
+<p><strong>原文标题：</strong> Dream2Flow: Bridging Video Generation and Open-World Manipulation with 3D Object Flow</p>
+<p><strong>摘要：</strong>
+生成式视频建模已成为一种引人注目的工具，能够以零样本方式对开放世界操作中合理的物理交互进行推理。然而，如何将此类由人类引导的运动转化为机器人系统所需的底层动作，仍然是一个挑战。我们观察到，给定初始图像和任务指令，这些模型擅长合成合理的物体运动。因此，我们提出了Dream2Flow框架，该框架通过三维物体流作为中间表示，将视频生成与机器人控制相连接。我们的方法从生成的视频中重建三维物体运动，并将操作任务形式化为物体轨迹跟踪。通过将状态变化与实现这些变化的执行器分离，Dream2Flow克服了具身性差距，能够利用预训练视频模型进行零样本引导，以操作多种类别的物体——包括刚性、铰接式、可变形和颗粒状物体。通过轨迹优化或强化学习，Dream2Flow将重建的三维物体流转化为可执行的底层指令，而无需任务特定的演示。仿真和真实世界实验表明，三维物体流是一种通用且可扩展的接口，能够将视频生成模型适配于开放世界机器人操作。视频和可视化内容可在 https://dream2flow.github.io/ 查看。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24766">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24766">arXiv</a></p>
+<hr />
+<h3>7. 面向含噪黑箱问题的禁忌增强仿真优化方法</h3>
+<p><strong>原文标题：</strong> TESO Tabu Enhanced Simulation Optimization for Noisy Black Box Problems</p>
+<p><strong>摘要：</strong>
+仿真优化常面临评估噪声干扰、计算成本高昂以及搜索空间复杂多模态等挑战。本文提出禁忌增强仿真优化框架，这是一种融合自适应搜索与记忆策略的新型元启发式方法。该框架通过短期禁忌列表避免循环搜索并促进解空间多样化，同时利用长期精英记忆库对优质解进行扰动以引导集中搜索。其特赦准则允许对优异候选解解除禁忌限制，从而在随机环境中实现探索与利用的动态平衡。以排队系统优化问题为例，本研究表明该框架在性能上优于基准算法，并验证了其记忆机制的有效性，体现了方法的可靠性与优越性。相关源代码与数据已公开于：https://github.com/bulentsoykan/TESO。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24007">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24007">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2026-01-02_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
