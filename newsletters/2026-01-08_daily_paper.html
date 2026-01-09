@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2026-01-08</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2026-01-08 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：20</li>
+<li>热门领域：LLM, GPT, RL, Transformer</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. 熵自适应微调：解决置信冲突以缓解遗忘</h3>
+<p><strong>原文标题：</strong> Entropy-Adaptive Fine-Tuning: Resolving Confident Conflicts to Mitigate Forgetting</p>
+<p><strong>摘要：</strong>
+监督微调是领域适应的标准范式，但其常导致灾难性遗忘。与此形成鲜明对比的是，在线强化学习能有效保持模型的通用能力。我们探究这一差异，发现其根源在于根本性的分布差距：强化学习与模型内部信念保持一致，而监督微调强制模型拟合外部监督。这种不匹配常表现为"置信冲突"标记——其特点是低概率但低熵。在此类情况下，模型对其自身预测高度确信，却被强制学习相悖的真实标注，从而引发破坏性的梯度更新。为解决该问题，我们提出熵自适应微调方法。与仅依赖预测概率的方法不同，该方法利用标记级熵作为门控机制，以区分认知不确定性与知识冲突。这使得模型能够从不确定样本中学习，同时抑制冲突数据的梯度更新。在数学、医学和智能体领域对千问及GLM系列模型（参数量4B至32B）的广泛实验验证了我们的假设。熵自适应微调在保持与标准监督微调相当的下游性能的同时，显著缓解了通用能力的退化。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.02151">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.02151">arXiv</a></p>
+<hr />
+<h3>2. 演化式程序化技能网络</h3>
+<p><strong>原文标题：</strong> Evolving Programmatic Skill Networks</p>
+<p><strong>摘要：</strong>
+本研究探讨在开放式具身环境中智能体的持续技能获取问题，智能体需构建、优化并复用不断扩展的可执行技能库。我们提出程序化技能网络（PSN）框架，该框架将技能定义为可执行的符号化程序，形成通过经验演化的组合式网络。PSN通过大语言模型实例化三个核心机制：（1）基于结构化故障定位的REFLECT机制，用于技能组合的精准问题定位；（2）成熟度感知门控的渐进式优化机制，在稳定可靠技能的同时保持不确定技能的演化可塑性；（3）回滚验证下的规范化结构重构机制，确保网络结构的紧凑性。研究进一步揭示PSN的学习动态与神经网络训练存在结构相似性。在MineDojo和Crafter环境中的实验表明，该系统在开放式任务分布中展现出强大的技能复用能力、快速适应能力以及优异的泛化性能。\footnote{代码将开源发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03509">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03509">arXiv</a></p>
+<hr />
+<h3>3. Atlas：面向多领域复杂推理的异构模型与工具协同编排框架</h3>
+<p><strong>原文标题：</strong> Atlas: Orchestrating Heterogeneous Models and Tools for Multi-Domain Complex Reasoning</p>
+<p><strong>摘要：</strong>
+大型语言模型（LLM）与外部工具的融合显著拓展了智能体的能力边界。然而，随着模型与工具多样性的增加，选择最优的模型-工具组合已成为一个高维优化难题。现有方法通常依赖单一模型或固定的工具调用逻辑，难以充分利用异构模型-工具组合间的性能差异。本文提出ATLAS（自适应工具-模型对齐与协同调用框架），一种面向跨领域复杂推理的动态工具调用双路径架构。该框架通过双路径机制实现：（1）基于无训练聚类路由的领域适配路径，利用经验先验实现领域特异性对齐；（2）基于强化学习的多步决策路径，通过自主轨迹探索实现分布外泛化。在15个基准测试上的实验表明，本方法在分布内任务（+10.1%）和分布外任务（+13.1%）上均超越现有路由方法，性能优于GPT-4o等闭源模型。此外，通过协同编排专用多模态工具，本框架在视觉推理任务中展现出显著优势。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03872">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03872">arXiv</a></p>
+<hr />
+<h3>4. Benchmark^2：大语言模型基准测试的系统性评估</h3>
+<p><strong>原文标题：</strong> Benchmark^2: Systematic Evaluation of LLM Benchmarks</p>
+<p><strong>摘要：</strong>
+用于评估大语言模型的基准测试的快速扩散，使得对评估基准测试本身质量的系统性方法产生了迫切需求。我们提出了Benchmark^2，一个包含三项互补指标的综合框架：（1）跨基准排名一致性，用于衡量一个基准测试产生的模型排名是否与其他同类基准测试一致；（2）区分度评分，用于量化基准测试区分不同模型的能力；（3）能力对齐偏差，用于识别同一模型系列中更强模型失败而较弱模型成功的异常实例。我们在涵盖数学、推理和知识领域的15个基准测试上进行了广泛实验，评估了来自四个模型系列的11个大语言模型。我们的分析揭示了现有基准测试之间存在显著的质量差异，并证明基于我们指标的精选基准测试构建方法，能够以大幅缩减的测试集实现可比的评估性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03986">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03986">arXiv</a></p>
+<hr />
+<h3>5. ROI-推理：基于预计算元认知的推理过程理性优化</h3>
+<p><strong>原文标题：</strong> ROI-Reasoning: Rational Optimization for Inference via Pre-Computation Meta-Cognition</p>
+<p><strong>摘要：</strong>
+大型语言模型（LLMs）在充足计算资源支持下可实现强大的推理性能，但其本身无法预知任务所需的具体计算量。本研究针对严格全局令牌约束下的多任务推理场景，将其形式化为有序随机多选择背包问题（OS-MCKP）。该视角揭示了元认知层面的需求——需要预判任务难度、评估投资回报率（ROI）并策略性分配计算资源。我们提出ROI-推理框架，通过两阶段训练赋予LLMs内在的预算感知理性能力。第一阶段通过元认知微调，使模型在生成前能预测推理成本与预期效用，从而支持显式的“求解-跳过”决策机制。第二阶段采用理性感知强化学习，在硬性令牌预算约束下优化序列决策，使模型能够学习长时程的资源分配策略。在多个受限数学推理基准测试中，ROI-推理框架在严格计算预算下持续提升总体得分，同时显著降低决策遗憾值。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03822">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03822">arXiv</a></p>
+<hr />
+<h3>6. Klear：统一多任务音视频联合生成</h3>
+<p><strong>原文标题：</strong> Klear: Unified Multi-Task Audio-Video Joint Generation</p>
+<p><strong>摘要：</strong>
+音视频联合生成技术发展迅速，但仍面临重大挑战。非商业化方法仍存在音画不同步、唇语对齐不佳及单模态退化等问题，其根源在于音视频对应关系建模薄弱、泛化能力有限以及高质量密集标注数据稀缺。为解决这些问题，我们提出Klear系统，并从模型架构、训练策略与数据构建三个维度展开研究。架构方面，我们采用单塔式设计，配备统一的DiT模块与全向全局注意力机制，实现了紧密的音画对齐与强大的可扩展性。训练策略上，我们采用渐进式多任务范式——通过随机模态掩码实现跨任务联合优化，并结合多阶段课程学习，从而构建鲁棒的表征、强化音画对齐的世界知识并防止单模态坍缩。数据构建方面，我们提出了首个大规模带密集标注的音视频数据集，并设计了一套创新的自动化数据构建流程，可对数百万条多样化、高质量、严格对齐的音-视-文三元组进行标注与筛选。基于此，Klear能够扩展至大规模数据集，在联合生成与单模态生成场景中均能实现高保真度、语义与时序对齐的指令跟随生成，同时对分布外场景展现出强大的泛化能力。在多项任务评估中，本方法显著超越现有技术，性能达到与Veo 3相当的水平，为下一代音视频合成提供了统一且可扩展的技术路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04151">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04151">arXiv</a></p>
+<hr />
+<h3>7. 动态物体世界的编舞</h3>
+<p><strong>原文标题：</strong> Choreographing a World of Dynamic Objects</p>
+<p><strong>摘要：</strong>
+物理四维（三维+时间）世界中的动态物体持续演化、形变并与其他物体相互作用，从而形成多样化的四维场景动态。本文提出一种通用生成框架CHORD，用于对动态物体与场景进行"编舞"并合成此类现象。传统基于规则的图形学流程虽能创建此类动态，但依赖特定类别的启发式方法，既耗费人力又难以扩展。近期基于学习的方法通常需要大规模数据集，却难以覆盖所有目标物体类别。我们的方法通过提出基于蒸馏的流程，从二维视频的欧拉表征中提取隐含的丰富拉格朗日运动信息，从而继承了视频生成模型的普适性。本方法具有通用性、多功能性且不依赖特定类别。我们通过生成多样化多体四维动态的实验验证其有效性，展示其相较于现有方法的优势，并证明其在生成机器人操作策略方面的应用潜力。项目页面：https://yanzhelyu.github.io/chord</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04194">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04194">arXiv</a></p>
+<hr />
+<h3>8. 能动式评估量规作为软件工程智能体的情境化验证工具</h3>
+<p><strong>原文标题：</strong> Agentic Rubrics as Contextual Verifiers for SWE Agents</p>
+<p><strong>摘要：</strong>
+验证对于改进智能体至关重要：它为强化学习提供奖励信号，并通过测试时扩展技术实现推理阶段的性能提升。尽管验证在软件工程智能体场景中具有重要意义，现有方法通常依赖代码执行，而环境搭建的开销使得该方法难以规模化扩展。虽然存在补丁分类器和启发式方法等可扩展替代方案，但这些方法往往缺乏代码库情境的充分依据且可解释性较弱。为此，我们提出“能动式评估量规”方案：由专家智能体与代码库交互，创建基于具体情境的评估清单，随后无需执行测试即可依据该清单对候选补丁进行评分。在并行测试时扩展评估框架下的SWE-Bench Verified基准测试中，能动式评估量规在Qwen3-Coder-30B-A3B模型上取得54.2%的得分，在Qwen3-32B模型上取得40.6%的得分，较对比组中最强基线模型至少提升3.5个百分点。我们进一步分析评估量规的行为特征，发现其评分结果与真实测试结果保持一致性，同时能识别出传统测试未能捕捉的问题。消融实验表明，智能体对情境的主动收集是生成针对特定代码库、无歧义评估标准的关键。综合而言，这些结果表明能动式评估量规能为软件工程智能体提供高效、可扩展且精细化的验证信号。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04171">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04171">arXiv</a></p>
+<hr />
+<h3>9. MDAgent2：面向分子动力学代码生成与知识问答的大语言模型</h3>
+<p><strong>原文标题：</strong> MDAgent2: Large Language Model for Code Generation and Knowledge Q&amp;A in Molecular Dynamics</p>
+<p><strong>摘要：</strong>
+分子动力学模拟在材料科学原子尺度行为研究中具有关键作用，但LAMMPS脚本编写仍存在高度专业化与耗时的问题。尽管大语言模型在代码生成和领域问答中展现出潜力，其在分子动力学场景中的应用受限于领域数据稀缺、前沿大模型部署成本高昂以及代码可执行率低等挑战。基于我们先前开发的MDAgent，本文提出首个支持分子动力学领域知识问答与代码生成的端到端框架MDAgent2。我们构建了领域专用的数据生成流程，产出涵盖分子动力学知识、问答与代码生成的三类高质量数据集。基于这些数据集，采用持续预训练、监督微调和强化学习三阶段训练策略，开发出领域适应模型MD-Instruct与MD-Code。进一步提出MD-GRPO强化学习方法，通过模拟结果构建奖励信号并循环利用低奖励轨迹实现持续优化。我们还构建了可部署的多智能体系统MDAgent2-RUNTIME，集成代码生成、执行、评估与自我修正功能。结合本文提出的首个LAMMPS代码生成与问答评估基准MD-EvalBench，我们的模型与系统在多项指标上超越现有基线方法。本工作系统论证了大语言模型在工业仿真任务中的适应性与泛化能力，为“AI for Science”及工业级仿真的自动化代码生成奠定了方法论基础。项目地址：https://github.com/FredericVAN/PKU_MDAgent2</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.02075">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.02075">arXiv</a></p>
+<hr />
+<h3>10. E-GRPO：高熵步长驱动流模型的有效强化学习</h3>
+<p><strong>原文标题：</strong> E-GRPO: High Entropy Steps Drive Effective Reinforcement Learning for Flow Models</p>
+<p><strong>摘要：</strong>
+近期强化学习技术提升了流匹配模型在人类偏好对齐任务上的性能。尽管随机采样能够探索去噪方向，但现有方法在优化多个去噪步骤时面临奖励信号稀疏且模糊的问题。我们观察到，高熵步长能够实现更高效、更有效的探索，而低熵步长则导致生成轨迹缺乏区分度。为此，我们提出E-GRPO（熵感知分组相对策略优化）方法，旨在提高随机微分方程采样步长的熵值。由于随机微分方程的积分过程受多步随机性影响，易产生模糊的奖励信号，我们特别将连续的低熵步长合并为一个高熵步长进行随机微分方程采样，而对其他步骤采用常微分方程采样。在此基础上，我们引入多步分组归一化优势函数，该函数在共享同一合并去噪步长的样本组内计算分组相对优势。在不同奖励设置下的实验结果验证了本方法的有效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.00423">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.00423">arXiv</a></p>
+<hr />
+<h3>11. EpiQAL：面向增强对齐与推理的流行病学问答大语言模型基准评测</h3>
+<p><strong>原文标题：</strong> EpiQAL: Benchmarking Large Language Models in Epidemiological Question Answering for Enhanced Alignment and Reasoning</p>
+<p><strong>摘要：</strong>
+可靠的流行病学推理需要综合研究证据，以推断人群层面的疾病负担、传播动态和干预效果。现有的医学问答基准主要侧重于临床知识或患者层面的推理，但少有系统性地评估基于证据的流行病学推断。本文提出EpiQAL，这是首个针对多种疾病的流行病学问答诊断基准，包含基于开放获取文献构建的三个子集。这些子集分别评估基于文本的事实性记忆、将文献证据与流行病学原理相联系的多步推理，以及在隐藏讨论部分情况下的结论重构能力。基准构建结合了专家设计的分类指导、多模型验证和基于检索的难度控制。在十个开源模型上的实验表明，当前大语言模型在流行病学推理方面表现有限，其中多步推理构成最大挑战。模型在不同子集上的排名存在波动，且仅靠模型规模无法预测成功。思维链提示方法对多步推理有益，但在其他方面效果不一。EpiQAL为证据锚定、推断性推理和结论重构提供了细粒度的诊断信号。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03471">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03471">arXiv</a></p>
+<hr />
+<h3>12. RedBench：面向大语言模型全面红队测试的通用数据集</h3>
+<p><strong>原文标题：</strong> RedBench: A Universal Dataset for Comprehensive Red Teaming of Large Language Models</p>
+<p><strong>摘要：</strong>
+随着大语言模型在安全关键型应用中的日益普及，确保其对抗对抗性提示的鲁棒性至关重要。然而，现有的红队测试数据集普遍存在风险分类不一致、领域覆盖有限以及评估方法过时等问题，阻碍了系统性的漏洞评估。为应对这些挑战，我们提出了RedBench——一个通用数据集，它整合了来自顶级学术会议和公开仓库的37个基准数据集，共包含29,362个涵盖攻击性提示与拒绝性提示的样本。RedBench采用标准化的分类体系，包含22个风险类别和19个领域，能够对大语言模型的漏洞进行一致且全面的评估。我们详细分析了现有数据集，为当前主流大语言模型建立了性能基线，并开源了数据集与评估代码。本研究的贡献在于促进了鲁棒性比较，推动了未来相关研究的发展，并有助于构建适用于实际部署的安全可靠的大语言模型。代码地址：https://github.com/knoveleng/redeval</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03699">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03699">arXiv</a></p>
+<hr />
+<h3>13. 为什么大语言模型尚非科学家：从四次自主科研尝试中汲取的教训</h3>
+<p><strong>原文标题：</strong> Why LLMs Aren't Scientists Yet: Lessons from Four Autonomous Research Attempts</p>
+<p><strong>摘要：</strong>
+本文报告了一项案例研究，通过构建由六个大语言模型智能体组成的流程，对应科研工作流程的各个阶段，进行了四次端到端的机器学习科研论文自主生成尝试。其中三次尝试在实施或评估阶段失败。一次尝试完整走完流程，其成果被要求以人工智能系统为第一作者的实验性首届会议Agents4Science 2025接收，并同时通过了人类与多智能体评审。基于这些尝试，我们记录了六种反复出现的失败模式：对训练数据默认设置的偏向、执行压力下的实施漂移、长周期任务中的记忆与上下文退化、面对明显失败仍过度兴奋地宣告成功、领域智能不足，以及实验设计中科学品味的薄弱。最后，我们讨论了构建更稳健的AI科学家系统的四项设计原则、对自主科学发现的启示，并在https://github.com/Lossfunk/ai-scientist-artefacts-v1 公开了所有提示词、过程产物与输出结果。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03315">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03315">arXiv</a></p>
+<hr />
+<h3>14. ThinkRL-Edit：基于强化学习的推理中心化图像编辑思维框架</h3>
+<p><strong>原文标题：</strong> ThinkRL-Edit: Thinking in Reinforcement Learning for Reasoning-Centric Image Editing</p>
+<p><strong>摘要：</strong>
+基于统一多模态生成模型的指令驱动图像编辑技术发展迅速，但其底层视觉推理能力仍显不足，导致在推理中心化编辑任务中表现欠佳。强化学习虽已被探索用于提升图像编辑质量，却面临三大关键挑战：(1) 推理探索空间受限，仅局限于去噪随机性；(2) 奖励融合存在偏差；(3) 基于视觉语言模型的指令奖励稳定性不足。本研究提出ThinkRL-Edit——一个将视觉推理与图像合成解耦、并突破去噪过程局限的推理中心化强化学习框架。为此，我们引入基于思维链的推理采样机制，在在线采样的生成阶段前设置规划与反思环节，迫使模型在确定视觉输出前探索多种语义假设并验证其合理性。为避免加权聚合的失效问题，我们提出跨多奖励维度的无偏链式偏好分组策略。此外，我们将区间式视觉语言模型评分替换为二进制检查表，从而为复杂推理任务提供更精确、低方差且可解释的奖励机制。实验表明，本方法在推理中心化图像编辑任务中显著优于现有技术，能够生成符合指令要求、视觉连贯且语义可靠的编辑结果。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03467">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03467">arXiv</a></p>
+<hr />
+<h3>15. 通过语言学习任务预训练增强语言模型的语言能力</h3>
+<p><strong>原文标题：</strong> Enhancing Linguistic Competence of Language Models through Pre-training with Language Learning Tasks</p>
+<p><strong>摘要：</strong>
+语言模型通常在原始文本数据集上进行预训练，以逐词元生成文本序列。虽然这种方法有助于学习世界知识和推理能力，但并未显式优化语言能力。为弥补这一不足，我们提出L2T预训练框架，将语言学习任务与标准的下一个词元预测相结合。受人类语言习得过程启发，L2T将原始文本转化为结构化输入-输出对，以提供显式语言刺激。在混合原始文本与L2T数据上进行语言模型预训练，不仅能提升语言能力基准测试的整体表现、加速语言能力习得，同时能在通用推理任务上保持竞争优势。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03448">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03448">arXiv</a></p>
+<hr />
+<h3>16. Pearmut：简化人工翻译评估的轻量级平台</h3>
+<p><strong>原文标题：</strong> Pearmut: Human Evaluation of Translation Made Trivial</p>
+<p><strong>摘要：</strong>
+人工评估是多语言自然语言处理领域的黄金标准，但在实践中常因流程复杂、耗时过长而被自动指标替代，现有工具通常需要大量工程部署与运维投入。我们推出Pearmut平台，该轻量级但功能完备的系统使得端到端人工评估能够像自动评估一样便捷运行。该平台消除了常见的入门壁垒，支持多语言任务评估，尤其专注于机器翻译领域。它实现了直接评估（DA）、错误跨度标注（ESA）与多维质量度量（MQM）等标准评估协议，同时具备可扩展性以支持新协议的原型设计。其核心功能包括文档级上下文支持、绝对与对比评估、注意力校验、ESAAI预标注技术，以及静态与基于主动学习的任务分配策略。通过Pearmut，可靠的人工评估得以成为模型开发与诊断中常态化、可落地的组成部分，而非偶发性工作。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.02933">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.02933">arXiv</a></p>
+<hr />
+<h3>17. Gen3R：三维场景生成与前馈式重建的融合</h3>
+<p><strong>原文标题：</strong> Gen3R: 3D Scene Generation Meets Feed-Forward Reconstruction</p>
+<p><strong>摘要：</strong>
+本文提出Gen3R方法，该方法通过桥接基础重建模型与视频扩散模型的强先验知识，实现场景级三维生成。我们重新利用VGGT重建模型，通过在其特征令牌上训练适配器来生成几何隐变量，并对其进行正则化以对齐预训练视频扩散模型的外观隐变量。通过联合生成这些解耦但对齐的隐变量，Gen3R能够同时生成RGB视频及对应的三维几何信息，包括相机位姿、深度图与全局点云。实验表明，本方法在单图像与多图像条件的三维场景生成任务中均达到最先进水平。此外，通过利用生成式先验，本方法能够增强重建的鲁棒性，证明了重建模型与生成模型的紧密耦合具有相互促进的效益。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04090">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04090">arXiv</a></p>
+<hr />
+<h3>18. ResTok：面向自回归图像生成的一维视觉分词器层次残差学习</h3>
+<p><strong>原文标题：</strong> ResTok: Learning Hierarchical Residuals in 1D Visual Tokenizers for Autoregressive Image Generation</p>
+<p><strong>摘要：</strong>
+现有用于自回归生成的一维视觉分词器主要遵循语言建模的设计原则，因其直接基于Transformer架构构建——该架构的先验知识源于语言领域，导致生成单层次潜在标记并将视觉数据视为扁平化的序列标记流。然而，这种类语言的处理方式忽视了视觉任务的关键特性，特别是长期以来对视觉模型收敛性和效率至关重要的层次化结构与残差网络设计。为使视觉任务回归其本质，我们提出残差分词器（ResTok），这是一种通过构建图像标记与潜在标记双重层次残差的一维视觉分词器。通过渐进式融合获得的层次化表征，可在每一层实现跨层级特征融合，显著提升表征能力。同时，层次间的语义残差可防止信息重叠，产生更集中的潜在分布，从而更易于自回归建模。跨层级绑定关系由此自然涌现，无需任何显式约束。为加速生成过程，我们进一步提出层次化自回归生成器，通过一次性预测整层潜在标记而非严格逐标记生成，大幅减少采样步骤。大量实验表明，在视觉分词中恢复层次残差先验能显著提升自回归图像生成效果，在ImageNet-256数据集上仅需9次采样步骤即可达到2.34的gFID指标。代码已开源：https://github.com/Kwai-Kolors/ResTok。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03955">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03955">arXiv</a></p>
+<hr />
+<h3>19. MAGMA：面向智能体的多图驱动记忆架构</h3>
+<p><strong>原文标题：</strong> MAGMA: A Multi-Graph based Agentic Memory Architecture for AI Agents</p>
+<p><strong>摘要：</strong>
+记忆增强生成技术通过为大型语言模型引入外部记忆以支持长上下文推理，但现有方法主要依赖对单一记忆存储的语义相似性检索，导致时序、因果与实体信息相互纠缠。这种设计限制了查询意图与检索证据之间的可解释性与对齐性，从而影响推理准确性。本文提出MAGMA——一种多图驱动的智能体记忆架构，该架构将每个记忆项映射至正交的语义图、时序图、因果图与实体图中。MAGMA将检索过程定义为基于策略的多关系图遍历机制，实现了查询自适应的记忆选择与结构化上下文构建。通过解耦记忆表征与检索逻辑，MAGMA提供了透明的推理路径与细粒度的检索控制。在LoCoMo与LongMemEval基准上的实验表明，MAGMA在长程推理任务中持续优于当前最先进的智能体记忆系统。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03236">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03236">arXiv</a></p>
+<hr />
+<h3>20. RGS-SLAM：基于单次密集初始化的鲁棒高斯溅射SLAM系统</h3>
+<p><strong>原文标题：</strong> RGS-SLAM: Robust Gaussian Splatting SLAM with One-Shot Dense Initialization</p>
+<p><strong>摘要：</strong>
+本文提出RGS-SLAM，一种鲁棒的高斯溅射SLAM框架，其采用免训练的对应关系-高斯初始化方法，取代了GS-SLAM中基于残差的致密化阶段。与通过残差揭示缺失几何结构而逐步添加高斯体的传统方法不同，RGS-SLAM通过对经置信感知内点分类器优化的DINOv3描述符所生成的密集多视角对应关系进行单次三角测量，在优化前生成分布均匀且具有结构感知的高斯种子先验。该初始化策略稳定了早期建图过程，并使收敛速度提升约20%，在纹理丰富和杂乱场景中实现了更高的渲染保真度，同时完全兼容现有GS-SLAM流程。在TUM RGB-D和Replica数据集上的评估表明，相较于最先进的高斯溅射与点云SLAM系统，RGS-SLAM在定位与重建精度方面达到竞争性或更优水平，并保持高达925 FPS的实时建图性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.00705">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.00705">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2026-01-08_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
