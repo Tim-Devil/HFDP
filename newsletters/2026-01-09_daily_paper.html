@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2026-01-09</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2026-01-09 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：33</li>
+<li>热门领域：RL, LLM, GPT</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. GDPO：面向多奖励强化学习优化的组奖励解耦归一化策略优化</h3>
+<p><strong>原文标题：</strong> GDPO: Group reward-Decoupled Normalization Policy Optimization for Multi-reward RL Optimization</p>
+<p><strong>摘要：</strong>
+随着语言模型能力日益增强，用户不仅期望其提供准确回应，还要求其行为能适应多样化场景中的人类偏好。为实现这一目标，强化学习流程已开始引入多个奖励信号，每个奖励对应不同偏好，以引导模型达成预期行为。然而，近期研究默认在多奖励场景中直接应用组相对策略优化方法，而未检验其适用性。本文证明，直接使用GRPO对不同轨迹奖励组合进行归一化会导致其坍缩为相同的优势值，从而降低训练信号的分辨率，引发收敛次优问题，甚至在某些情况下导致训练早期失败。为此，我们提出组奖励解耦归一化策略优化方法，该方法通过解耦各奖励的归一化过程，更真实地保留奖励间的相对差异，实现更精确的多奖励优化，并显著提升训练稳定性。我们在工具调用、数学推理和代码推理三类任务中对比GDPO与GRPO，同时评估正确性指标（准确率、错误率）与约束遵循指标（格式、长度）。在所有实验设置下，GDPO均持续优于GRPO，证明了该方法在多奖励强化学习优化中的有效性与泛化能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05242">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05242">arXiv</a></p>
+<hr />
+<h3>2. 可学习乘子：释放语言模型矩阵层的尺度约束</h3>
+<p><strong>原文标题：</strong> Learnable Multipliers: Freeing the Scale of Language Model Matrix Layers</p>
+<p><strong>摘要：</strong>
+在大语言模型预训练中，对矩阵层施加权重衰减是标准做法。已有研究表明，随机梯度噪声会引发权重矩阵W的类布朗运动式扩张，而权重衰减则抵消这种扩张，最终形成具有特定权重范数||W||的权重衰减-噪声平衡态。本研究将这种平衡范数视为训练过程的有害伪影，并通过引入可学习乘子来学习最优尺度以解决该问题。首先，我们在W上附加可学习的标量乘子，并证实权重衰减-噪声平衡范数处于次优状态：学习得到的尺度能够自适应数据并提升模型性能。进而，我们论证了矩阵各行与各列的范数同样受此约束，因此通过引入可学习的行乘子与列乘子来释放其尺度约束。本方法可视为对μP乘子的一种可学习、表达能力更强的泛化形式。实验表明，该方法优于经充分调优的μP基线，降低了乘子调优的计算开销，并引发出关于前向传播对称性、学习乘子的宽度缩放等实践性问题。最后，我们在Adam与Muon优化器上均验证了可学习乘子的有效性，其在下游任务评估中带来的性能提升与从Adam切换至Muon优化器所获提升相当。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04890">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04890">arXiv</a></p>
+<hr />
+<h3>3. RL-AWB：基于深度强化学习的低光照夜间场景自动白平衡校正</h3>
+<p><strong>原文标题：</strong> RL-AWB: Deep Reinforcement Learning for Auto White Balance Correction in Low-Light Night-time Scenes</p>
+<p><strong>摘要：</strong>
+在计算摄影中，由于低光照噪声和复杂的照明条件，夜间色彩恒常性仍是一个具有挑战性的问题。本文提出RL-AWB，一种将统计方法与深度强化学习相结合的新型夜间白平衡校正框架。该方法首先采用一种专为夜间场景设计的统计算法，该算法结合了显著灰色像素检测与新颖的照明估计技术。在此基础上，我们开发了首个基于深度强化学习的色彩恒常性方法，该方法以统计算法为核心，通过动态优化每张图像的参数来模拟专业AWB调校专家的决策过程。为促进跨传感器评估，我们首次构建了一个多传感器夜间数据集。实验结果表明，该方法在低光照与良好照明图像上均展现出卓越的泛化能力。项目页面：https://ntuneillee.github.io/research/rl-awb/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05249">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05249">arXiv</a></p>
+<hr />
+<h3>4. 基于FusionRoute的令牌级大语言模型协同框架</h3>
+<p><strong>原文标题：</strong> Token-Level LLM Collaboration via FusionRoute</p>
+<p><strong>摘要：</strong>
+大语言模型（LLM）在不同领域展现出显著优势。然而，要构建一个在多个领域均表现优异的通用模型，通常需要将模型规模扩展至训练和部署成本极高的程度。另一方面，尽管小型领域专用模型效率更高，但其在训练分布之外往往泛化能力不足。为解决这一困境，本文提出FusionRoute——一种鲁棒且高效的令牌级多LLM协同框架。该框架通过轻量级路由机制同时实现两个功能：（1）在每一步解码时选择最合适的专家模型；（2）生成互补逻辑值，通过逻辑值加法对所选专家模型的下一令牌概率分布进行优化或校正。与现有仅依赖固定专家输出的令牌级协同方法不同，本文的理论分析表明，纯专家路由机制存在根本性局限：除非满足强全局覆盖假设，否则通常无法实现最优解码策略。FusionRoute通过可训练的互补生成器增强专家选择机制，扩展了有效策略类别，并在温和条件下实现了最优价值函数的恢复。实证研究表明，在Llama-3和Gemma-2系列模型上，跨越数学推理、代码生成和指令遵循等多个基准测试，FusionRoute在性能上均优于序列级/令牌级协同、模型融合及直接微调方法，同时在各自任务上与领域专家模型保持竞争力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05106">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05106">arXiv</a></p>
+<hr />
+<h3>5. RelayLLM：基于协同解码的高效推理框架</h3>
+<p><strong>原文标题：</strong> RelayLLM: Efficient Reasoning via Collaborative Decoding</p>
+<p><strong>摘要：</strong>
+大型语言模型在复杂推理任务中常受限于高昂的计算成本与延迟，而资源高效的小型语言模型通常缺乏必要的推理能力。现有的协同方法（如级联或路由机制）采用粗粒度操作模式，将完整查询卸载至大型语言模型，当小型语言模型已能处理多数推理步骤时，这种模式会导致显著的计算资源浪费。为此，我们提出RelayLLM——一种基于词元级协同解码的新型高效推理框架。与路由机制不同，RelayLLM使小型语言模型成为主动控制器，仅通过特殊指令动态调用大型语言模型处理关键词元，从而实现生成过程的“接力式”传递。我们设计了两阶段训练框架，包括预热阶段与分组相对策略优化，以指导模型在自主推理与策略性求助之间取得平衡。在六个基准测试上的实验结果表明，RelayLLM平均准确率达到49.52%，有效弥合了两类模型的性能差距。值得注意的是，该框架仅需对总生成词元的1.07%调用大型语言模型，相较于性能匹配的随机路由方法实现了98.2%的成本降低。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05167">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05167">arXiv</a></p>
+<hr />
+<h3>6. RoboVIP：基于视觉身份提示增强的多视角视频生成提升机器人操作性能</h3>
+<p><strong>原文标题：</strong> RoboVIP: Multi-View Video Generation with Visual Identity Prompting Augments Robot Manipulation</p>
+<p><strong>摘要：</strong>
+操作数据的多样性、数量与质量对于训练有效的机器人策略至关重要。然而，受硬件与物理环境限制，在多样化场景中收集大规模真实世界操作数据仍难以扩展。近期研究采用文本提示条件化的图像扩散模型，通过改变视觉观测中的背景与桌面物体来增强操作数据。然而，这些方法往往忽视了先进策略模型所需的多视角与时序一致性观测的实际需求。此外，仅依靠文本提示无法可靠指定场景配置。为向扩散模型提供明确的视觉引导，我们提出视觉身份提示方法，通过提供示例图像作为条件输入来引导生成目标场景配置。为此，我们构建了可扩展的数据处理流程，从大规模机器人数据集中筛选构建视觉身份池。使用增强后的操作数据训练下游视觉-语言-动作策略模型与视觉运动策略模型，在仿真与真实机器人实验中均实现了稳定的性能提升。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05241">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05241">arXiv</a></p>
+<hr />
+<h3>7. AT^2PO：基于树搜索的智能体回合制策略优化</h3>
+<p><strong>原文标题：</strong> AT^2PO: Agentic Turn-based Policy Optimization via Tree Search</p>
+<p><strong>摘要：</strong>
+大型语言模型智能体已发展成为通过交替进行内部推理与外部工具交互来处理多回合任务的强大系统。智能体强化学习作为一种关键的训练后优化范式，近年来受到广泛研究关注，旨在进一步提升这些能力。本文提出AT^2PO（基于树搜索的智能体回合制策略优化），这是一个面向多回合智能体强化学习的统一框架，解决了三个核心挑战：探索多样性有限、稀疏信用分配以及策略优化失准。AT^2PO引入了回合级树结构，该结构同时实现了两种机制：通过熵引导树扩展实现策略性探索，以及通过回合级信用分配实现稀疏结果下的细粒度奖励传播。在此基础上，我们提出智能体回合制策略优化方法——一种回合级学习目标，使策略更新与智能体交互的自然决策粒度保持一致。该方法与树搜索正交，可轻松集成到任何多回合强化学习流程中。在七个基准测试上的实验表明，该框架相较最先进基线模型平均提升达1.84个百分点，消融研究验证了各组件的有效性。代码已开源：https://github.com/zzfoutofspace/ATPO。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04767">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04767">arXiv</a></p>
+<hr />
+<h3>8. 关键少数令牌：基于熵的视觉语言模型攻击方法</h3>
+<p><strong>原文标题：</strong> Few Tokens Matter: Entropy Guided Attacks on Vision-Language Models</p>
+<p><strong>摘要：</strong>
+视觉语言模型（VLMs）虽表现出卓越性能，但仍易受对抗性攻击影响。熵作为模型不确定性的度量指标，与VLM的可靠性存在显著关联。现有基于熵的攻击方法倾向于在所有解码步骤中最大化模型不确定性，其隐含假设是每个令牌对生成不稳定性的贡献程度均等。本研究发现，实际上一小部分（约20%）高熵令牌——即自回归生成过程中的关键决策点——对输出轨迹具有决定性影响。通过将对抗性扰动集中于这些关键位置，我们仅需极小的扰动预算即可实现与全局攻击方法相当的语义破坏效果。更重要的是，在多个代表性VLM上的实验表明，此类选择性攻击可将35-49%的良性输出转化为有害内容，暴露出更为严峻的安全风险。值得注意的是，这些脆弱的高熵决策分支在不同架构的VLM中反复出现，使得跨模型攻击迁移成为可能（在未见目标模型上达到17-26%的有害转化率）。基于这些发现，我们提出熵库引导对抗攻击（EGA）方法，该方法在实现竞争性攻击成功率（93-95%）的同时保持高有害转化率，从而揭示了当前VLM安全机制中尚未被充分认知的脆弱性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.21815">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.21815">arXiv</a></p>
+<hr />
+<h3>9. VideoAuto-R1：通过“思考一次，回答两次”实现视频自动推理</h3>
+<p><strong>原文标题：</strong> VideoAuto-R1: Video Auto Reasoning via Thinking Once, Answering Twice</p>
+<p><strong>摘要：</strong>
+思维链推理已成为多模态大语言模型在视频理解任务中的强大工具。然而，其相对于直接回答的必要性和优势尚未得到充分探讨。本文首先证明，对于通过强化学习训练的视频模型，直接回答往往能够达到甚至超越思维链推理的性能，尽管后者以更高的计算成本生成逐步分析。受此启发，我们提出了VideoAuto-R1，一种采用“必要时推理”策略的视频理解框架。在训练过程中，我们的方法遵循“思考一次，回答两次”的范式：模型首先生成一个初始答案，随后进行推理，最终输出一个经过复核的答案。两个答案均通过可验证的奖励机制进行监督。在推理阶段，模型利用初始答案的置信度分数来决定是否进行推理。在视频问答和定位基准测试中，VideoAuto-R1以显著提升的效率实现了最先进的准确率，将平均响应长度减少了约3.3倍（例如从149个标记降至仅44个标记）。此外，我们观察到在感知导向任务中思维模式的激活率较低，而在推理密集型任务中激活率较高。这表明基于语言的显式推理通常有益，但并非总是必要。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05175">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05175">arXiv</a></p>
+<hr />
+<h3>10. VerseCrafter：具备四维几何控制的动态逼真视频世界模型</h3>
+<p><strong>原文标题：</strong> VerseCrafter: Dynamic Realistic Video World Model with 4D Geometric Control</p>
+<p><strong>摘要：</strong>
+视频世界模型旨在模拟动态的真实世界环境，然而现有方法难以对相机与多物体运动提供统一且精确的控制，因为视频本质上是在投影的二维图像平面上运作动态。为弥合这一差距，我们提出了VerseCrafter——一种具备四维感知能力的视频世界模型，能够在统一的四维几何世界状态中实现对相机与物体动态的显式连贯控制。本方法的核心是一种新颖的四维几何控制表示法，该方法通过静态背景点云与逐物体三维高斯轨迹来编码世界状态。此表示不仅捕捉物体的运动路径，还描述其随时间变化的概率性三维占据情况，为刚性边界框或参数化模型提供了一种灵活且与类别无关的替代方案。这些四维控制被渲染为预训练视频扩散模型的条件信号，从而能够生成高保真、视角一致且严格遵循指定动态的视频。当前另一主要挑战在于缺乏具有显式四维标注的大规模训练数据。我们通过开发自动数据引擎来解决此问题，该引擎能够从真实场景视频中提取所需的四维控制信息，从而使模型得以在海量多样化数据集上进行训练。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05138">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05138">arXiv</a></p>
+<hr />
+<h3>11. 专业化的幻象：揭示混合专家模型中领域不变的“常务委员会”</h3>
+<p><strong>原文标题：</strong> The Illusion of Specialization: Unveiling the Domain-Invariant "Standing Committee" in Mixture-of-Experts Models</p>
+<p><strong>摘要：</strong>
+混合专家模型被广泛认为通过稀疏路由机制实现领域专业化。本研究通过引入COMMITTEEAUDIT后验分析框架，在专家组层面（而非单个专家层面）分析路由行为，对这一假设提出质疑。通过对三个代表性模型和MMLU基准测试的分析，我们发现了一个领域不变的“常务委员会”——这是一个由被路由专家组成的紧凑联盟，在不同领域、网络层和路由预算下持续占据路由质量的主导地位，即使在架构已包含共享专家的情况下依然如此。定性分析进一步表明，“常务委员会”锚定了推理结构和句法模式，而外围专家则处理领域特定知识。这些发现揭示了混合专家模型存在强烈的中心化计算结构偏置，表明其专业化程度远低于普遍认知。这种固有偏置同时暗示，当前训练目标（如强制均衡专家使用率的负载平衡损失函数）可能违背模型的自然优化路径，从而限制了训练效率与性能表现。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03425">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03425">arXiv</a></p>
+<hr />
+<h3>12. 智能体即法官：迈向可验证与精细化评估的新范式</h3>
+<p><strong>原文标题：</strong> Agent-as-a-Judge</p>
+<p><strong>摘要：</strong>
+大语言模型即法官（LLM-as-a-Judge）通过利用大语言模型进行规模化评估，彻底改变了人工智能评价体系。然而，随着评估对象日益复杂化、专业化与多步骤化，该方法的可靠性受限于其固有偏见、浅层的单次推理能力以及无法基于真实世界观察进行验证的缺陷。这推动了向“智能体即法官”（Agent-as-a-Judge）的范式转变：智能体法官通过规划、工具增强的验证、多智能体协作与持久记忆等技术，实现了更鲁棒、可验证且精细化的评估。尽管智能体评估系统正迅速涌现，该领域仍缺乏一个统一的框架来梳理这一快速演变的格局。为弥合此差距，本文首次对这一演进脉络进行了全面综述。具体而言，我们识别了表征这一范式转变的关键维度，并建立了发展分类体系。我们系统梳理了核心方法，并综述了其在通用领域与专业领域的应用。此外，我们分析了当前面临的前沿挑战，指出了富有前景的研究方向，最终为下一代智能体评估系统的发展提供了清晰的路线图。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05111">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05111">arXiv</a></p>
+<hr />
+<h3>13. 全光视频生成</h3>
+<p><strong>原文标题：</strong> Plenoptic Video Generation</p>
+<p><strong>摘要：</strong>
+以相机控制为核心的生成式视频重渲染方法（如ReCamMaster）已取得显著进展。然而，尽管在单视角场景中表现优异，这些方法在多视角场景下往往难以保持一致性。由于生成模型固有的随机性，确保幻觉区域的时空连贯性仍具挑战。为此，我们提出PlenopticDreamer框架，通过同步生成式幻觉以维持时空记忆。其核心思想是以自回归方式训练一个多输入单输出的视频条件化模型，并辅以相机引导的视频检索策略——该策略自适应地从历史生成片段中选择显著视频作为条件输入。此外，我们的训练方法融合了渐进式上下文扩展以提升收敛效率，采用自条件机制增强对误差累积导致的长期视觉退化的鲁棒性，并引入长视频条件机制以支持扩展视频生成。在Basic与Agibot基准测试上的大量实验表明，PlenopticDreamer实现了最先进的视频重渲染效果，在视角同步性、视觉保真度、相机控制精确度以及多样化视角转换（如第三人称到第三人称、机器人操作中的头部视角到抓取器视角）方面均表现卓越。项目页面：https://research.nvidia.com/labs/dir/plenopticdreamer/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05239">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05239">arXiv</a></p>
+<hr />
+<h3>14. CoV：面向空间推理的视点链提示方法</h3>
+<p><strong>原文标题：</strong> CoV: Chain-of-View Prompting for Spatial Reasoning</p>
+<p><strong>摘要：</strong>
+三维环境中的具身问答任务通常需要整合分布在多个视角且存在部分遮挡的上下文信息。然而，当前大多数视觉-语言模型受限于固定且有限的输入视角集合，这限制了其在推理过程中获取问题相关上下文的能力，并阻碍了复杂空间推理的进行。本文提出视点链提示方法，这是一种无需训练、仅需测试时推理的框架，通过从粗到精的探索过程将视觉-语言模型转化为主动的视点推理器。该方法首先通过视点选择代理过滤冗余帧并识别与问题对齐的锚定视点，随后通过迭代推理与离散相机动作的交错执行进行细粒度视点调整，从底层三维场景表示中持续获取新观测，直至收集到足够上下文信息或达到步骤预算上限。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05172">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05172">arXiv</a></p>
+<hr />
+<h3>15. DocDancer：迈向基于文档的自主信息检索智能体</h3>
+<p><strong>原文标题：</strong> DocDancer: Towards Agentic Document-Grounded Information Seeking</p>
+<p><strong>摘要：</strong>
+文档问答旨在基于给定文档回答问题，然而现有的文档问答智能体缺乏有效的工具利用能力，且主要依赖闭源模型。本研究提出了DocDancer——一个端到端训练的开源文档智能体。我们将文档问答构建为信息检索问题，并提出一种工具驱动的智能体框架，该框架显式建模文档探索与理解过程。为实现此类智能体的端到端训练，我们设计了“探索-合成”数据生成流程，以解决文档问答领域高质量训练数据稀缺的问题。通过在合成数据上训练，模型在两个长上下文文档理解基准（MMLongBench-Doc与DocBench）上展现出显著有效性。进一步的分析为智能体工具设计与合成数据生成提供了有价值的洞见。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05163">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05163">arXiv</a></p>
+<hr />
+<h3>16. Re-Align：基于结构化推理引导的对齐方法用于上下文图像生成与编辑</h3>
+<p><strong>原文标题：</strong> Re-Align: Structured Reasoning-guided Alignment for In-Context Image Generation and Editing</p>
+<p><strong>摘要：</strong>
+上下文图像生成与编辑（ICGE）允许用户通过交错排列的图像-文本提示来指定视觉概念，这要求模型能够精确理解并忠实执行用户意图。尽管近期出现的统一多模态模型展现出良好的理解能力，但这些优势往往无法有效迁移至图像生成任务中。本文提出Re-Align，一个通过结构化推理引导的对齐来弥合理解与生成之间差距的统一框架。其核心是上下文思维链（IC-CoT），这是一种结构化推理范式，能够解耦语义引导与参考关联，从而提供清晰的文本目标并减轻参考图像间的混淆。此外，Re-Align引入了一种有效的强化学习训练方案，该方案利用代理奖励来衡量结构化推理文本与生成图像之间的对齐程度，进而提升模型在ICGE任务上的整体性能。大量实验验证表明，Re-Align在上下文图像生成与编辑任务上均优于模型规模和资源相当的其他竞争方法。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05124">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05124">arXiv</a></p>
+<hr />
+<h3>17. DiffCoT：大语言模型中扩散式思维链推理方法</h3>
+<p><strong>原文标题：</strong> DiffCoT: Diffusion-styled Chain-of-Thought Reasoning in LLMs</p>
+<p><strong>摘要：</strong>
+思维链（CoT）推理能够提升大语言模型在多步骤数学问题求解中的表现，但其仍易受暴露偏差和错误累积的影响——早期错误会通过自回归解码过程不可逆地传播。本研究提出DiffCoT，一种扩散式思维链框架，将CoT推理重新构建为迭代去噪过程。DiffCoT通过滑动窗口机制在推理步骤层面融合扩散原理，在保持词元级自回归的同时，实现了中间步骤的统一生成与回溯修正。为保持因果一致性，我们进一步设计了遵循推理链时序结构的因果扩散噪声调度机制。在多种模型架构上对三个多步骤CoT推理基准的广泛实验表明，DiffCoT在性能上持续优于现有CoT偏好优化方法，显著提升了CoT推理的鲁棒性与错误修正能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03559">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03559">arXiv</a></p>
+<hr />
+<h3>18. ProFuse：面向开放词汇3D高斯泼溅的高效跨视角上下文融合方法</h3>
+<p><strong>原文标题：</strong> ProFuse: Efficient Cross-View Context Fusion for Open-Vocabulary 3D Gaussian Splatting</p>
+<p><strong>摘要：</strong>
+本文提出ProFuse，一种面向开放词汇3D场景理解的高效上下文感知框架，基于3D高斯泼溅（3DGS）技术。该流程在直接配准框架内增强了跨视角一致性与掩码内聚性，仅引入极小计算开销且无需渲染监督微调。区别于依赖预训练3DGS场景的传统方法，我们提出稠密对应引导的预配准阶段，通过跨视角聚类同步实现高精度几何结构的高斯初始化与3D上下文提案构建。每个提案通过成员嵌入的加权聚合获得全局特征，该特征在直接配准过程中融合至高斯单元，确保跨视角的基元级语言连贯性。借助预先建立的关联关系，语义融合无需在标准重建流程外进行额外优化，模型在保持几何细化的同时避免了密度增长。ProFuse在实现强大开放词汇3DGS理解能力的同时，仅需约五分钟即可完成单场景语义附着，较当前最优技术提速两倍。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04754">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04754">arXiv</a></p>
+<hr />
+<h3>19. 发丝守护者：在深度、立体与新颖视角中拯救软边界</h3>
+<p><strong>原文标题：</strong> Guardians of the Hair: Rescuing Soft Boundaries in Depth, Stereo, and Novel Views</p>
+<p><strong>摘要：</strong>
+软边界（如纤细发丝）在自然图像与计算机生成图像中普遍存在，但由于前景与背景线索的模糊混合，其在三维视觉任务中仍具挑战性。本文提出“发丝守护者”（HairGuard）框架，旨在恢复三维视觉任务中细粒度的软边界细节。具体而言，我们首先设计了一种新颖的数据处理流程，利用图像抠图数据集进行训练，并构建深度修正网络以自动识别软边界区域。通过门控残差模块，该网络能在保持全局深度质量的同时精确优化软边界区域的深度，实现与前沿深度模型的即插即用式集成。在视角合成任务中，我们采用基于深度的前向变形以保留高保真纹理，随后通过生成式场景绘制器填补遮挡区域并消除软边界内的冗余背景伪影。最后，色彩融合模块自适应地结合变形与修复结果，生成具有几何一致性与细粒度细节的新视角图像。大量实验表明，HairGuard在单目深度估计、立体图像/视频转换及新颖视角合成任务中均达到领先性能，尤其在软边界区域取得显著改进。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03362">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03362">arXiv</a></p>
+<hr />
+<h3>20. 一以贯之：强化学习规模化中的极致数据效率</h3>
+<p><strong>原文标题：</strong> One Sample to Rule Them All: Extreme Data Efficiency in RL Scaling</p>
+<p><strong>摘要：</strong>
+大规模语言模型（LLM）的推理能力可通过强化学习（RL）得到充分释放（OpenAI，2024；深度求索等，2025a；Zeng等，2025）。现有基于LLM的强化学习方法通常依赖于数千乃至更多的高质量训练样本。本文通过展示单样本学习的显著效果，对LLM强化学习中数据需求的基本假设提出挑战。具体而言，我们提出博学学习框架，该框架通过设计单个训练样本来激发跨学科影响。我们呈现三项关键发现：（1）单个经过策略性筛选的数学推理样本，结合强化学习，可在物理、化学、生物等多个领域产生显著的性能提升；（2）对推理至关重要的数学技能揭示了最优博学样本应具备的特征；（3）整合多学科要素的人工合成样本，其训练效果优于使用自然产生的独立样本。我们的方法在多种推理基准测试中均优于使用更大规模数据集的训练效果，表明提升语言模型推理能力的关键可能在于样本质量与设计，而非单纯追求数据量。这些结果预示着一个被称为“样本工程”的范式转变：即从单纯增加数据规模转向对训练样本进行精准设计。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03111">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03111">arXiv</a></p>
+<hr />
+<h3>21. 三维形状生成中的记忆化现象：一项实证研究</h3>
+<p><strong>原文标题：</strong> Memorization in 3D Shape Generation: An Empirical Study</p>
+<p><strong>摘要：</strong>
+生成模型在三维视觉领域被日益广泛地应用于合成新形状，然而其生成过程是否依赖于对训练形状的记忆仍不明确。理解模型的记忆化行为有助于防止训练数据泄露并提升生成结果的多样性。本文设计了一个评估框架来量化三维生成模型中的记忆化程度，并探究不同数据与模型设计对记忆化的影响。我们首先应用该框架对现有方法的记忆化水平进行量化分析。随后，通过基于潜在向量集扩散模型的对照实验发现：在数据层面，记忆化程度受数据模态影响，并随着数据多样性的增加及更细粒度条件控制的引入而上升；在模型层面，记忆化在中等引导强度时达到峰值，但可通过延长向量集长度及采用简单旋转增强策略得到有效缓解。本研究提出的框架与分析为三维生成模型的记忆化现象提供了实证依据，并提出了一系列在保持生成质量的同时降低记忆化的简易有效策略。代码已开源：https://github.com/zlab-princeton/3d_mem。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.23628">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.23628">arXiv</a></p>
+<hr />
+<h3>22. 多尺度局部推测解码用于图像生成</h3>
+<p><strong>原文标题：</strong> Multi-Scale Local Speculative Decoding for Image Generation</p>
+<p><strong>摘要：</strong>
+自回归模型在图像合成领域取得了显著成功，但其顺序生成特性导致严重的延迟限制。推测解码为加速生成提供了可行路径，但现有方法受限于令牌级模糊性和空间感知缺失。本研究提出多尺度局部推测解码框架，通过结合多分辨率草案生成与空间感知验证机制，加速自回归图像生成过程。该方法采用低分辨率草案生成器与学习型上采样器协同工作，生成候选图像令牌，随后由高分辨率目标模型进行并行验证。关键创新在于引入局部拒绝与重采样机制，通过聚焦空间邻域而非首次拒绝后的光栅扫描式重采样，实现对草案错误的高效修正。实验表明，MuLo-SD框架可实现最高达1.7倍的加速效果，在MS-COCO 5k验证集上使用GenEval、DPG-Bench及FID/HPSv2评估指标验证，其加速性能超越EAGLE-2和LANTERN等强基准方法，同时保持相当的语义对齐度与感知质量。系统消融实验揭示了上采样设计、概率池化以及邻域扩展的局部拒绝重采样机制的关键影响。本方法在图像合成推测解码领域实现了效率与保真度的新平衡，确立了该领域的最先进水平。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05149">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05149">arXiv</a></p>
+<hr />
+<h3>23. PyramidalWan：构建金字塔式预训练视频模型以实现高效推理</h3>
+<p><strong>原文标题：</strong> PyramidalWan: On Making Pretrained Video Model Pyramidal for Efficient Inference</p>
+<p><strong>摘要：</strong>
+近期提出的金字塔模型将传统的前向与反向扩散过程分解为多个在不同分辨率下运行的阶段。这些模型在较低分辨率下处理噪声水平较高的输入，而在较高分辨率下处理噪声较少的输入。这种分层方法显著降低了多步去噪模型推理的计算成本。然而，现有的开源金字塔视频模型均从头开始训练，在视觉合理性方面往往逊于当前最优系统。本研究提出一种通过低成本微调将预训练扩散模型转换为金字塔模型的流程，实现了在不降低输出视频质量的前提下完成模型转换。此外，我们探索并比较了金字塔模型内部步骤蒸馏的各种策略，旨在进一步提升推理效率。相关结果发布于 https://qualcomm-ai-research.github.io/PyramidalWan。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04792">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04792">arXiv</a></p>
+<hr />
+<h3>24. AgentDevel：将自演进大语言模型智能体重构为发布工程</h3>
+<p><strong>原文标题：</strong> AgentDevel: Reframing Self-Evolving LLM Agents as Release Engineering</p>
+<p><strong>摘要：</strong>
+近期大语言模型（LLM）智能体的研究进展主要集中于在智能体内部嵌入自我改进机制或对大量并发变体进行搜索。尽管这些方法能够提升综合评分，但往往产生不稳定且难以审计的改进轨迹，导致难以保证版本间的无回归特性或有效追溯跨版本故障。本文将智能体改进重构为发布工程问题：将智能体视为可交付产物，并将改进过程外化为具有回归感知能力的发布流水线。我们提出AgentDevel——一种迭代运行当前智能体、从执行轨迹中生成与实现无关的症状级质量信号、通过可执行诊断合成单一发布候选版本，并在翻转中心化门控机制下进行版本升级的发布工程流水线。AgentDevel包含三项核心设计：（1）与实现无关的LLM批评器，在不访问智能体内部实现的情况下表征故障表象；（2）基于脚本的可执行诊断，聚合主导性症状模式并生成可审计的工程规范；（3）以翻转为中心的门控机制，将“通过→失败”的回归案例与“失败→通过”的修复案例作为首要判定依据。与基于群体搜索或智能体内自优化方法不同，AgentDevel维护单一规范版本线，并将非回归性作为核心目标。在执行密集型基准测试中的实验表明，AgentDevel在显著减少回归现象的同时实现稳定改进，并生成可复现、可审计的交付产物。总体而言，AgentDevel为将LLM智能体作为软件开发对象进行构建、调试与发布提供了实用的工程规范。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04620">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04620">arXiv</a></p>
+<hr />
+<h3>25. 规模化行为克隆提升因果推理能力：一个用于实时视频游戏游玩的开源模型</h3>
+<p><strong>原文标题：</strong> Scaling Behavior Cloning Improves Causal Reasoning: An Open Model for Real-Time Video Game Playing</p>
+<p><strong>摘要：</strong>
+随着模型与数据规模的扩大被证明能为众多重要任务提供强有力的起点，行为克隆技术正重新获得广泛关注。本研究提出一种开源训练方案，用于构建专为消费级GPU实时推理设计的视频游戏游玩基础模型。我们以开放许可协议发布了全部数据（8300小时以上高质量人类游戏录像）、训练与推理代码以及预训练模型检查点。实验表明，我们最优模型能在多种3D视频游戏中达到与人类玩家相当的竞技水平。基于此方案，我们系统研究了行为克隆的缩放规律，以探究模型性能与因果推理能力如何随模型及数据规模变化。我们首先通过简单示例问题证明：对于特定类型的因果推理任务，增加训练数据量和网络深度可使模型习得更具因果性的策略。随后我们系统研究了在参数规模达12亿的扩展模型中，因果性如何随参数数量（及深度）与训练步数变化，并发现其缩放规律与示例问题中观察到的结果具有一致性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04575">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04575">arXiv</a></p>
+<hr />
+<h3>26. ReHyAt：面向视频扩散变换器的循环混合注意力机制</h3>
+<p><strong>原文标题：</strong> ReHyAt: Recurrent Hybrid Attention for Video Diffusion Transformers</p>
+<p><strong>摘要：</strong>
+近期视频扩散模型的研究进展已转向基于变换器的架构，虽实现了最先进的视频生成效果，但因其注意力机制具有二次计算复杂度，严重限制了模型在生成长序列时的可扩展性。本文提出ReHyAt，一种循环混合注意力机制，它融合了Softmax注意力的高保真度与线性注意力的高效率，支持分块循环重构并实现恒定内存占用。与同期仅采用线性注意力的SANA Video不同，ReHyAt的混合设计能够高效地从现有基于Softmax的模型中提取知识，将训练成本降低两个数量级至约160 GPU小时，同时在生成质量上保持竞争力。我们提出的轻量化知识蒸馏与微调流程为未来基于双向Softmax的先进模型提供了可迁移的技术方案。在VBench和VBench-2.0基准测试以及人类偏好研究中，实验结果表明ReHyAt在将注意力计算成本从二次降为线性的同时，实现了业界领先的视频生成质量，为长时长视频生成与端侧部署提供了切实可行的扩展路径。项目页面详见：https://qualcomm-ai-research.github.io/rehyat。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04342">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04342">arXiv</a></p>
+<hr />
+<h3>27. 超越二元偏好：通过属性解耦实现扩散模型与细粒度评价标准的对齐</h3>
+<p><strong>原文标题：</strong> Beyond Binary Preference: Aligning Diffusion Models to Fine-grained Criteria by Decoupling Attributes</p>
+<p><strong>摘要：</strong>
+扩散模型的后训练对齐通常依赖于简化的反馈信号，例如标量奖励或二元偏好。这限制了模型与复杂人类专业知识的对齐，因为专业知识具有层次化和细粒度的特性。为解决这一问题，我们首先与领域专家共同构建了一套层次化、细粒度的评价标准，将图像质量分解为多个正负属性，并以树状结构组织。在此基础上，我们提出了一个两阶段对齐框架。第一阶段，我们通过监督微调将领域知识注入辅助扩散模型；第二阶段，我们提出复杂偏好优化方法，该方法将DPO扩展至非二元、层次化的评价标准，使目标扩散模型与我们的标准对齐。具体而言，我们重新构建了对齐问题，使其在最大化正属性概率的同时，利用辅助扩散模型最小化负属性概率。我们在绘画生成领域实例化了该方法，并基于标注了细粒度属性的绘画数据集进行了CPO训练。大量实验表明，CPO显著提升了生成质量以及与专业知识的对齐程度，为细粒度标准对齐开辟了新途径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04300">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04300">arXiv</a></p>
+<hr />
+<h3>28. 利用特权信息增强目标检测：一种模型无关的师生架构方法</h3>
+<p><strong>原文标题：</strong> Enhancing Object Detection with Privileged Information: A Model-Agnostic Teacher-Student Approach</p>
+<p><strong>摘要：</strong>
+本文研究将特权信息学习范式融入目标检测任务，以充分利用训练阶段可用而推理阶段缺失的细粒度描述性信息。我们提出一种通用的、模型无关的方法论，通过师生架构将特权信息（如边界框掩码、显著图与深度线索）注入基于深度学习的目标检测器中。实验在五种前沿目标检测模型及多个公共基准数据集上展开，包括基于无人机的垃圾检测数据集和Pascal VOC 2012，以评估该方法对检测精度、泛化能力与计算效率的影响。实验结果表明，经特权信息学习训练的学生模型始终优于基线模型，在未增加推理复杂度或模型参数量的前提下显著提升了检测精度。该方法对中大型目标的性能提升尤为显著，消融实验表明教师指导的中间加权策略能最优平衡特权信息与标准输入的学习过程。研究证实，特权信息学习框架为资源受限场景和实际应用中的目标检测系统提供了一种高效实用的性能提升策略。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.02016">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.02016">arXiv</a></p>
+<hr />
+<h3>29. VERSE：视觉嵌入降维与空间探索——基于聚类引导的视觉富文档理解训练数据增强方法</h3>
+<p><strong>原文标题：</strong> VERSE: Visual Embedding Reduction and Space Exploration. Clustering-Guided Insights for Training Data Enhancement in Visually-Rich Document Understanding</p>
+<p><strong>摘要：</strong>
+本研究提出VERSE方法，通过探索视觉-语言模型在视觉富文档理解任务中的视觉嵌入空间，实现模型分析与性能优化。该方法能够可视化潜在表征，支持模型可行性的系统评估，并有助于识别问题区域，进而指导合成数据的生成以提升特定聚类簇的性能。我们在合成数据集MERIT上进行训练，并在其实世界对应数据集MERIT Secret上进行验证。实验结果表明：VERSE能够有效揭示易出错聚类簇相关的视觉特征，通过包含这些特征的样本进行再训练，可在不损害泛化能力的前提下显著提升F1分数。此外，研究证明经VERSE优化的本地模型（如Donut和Idefics2）能够达到甚至超越GPT-4、Pixtral等SaaS解决方案的性能表现。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.05125">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.05125">arXiv</a></p>
+<hr />
+<h3>30. 通过交互学习用户偏好以实现长期协作</h3>
+<p><strong>原文标题：</strong> Learning User Preferences Through Interaction for Long-Term Collaboration</p>
+<p><strong>摘要：</strong>
+随着对话智能体在与用户协作过程中不断积累经验，适应用户偏好对于建立长期合作关系并持续提升协作质量至关重要。本文提出MultiSessionCollab基准测试框架，用于评估智能体在多轮会话中学习用户偏好并利用其提升协作质量的能力。为构建适应此场景的智能体，我们设计了配备记忆模块的长期协作智能体，该模块能够随着交互经验的积累持续存储并优化用户偏好模型。研究进一步表明，通过MultiSessionCollab中的用户模拟器行为可提取学习信号，用于训练智能体生成更全面的反思并提升记忆更新效率。大量实验证明，配备记忆模块的智能体显著改善了长期协作效果，实现了更高的任务成功率、更高效的交互过程以及更低用户操作负荷。最后，我们通过真实用户实验验证了记忆机制在实际场景中对用户体验的提升作用。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.02702">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.02702">arXiv</a></p>
+<hr />
+<h3>31. 一例安全：基于单个实例修复微调后的大型语言模型</h3>
+<p><strong>原文标题：</strong> Safety at One Shot: Patching Fine-Tuned LLMs with A Single Instance</p>
+<p><strong>摘要：</strong>
+对已进行安全对齐的大型语言模型（LLMs）进行微调可能会严重损害其安全性。以往的方法需要大量安全样本或校准集，这不仅在重新对齐过程中带来显著的计算开销，还会导致模型实用性明显下降。与此观点相反，我们证明仅需单个安全示例即可完全恢复安全对齐，且无需牺牲实用性，成本极低。值得注意的是，无论微调过程中使用了多少有害示例或基础模型的规模如何，这种恢复均能有效实现，并且仅需几个训练周期即可达到收敛。此外，我们揭示了安全梯度的低秩结构，从而解释了为何能够实现如此高效的修正。我们在五种安全对齐的大型语言模型及多个数据集上验证了我们的发现，证明了该方法的普适性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.01887">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.01887">arXiv</a></p>
+<hr />
+<h3>32. LEMAS：基于生成式语音模型的150千小时大规模可扩展多语言音频套件</h3>
+<p><strong>原文标题：</strong> LEMAS: Large A 150K-Hour Large-scale Extensible Multilingual Audio Suite with Generative Speech Models</p>
+<p><strong>摘要：</strong>
+本文介绍LEMAS数据集，据我们所知，这是目前规模最大的开源多语言语音语料库，具备词级时间戳标注。该数据集涵盖10种主要语言，总时长超过15万小时，通过高效的数据处理流程构建，确保了高质量数据与标注。为验证LEMAS数据集在不同生成范式中的有效性，我们基于该数据集训练了两种不同架构与任务专精的基准模型。LEMAS-TTS基于非自回归流匹配框架，利用数据集的大规模与语言多样性实现了鲁棒的零样本多语言合成。我们提出的口音对抗训练与CTC损失缓解了跨语言口音问题，提升了合成稳定性。互补地，LEMAS-Edit采用仅含自回归解码器的架构，将语音编辑建模为掩码标记填充任务。通过利用精确的词级对齐构建训练掩码，并采用自适应解码策略，该模型实现了边界平滑、过渡自然的无缝语音编辑。实验结果表明，基于LEMAS数据集训练的模型能够提供高质量的合成与编辑性能，验证了数据集的质量。我们预期这个具备丰富时间戳标注的细粒度多语言语料库将推动基于提示的语音生成系统的未来发展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04233">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04233">arXiv</a></p>
+<hr />
+<h3>33. 迈向开放词汇工业缺陷理解：基于大规模多模态数据集的研究</h3>
+<p><strong>原文标题：</strong> Towards Open-Vocabulary Industrial Defect Understanding with a Large-Scale Multimodal Dataset</p>
+<p><strong>摘要：</strong>
+本文提出首个大规模工业多模态缺陷数据集IMDD-1M，包含100万组对齐的图像-文本对，旨在推动制造业与质量检测领域的多模态学习。该数据集涵盖60余种材料类别和400多种缺陷类型的高分辨率真实缺陷样本，每个样本均配备经过专家核验的标注信息及细粒度文本描述，详细说明缺陷位置、严重程度及上下文属性。本数据集支持分类、分割、检索、描述生成和生成式建模等多种应用场景。基于IMDD-1M，我们从头训练了一个专为工业场景定制的扩散式视觉-语言基础模型。该模型作为通用化基础架构，可通过轻量级微调高效适配特定领域：在仅需专用专家模型5%任务数据的情况下，即可达到相当性能水平。这一成果凸显了数据高效的基础模型适配在工业检测与生成任务中的潜力，为构建可扩展、领域自适应且知识驱动的智能制造系统开辟了新路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24160">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24160">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2026-01-09_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
