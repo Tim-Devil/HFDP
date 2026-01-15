@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2026-01-14</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2026-01-14 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：24</li>
+<li>热门领域：RL, LLM, NLP, GPT</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. MemGovern：通过治理化人类经验学习增强代码智能体</h3>
+<p><strong>原文标题：</strong> MemGovern: Enhancing Code Agents through Learning from Governed Human Experiences</p>
+<p><strong>摘要：</strong>
+尽管自主软件工程智能体正在重塑编程范式，但其目前存在“封闭世界”局限：它们倾向于从零开始或仅依赖局部上下文修复缺陷，而忽略了GitHub等平台上可获取的丰富历史人类经验。现实世界中非结构化、碎片化的缺陷追踪数据阻碍了对这些开放世界经验的利用。本文提出MemGovern框架，旨在治理原始GitHub数据并将其转化为可供智能体使用的可执行经验记忆。MemGovern通过经验治理机制将人类经验转化为智能体友好的经验卡片，并引入智能体经验检索策略，实现基于逻辑驱动的人类专业知识检索。通过生成13.5万张治理化经验卡片，MemGovern在SWE-bench Verified基准上的缺陷解决率显著提升4.65%。作为一种插件式方案，MemGovern为构建智能体友好的记忆基础设施提供了有效解决方案。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.06789">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.06789">arXiv</a></p>
+<hr />
+<h3>2. Solar Open技术报告</h3>
+<p><strong>原文标题：</strong> Solar Open Technical Report</p>
+<p><strong>摘要：</strong>
+本文介绍Solar Open——一个针对资源稀缺语言开发的1020亿参数双语专家混合模型。我们通过解决三个相互关联的挑战，系统性地构建了具有竞争力的语言模型。首先，针对资源稀缺语言训练数据不足的问题，我们合成了4.5万亿个高质量、领域特定且强化学习导向的文本单元。其次，我们通过渐进式课程学习框架协调这些数据，在20万亿文本单元的规模上联合优化数据构成、质量阈值和领域覆盖。第三，为实现可扩展的推理能力，我们应用自主研发的SnapPO框架进行高效强化学习优化。在英语和韩语的基准测试中，Solar Open展现出具有竞争力的性能，验证了该方法对资源稀缺语言人工智能发展的有效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.07022">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.07022">arXiv</a></p>
+<hr />
+<h3>3. KnowMe-Bench：面向终身数字伴侣的人物理解基准测试</h3>
+<p><strong>原文标题：</strong> KnowMe-Bench: Benchmarking Person Understanding for Lifelong Digital Companions</p>
+<p><strong>摘要：</strong>
+现有的长时记忆基准测试多采用多轮对话或合成用户历史数据，这使得检索性能难以准确反映真实的人物理解能力。本文提出\BenchName，一个基于长篇自传体叙事构建的可公开发布的基准测试，其中行动、情境与内心思考为推断稳定的动机与决策原则提供了密集证据。\BenchName将每段叙事重构为具有回溯感知、时间锚定的序列流，并通过涵盖事实回忆、主观状态归因及原则层面推理的证据关联问题对模型进行评估。在不同叙事来源中，检索增强系统主要提升了事实准确性，但在基于时间线的解释与高层推理上错误依然存在，这凸显了超越单纯检索的记忆机制的必要性。相关数据已发布于KnowMeBench{https://github.com/QuantaAlpha/KnowMeBench}。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04745">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04745">arXiv</a></p>
+<hr />
+<h3>4. 面向用户的大规模多轮工具使用对话生成</h3>
+<p><strong>原文标题：</strong> User-Oriented Multi-Turn Dialogue Generation with Tool Use at scale</p>
+<p><strong>摘要：</strong>
+近期向大型推理模型作为自主智能体的范式转变，显著增强了对复杂多轮工具使用能力的需求。然而，现有数据集与数据生成方法受限于静态、预定义的工具集，难以适应开放式人机协作的复杂性。为此，我们首先开发了一个面向任务的大规模自动化多轮对话生成框架，利用基于大型推理模型的模拟器动态生成高价值、领域特定的工具以解决指定任务。但我们发现，纯任务导向的设计常导致“仅限任务解决”的轨迹，即智能体以最少交互完成任务目标，无法生成现实场景中常见的高轮次对话。为弥合这一差距，我们转向面向用户的模拟范式。通过将任务生成与模拟人类行为规则（如渐进式请求和逐轮反馈）的专用用户模拟器解耦，我们促成了更真实、更延展的多轮对话，反映了现实世界问题解决的迭代特性。我们的生成流程作为一个多功能即插即用模块，能够从任意状态启动生成，确保在产生扩展性工具使用数据时的高度可扩展性。此外，通过支持在单一路径中完成多重任务，该流程生成了高密度数据集，体现了现实人机交互的多维度需求。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08225">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08225">arXiv</a></p>
+<hr />
+<h3>5. ShowUI-π：基于流的生成模型作为图形用户界面的灵巧操作手</h3>
+<p><strong>原文标题：</strong> ShowUI-π: Flow-based Generative Models as GUI Dexterous Hands</p>
+<p><strong>摘要：</strong>
+构建能够进行灵巧操作的智能体，对于在机器人学和数字环境中实现类人自动化至关重要。然而，现有的图形用户界面（GUI）智能体依赖于离散的点击预测（x, y坐标），这限制了需要连续、实时感知与调整的自由形式、闭环轨迹操作（例如拖动进度条）。在本工作中，我们开发了ShowUI-π，这是首个作为GUI灵巧操作手的基于流的生成模型，其设计特点包括：（i）统一离散-连续动作，将离散点击与连续拖动整合在一个共享模型中，实现了跨多种交互模式的灵活适应；（ii）用于拖动建模的基于流的动作生成，通过一个轻量级动作专家，根据连续的视觉观察预测光标的增量调整，确保轨迹平滑稳定；（iii）拖动训练数据与基准测试，我们手动收集并合成了涵盖五个领域（如PowerPoint、Adobe Premiere Pro）的2万条拖动轨迹，并引入了ScreenDrag基准，该基准包含全面的在线与离线评估协议，用于评估GUI智能体的拖动能力。实验表明，现有的专有GUI智能体在ScreenDrag上仍表现不佳（例如Operator得分为13.27，表现最佳的Gemini-2.5-CUA达到22.18）。相比之下，ShowUI-π仅以4.5亿参数便取得了26.98的得分，既凸显了该任务的难度，也证明了我们方法的有效性。我们希望这项工作能推动GUI智能体在数字世界中实现类人的灵巧控制。代码可在 https://github.com/showlab/showui-pi 获取。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2512.24965">HuggingFace</a> | <a href="https://arxiv.org/abs/2512.24965">arXiv</a></p>
+<hr />
+<h3>6. ArenaRL：基于锦标赛相对排序的开放式智能体强化学习规模化方法</h3>
+<p><strong>原文标题：</strong> ArenaRL: Scaling RL for Open-Ended Agents via Tournament-based Relative Ranking</p>
+<p><strong>摘要：</strong>
+强化学习在可验证结果的任务上显著提升了大型语言模型智能体的性能，但在具有广阔解空间的开放式智能体任务（如复杂旅行规划）中仍面临挑战。由于此类任务缺乏客观真实值，现有强化学习算法主要依赖为单个响应分配标量分数的奖励模型。我们认为这种逐点评分存在固有的判别力坍缩问题：奖励模型难以区分不同轨迹间的细微优势，导致组内分数被压缩至狭窄区间。因此，有效奖励信号被奖励模型的噪声主导，引发优化停滞。为解决该问题，我们提出ArenaRL——一种从逐点标量评分转向组内相对排序的强化学习范式。ArenaRL引入过程感知的成对评估机制，采用多级量规为轨迹分配细粒度相对分数。此外，我们构建组内对抗竞技场并设计基于锦标赛的排序方案，以获取稳定的优势信号。实验结果表明，所构建的种子单败淘汰制方案在仅需O(N)复杂度的同时，实现了与O(N^2)复杂度的全成对比较近乎等效的优势估计精度，在效率与精度间达到最优平衡。针对开放式智能体缺乏全周期基准测试的问题，我们构建了Open-Travel与Open-DeepResearch两个高质量基准，其完整流程涵盖监督微调、强化训练与多维度评估。大量实验表明，ArenaRL显著优于标准强化学习基线，能使大型语言模型智能体为复杂现实任务生成更稳健的解决方案。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.06487">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.06487">arXiv</a></p>
+<hr />
+<h3>7. MemoBrain：作为推理智能体核心的执行记忆系统</h3>
+<p><strong>原文标题：</strong> MemoBrain: Executive Memory as an Agentic Brain for Reasoning</p>
+<p><strong>摘要：</strong>
+在工具增强型智能体框架中，复杂推理本质上是长程的，这导致推理轨迹和临时性工具产物不断累积，从而对大型语言模型的有限工作上下文造成压力。若无显式记忆机制，此类累积会破坏逻辑连续性并削弱任务对齐能力。这使得记忆不再仅是辅助效率的考量，而成为维持长程连贯、目标导向推理的核心组件。</p>
+<p>我们提出 MemoBrain，一种面向工具增强型智能体的执行记忆模型。该模型在推理步骤之上构建依赖感知的记忆系统，捕获关键的中间状态及其逻辑关系。MemoBrain 作为推理智能体的协同处理器运行，在不阻断执行的前提下组织推理进程，并主动管理工作上下文。具体而言，它在固定上下文容量下修剪无效步骤、折叠已完成的子轨迹，并保留紧凑且高显著性的推理主干。这些机制共同实现了对推理轨迹的显式认知控制，而非被动的上下文累积。</p>
+<p>我们在具有挑战性的长程基准测试（包括 GAIA、WebWalker 和 BrowseComp-Plus）上评估 MemoBrain，结果表明其相较于强基线模型取得了持续的性能提升。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08079">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08079">arXiv</a></p>
+<hr />
+<h3>8. Ministral 3</h3>
+<p><strong>原文标题：</strong> Ministral 3</p>
+<p><strong>摘要：</strong>
+本文介绍Ministral 3系列模型，这是一个专为计算和内存受限应用设计的参数高效密集型语言模型家族，提供三种参数量版本：30亿、80亿和140亿参数。针对每种规模，我们发布了三个变体：适用于通用场景的预训练基础模型、经过指令微调的模型，以及用于复杂问题求解的推理模型。此外，我们提出了通过级联蒸馏技术推导Ministral 3模型的方法论，该技术融合了迭代剪枝与持续蒸馏训练。全系列模型均具备图像理解能力，并基于Apache 2.0开源协议发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08584">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08584">arXiv</a></p>
+<hr />
+<h3>9. 3AM：基于几何一致性的视频通用分割方法</h3>
+<p><strong>原文标题：</strong> 3AM: Segment Anything with Geometric Consistency in Videos</p>
+<p><strong>摘要：</strong>
+基于记忆架构的视频目标分割方法（如SAM2）虽具备较强性能，但因其依赖外观特征，在视角剧烈变化时表现受限。传统三维实例分割方法虽能保持视角一致性，却需要相机位姿、深度图及昂贵的预处理流程。本文提出3AM——一种训练时增强方法，将MUSt3R的三维感知特征集成至SAM2框架中。我们设计的轻量级特征融合器能够整合MUSt3R中编码隐式几何对应关系的多层级特征。结合SAM2的外观特征，该模型实现了基于空间位置与视觉相似性的几何一致性识别。我们进一步提出视场感知采样策略，确保帧序列观测到空间一致的目标区域，从而建立可靠的三维对应学习。关键的是，本方法在推理时仅需RGB输入，无需相机位姿或预处理。在具有宽基线运动的挑战性数据集（ScanNet++、Replica）上，3AM显著优于SAM2及其扩展方法，在ScanNet++精选子集上达到90.6%的交并比和71.7%正向交并比，较当前最优视频目标分割方法分别提升15.9和30.4个百分点。项目页面：https://jayisking.github.io/3AM-Page/</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08831">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08831">arXiv</a></p>
+<hr />
+<h3>10. 视频生成中的运动归因</h3>
+<p><strong>原文标题：</strong> Motion Attribution for Video Generation</p>
+<p><strong>摘要：</strong>
+尽管视频生成模型发展迅速，但数据对运动特性的影响机制尚未得到充分理解。本文提出Motive（视频生成运动归因框架），这是一个以运动为核心、基于梯度的数据归因框架，可适配现代大规模高质量视频数据集与模型。我们运用该框架探究哪些微调片段会改善或损害时序动态特性。Motive通过运动加权损失掩码将时序动态与静态表观特征解耦，实现了高效可扩展的运动特异性影响计算。在文本到视频模型中，Motive能识别对运动特性具有显著影响的数据片段，并指导数据筛选以提升时序一致性与物理合理性。使用Motive筛选的高影响力数据进行训练后，我们的方法在VBench评测中同时提升了运动平滑度与动态程度指标，相较于预训练基础模型获得74.1%的人类偏好胜率。据我们所知，这是首个在视频生成模型中针对运动特性（而非视觉表观）进行归因，并以此指导微调数据筛选的框架。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08828">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08828">arXiv</a></p>
+<hr />
+<h3>11. 置信度二分法：工具使用智能体的校准偏差分析与缓解策略</h3>
+<p><strong>原文标题：</strong> The Confidence Dichotomy: Analyzing and Mitigating Miscalibration in Tool-Use Agents</p>
+<p><strong>摘要：</strong>
+基于大语言模型的自主智能体正快速发展以处理多轮任务，但其可信度保障仍是关键挑战。可信度的核心支柱在于校准能力，即智能体表达的信心与其实际性能可靠匹配的程度。尽管静态模型的校准研究已较为成熟，工具集成智能体工作流中的动态校准机制仍待深入探索。本研究系统探究工具使用智能体的言语化校准现象，揭示了由工具类型驱动的根本性置信度二分效应。具体而言，初步研究发现证据型工具（如网络搜索）因检索信息的固有噪声会导致系统性严重过度自信，而验证型工具（如代码解释器）可通过确定性反馈锚定推理过程从而缓解校准偏差。为全面提升跨工具类型的校准能力，我们提出基于强化学习的微调框架，通过综合奖励设计基准联合优化任务准确率与校准度。实验表明，经训练的智能体不仅实现更优校准性能，还能从局部训练环境稳健泛化至嘈杂网络场景及数学推理等新领域。本研究结果凸显了针对工具使用智能体开发领域特异性校准策略的必要性。更广泛而言，本工作为构建能在高风险现实部署中可靠传达不确定性的自感知智能体奠定了理论基础。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.07264">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.07264">arXiv</a></p>
+<hr />
+<h3>12. 面向检索增强生成的并行专家上下文解码方法</h3>
+<p><strong>原文标题：</strong> Parallel Context-of-Experts Decoding for Retrieval Augmented Generation</p>
+<p><strong>摘要：</strong>
+检索增强生成技术面临一个权衡困境：将多篇文档拼接为长提示文本虽能实现跨文档推理，却会导致预填充阶段的性能瓶颈；而将文档键值缓存分别编码虽能提升速度，却会破坏文档间的交互关联。本文提出并行专家上下文解码框架，该免训练框架将证据聚合机制从注意力层转移至解码层。该方法将检索文档视为独立的“专家”，通过创新的检索感知对比解码规则同步各专家预测结果，该规则依据模型先验对专家对数概率进行加权处理。该方案无需构建跨文档共享注意力机制，即可恢复跨文档推理能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08670">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08670">arXiv</a></p>
+<hr />
+<h3>13. ViDoRe V3：复杂现实场景中检索增强生成技术的综合评估</h3>
+<p><strong>原文标题：</strong> ViDoRe V3: A Comprehensive Evaluation of Retrieval Augmented Generation in Complex Real-World Scenarios</p>
+<p><strong>摘要：</strong>
+检索增强生成（RAG）流程需应对超越简单单文档检索的挑战，例如解析视觉元素（表格、图表、图像）、跨文档信息综合以及提供精确的溯源依据。现有基准测试未能涵盖此类复杂性，往往局限于文本数据、单文档理解或孤立评估检索与生成环节。本文推出ViDoRe v3——一个全面的多模态RAG基准测试体系，其特点在于针对视觉密集型文档集设计多类型查询任务。该基准涵盖10个跨专业领域数据集，包含约26,000份文档页面与3,099条人工验证查询的配对数据，每条查询均支持6种语言版本。通过12,000小时的人工标注工作，我们为检索相关性、边界框定位及验证参考答案提供了高质量标注。对前沿RAG流程的评估表明：视觉检索器性能优于文本检索器，延迟交互模型与文本重排序技术能显著提升表现，混合或纯视觉上下文可增强答案生成质量。然而，现有模型在处理非文本元素、开放式查询及细粒度视觉定位方面仍存在不足。为促进相关挑战的攻关，本基准测试已通过商业友好许可发布于https://hf.co/vidore。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08620">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08620">arXiv</a></p>
+<hr />
+<h3>14. SnapGen++：释放扩散变换器在边缘设备上实现高效高保真图像生成的潜力</h3>
+<p><strong>原文标题：</strong> SnapGen++: Unleashing Diffusion Transformers for Efficient High-Fidelity Image Generation on Edge Devices</p>
+<p><strong>摘要：</strong>
+扩散变换器（DiTs）的最新进展为图像生成树立了新的标杆，但其高昂的计算与内存成本使其难以在实际设备上部署。本研究提出一种专为移动与边缘设备设计的高效DiT框架，能在严格资源限制下实现变换器级别的生成质量。我们的设计融合了三个关键组成部分：首先，提出一种紧凑的DiT架构，采用自适应全局-局部稀疏注意力机制，平衡全局上下文建模与局部细节保留；其次，设计弹性训练框架，在统一超网络内联合优化不同容量的子DiT模型，使单一模型能够动态调整以适应不同硬件的高效推理需求；最后，开发知识引导分布匹配蒸馏技术，该分步蒸馏流程将DMD目标与少步数教师模型的知识迁移相结合，生成适用于设备端实时应用的高保真、低延迟图像（例如4步生成）。这些贡献共同构建了可扩展、高效且高质量的扩散模型，为多样化硬件部署提供了可行方案。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08303">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08303">arXiv</a></p>
+<hr />
+<h3>15. VLingNav：基于自适应推理与视觉辅助语言记忆的具身导航</h3>
+<p><strong>原文标题：</strong> VLingNav: Embodied Navigation with Adaptive Reasoning and Visual-Assisted Linguistic Memory</p>
+<p><strong>摘要：</strong>
+视觉语言动作模型通过统一感知与规划，并继承大型视觉语言模型的强大泛化能力，在具身导航任务中展现出显著潜力。然而，现有视觉语言动作模型大多依赖从观测到动作的被动映射，缺乏应对复杂长程导航任务所需的显式推理能力与持久记忆机制。为应对这些挑战，我们提出VLingNav——一种基于语言驱动认知的具身导航视觉语言动作模型。首先，受人类认知双过程理论启发，我们引入自适应思维链机制，该机制仅在必要时动态触发显式推理，使智能体能够在快速直觉执行与慢速审慎规划之间灵活切换。其次，为处理长程空间依赖关系，我们开发了视觉辅助语言记忆模块，构建持久跨模态语义记忆，使智能体能够回溯历史观测以避免重复探索，并推断动态环境中的运动趋势。在训练策略方面，我们构建了Nav-AdaCoT-2.9M数据集——迄今为止规模最大的含推理标注具身导航数据集，其中增强的自适应思维链标注可引导模型形成兼具“何时思考”与“思考内容”调节能力的推理范式。此外，我们引入在线专家引导强化学习阶段，使模型能够超越纯模仿学习，获得更鲁棒、自主探索的导航行为。大量实验表明，VLingNav在广泛的具身导航基准测试中均达到最先进性能。值得注意的是，VLingNav能够以零样本方式迁移至真实机器人平台，执行多样化导航任务，并展现出强大的跨领域与跨任务泛化能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08665">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08665">arXiv</a></p>
+<hr />
+<h3>16. 无需结构引导的端到端视频角色替换</h3>
+<p><strong>原文标题：</strong> End-to-End Video Character Replacement without Structural Guidance</p>
+<p><strong>摘要：</strong>
+由于缺乏成对的视频数据，基于用户提供身份信息的可控视频角色替换仍是一个具有挑战性的问题。现有研究主要依赖于基于重建的范式，该方法需要逐帧分割掩码和明确的结构引导（如骨骼、深度信息）。然而，这种依赖性严重限制了其在复杂场景中的泛化能力，例如存在遮挡、角色与物体交互、非常规姿态或复杂光照等情况时，常导致视觉伪影和时间不一致性。本文提出MoCha框架，该开创性方法仅需单帧任意掩码即可突破上述限制。为有效适配多模态输入条件并增强面部身份特征，我们引入了条件感知的旋转位置编码，并采用基于强化学习的后训练阶段。此外，为克服高质量配对训练数据的稀缺问题，我们提出了完整的数据构建流程：专门设计了基于虚幻引擎5构建的高保真渲染数据集、通过当前人像动画技术合成的表情驱动数据集，以及从现有视频-掩码对衍生的增强数据集。大量实验表明，本方法显著优于现有最先进技术。我们将公开代码以促进后续研究，更多细节请访问项目页面：orange-3dv-team.github.io/MoCha</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08587">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08587">arXiv</a></p>
+<hr />
+<h3>17. VideoLoom：一种用于联合时空理解的视频大语言模型</h3>
+<p><strong>原文标题：</strong> VideoLoom: A Video Large Language Model for Joint Spatial-Temporal Understanding</p>
+<p><strong>摘要：</strong>
+本文提出VideoLoom，一种用于联合时空理解的统一视频大语言模型。为促进细粒度时空定位能力的发展，我们构建了LoomData-8.7k数据集——一个以人为中心、包含时间锚定与空间定位描述的视频数据集。基于此，VideoLoom在多项时空基准测试中取得了领先或极具竞争力的性能（例如，在指代视频目标分割任务ReVOS上达到63.1 J&amp;F分数，在时序定位任务Charades-STA上达到48.3 R1@0.7分数）。此外，我们提出了LoomBench——一个由时序、空间及组合型视频-问题对构成的新型评测基准，能够从多维度对视频大语言模型进行全面评估。这些成果共同构成了一套通用且高效的联合时空视频理解方案，为多模态智能领域树立了新标准。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.07290">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.07290">arXiv</a></p>
+<hr />
+<h3>18. JudgeRLVR：先判别后生成的高效推理方法</h3>
+<p><strong>原文标题：</strong> JudgeRLVR: Judge First, Generate Second for Efficient Reasoning</p>
+<p><strong>摘要：</strong>
+基于可验证奖励的强化学习已成为大语言模型推理的标准范式。然而，仅针对最终答案正确性进行优化常导致模型陷入盲目、冗长的探索，使其依赖穷举试错策略而非结构化规划来求解。虽然长度惩罚等启发式约束可减少冗余，但常会截断关键推理步骤，造成效率与验证之间的艰难权衡。本文提出判别能力是高效生成的前提：通过学习区分有效解，模型可内化一种能剪枝搜索空间的引导信号。我们提出JudgeRLVR，一种“先判别后生成”的两阶段范式。第一阶段，训练模型对含可验证答案的求解响应进行判别；第二阶段，以判别模型初始化，通过标准生成式RLVR对同一模型进行微调。在使用相同数学领域训练数据的情况下，与原始RLVR相比，JudgeRLVR为Qwen3-30B-A3B模型实现了更优的质量-效率权衡：在领域内数学任务上，平均准确率提升约3.7分的同时平均生成长度减少42%；在领域外基准测试中，平均准确率提升约4.5分，展现出更强的泛化能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08468">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08468">arXiv</a></p>
+<hr />
+<h3>19. EpiCaR：认知不确定性对提升大语言模型推理能力的重要性</h3>
+<p><strong>原文标题：</strong> EpiCaR: Knowing What You Don't Know Matters for Better Reasoning in LLMs</p>
+<p><strong>摘要：</strong>
+提升大语言模型（LLMs）的推理能力主要依赖于利用模型生成数据进行迭代式自训练。尽管现有方法能有效提高准确性，但其主要强化了成功的推理路径，并带来了显著的校准代价：模型会变得过度自信，丧失表征不确定性的能力。这种缺陷被描述为对齐过程中的一种模型坍缩现象，即预测分布退化为低方差的点估计。为解决此问题，我们将推理训练重新定义为认知学习问题，要求模型不仅学习如何推理，还需学会判断何时应信任自身的推理过程。我们提出认知校准推理（EpiCaR）作为联合优化推理性能与校准度的训练目标，并基于显式自评估信号在迭代式监督微调框架中实现该方法。在Llama-3和Qwen-3系列模型上的实验表明，我们的方法在准确性与校准度上均对标准基线实现了帕累托优化，尤其在具备充分推理能力的模型（如3B+参数规模）中效果显著。该框架能有效泛化至分布外数学推理（GSM8K）与代码生成（MBPP）任务。最终，我们的方法在具备足够能力的模型中，仅需K=10个样本即可匹配STaR方法K=30样本的推理性能，实现了推理计算量三倍的降低。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.06786">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.06786">arXiv</a></p>
+<hr />
+<h3>20. UM-Text：一种用于图像理解的多模态统一模型</h3>
+<p><strong>原文标题：</strong> UM-Text: A Unified Multimodal Model for Image Understanding</p>
+<p><strong>摘要：</strong>
+随着图像生成技术的快速发展，基于自然语言指令的视觉文本编辑日益受到关注。该任务的主要挑战在于充分理解指令与参考图像，从而生成与图像风格一致的视觉文本。现有方法通常涉及指定文本内容及字体大小、颜色、布局等属性的复杂步骤，且未充分考虑与参考图像之间的风格一致性。为此，我们提出UM-Text——一个通过自然语言指令实现上下文理解与视觉文本编辑的多模态统一模型。具体而言，我们引入视觉语言模型处理指令与参考图像，使文本内容与布局能够依据上下文信息进行精细化设计。为生成准确且协调的视觉文本图像，我们进一步提出UM-Encoder以融合多类条件信息的嵌入表示，其融合方式由视觉语言模型根据输入指令自动配置。在训练阶段，我们提出区域一致性损失函数，在潜在空间与RGB空间为字形生成提供更有效的监督，并设计定制化的三阶段训练策略以进一步提升模型性能。此外，我们构建了包含20万张多场景视觉文本图像的大规模数据集UM-DATA-200K用于模型训练。在多个公开基准测试上的大量定性与定量实验表明，本方法取得了当前最优性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08321">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08321">arXiv</a></p>
+<hr />
+<h3>21. 智能体首日：工作场景中的学习、探索与调度基准测试</h3>
+<p><strong>原文标题：</strong> The Agent's First Day: Benchmarking Learning, Exploration, and Scheduling in the Workplace Scenarios</p>
+<p><strong>摘要：</strong>
+多模态大语言模型的快速发展推动了工作流程自动化，但现有研究主要关注静态环境下的性能上限，忽视了随机现实部署场景中的鲁棒性问题。我们识别出三个关键挑战：动态任务调度、不确定性下的主动探索以及基于经验的持续学习。为弥补这一空白，我们提出了动态评估环境，该环境模拟"受训"智能体在全新场景中的持续探索过程。与传统基准测试不同，本框架从三个维度评估智能体：(1) 针对不同优先级流式任务的上下文感知调度能力；(2) 通过主动探索进行审慎信息获取以减少幻觉现象；(3) 从基于规则动态生成的任务中提炼泛化策略以实现持续进化。实验表明，前沿智能体在动态环境中存在显著缺陷，尤其在主动探索与持续学习方面。本研究建立了评估智能体可靠性的框架，将评估重点从静态测试转向真实的生产导向场景。代码已开源：https://github.com/KnowledgeXLab/EvoEnv</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08173">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08173">arXiv</a></p>
+<hr />
+<h3>22. 对齐文本、代码与视觉：一种面向文本到可视化的多目标强化学习框架</h3>
+<p><strong>原文标题：</strong> Aligning Text, Code, and Vision: A Multi-Objective Reinforcement Learning Framework for Text-to-Visualization</p>
+<p><strong>摘要：</strong>
+文本到可视化系统能够将针对表格数据的自然语言查询转化为简洁的答案与可执行的可视化图表。尽管闭源大语言模型能够生成功能代码，但其生成的图表往往在语义对齐性和清晰度方面存在不足，而这些质量指标通常只能在执行后才能评估。开源模型的表现则更为困难，常常产生无法执行或视觉效果不佳的输出。虽然监督微调可以提升代码可执行性，但由于传统的监督微调损失函数无法捕捉执行后的反馈，它难以改善可视化的整体质量。为弥补这一不足，我们提出了RL-Text2Vis，这是首个用于文本到可视化生成的强化学习框架。该方法基于分组相对策略优化构建，采用一种新颖的多目标奖励机制，利用执行后反馈联合优化文本准确性、代码有效性和可视化质量。通过训练Qwen2.5模型，RL-Text2Vis在Text2Vis基准测试中实现了相较于GPT-4o图表质量22%的相对提升，并将代码执行成功率从零样本基线的78%提高至97%。我们的模型显著超越了强大的零样本与监督基线，并在VIS-Eval和NVBench等域外数据集上展现出良好的泛化能力。这些结果表明，分组相对策略优化是可视化生成中结构化多模态推理的有效策略。代码已发布于https://github.com/vis-nlp/RL-Text2Vis。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04582">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04582">arXiv</a></p>
+<hr />
+<h3>23. 迈向大语言模型在事实核查中的全面分阶段基准测试</h3>
+<p><strong>原文标题：</strong> Towards Comprehensive Stage-wise Benchmarking of Large Language Models in Fact-Checking</p>
+<p><strong>摘要：</strong>
+大语言模型正日益广泛应用于现实世界的事实核查系统中，然而现有评估主要集中于主张验证环节，忽视了包括主张提取与证据检索在内的更广泛的事实核查工作流程。这种局限使得当前基准测试无法充分揭示现代大语言模型的系统性推理缺陷、事实盲点及鲁棒性限制。为弥补这一空白，我们提出FactArena——一个全自动的竞技场式评估框架，针对完整的事实核查流程对大语言模型进行全面的分阶段基准测试。FactArena整合了三个核心模块：（一）由大语言模型驱动的事实核查流程，实现了主张解构、通过工具增强交互的证据检索以及基于论证的判定预测的标准化；（二）以统一参考准则为导向的竞技场式评判机制，确保异构评判代理之间进行无偏且一致的成对比较；（三）竞技场驱动的主张演化模块，能够自适应生成更具挑战性且语义受控的主张，以探究大语言模型在固定种子数据之外的事实鲁棒性。通过对涵盖七个模型家族的16个前沿大语言模型进行测试，FactArena产生了稳定且可解释的性能排序。我们的分析进一步揭示了静态主张验证准确率与端到端事实核查能力之间的显著差异，凸显了整体性评估的必要性。该框架为诊断大语言模型的事实推理能力、指导未来模型发展，以及推动大语言模型在安全关键型事实核查应用中的可靠部署，提供了一个可扩展且可信的评估范式。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.02669">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.02669">arXiv</a></p>
+<hr />
+<h3>24. GeoMotionGPT：基于大语言模型的几何对齐运动理解</h3>
+<p><strong>原文标题：</strong> GeoMotionGPT: Geometry-Aligned Motion Understanding with Large Language Models</p>
+<p><strong>摘要：</strong>
+离散运动标记化技术近期使得大语言模型能够作为运动理解与运动-语言推理的多功能基础架构。然而，现有流程通常将运动量化与语义嵌入学习解耦，仅通过标记ID建立关联。这种方法未能有效对齐运动空间的内在几何结构与嵌入空间，从而限制了大语言模型进行精细运动推理的能力。我们认为，当两种模态共享统一的几何基础时，对齐效果最为显著。因此，我们提出了一种新型框架，该框架不再强制大语言模型从零开始重构运动标记间的复杂几何关系，而是通过对运动码本和大语言模型嵌入空间同时施加正交性约束，确保二者的关系结构自然映射。具体而言，我们采用基于Gumbel-Softmax的仅解码器量化器实现可微分训练与平衡的码本使用。为 bridging 模态间隙，我们使用稀疏投影将运动编码映射至大语言模型嵌入空间，同时保持正交特性。最后，通过两阶段正交正则化方案，在标记器训练和大语言模型微调过程中实施软约束，在维持几何对齐的同时不阻碍语义适应。在HumanML3D数据集上的大量实验表明，我们的框架相比当前最优方法实现了20%的性能提升，验证了统一几何基础能有效增强大语言模型的精细运动推理能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.07632">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.07632">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2026-01-14_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
