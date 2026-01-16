@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2026-01-15</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2026-01-15 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：27</li>
+<li>热门领域：GPT, LLM, RL, Transformer, NLP</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. 面向算法代码优化的受控自演化方法</h3>
+<p><strong>原文标题：</strong> Controlled Self-Evolution for Algorithmic Code Optimization</p>
+<p><strong>摘要：</strong>
+自演化方法通过迭代式的“生成-验证-精炼”循环增强代码生成能力，但现有方法存在探索效率低下的问题，难以在有限资源约束下发现具有更优复杂度的解决方案。这种低效性源于三方面瓶颈：初始化偏差使演化过程陷入次优解区域、缺乏反馈引导的随机操作难以控制，以及跨任务经验利用不足。为解决这些问题，本文提出受控自演化方法，其包含三个核心组件：多样化规划初始化通过生成结构差异化的算法策略实现广阔解空间覆盖；遗传演化以反馈引导机制替代随机操作，实现定向变异与组合交叉；分层演化记忆在任务间与任务内层级同时捕获成功与失败经验。在EffiBench-X基准上的实验表明，CSE在不同大语言模型基座上均持续优于所有基线方法。此外，CSE从演化早期即展现更高效率，并在整个演化过程中保持持续改进能力。代码已开源：https://github.com/QuantaAlpha/EvoControl。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.07348">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.07348">arXiv</a></p>
+<hr />
+<h3>2. DeepResearchEval：一种用于深度研究任务构建与智能体评估的自动化框架</h3>
+<p><strong>原文标题：</strong> DeepResearchEval: An Automated Framework for Deep Research Task Construction and Agentic Evaluation</p>
+<p><strong>摘要：</strong>
+深度研究系统被广泛用于多步骤网络研究、分析与跨来源综合，但其评估仍面临挑战。现有基准测试通常需要大量标注的任务构建，依赖静态评估维度，或在引用缺失时无法可靠验证事实。为弥补这些不足，本文提出DeepResearchEval——一种用于深度研究任务构建与智能体评估的自动化框架。在任务构建方面，我们设计了一种基于人物角色的流程，通过多样化用户画像生成真实且复杂的研究任务，并应用包含“任务资格”与“搜索必要性”的两阶段筛选机制，仅保留需要多源证据整合与外部检索的任务。在评估方面，我们提出了一种智能体评估流程，包含两个核心组件：一是“自适应点式质量评估”，能够根据每个生成的任务动态推导任务特定的评估维度、标准与权重；二是“主动事实核查”，即使引用缺失，也能通过网络搜索自主提取并验证报告中的陈述。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09688">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09688">arXiv</a></p>
+<hr />
+<h3>3. MAXS：基于大语言模型智能体的元自适应探索框架</h3>
+<p><strong>原文标题：</strong> MAXS: Meta-Adaptive Exploration with LLM Agents</p>
+<p><strong>摘要：</strong>
+大语言模型智能体通过多工具协作展现出固有的推理能力。然而在智能体推理过程中，现有方法常存在两大问题：（一）因缺乏前瞻性而导致的局部短视生成；（二）轨迹不稳定性，即早期微小误差可能演变为发散推理路径。这些问题使得全局效能与计算效率难以平衡。为应对上述挑战，我们提出基于大语言模型智能体的元自适应探索框架（MAXS，项目地址：https://github.com/exoskeletonzj/MAXS），该元自适应推理框架能灵活整合工具执行与推理规划。MAXS采用前瞻策略将推理路径延伸若干步骤，评估工具使用的优势值，并结合步骤一致性方差与跨步骤趋势斜率联合选择稳定、一致且高价值的推理步骤。此外，我们引入轨迹收敛机制，在达成路径一致性时停止进一步推演以控制计算成本，从而实现多工具推理中资源效率与全局效能的平衡。我们在三个基础模型（MiMo-VL-7B、Qwen2.5-VL-7B、Qwen2.5-VL-32B）和五个数据集上进行了广泛实证研究，结果表明MAXS在性能与推理效率方面均持续优于现有方法。进一步分析验证了我们前瞻策略与工具使用机制的有效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09259">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09259">arXiv</a></p>
+<hr />
+<h3>4. A^3-Bench：基于锚点与吸引子激活的记忆驱动科学推理基准测试</h3>
+<p><strong>原文标题：</strong> A^3-Bench: Benchmarking Memory-Driven Scientific Reasoning via Anchor and Attractor Activation</p>
+<p><strong>摘要：</strong>
+科学推理不仅依赖于逻辑推断，还需要激活先验知识与经验结构。记忆能够高效复用知识，并提升推理的一致性与稳定性。然而，现有基准测试主要评估最终答案或逐步推理的连贯性，忽视了人类推理背后基于记忆驱动的机制——该机制涉及激活锚点与吸引子，并将其整合至多步推理中。为填补这一空白，我们提出A^3-Bench（https://a3-bench.github.io），这是一个基于锚点与吸引子激活理论构建的双尺度记忆驱动激活科学推理评估基准。首先，我们采用SAPM流程（主体、锚点与吸引子、问题及记忆发展）对跨领域的2,198个科学推理问题进行了系统标注。其次，我们引入一个利用锚点与吸引子的双尺度记忆评估框架，并提出AAUI（锚点—吸引子利用指数）指标以量化记忆激活率。最后，通过对多种基础模型与推理范式的实验，我们验证了A^3-Bench的有效性，分析了记忆激活如何影响推理性能，从而为记忆驱动的科学推理研究提供了新的见解。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09274">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09274">arXiv</a></p>
+<hr />
+<h3>5. 分布对齐序列蒸馏：实现卓越的长链思维推理</h3>
+<p><strong>原文标题：</strong> Distribution-Aligned Sequence Distillation for Superior Long-CoT Reasoning</p>
+<p><strong>摘要：</strong>
+本报告介绍了DASD-4B-Thinking——一个轻量级但能力卓越、完全开源的推理模型。该模型在数学、科学推理和代码生成等具有挑战性的基准测试中，取得了同规模开源模型中最先进的性能表现，甚至超越了若干更大规模的模型。我们首先批判性地重新审视了当前社区广泛采用的一种蒸馏范式：基于教师生成响应的监督微调，亦称为序列级蒸馏。尽管近期一系列遵循此方案的研究展现了显著的效率优势和强大的实证性能，但这些方法主要基于监督微调的视角。因此，现有研究多聚焦于设计启发式的监督微调数据过滤规则，却很大程度上忽视了蒸馏的核心原则——使学生模型能够学习教师模型的完整输出分布，从而继承其泛化能力。具体而言，我们识别出现行实践中的三个关键局限：i）教师序列级分布的表征不足；ii）教师输出分布与学生学习能力之间的错位；iii）教师强制训练与自回归推理之间的曝光偏差。总之，这些缺陷反映了蒸馏过程中缺乏明确的师生交互机制，导致蒸馏的本质未能得到充分挖掘。为解决这些问题，我们提出了多项方法论创新，共同构建了一个增强的序列级蒸馏训练流程。值得注意的是，DASD-4B-Thinking仅使用44.8万训练样本就获得了具有竞争力的结果——这比大多数现有开源工作使用的数据量少一个数量级。为支持社区研究，我们公开发布了模型及训练数据集。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09088">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09088">arXiv</a></p>
+<hr />
+<h3>6. Fast-ThinkAct：通过可言语化潜在规划实现高效视觉-语言-动作推理</h3>
+<p><strong>原文标题：</strong> Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning</p>
+<p><strong>摘要：</strong>
+视觉-语言-动作任务需要在动态环境中对复杂视觉场景进行推理并执行适应性动作。尽管近期关于推理型视觉-语言-动作模型的研究表明，显式的思维链能够提升泛化能力，但由于冗长的推理轨迹，这些方法存在推理延迟较高的问题。本文提出Fast-ThinkAct——一种通过可言语化潜在推理实现紧凑高效规划的推理框架。该方法通过从教师模型蒸馏学习，在偏好引导目标的驱动下对齐操作轨迹，从而学习利用潜在思维链进行高效推理，同时迁移语言与视觉规划能力以实现具身控制。这种机制实现了推理增强的策略学习，有效将紧凑推理与动作执行相连接。在多样化的具身操作与推理基准测试中进行的广泛实验表明，Fast-ThinkAct在保持有效长程规划、少样本适应及故障恢复能力的同时，以最高降低89.3%推理延迟的显著优势，在性能上超越了当前最先进的推理型视觉-语言-动作模型。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09708">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09708">arXiv</a></p>
+<hr />
+<h3>7. SkinFlow：基于动态视觉编码与分阶段强化学习的开放性皮肤病诊断高效信息传输框架</h3>
+<p><strong>原文标题：</strong> SkinFlow: Efficient Information Transmission for Open Dermatological Diagnosis via Dynamic Visual Encoding and Staged RL</p>
+<p><strong>摘要：</strong>
+通用大规模视觉语言模型尽管参数规模庞大，但在皮肤病学领域常因"注意力弥散"现象而表现不佳——即难以从背景噪声中分离出细微的病理特征。本文挑战了"参数扩展是提升医学精度的唯一路径"这一固有认知，提出SkinFlow框架，将诊断过程重新定义为视觉信息传输效率的优化问题。该框架采用虚拟宽度动态视觉编码器，在不增加实体参数的前提下实现复杂病理流形的"展开"表征，并结合两阶段强化学习策略：第一阶段在受限语义空间内对齐显性医学描述，第二阶段重构隐性诊断纹理特征。此外，我们建立了基于临床实践的评价体系，强调诊断安全性与层次化关联性优先于僵化的标签匹配。实验结果表明：我们的70亿参数模型在Fitzpatrick17k基准测试中取得突破性进展，相较于通用大模型（如Qwen3VL-235B与GPT-5.2），Top-1准确率提升12.06%，Top-6准确率提升28.57%。这些发现证明，通过优化几何表征能力与信息流传输机制，能够比单纯扩展参数规模产生更卓越的诊断推理性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09136">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09136">arXiv</a></p>
+<hr />
+<h3>8. OpenDecoder：开放大语言模型解码以在检索增强生成中融入文档质量评估</h3>
+<p><strong>原文标题：</strong> OpenDecoder: Open Large Language Model Decoding to Incorporate Document Quality in RAG</p>
+<p><strong>摘要：</strong>
+大语言模型（LLM）的发展在一系列下游任务中取得了卓越性能，包括基于LLM的检索增强生成（RAG）。生成内容的质量高度依赖于检索信息的有用性，以及LLM内部信息处理机制在答案生成中融合这些信息的能力。现有研究通常假设检索信息与问题相关，然而实际检索信息的关联性与实用性可能因具体问题及文档集合而异。在答案生成中考虑检索信息的相关性至关重要。本文提出OpenDecoder，这是一种通过显式评估检索信息作为生成质量指示特征的新方法。我们旨在构建一个对不同程度噪声上下文具有更强鲁棒性的RAG模型。该方法综合考虑三类显式评估信息：相关性评分、排序评分及查询性能预测评分。在五个基准数据集上的实验结果表明，OpenDecoder在超越多种基线方法的同时，展现出显著的有效性与更优的鲁棒性。值得注意的是，该范式具有高度灵活性，既可适配于各类目标的LLM后训练，也能与任意类型的外部指示特征相结合。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09028">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09028">arXiv</a></p>
+<hr />
+<h3>9. OpenVoxel：面向开放词汇3D场景理解的免训练体素分组与描述方法</h3>
+<p><strong>原文标题：</strong> OpenVoxel: Training-Free Grouping and Captioning Voxels for Open-Vocabulary 3D Scene Understanding</p>
+<p><strong>摘要：</strong>
+本文提出OpenVoxel，一种免训练算法，用于为开放词汇3D场景理解任务进行稀疏体素的分组与描述。给定从3D场景的多视角图像中获得的稀疏体素栅格化（SVR）模型，我们的OpenVoxel能够生成描述场景中不同物体的有意义分组。同时，通过利用强大的视觉语言模型（VLMs）和多模态大语言模型（MLLMs），OpenVoxel成功通过对每个分组进行描述来构建信息丰富的场景地图，从而支持进一步的3D场景理解任务，如开放词汇分割（OVS）或指代表达分割（RES）。与先前方法不同，我们的方法无需训练，且不引入CLIP/BERT文本编码器的嵌入向量。相反，我们直接使用MLLMs进行文本到文本的搜索。通过大量实验验证，我们的方法在多项任务中展现出优于近期研究的性能，尤其在复杂的指代表达分割（RES）任务中表现突出。代码将开源发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09575">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09575">arXiv</a></p>
+<hr />
+<h3>10. ExpSeek：面向网络智能体的自触发经验寻求机制</h3>
+<p><strong>原文标题：</strong> ExpSeek: Self-Triggered Experience Seeking for Web Agents</p>
+<p><strong>摘要：</strong>
+经验干预在网络智能体中作为一种前景广阔的技术范式，通过利用积累的经验提供有价值的洞察，从而增强智能体的交互能力。然而，现有方法主要在任务执行前将经验作为全局上下文被动注入，难以适应智能体与环境交互过程中动态变化的上下文观察。我们提出ExpSeek，将经验干预转向步骤级的主动寻求机制：（1）利用模型内在信号估计步骤级熵阈值以确定干预时机；（2）设计步骤级定制化的经验内容。在四个具有挑战性的网络智能体基准测试中，基于Qwen3-8B和32B模型的实验表明，ExpSeek分别实现了9.3%和7.5%的绝对性能提升。我们的实验验证了熵作为自触发信号的可行性及优势，并揭示即使仅使用4B规模的小型经验模型也能显著提升大型智能体模型的性能。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08605">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08605">arXiv</a></p>
+<hr />
+<h3>11. EvoFSM：基于有限状态机的可控自进化深度研究框架</h3>
+<p><strong>原文标题：</strong> EvoFSM: Controllable Self-Evolution for Deep Research with Finite State Machines</p>
+<p><strong>摘要：</strong>
+尽管基于大语言模型的智能体在深度研究中展现出潜力，但现有方法大多依赖固定工作流程，难以适应现实世界中开放式的查询需求。为此，近期研究开始探索通过让智能体重写自身代码或提示词以实现自我进化，从而提升问题解决能力。然而，无约束的优化常导致系统不稳定、产生幻觉或偏离原始指令。本文提出EvoFSM，一种结构化的自进化框架，通过演化显式的有限状态机而非依赖自由形式的重写，在实现适应性的同时保持可控性。EvoFSM将优化空间解耦为宏观的流程（状态转移逻辑）与微观的技能（状态特定行为），从而在清晰的行为边界内实现针对性改进。在评估机制的引导下，EvoFSM通过一组受限操作对有限状态机进行优化，并进一步引入自进化记忆模块，将成功轨迹提炼为可复用的先验知识，将失败模式转化为未来查询的约束条件。在五个多跳问答基准上的广泛实验证明了EvoFSM的有效性，其中在DeepSearch基准上达到了58.0%的准确率。在交互式决策任务上的额外实验结果进一步验证了其泛化能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09465">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09465">arXiv</a></p>
+<hr />
+<h3>12. FocusUI：基于位置保持视觉标记选择的高效用户界面定位方法</h3>
+<p><strong>原文标题：</strong> FocusUI: Efficient UI Grounding via Position-Preserving Visual Token Selection</p>
+<p><strong>摘要：</strong>
+视觉语言模型在用户界面定位任务中展现出卓越性能，这得益于其处理日益高分辨率截图的能力。然而，截图被分割为数千个视觉标记（例如2K分辨率下约4700个），导致显著的计算开销并分散注意力机制。相比之下，人类在与用户界面交互时通常聚焦于感兴趣区域。本研究开创性地探索高效用户界面定位任务。通过对任务特性与挑战的实际分析，我们提出FocusUI框架，该框架在保持位置连续性的同时筛选与指令最相关的图像区块，从而实现精确定位。FocusUI解决了两大核心挑战：（1）消除视觉编码中的冗余标记。我们通过融合指令条件评分与基于规则的用户界面图评分构建区块级监督机制，该机制通过降低大范围同质区域的权重来筛选具有区分度且与指令相关的视觉标记。（2）在视觉标记选择过程中保持位置连续性。研究发现，通用视觉标记剪枝方法会因位置信息断裂导致用户界面定位任务准确率严重下降。为此，我们提出创新的位置填充策略，将每个连续丢弃的视觉标记序列压缩为置于序列末位索引的特殊标记，从而保持位置连续性。在四个定位基准测试上的综合实验表明，FocusUI优于专用图形用户界面基线模型。在ScreenSpot-Pro基准测试中，FocusUI-7B相较于GUI-Actor-7B实现3.7%的性能提升。即使在仅保留30%视觉标记的情况下，FocusUI-7B仅下降3.2%的准确率，同时实现高达1.44倍的推理加速与17%的峰值GPU内存降低。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.03928">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.03928">arXiv</a></p>
+<hr />
+<h3>13. 大语言模型是否易受偏好削弱攻击？一种诊断偏好对齐与现实有效性权衡的析因分析方法</h3>
+<p><strong>原文标题：</strong> Are LLMs Vulnerable to Preference-Undermining Attacks (PUA)? A Factorial Analysis Methodology for Diagnosing the Trade-off between Preference Alignment and Real-World Validity</p>
+<p><strong>摘要：</strong>
+大语言模型的训练通常以偏好对齐为优化目标，奖励那些被认为有帮助且交互友好的输出。然而，这种以偏好为导向的目标可能被利用：操纵性提示可以引导模型倾向于取悦用户的附和回应，而非基于事实的修正。本研究探讨经过对齐的模型是否易受偏好削弱攻击——这类操纵性提示策略旨在利用模型取悦用户偏好的倾向，从而牺牲其真实性。我们提出一种诊断方法，通过析因评估框架在受控的2×2⁴设计中将提示引发的响应变化分解为系统目标（以真实性为导向 vs. 以偏好为导向）与PUA式对话因素（指令控制、人身贬损、条件性认可、现实否认）的可解释效应，该方法比聚合基准分数能提供更细粒度、更具指向性的分析。令人惊讶的是，更先进的模型有时反而更容易受到操纵性提示的影响。除了占主导地位的现实否认因素外，我们还观察到模型特定的符号反转以及与PUA式因素的交互作用，这表明需要针对性的防御策略而非统一的鲁棒性方案。这些发现提出了一种新颖、可复现的析因评估方法，为RLHF等训练后过程提供更细粒度的诊断，通过对偏好对齐风险与操纵性提示影响的更细致理解，助力大语言模型在产品迭代中实现更优的权衡。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.06596">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.06596">arXiv</a></p>
+<hr />
+<h3>14. TranslateGemma技术报告</h3>
+<p><strong>原文标题：</strong> TranslateGemma Technical Report</p>
+<p><strong>摘要：</strong>
+本文介绍了TranslateGemma，一套基于Gemma 3基础模型的开源机器翻译模型。为增强Gemma 3模型在翻译任务中固有的多语言能力，我们采用了两阶段微调方法。首先，使用通过先进模型生成的大规模高质量合成平行数据与人工翻译平行数据构成的丰富混合数据集进行监督式微调。随后进行强化学习阶段，通过集成包括MetricX-QE和AutoMQM在内的奖励模型，以翻译质量为目标进行优化。我们在WMT25测试集的10个语言对上通过人工评估，以及在WMT24++基准测试的55个语言对上通过自动评估，验证了TranslateGemma的有效性。自动评估指标显示，所有规模的TranslateGemma模型相较于基线Gemma 3模型均取得了一致且显著的性能提升。值得注意的是，较小规模的TranslateGemma模型常能达到与较大规模基线模型相当的性能，同时提升了效率。我们还证明TranslateGemma模型保留了强大的多模态能力，在Vistra图像翻译基准测试中表现出增强的性能。开源TranslateGemma模型的发布旨在为研究社区提供强大且适应性强的机器翻译工具。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09012">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09012">arXiv</a></p>
+<hr />
+<h3>15. 想象而后规划：基于世界模型的自适应前瞻智能体学习</h3>
+<p><strong>原文标题：</strong> Imagine-then-Plan: Agent Learning from Adaptive Lookahead with World Models</p>
+<p><strong>摘要：</strong>
+世界模型的最新进展为环境状态的未来动态建模提供了可能，使智能体能够在无需访问真实环境的情况下进行推理与决策。现有方法主要执行单步或固定步长的轨迹推演，其在复杂任务规划中的潜力尚未得到充分挖掘。本文提出“想象而后规划”框架，该统一框架通过前瞻想象实现智能体学习，使策略模型与习得的世界模型交互，生成多步“想象”轨迹。鉴于想象步长可能随任务和阶段动态变化，我们引入一种新颖的自适应前瞻机制，通过权衡最终目标与任务进度实现动态调整。生成的想象轨迹提供了关于未来结果的丰富信号（如已达成进度与潜在冲突），这些信号与当前观测信息相融合，构建出部分可观测且可想象的马尔可夫决策过程以指导策略学习。我们通过免训练和强化训练两种变体实现了该框架。在代表性智能体基准测试上的大量实验表明，本方法显著优于现有基线模型。进一步分析验证了自适应前瞻机制能有效增强智能体的推理能力，为应对更广泛的复杂任务提供了重要启示。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08955">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08955">arXiv</a></p>
+<hr />
+<h3>16. 基于稀疏扩散与三维渲染的静态场景高效相机控制视频生成</h3>
+<p><strong>原文标题：</strong> Efficient Camera-Controlled Video Generation of Static Scenes via Sparse Diffusion and 3D Rendering</p>
+<p><strong>摘要：</strong>
+基于扩散模型的现代视频生成模型能够生成高度逼真的视频片段，但其计算效率低下，通常需要数分钟GPU时间才能生成数秒视频。这种低效性对在需要实时交互的应用（如具身人工智能和虚拟/增强现实）中部署生成式视频构成了关键障碍。本文探索了一种静态场景相机条件视频生成的新策略：利用基于扩散的生成模型生成稀疏关键帧集合，随后通过三维重建与渲染合成完整视频。通过将关键帧提升至三维表征并渲染中间视图，我们的方法在确保几何一致性的同时，将生成成本分摊至数百帧。我们进一步提出一种预测给定相机轨迹最优关键帧数量的模型，使系统能够自适应分配计算资源。我们的最终方法SRENDER针对简单轨迹使用极稀疏关键帧，针对复杂相机运动则采用更密集的关键帧分布。该方法在生成20秒视频时，比基于扩散的基线方法提速超过40倍，同时保持高视觉保真度与时间稳定性，为高效可控的视频合成提供了可行路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09697">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09697">arXiv</a></p>
+<hr />
+<h3>17. 几何稳定性：表征分析中缺失的维度</h3>
+<p><strong>原文标题：</strong> Geometric Stability: The Missing Axis of Representations</p>
+<p><strong>摘要：</strong>
+现有学习表征分析存在盲区：其聚焦于相似性度量，即衡量嵌入与外部参考的对齐程度，但相似性仅能揭示表征内容，无法判断该结构是否具有鲁棒性。本文提出几何稳定性这一全新维度，用于量化表征几何在扰动下的保持可靠性，并构建Shesha框架进行测量。通过在七个领域的2463种配置实验中，我们发现稳定性与相似性在经验上无相关性（ρ≈0.01）且机制相异：移除主要主成分后相似性度量会失效，而稳定性仍对细粒度流形结构保持敏感。这种差异产生可操作的洞见：在安全监控方面，稳定性可作为功能性几何预警指标，其检测结构漂移的灵敏度比CKA提升近2倍，同时能过滤刚性距离度量中引发误报的非功能性噪声；在可控性方面，监督稳定性可预测线性可操控性（ρ=0.89-0.96）；在模型选择方面，稳定性与可迁移性解耦，揭示了迁移优化所产生的几何代价。超越机器学习领域，稳定性可预测CRISPR扰动一致性与神经行为耦合度。通过量化系统维持结构的可靠性，几何稳定性为生物与计算系统的表征审计提供了相似性度量不可或缺的补充维度。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09173">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09173">arXiv</a></p>
+<hr />
+<h3>18. 人工智能海马体：我们距离人类记忆还有多远？</h3>
+<p><strong>原文标题：</strong> The AI Hippocampus: How Far are We From Human Memory?</p>
+<p><strong>摘要：</strong>
+记忆在增强现代大语言模型与多模态大语言模型的推理能力、适应性与情境保真度方面发挥着基础性作用。随着这些模型从静态预测器向具备持续学习与个性化推理能力的交互式系统演进，记忆机制的整合已成为其架构与功能发展的核心议题。本文对LLMs与MLLMs中的记忆研究进行了全面而结构化的梳理，将现有文献整合为涵盖隐性记忆、显性记忆与智能体记忆范式的统一分类体系。具体而言，本文系统阐述了三类主要记忆框架：隐性记忆指预训练Transformer内部参数所蕴含的知识，包括其记忆存储、关联检索与情境推理能力，近期研究聚焦于对这一潜在记忆进行解释、操控与重构的方法；显性记忆通过外部存储与检索组件（如文本语料库、稠密向量与图结构等动态可查询知识表征）增强模型输出，从而实现与信息源的可扩展、可更新交互；智能体记忆在自主智能体中引入持久化、时序延展的记忆结构，促进多智能体系统中的长期规划、自我一致性与协作行为，对具身交互人工智能具有重要意义。本文进一步超越文本范畴，探讨了多模态场景中记忆机制的整合，其中视觉、语言、音频与行为模态间的协调一致性至关重要。文中系统评述了关键架构进展、基准任务与开放挑战，涉及记忆容量、对齐机制、事实一致性及跨系统互操作性等核心议题。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09113">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09113">arXiv</a></p>
+<hr />
+<h3>19. 流等变世界模型：面向部分可观测动态环境的记忆机制</h3>
+<p><strong>原文标题：</strong> Flow Equivariant World Models: Memory for Partially Observed Dynamic Environments</p>
+<p><strong>摘要：</strong>
+具身系统将世界体验为“流动的交响曲”：即多种连续感官输入流与自身运动耦合，并与外部物体动力学交织形成的组合。这些数据流遵循平滑的时间参数化对称性，并通过精确结构化的代数进行组合；然而大多数神经网络世界模型忽略此结构，转而反复从数据中重新学习相同的变换。本研究提出“流等变世界模型”框架，将自身运动与外部物体运动统一建模为单参数李群“流”。我们利用这种统一性实现对变换的群等变性，从而在数百个时间步长上提供稳定的潜在世界表征。在2D与3D部分可观测视频世界建模基准测试中，流等变世界模型显著优于当前基于扩散和记忆增强的先进世界建模架构——尤其在智能体当前视野外存在可预测世界动力学时表现突出。研究表明流等变性对长序列推演尤为有益，其泛化能力远超训练时域。通过基于内外运动构建世界模型表征，流等变性为数据高效、对称性引导的具身智能开辟了可扩展路径。项目链接：https://flowequivariantworldmodels.github.io。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.01075">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.01075">arXiv</a></p>
+<hr />
+<h3>20. DPWriter：基于多样化规划分支强化学习的创意写作方法</h3>
+<p><strong>原文标题：</strong> DPWriter: Reinforcement Learning with Diverse Planning Branching for Creative Writing</p>
+<p><strong>摘要：</strong>
+基于强化学习的大语言模型增强方法常导致输出多样性下降，削弱了其在创意写作等开放式任务中的实用性。现有方法缺乏引导多样化探索的显式机制，往往优先考虑优化效率与性能而忽视多样性。本文提出一种围绕半结构化长链思维构建的强化学习框架，该框架将生成过程分解为显式规划的中间步骤。我们引入一种多样化规划分支方法，该方法基于多样性变化在规划阶段策略性地引入分岔，并结合群体感知多样性奖励以激励差异化轨迹生成。在创意写作基准测试上的实验结果表明，该方法在保持生成质量的同时显著提升了输出多样性，各项指标持续优于现有基线模型。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09609">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09609">arXiv</a></p>
+<hr />
+<h3>21. Omni-R1：迈向统一生成式多模态推理范式</h3>
+<p><strong>原文标题：</strong> Omni-R1: Towards the Unified Generative Paradigm for Multimodal Reasoning</p>
+<p><strong>摘要：</strong>
+多模态大语言模型（MLLMs）在多模态推理领域正取得显著进展。早期方法主要关注纯文本推理。近期研究虽已将多模态信息融入推理步骤，但通常遵循单一任务特定的推理模式，这限制了其在各类多模态任务中的泛化能力。实际上，众多多模态任务需要多样化的推理技能，例如聚焦图像特定区域或在图像中标记对象。为解决这一问题，我们提出统一生成式多模态推理范式，通过在推理过程中生成中间图像来统一多样的多模态推理能力。我们通过Omni-R1实例化这一范式，该框架采用两阶段监督微调与强化学习架构，引入感知对齐损失和感知奖励机制，从而实现功能性图像生成。此外，我们提出Omni-R1-Zero，该方法通过从纯文本推理数据中自举逐步可视化信息，无需依赖多模态标注。实验结果表明，Omni-R1能够在广泛的多模态任务中实现统一的生成式推理，而Omni-R1-Zero在整体表现上可达到甚至超越Omni-R1，这为生成式多模态推理指明了具有前景的发展方向。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09536">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09536">arXiv</a></p>
+<hr />
+<h3>22. 告别陈旧反馈：面向开放世界智能体学习的协同演化批评器</h3>
+<p><strong>原文标题：</strong> No More Stale Feedback: Co-Evolving Critics for Open-World Agent Learning</p>
+<p><strong>摘要：</strong>
+基于批评的强化学习已成为通过自然语言反馈增强稀疏结果奖励来训练大语言模型智能体的重要范式。然而，现有方法通常依赖静态或离线批评模型，无法随策略演化而动态调整。在同策略强化学习中，智能体的错误模式会随时间变化，导致固定批评器逐渐失效，其反馈效用随之衰减。为此，我们提出ECHO（面向后见指导优化的演化批评器）框架，通过同步协同演化循环实现策略与批评器的联合优化。ECHO采用级联推演机制：批评器对初始轨迹生成多重诊断，继而通过策略精调实现群体结构化优势估计。针对学习平台期问题，我们提出饱和度感知增益塑形目标，通过奖励批评器在高性能轨迹中诱导渐进式改进来突破瓶颈。通过双轨GRPO更新机制，ECHO确保批评反馈与演化策略保持同步。实验结果表明，ECHO在开放世界环境中能实现更稳定的训练过程，并在长周期任务中取得更高的成功率。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.06794">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.06794">arXiv</a></p>
+<hr />
+<h3>23. SCALER：面向推理任务的合成式可扩展自适应学习环境</h3>
+<p><strong>原文标题：</strong> SCALER:Synthetic Scalable Adaptive Learning Environment for Reasoning</p>
+<p><strong>摘要：</strong>
+强化学习为提升大语言模型的推理能力提供了一种理论化方法，但其有效性依赖于能够随模型演化而持续提供信息的训练信号。实践中，当任务难度与模型能力不匹配，或训练过程被少量重复出现的问题模式主导时，强化学习的进展往往会放缓。为协同解决这些问题，我们提出SCALER（面向推理任务的合成式可扩展自适应学习环境），该框架通过自适应环境设计来维持有效的学习信号。SCALER引入了一个可扩展的合成流程，能够将现实世界的编程问题转化为具有可控难度和无限实例生成能力的可验证推理环境，从而在保持强正确性保证的前提下，实现超越有限数据集的强化学习训练。在此基础上，SCALER进一步采用一种自适应多环境强化学习策略，动态调整实例难度并筛选活跃环境集合，以追踪模型能力边界并保持分布多样性。这种协同适应机制避免了奖励稀疏性，缓解了对狭窄任务模式的过拟合，并支持训练过程中的持续改进。大量实验表明，SCALER在多种推理基准测试中始终优于基于数据集的强化学习基线方法，并展现出更稳定、更长周期的训练动态。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04809">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04809">arXiv</a></p>
+<hr />
+<h3>24. 焦点引导：从视频扩散模型的语义弱层中解锁可控性</h3>
+<p><strong>原文标题：</strong> Focal Guidance: Unlocking Controllability from Semantic-Weak Layers in Video Diffusion Models</p>
+<p><strong>摘要：</strong>
+图像到视频（I2V）生成任务旨在根据参考图像和文本提示合成视频。这要求扩散模型在去噪过程中协调高频视觉约束与低频文本引导。然而，尽管现有I2V模型优先考虑视觉一致性，如何有效耦合这种双重引导以确保对文本提示的严格遵循仍待深入探索。本研究观察到，在基于扩散Transformer（DiT）的I2V模型中，某些中间层表现出较弱的语义响应（称为语义弱层），其表现为文本-视觉相似度的可测量下降。我们将此归因于一种称为“条件隔离”的现象，即对视觉特征的注意力部分脱离文本引导，并过度依赖模型学习到的视觉先验。为解决此问题，我们提出焦点引导（FG）方法，以增强语义弱层的可控性。FG包含两种机制：（1）细粒度语义引导（FSG）利用CLIP识别参考帧中的关键区域，并将其作为锚点引导语义弱层；（2）注意力缓存将语义响应层的注意力图传递至语义弱层，注入显式语义信号，减轻其对模型学习视觉先验的过度依赖，从而提升对文本指令的遵循能力。为进一步验证本方法并弥补该方向评估体系的缺失，我们引入了一个用于评估I2V模型指令遵循能力的基准测试。在此基准上，焦点引导证明了其有效性和泛化能力：将Wan2.1-I2V的总分提升至0.7250（+3.97%），并将基于MMDiT的HunyuanVideo-I2V得分提升至0.5571（+7.44%）。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.07287">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.07287">arXiv</a></p>
+<hr />
+<h3>25. 集群工作负载分配：基于自然语言处理的语义软亲和性</h3>
+<p><strong>原文标题：</strong> Cluster Workload Allocation: Semantic Soft Affinity Using Natural Language Processing</p>
+<p><strong>摘要：</strong>
+集群工作负载分配通常需要复杂的配置，导致可用性差距。本文提出一种基于自然语言处理的语义化、意图驱动的集群系统调度范式。该系统通过集成大型语言模型（LLM）至Kubernetes调度器扩展程序，以解析用于软亲和性偏好的自然语言分配提示注解。研究开发了包含集群状态缓存和意图分析器（使用AWS Bedrock）的原型系统。实证评估表明，在评估基准数据集上，Amazon Nova Pro/Premier和Mistral Pixtral Large等顶级模型的LLM解析准确率较高（子集准确率&gt;95%），显著优于基线引擎。在六种场景下的调度质量测试显示，与标准Kubernetes配置相比，该原型实现了更优或同等的资源分配效果，尤其在复杂场景、量化场景及冲突软偏好处理方面表现突出。结果验证了利用LLM实现可访问调度的可行性，但也揭示了同步LLM延迟等局限性，建议采用异步处理以满足生产环境要求。本研究证实了语义软亲和性在简化工作负载编排方面的实用价值。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.09282">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.09282">arXiv</a></p>
+<hr />
+<h3>26. sui-1：基于引证且可验证的长文本摘要生成模型</h3>
+<p><strong>原文标题：</strong> sui-1: Grounded and Verifiable Long-Form Summarization</p>
+<p><strong>摘要：</strong>
+大型语言模型常生成看似合理但无法忠实反映原文的摘要，用户难以依据源文本进行验证，这在政府与法律分析等对合规性要求严格的领域构成关键局限。本文提出sui-1模型，该模型拥有240亿参数，能够生成包含文中引证的抽象摘要，使用户能够将每个主张追溯至源语句。我们通过结合思维链提示与多阶段验证的合成数据流程，从议会文件、网络文本及维基百科等多样化来源中，生成了涵盖五种语言超过22,000个高质量训练样本。评估表明，sui-1在各项指标上显著优于所有测试的开源基线模型，包括参数量为其三倍的模型。这些结果证明，针对引证型摘要任务的专业化训练能够显著超越单纯扩大模型规模的效果。模型权重及交互演示已公开发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.08472">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.08472">arXiv</a></p>
+<hr />
+<h3>27. SampoNLP：一种用于子词分词器形态学分析的自参照工具包</h3>
+<p><strong>原文标题：</strong> SampoNLP: A Self-Referential Toolkit for Morphological Analysis of Subword Tokenizers</p>
+<p><strong>摘要：</strong>
+子词分词的质量对大语言模型至关重要，然而，对形态丰富的乌拉尔语系语言进行分词器评估，常因缺乏清晰的语素词典而受阻。本文介绍SampoNLP，一种无需语料库的形态学词典构建工具包，其采用受最小描述长度启发的自参照原子性评分方法，通过内部结构线索过滤复合形式，适用于低资源场景。利用SampoNLP为芬兰语、匈牙利语和爱沙尼亚语生成的高纯度词典，我们对BPE分词器在不同词汇表规模（8k-256k）下进行了系统评估。我们提出统一指标——综合性能得分，以权衡语素覆盖与过度切分之间的平衡。通过分析综合性能得分曲线，我们确定了收益递减的“拐点”，并为这些语言首次提供了基于实证的最优词汇表规模建议。本研究不仅提供了实用指导，还定量证明了标准BPE对高度黏着性语言的局限性。SampoNLP库及所有生成资源已公开：https://github.com/AragonerUA/SampoNLP</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.04469">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.04469">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2026-01-15_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
