@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2026-01-21</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2026-01-21 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：32</li>
+<li>热门领域：Transformer, GPT, LLM, RL</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. Being-H0.5：面向跨形态泛化的人本机器人学习规模化框架</h3>
+<p><strong>原文标题：</strong> Being-H0.5: Scaling Human-Centric Robot Learning for Cross-Embodiment Generalization</p>
+<p><strong>摘要：</strong>
+本文提出Being-H0.5，这是一个面向多样化机器人平台间鲁棒跨形态泛化的基础视觉-语言-动作模型。现有视觉-语言-动作模型常受形态异构性与数据稀缺性制约，为此我们提出一种以人为中心的学习范式，将人类交互轨迹视为物理交互的通用“母语”。为支撑该范式，我们构建了迄今最大规模的具身预训练方案UniHand-2.0，涵盖30种不同机器人形态的超过35,000小时多模态数据。本方法创新性地提出统一动作空间，将异构机器人控制映射至语义对齐的指令槽，使低资源机器人能够从人类数据及高资源平台中迁移技能。基于此以人为中心的框架，我们设计了统一的序列建模与多任务预训练范式，以桥接人类示范与机器人执行过程。在架构层面，Being-H0.5采用混合Transformer设计，其新颖的混合流框架可将共享运动基元与特定形态专家模块解耦。最后，为提升跨形态策略在现实世界的稳定性，我们提出流形保持门控机制以增强感知偏移下的鲁棒性，并设计通用异步分块控制器以实现不同延迟与控制特性平台间的分块控制泛化。实验表明，Being-H0.5在LIBERO（98.9%）和RoboCasa（53.9%）等仿真基准测试中达到最优性能，同时在五种机器人平台上展现出强大的跨形态泛化能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.12993">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.12993">arXiv</a></p>
+<hr />
+<h3>2. 基于大语言模型的软件工程问题解决进展与前沿：一项综合性综述</h3>
+<p><strong>原文标题：</strong> Advances and Frontiers of LLM-based Issue Resolution in Software Engineering: A Comprehensive Survey</p>
+<p><strong>摘要：</strong>
+问题解决作为现实软件开发中一项复杂的软件工程任务，已成为人工智能领域极具挑战性的研究方向。SWE-bench等基准测试的建立揭示了大语言模型在此任务上面临的显著困难，从而极大推动了自主编码智能体的演进。本文对这一新兴领域进行了系统性综述。首先，我们考察数据构建流程，涵盖自动化收集与合成方法。随后，我们对方法论进行全面分析，包括基于模块化组件的免训练框架，以及基于监督微调与强化学习等训练技术。进而，我们探讨数据质量与智能体行为的关键分析，并综述实际应用场景。最后，我们指出当前面临的核心挑战，并展望未来研究的潜在方向。本领域动态资源库持续维护于 https://github.com/DeepSoftwareAnalytics/Awesome-Issue-Resolution。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.11655">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.11655">arXiv</a></p>
+<hr />
+<h3>3. Think3D：利用空间进行空间推理的思维框架</h3>
+<p><strong>原文标题：</strong> Think3D: Thinking with Space for Spatial Reasoning</p>
+<p><strong>摘要：</strong>
+理解和推理物理世界需要空间智能：即超越二维感知、解读几何、透视与空间关系的能力。尽管当前视觉大模型在视觉理解方面表现出色，但其本质上仍是二维感知器，难以进行真正的三维推理。本文提出Think3D框架，使视觉大模型智能体能够基于三维空间进行思考。该框架利用三维重建模型从图像或视频中恢复点云与相机位姿，使智能体能够通过基于相机的操作以及自我/全局视角切换来主动操控空间，从而将空间推理转化为交互式的三维思维链过程。在无需额外训练的情况下，Think3D显著提升了GPT-4.1和Gemini 2.5 Pro等先进模型的空间推理性能，在BLINK Multi-view和MindCube数据集上平均提升+7.8%，在VSI-Bench上平均提升+4.7%。我们进一步发现，对于在空间探索方面存在困难的小规模模型，通过强化学习策略使其能够选择信息丰富的视角与操作，可带来显著性能改善：在强化学习辅助下，工具使用的收益从+0.7%提升至+6.8%。我们的研究表明，无需训练、基于工具增强的空间探索是实现多模态智能体更灵活、更类人三维推理的可行路径，从而确立了多模态智能的新维度。代码与权重已发布于https://github.com/zhangzaibin/spagent。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13029">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13029">arXiv</a></p>
+<hr />
+<h3>4. OmniTransfer：面向时空视频迁移的一体化框架</h3>
+<p><strong>原文标题：</strong> OmniTransfer: All-in-one Framework for Spatio-temporal Video Transfer</p>
+<p><strong>摘要：</strong>
+视频比图像或文本承载更丰富的信息，能够同时捕捉空间与时间动态。然而，现有的大多数视频定制方法依赖于参考图像或特定任务的时间先验，未能充分利用视频内在的丰富时空信息，从而限制了视频生成的灵活性与泛化能力。为应对这些局限，本文提出OmniTransfer，一个统一的时空视频迁移框架。该框架通过利用跨帧的多视角信息以增强外观一致性，并挖掘时序线索以实现细粒度的时间控制。为统一各类视频迁移任务，OmniTransfer包含三项关键设计：任务感知位置偏置，可自适应利用参考视频信息以提升时序对齐或外观一致性；参考解耦的因果学习，通过分离参考分支与目标分支，在提升效率的同时实现精确的参考迁移；以及任务自适应的多模态对齐，借助多模态语义引导动态区分并处理不同任务。大量实验表明，OmniTransfer在外观（身份与风格）迁移和时序（摄像机运动与视频特效）迁移任务上均优于现有方法，并在无需使用姿态信息的情况下，在运动迁移任务中达到与姿态引导方法相当的性能，为灵活、高保真的视频生成建立了新范式。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.14250">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.14250">arXiv</a></p>
+<hr />
+<h3>5. 迈向高效智能体：记忆、工具学习与规划</h3>
+<p><strong>原文标题：</strong> Toward Efficient Agents: Memory, Tool learning, and Planning</p>
+<p><strong>摘要：</strong>
+近年来，将大型语言模型扩展为智能体系统的研究日益受到关注。尽管智能体的性能持续提升，但对其实际部署至关重要的效率问题却常被忽视。本文从智能体的三个核心组成部分——记忆、工具学习和规划——出发，结合延迟、令牌消耗、步骤数等成本因素，系统探讨了效率优化问题。为全面研究智能体系统自身的效率，我们综述了近年来各类方法，这些方法在实现上各有不同，但常遵循共同的高层原则，包括但不限于：通过压缩与管理限制上下文范围、设计强化学习奖励以最小化工具调用、采用受控搜索机制提升效率等，文中对此进行了详细讨论。基于此，我们从两个互补维度界定效率：在固定成本预算下比较性能表现，以及在相当性能水平下比较成本消耗。这种权衡亦可从性能与成本的帕累托前沿视角理解。由此出发，我们通过总结各组成部分的评估方案、整合基准测试与方法研究中常用的效率指标，系统梳理了面向效率的基准评估体系。此外，本文进一步探讨了关键挑战与未来研究方向，旨在为该领域提供前瞻性见解。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.14192">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.14192">arXiv</a></p>
+<hr />
+<h3>6. FutureOmni：面向多模态大语言模型的全模态上下文未来预测评估</h3>
+<p><strong>原文标题：</strong> FutureOmni: Evaluating Future Forecasting from Omni-Modal Context for Multimodal LLMs</p>
+<p><strong>摘要：</strong>
+尽管多模态大语言模型（MLLMs）展现出强大的全模态感知能力，但其基于视听线索预测未来事件的能力仍鲜有探索，现有基准主要关注回顾性理解。为填补这一空白，我们提出了FutureOmni——首个用于评估基于视听环境进行全模态未来预测的基准。该基准要求被评估模型能够执行跨模态的因果与时序推理，并有效利用内部知识来预测未来事件。FutureOmni通过可扩展的大语言模型辅助、人机协同流程构建，涵盖8个主要领域，包含919个视频和1,034个多项选择问答对。对13个全模态模型和7个纯视频模型的评估表明，当前系统在视听未来预测任务上表现欠佳，尤其在语音密集场景中，最佳准确率（由Gemini 3 Flash实现）仅为64.8%。为改善这一局限，我们构建了一个包含7千样本的指令微调数据集，并提出了一种全模态未来预测训练策略。在FutureOmni及主流视听与纯视频基准上的实验证明，该策略能有效提升未来预测能力与泛化性能。我们已公开全部代码（https://github.com/OpenMOSS/FutureOmni）与数据集（https://huggingface.co/datasets/OpenMOSS-Team/FutureOmni）。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13836">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13836">arXiv</a></p>
+<hr />
+<h3>7. MemoryRewardBench：面向大语言模型长期记忆管理的奖励模型基准评测</h3>
+<p><strong>原文标题：</strong> MemoryRewardBench: Benchmarking Reward Models for Long-Term Memory Management in Large Language Models</p>
+<p><strong>摘要：</strong>
+现有研究越来越多地采用以记忆为中心的机制对长上下文进行分段处理，而有效的记忆管理是大语言模型在整个序列中有效传递信息的关键能力之一。因此，利用奖励模型来自动且可靠地评估记忆质量至关重要。本研究提出了MemoryRewardBench，这是首个系统研究奖励模型评估长期记忆管理能力的基准。MemoryRewardBench涵盖长上下文理解与长文本生成任务，包含10种具有不同记忆管理模式的典型场景，上下文长度覆盖8K至128K词元。对13个前沿奖励模型的评估表明，开源模型与专有模型之间的性能差距正在缩小，且新一代模型无论参数量大小均持续优于前代模型。我们进一步揭示了当前奖励模型在不同场景下评估大语言模型记忆管理的能力与根本性局限。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.11969">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.11969">arXiv</a></p>
+<hr />
+<h3>8. 定位、引导与优化：大语言模型中可操作性机制可解释性实用综述</h3>
+<p><strong>原文标题：</strong> Locate, Steer, and Improve: A Practical Survey of Actionable Mechanistic Interpretability in Large Language Models</p>
+<p><strong>摘要：</strong>
+机制可解释性已成为揭示大语言模型不透明决策机制的关键方法。然而，现有综述多将机制可解释性视为观测性科学，主要集中于分析性见解的总结，缺乏系统性、可操作的干预框架。为弥补这一空白，本文提出以“定位、引导与优化”为流程结构的实用综述框架。我们基于特定可解释对象，对定位（诊断）与引导（干预）方法进行形式化分类，从而建立严谨的干预规范。进一步地，我们论证了该框架如何在对齐性、能力与效率三个维度实现实质性改进，使机制可解释性真正转化为可操作的模型优化方法论。本工作的精选文献列表发布于 https://github.com/rattlesnakey/Awesome-Actionable-MI-Survey。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.14004">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.14004">arXiv</a></p>
+<hr />
+<h3>9. UniX：统一自回归与扩散模型用于胸部X光影像理解与生成</h3>
+<p><strong>原文标题：</strong> UniX: Unifying Autoregression and Diffusion for Chest X-Ray Understanding and Generation</p>
+<p><strong>摘要：</strong>
+尽管近期取得进展，医疗基础模型在统一视觉理解与生成任务方面仍面临挑战，因为这两类任务存在固有目标冲突：语义抽象与像素级重建。现有方法通常基于参数共享的自回归架构，往往导致其中一项或两项任务性能受损。为此，我们提出UniX——面向胸部X光影像理解与生成的新一代统一医疗基础模型。UniX将两项任务解耦为理解任务的自回归分支和实现高保真生成的扩散分支。关键创新在于引入跨模态自注意力机制，通过理解特征动态引导生成过程。结合严格的数据清洗流程与多阶段训练策略，该架构在充分发挥扩散模型生成优势的同时，实现了任务间的协同协作。在两个代表性基准测试中，UniX仅使用LLM-CXR四分之一参数量，即在理解性能（Micro-F1）上提升46.1%，在生成质量（FD-RadDino）上提升24.2%。通过与专用模型相媲美的性能表现，本研究为医疗影像理解与生成的协同推进建立了可扩展范式。代码与模型已开源：https://github.com/ZrH42/UniX。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.11522">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.11522">arXiv</a></p>
+<hr />
+<h3>10. ToolPRMBench：面向工具使用智能体的过程奖励模型评估与改进</h3>
+<p><strong>原文标题：</strong> ToolPRMBench: Evaluating and Advancing Process Reward Models for Tool-using Agents</p>
+<p><strong>摘要：</strong>
+奖励引导的搜索方法通过有效指导复杂动作空间中的采样与探索，在增强工具使用智能体方面展现出显著潜力。这些方法以过程奖励模型（PRM）为核心设计，通过提供步骤级奖励实现更细粒度的过程监控。然而，当前在工具使用场景中仍缺乏系统可靠的PRM评估基准。本文提出ToolPRMBench——一个专门用于评估工具使用智能体PRM的大规模基准。该基准基于多个代表性工具使用基准构建，将智能体轨迹转化为步骤级测试用例。每个案例包含交互历史、正确动作、合理但错误的替代动作及相关工具元数据。我们分别采用离线采样以隔离局部单步错误，并通过在线采样从完整智能体推演中捕捉真实多步失败场景。为降低标注噪声并确保数据质量，我们设计了多大型语言模型验证流程。基于ToolPRMBench，我们对大型语言模型、通用PRM及工具专用PRM进行了广泛实验。结果表明不同PRM效能存在显著差异，并凸显了专用PRM在工具使用场景中的潜力。代码与数据将在https://github.com/David-Li0406/ToolPRMBench 公开。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.12294">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.12294">arXiv</a></p>
+<hr />
+<h3>11. DARC：面向大语言模型进化的解耦非对称推理课程框架</h3>
+<p><strong>原文标题：</strong> DARC: Decoupled Asymmetric Reasoning Curriculum for LLM Evolution</p>
+<p><strong>摘要：</strong>
+基于大语言模型的自我博弈已成为实现自我改进人工智能的重要范式。然而，现有自我博弈框架常因以下问题导致优化不稳定：（一）提问者依赖求解器反馈的奖励目标具有非平稳性；（二）求解器训练时使用自生成伪标签会引入自举误差。为应对这些挑战，我们提出DARC（解耦非对称推理课程框架），该两阶段框架能有效稳定自我进化过程。首先，我们训练提问者根据显式难度分级和外部语料库生成难度可校准的问题。其次，我们通过非对称自蒸馏机制训练求解器：具备文档增强能力的教师模型生成高质量伪标签，用于监督无法访问文档的学生求解器。实验结果表明，DARC具有模型无关性，在九个推理基准测试和三种骨干模型上平均提升10.9个性能点。此外，DARC在无需人工标注的情况下持续超越所有基线模型，其性能接近全监督模型水平。代码已开源：https://github.com/RUCBM/DARC。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13761">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13761">arXiv</a></p>
+<hr />
+<h3>12. 基于知识化经验学习的具身世界模型对齐方法</h3>
+<p><strong>原文标题：</strong> Aligning Agentic World Models via Knowledgeable Experience Learning</p>
+<p><strong>摘要：</strong>
+当前大型语言模型存在显著的模态割裂问题：它们拥有海量语义知识，却缺乏遵循物理世界恒定法则的程序性基础。这导致这些智能体虽隐式地作为世界模型运行，其模拟过程常出现物理幻觉——生成逻辑合理但物理上不可执行的计划。现有对齐策略主要依赖资源密集的训练或微调，试图将动态环境规则压缩为静态模型参数。然而这种参数化封装本质上是僵化的，难以适应物理动态的开放可变性，且需要持续的高成本重训练。为弥补这一鸿沟，我们提出WorldMind框架，该框架通过综合环境反馈自主构建符号化世界知识库。具体而言，它统一了通过预测误差强化物理可行性的过程经验，以及借助成功轨迹指导任务最优性的目标经验。在EB-ALFRED和EB-Habitat上的实验表明，WorldMind相较于基线方法实现了更优性能，并展现出卓越的跨模型与跨环境迁移能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13247">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13247">arXiv</a></p>
+<hr />
+<h3>13. Agentic-R：面向智能体搜索的检索学习框架</h3>
+<p><strong>原文标题：</strong> Agentic-R: Learning to Retrieve for Agentic Search</p>
+<p><strong>摘要：</strong>
+智能体搜索作为一种新兴的强大范式，通过将多步推理与按需检索相结合来解决复杂问题。尽管该范式已取得显著成效，但如何为其设计专用检索器仍缺乏深入探索。现有搜索智能体通常依赖基于相似度的检索器，然而相似文本片段并不总能有效支持最终答案的生成。本文提出一种专为智能体搜索设计的创新检索器训练框架。与面向单轮检索增强生成（RAG）且仅依赖局部片段效用的检索器不同，本框架通过局部查询-片段相关性与全局答案正确性双重维度，衡量多轮智能体搜索中文本片段的效用价值。我们进一步引入迭代训练策略，实现搜索智能体与检索器的双向迭代优化。相较于仅通过固定问题单次训练的RAG检索器，本方案能持续利用智能体生成的动态演进且更高质量的查询进行检索器改进。在七个单跳与多跳问答基准测试上的大量实验表明，本研究所提出的检索器（命名为Agentic-R）在不同搜索智能体中均能稳定超越现有基线方法。代码已开源：https://github.com/8421BCD/Agentic-R。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.11888">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.11888">arXiv</a></p>
+<hr />
+<h3>14. LLM编排的BERTology视角：面向高效单次分类的令牌与层级选择性探针</h3>
+<p><strong>原文标题：</strong> A BERTology View of LLM Orchestrations: Token- and Layer-Selective Probes for Efficient Single-Pass Classification</p>
+<p><strong>摘要：</strong>
+生产级大型语言模型系统通常依赖独立模型处理安全性及其他分类密集型任务，这会导致延迟增加、显存占用扩大及操作复杂性上升。我们提出复用服务LLM已完成的计算：在其隐藏状态上训练轻量级探针，并在生成所用的同一次前向传播中完成标签预测。我们将分类任务重新定义为对完整令牌-层级隐藏状态张量的表征选择，而非固定采用特定令牌或特定层级（如首令牌逻辑值或最终层池化）。为实现此方法，我们设计了一个两阶段聚合器：（1）在各层级内汇总令牌信息；（2）跨层级聚合摘要以形成单一分类表征。我们通过三种方式实例化该框架：直接池化法、10万参数规模的评分注意力门控机制，以及最多包含3500万可训练参数的降维多头自注意力探针。在安全性与情感分析基准测试中，我们的探针方法优于仅复用逻辑值的方案（如MULI），并与参数量显著更大的任务专用基线模型表现相当，同时保持接近服务原型的延迟水平，避免了独立防护模型流水线带来的显存与延迟开销。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13288">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13288">arXiv</a></p>
+<hr />
+<h3>15. KAGE-Bench：面向强化学习的快速已知轴视觉泛化评估基准</h3>
+<p><strong>原文标题：</strong> KAGE-Bench: Fast Known-Axis Visual Generalization Evaluation for Reinforcement Learning</p>
+<p><strong>摘要：</strong>
+基于像素的强化学习智能体常因纯视觉分布偏移而失效，即使潜在动态与奖励机制保持不变。然而，现有基准测试往往混杂多种偏移来源，阻碍了系统性分析。为此，我们提出KAGE-Env——一个基于JAX原生开发的2D平台环境，该环境将观测过程分解为可独立控制的视觉轴，同时保持底层控制问题固定。通过这种设计，改变视觉轴仅通过影响像素策略的状态条件动作分布来改变性能，从而为视觉泛化提供了清晰的抽象框架。基于此环境，我们构建了KAGE-Bench基准测试，包含六个已知轴测试套件，涵盖34组训练-评估配置对，可分离评估单一视觉偏移的影响。采用标准PPO-CNN基线进行实验，我们观察到显著的轴依赖性失效现象：背景与光度偏移常导致任务完全失败，而智能体外貌偏移的影响相对较小。部分偏移虽能维持向前运动却破坏任务完成，这表明仅依赖回报指标可能掩盖泛化失败问题。此外，完全向量化的JAX实现支持在单GPU上达到每秒3300万环境步的运算速度，实现了对视觉因素的高效可复现扫描。代码地址：https://avanturist322.github.io/KAGEBench/。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.14232">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.14232">arXiv</a></p>
+<hr />
+<h3>16. LightOnOCR：用于最先进OCR的十亿参数端到端多语言视觉-语言模型</h3>
+<p><strong>原文标题：</strong> LightOnOCR: A 1B End-to-End Multilingual Vision-Language Model for State-of-the-Art OCR</p>
+<p><strong>摘要：</strong>
+本文提出LightOnOCR-2-1B模型，这是一个拥有十亿参数的端到端多语言视觉-语言模型，能够直接将文档图像（如PDF文件）转换为整洁、自然排序的文本，无需依赖脆弱的传统OCR流程。该模型通过大规模高质量蒸馏混合数据进行训练，特别强化了对扫描文档、法语文档及科学类PDF的覆盖能力。LightOnOCR-2在OlmOCR-Bench评测中取得了最先进的性能表现，其参数量仅为先前最佳模型的九分之一，且推理速度显著提升。我们进一步扩展输出格式以预测嵌入式图像的归一化边界框，通过渐进式训练策略在预训练阶段引入定位能力，并采用基于交并比奖励的RLVR方法进行精细化调整。最后，我们通过检查点平均与任务算术融合技术提升了模型鲁棒性。模型检查点已基于Apache 2.0协议开源发布，相关数据集及LightOnOCR-bbox-bench评估基准亦在对应许可下公开。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.14251">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.14251">arXiv</a></p>
+<hr />
+<h3>17. PRiSM：语音模型中音素实现性能的基准测试</h3>
+<p><strong>原文标题：</strong> PRiSM: Benchmarking Phone Realization in Speech Models</p>
+<p><strong>摘要：</strong>
+音素识别（PR）作为跨语言语音处理与语音学分析中语言无关建模的原子接口，其重要性不言而喻。尽管音素识别系统的开发已历经长期努力，但现有评估仅关注表层转写准确度。本研究提出PRiSM——首个开源基准测试框架，旨在通过音素识别系统的内在与外在评估揭示语音感知中的盲点。PRiSM标准化了基于转写的评估方法，并借助转写与表征探针，系统评估了音素识别在临床、教育及多语言场景中的下游应用价值。研究发现：训练过程中的多语言暴露是提升音素识别性能的关键；编码器-CTC模型表现最为稳定；专用音素识别模型仍优于大型音频语言模型。PRiSM开源了代码、训练方案与数据集，以推动该领域向具备强健语音能力的多语言语音模型发展：https://github.com/changelinglab/prism。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.14046">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.14046">arXiv</a></p>
+<hr />
+<h3>18. FantasyVLN：面向视觉语言导航的统一多模态思维链推理框架</h3>
+<p><strong>原文标题：</strong> FantasyVLN: Unified Multimodal Chain-of-Thought Reasoning for Vision-Language Navigation</p>
+<p><strong>摘要：</strong>
+在视觉语言导航（VLN）任务中实现人类水平的性能，要求智能体能够同时理解多模态指令与视觉空间上下文，并对长序列动作进行推理。近期研究如NavCoT与NavGPT-2已证明思维链（CoT）推理在提升可解释性与长程规划能力方面的潜力。此外，OctoNav-R1与CoT-VLA等多模态扩展工作进一步验证了CoT是实现类人导航推理的有效路径。然而，现有方法存在明显缺陷：纯文本型CoT缺乏空间 grounding 且易对稀疏标注的推理步骤过拟合，而多模态CoT因生成虚拟视觉观测导致严重的token膨胀，使得实时导航难以实现。本研究提出FantasyVLN——一个统一的隐式推理框架，在保留CoT推理优势的同时避免了显式的token开销。具体而言，在CoT推理训练阶段，我们通过预训练的视觉自回归编码器将虚拟视觉token压缩至紧凑的潜在空间，并采用统一的多CoT策略使模型能够联合学习文本、视觉及多模态三种CoT模式。在推理阶段，模型可直接实现从指令到动作的映射，同时保持具备推理感知的特征表示。在LH-VLN数据集上的大量实验表明，本方法在实现推理感知的同时保证了实时导航性能，不仅提升了任务成功率与效率，相较显式CoT方法更将推理延迟降低了一个数量级。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13976">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13976">arXiv</a></p>
+<hr />
+<h3>19. 哪种推理轨迹能更好地教会学生推理？一种衡量信息对齐的简单指标</h3>
+<p><strong>原文标题：</strong> Which Reasoning Trajectories Teach Students to Reason Better? A Simple Metric of Informative Alignment</p>
+<p><strong>摘要：</strong>
+长链思维轨迹为从教师大语言模型向学生模型提炼推理能力提供了丰富的监督信号。然而，先前研究及我们的实验均表明，来自更强教师的轨迹未必能培养出更优秀的学生模型，这凸显了蒸馏过程中数据与学生模型适配性的重要性。现有方法主要通过学生模型的似然度评估适配性，倾向于选择与模型当前行为高度一致的轨迹，却可能忽略信息量更丰富的样本。针对这一问题，我们提出<strong>排序-惊异值比率</strong>——一种能够同时捕捉对齐性和信息量的简单指标，用以评估推理轨迹的适配性。该指标的提出基于以下观察：有效的推理轨迹通常同时具备较低的整体概率和相对较高的学生模型内部词元排序，从而在学习信号强度与行为对齐之间取得平衡。具体而言，该指标定义为轨迹的平均词元排序与平均负对数似然之比，其计算和解释均较为直观。在五种学生模型与来自11位不同教师的推理轨迹上的实验表明，该指标与训练后性能呈现强相关性（平均斯皮尔曼系数0.86），优于现有评估指标。我们进一步展示了该指标在轨迹选择和教师选择两个实际场景中的应用价值。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.14249">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.14249">arXiv</a></p>
+<hr />
+<h3>20. InT：自提议干预实现大语言模型推理中的信用分配</h3>
+<p><strong>原文标题：</strong> InT: Self-Proposed Interventions Enable Credit Assignment in LLM Reasoning</p>
+<p><strong>摘要：</strong>
+结果奖励强化学习（RL）已被证明能有效提升大语言模型（LLM）的推理能力。然而，标准RL仅将信用分配至最终答案层面：当结果错误时，整个推理轨迹均受惩罚；当结果正确时，所有步骤被均匀强化。这导致失败轨迹中的正确中间步骤可能被抑制，而成功轨迹中的无效步骤却得到强化。我们将此问题称为信用分配困境。虽然训练过程奖励模型是一种自然解决方案，但精准优化此类模型以识别纠正式推理步骤仍具挑战性。本文提出干预训练（InT），该训练范式使模型能够通过提出简短、有针对性的修正建议（引导轨迹获得更高奖励），对其自身推理轨迹进行细粒度信用分配。利用数学推理数据集中普遍存在的参考答案，并基于“验证模型生成解比从头生成正确解更容易”这一事实，模型首先识别其推理过程中的首个错误，随后提出单步干预以将轨迹导向正确解。接着，我们对策略内执行轨迹（截至错误发生点）与干预建议进行拼接，并实施监督微调（SFT），从而将错误定位至导致失败的具体步骤。研究表明，经此过程得到的模型可作为RL训练更优的初始化基础。在实施InT及后续RL微调后，我们在IMO-AnswerBench数据集上将4B参数基模型的准确率提升近14%，其表现超越了gpt-oss-20b等更大规模的开源模型。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.14209">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.14209">arXiv</a></p>
+<hr />
+<h3>21. 面向指令微调的不确定性感知梯度信噪比数据选择方法</h3>
+<p><strong>原文标题：</strong> Uncertainty-Aware Gradient Signal-to-Noise Data Selection for Instruction Tuning</p>
+<p><strong>摘要：</strong>
+指令微调是适配大语言模型的标准范式，但现代指令数据集普遍存在规模庞大、噪声显著和冗余度高等问题，导致全数据微调成本高昂且往往非必要。现有数据选择方法或需构建高成本的梯度数据存储库，或依赖弱代理模型生成静态评分，大多忽略了模型训练过程中动态演变的不确定性，因而错失了大语言模型可解释性的关键信息来源。本研究提出GRADFILTERING框架——一种与优化目标无关的不确定性感知数据选择方法，该方法采用集成LoRA模块的小型GPT-2代理模型，通过聚合样本级梯度计算梯度信噪比效用指标。在多数基于大语言模型裁判的评估及人工评估中，本方法所选数据子集的性能达到或超越了随机抽样及现有强基线方法。此外，在相同计算预算下，经GRADFILTERING筛选的数据子集比竞争性过滤方法收敛更快，这印证了不确定性感知评分机制的有效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13697">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13697">arXiv</a></p>
+<hr />
+<h3>22. 论成员推理在版权审计中的证据局限性</h3>
+<p><strong>原文标题：</strong> On the Evidentiary Limits of Membership Inference for Copyright Auditing</p>
+<p><strong>摘要：</strong>
+随着大语言模型（LLM）在日益不透明的语料库上进行训练，尽管在实际条件下其可靠性备受质疑，成员推理攻击（MIA）仍被提议用于审计训练过程中是否使用了受版权保护的文本。本文探讨在对抗性版权纠纷中，当被指控的模型开发者可能对训练数据进行语义保留的模糊化处理时，MIA能否作为可采信的证据。我们通过构建法官-控方-被告的通信协议形式化该场景，并引入SAGE（结构感知的稀疏自编码器引导提取）——一种基于稀疏自编码器（SAE）的复述框架，该框架通过改写训练数据以改变词汇结构，同时保留语义内容与下游任务效用。实验表明，当模型在SAGE生成的复述文本上进行微调时，最先进的MIA性能显著下降，这证明其信号对语义保持的转换缺乏鲁棒性。尽管在某些微调机制中仍存在信息残留，但这些结果表明MIA在对抗性环境中具有脆弱性，无法独立作为LLM版权审计的可靠机制。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.12937">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.12937">arXiv</a></p>
+<hr />
+<h3>23. 差分隐私随机梯度下降中有利隐私-效用保证的基本局限</h3>
+<p><strong>原文标题：</strong> Fundamental Limitations of Favorable Privacy-Utility Guarantees for DP-SGD</p>
+<p><strong>摘要：</strong>
+差分隐私随机梯度下降（DP-SGD）是隐私训练的主流范式，但其在最坏情况对抗性隐私定义下的基本局限性仍未得到充分理解。我们在f-差分隐私框架下分析DP-SGD（该框架通过假设检验权衡曲线刻画隐私特性），并研究单轮训练周期内进行M次梯度更新的混洗采样机制。我们推导出可达到的权衡曲线存在显式的次优上界，该结果导出了分离度κ的几何下界（κ代表机制权衡曲线与理想随机猜测线之间的最大距离）。由于较大的分离度意味着显著的对抗性优势，有意义的隐私保护需要较小的κ值。然而，我们证明强制保持较小分离度会对高斯噪声乘数σ施加严格下界，从而直接限制可实现的效用。具体而言，在标准最坏情况对抗性模型下，混洗DP-SGD必须满足：
+σ ≥ 1/(2ln M) 或 κ ≥ 1/8[1-1/(4πln M)]，</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.10237">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.10237">arXiv</a></p>
+<hr />
+<h3>24. DSAEval：基于广泛真实世界数据科学问题的数据智能体评估体系</h3>
+<p><strong>原文标题：</strong> DSAEval: Evaluating Data Science Agents on a Wide Range of Real-World Data Science Problems</p>
+<p><strong>摘要：</strong>
+当前基于大语言模型的数据智能体致力于实现从数据分析到深度学习的数据科学任务自动化。然而，真实世界数据科学问题具有开放性的本质——常跨越多个分类体系且缺乏标准答案——这为评估工作带来了重大挑战。为此，我们提出DSAEval评估基准，该基准包含基于285个多样化数据集的641个真实世界数据科学问题，涵盖结构化与非结构化数据（如视觉与文本数据）。DSAEval具备三大特色：（1）多模态环境感知能力，使智能体能够解析文本、视觉等多模态观测信息；（2）多轮次交互机制，模拟真实数据科学项目中迭代与累积的工作特性；（3）多维度评估体系，从推理过程、代码实现与结果输出三个维度进行系统性评估。基于DSAEval，我们对11种先进的智能体化大语言模型进行了系统化评估。实验结果表明：Claude-Sonnet-4.5在综合性能上表现最优，GPT-5.2具有最高执行效率，而MiMo-V2-Flash则展现出最佳成本效益。我们进一步验证了多模态感知能力能持续提升视觉相关任务的表现，性能增益范围达2.04%至11.30%。总体而言，当前数据科学智能体在结构化数据与常规分析流程中表现良好，但在非结构化数据领域仍面临显著挑战。最后，我们提出关键见解并展望未来研究方向，以推动数据科学智能体的持续发展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13591">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13591">arXiv</a></p>
+<hr />
+<h3>25. 一种面向低资源语言大规模语义数据集生成的混合协议：以土耳其语语义关系语料库为例</h3>
+<p><strong>原文标题：</strong> A Hybrid Protocol for Large-Scale Semantic Dataset Generation in Low-Resource Languages: The Turkish Semantic Relations Corpus</p>
+<p><strong>摘要：</strong>
+本文提出一种用于低资源语言大规模语义关系数据集生成的混合方法，并通过构建全面的土耳其语语义关系语料库进行验证。该方法整合了三个阶段：(1) 采用FastText词嵌入与凝聚聚类识别语义簇，(2) 利用Gemini 2.5-Flash模型实现自动化语义关系分类，(3) 整合精编词典资源。最终构建的数据集包含843,000个土耳其语独特语义对，涵盖同义词、反义词和共下位词三种关系类型，其规模达到现有资源的10倍，而成本仅65美元。我们通过两项下游任务验证数据集质量：嵌入模型在Top-1检索任务中达到90%准确率，分类模型取得90%的宏观F1分数。这种可扩展的协议有效缓解了土耳其语自然语言处理领域的数据稀缺问题，并证明其可推广至其他低资源语言。我们公开发布了该数据集及相关模型。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13253">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13253">arXiv</a></p>
+<hr />
+<h3>26. 超越余弦相似度：在一个包含1500万节点的土耳其语同义词图中抑制语义漂移与反义词干扰</h3>
+<p><strong>原文标题：</strong> Beyond Cosine Similarity: Taming Semantic Drift and Antonym Intrusion in a 15-Million Node Turkish Synonym Graph</p>
+<p><strong>摘要：</strong>
+神经嵌入表示存在一个显著的盲点：其无法可靠地区分同义词与反义词。因此，单纯提高相似度阈值往往难以避免对立词被错误归为一类。我们构建了一个专门针对此问题的大规模语义聚类系统。该处理流程分析了1500万个词汇单元，评估了5.2亿个潜在语义关系，最终生成了290万个高精度语义簇。本系统主要有三项贡献：首先，我们构建了一个包含84.3万对概念（涵盖同义、反义及同级关系）的标注数据集，该数据集通过Gemini 2.5-Flash大语言模型增强生成，并利用人工校勘的词典资源进行了验证。其次，我们提出了一种专用的三元语义关系判别器，其宏观F1值达到90%，能够实现超越原始嵌入相似度的鲁棒消歧。第三，我们设计了一种新颖的软聚类到硬聚类转换算法，该算法通过拓扑感知的两阶段扩展-剪枝流程结合拓扑投票机制，既能抑制导致错误传递链（如：热→辣→疼痛→抑郁）的语义漂移，又能有效处理一词多义现象，确保每个术语被精确分配至一个语义连贯的簇。最终构建的资源支持高精度语义搜索与检索增强生成，尤其适用于形态复杂且现有同义词数据库稀缺的低资源语言。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13251">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13251">arXiv</a></p>
+<hr />
+<h3>27. METIS：面向审慎探究与解决方案的导师引擎</h3>
+<p><strong>原文标题：</strong> METIS: Mentoring Engine for Thoughtful Inquiry &amp; Solutions</p>
+<p><strong>摘要：</strong>
+许多学生难以获得专业的研究指导。本研究探讨人工智能导师能否帮助本科生将初步想法发展为完整论文。我们构建了METIS——一个具备文献检索、精选指南、方法校验与记忆功能的工具增强型分阶段智能助手。通过LLM作为评判者的两两偏好比较、学生角色量规评估、短轮次多轮辅导对话以及证据/合规性检查，我们在六个写作阶段将METIS与GPT-5和Claude Sonnet 4.5进行系统对比。在90个单轮提示测试中，LLM评判者认为METIS优于Claude Sonnet 4.5的比例达71%，优于GPT-5的比例为54%。分阶段评估显示，METIS在学生评分（清晰度/可操作性/约束匹配度；90提示×3评委）中全面领先。在多轮对话场景（五种情境/智能体）中，METIS最终产出质量略高于GPT-5。性能提升主要集中在文献支撑阶段（D-F），这与分阶段路由机制的设计相符；其失效模式包括工具过早路由、文献支撑深度不足及偶发的阶段误判。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13075">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13075">arXiv</a></p>
+<hr />
+<h3>28. SciCoQA：面向科学论文与代码对齐的质量保障研究</h3>
+<p><strong>原文标题：</strong> SciCoQA: Quality Assurance for Scientific Paper--Code Alignment</p>
+<p><strong>摘要：</strong>
+本文提出SciCoQA，一个用于检测科学出版物与其对应代码库间差异的数据集，旨在确保实现过程的忠实性。我们基于GitHub议题与可复现性论文构建SciCoQA，并提出一种合成数据生成方法以规模化构建论文-代码差异样本。通过对论文-代码差异的详细分析，我们提出了差异类型与分类体系，以深入理解实际存在的错配现象。该数据集共包含611个论文-代码差异样本（其中81个为真实案例，530个为合成案例），覆盖人工智能、物理学、定量生物学等多个计算科学领域。我们对21种大语言模型的评估结果表明，SciCoQA任务具有较高挑战性，尤其涉及论文细节缺失、长上下文输入及模型预训练语料外数据的案例表现更为困难。评估中表现最佳的GPT-5模型仅能检测出45.7%的真实世界论文-代码差异。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.12910">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.12910">arXiv</a></p>
+<hr />
+<h3>29. LIBERTy：基于结构反事实的LLM概念解释因果基准框架</h3>
+<p><strong>原文标题：</strong> LIBERTy: A Causal Framework for Benchmarking Concept-Based Explanations of LLMs with Structural Counterfactuals</p>
+<p><strong>摘要：</strong>
+基于概念的解释方法量化了高层次概念（如性别或经验）如何影响模型行为，这对于高风险领域的决策者至关重要。近期研究通过将此类解释与基于反事实估计的参考因果效应进行比较，以评估其忠实性。在实践中，现有基准依赖于成本高昂的人工编写反事实作为不完美的代理。为解决这一问题，我们提出了一个构建包含结构反事实对数据集的框架：LIBERTy（基于LLM的可解释性干预基准参考目标）。该框架以明确定义的文本生成结构化因果模型为基础，通过对概念的干预在SCM中传播，直至LLM生成反事实文本。我们构建了三个数据集（疾病检测、简历筛选和工作场所暴力预测）并提出了新的评估指标——顺序忠实性。基于这些数据集和指标，我们在五个模型中评估了多种方法，发现现有概念解释方法仍有显著改进空间。LIBERTy还能系统分析模型对干预的敏感性：我们发现专有LLM对人口统计学概念的敏感性明显降低，这很可能源于训练后的缓解措施。总体而言，LIBERTy为开发忠实可靠的可解释性方法提供了亟需的基准框架。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.10700">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.10700">arXiv</a></p>
+<hr />
+<h3>30. 终于超越随机基线：三维生物医学影像主动学习的简单有效解决方案</h3>
+<p><strong>原文标题：</strong> Finally Outshining the Random Baseline: A Simple and Effective Solution for Active Learning in 3D Biomedical Imaging</p>
+<p><strong>摘要：</strong>
+在三维生物医学图像分割领域，专家对体数据标注既耗时又昂贵，主动学习（AL）具有显著降低标注成本的潜力。然而，现有主动学习方法始终无法稳定超越针对三维数据优化的改进型随机采样基线，导致该领域缺乏可靠解决方案。本文提出类别分层调度幂预测熵（ClaSP PE）——一种简单高效的查询策略，它解决了标准基于不确定性的主动学习方法的两大关键局限：类别不平衡与早期选择冗余。ClaSP PE融合了类别分层查询机制以确保对低代表性结构的覆盖，同时采用对数尺度幂噪声结合衰减调度方案，在主动学习早期阶段强制实现查询多样性，并在后期促进针对性挖掘。我们在综合性nnActive基准测试中，使用四个三维生物医学数据集构建的24组实验场景进行评估，结果表明ClaSP PE是唯一能在分割质量（具有统计显著提升）和标注效率两方面均稳定超越改进型随机基线的方法。此外，我们通过在不进行人工适配的情况下，将方法应用于四个未见数据集来显式模拟实际应用场景，所有实验参数均依据预设准则设置。结果证实ClaSP PE能够稳健地泛化至新任务，无需针对特定数据集进行调整。在nnActive框架内，我们提供了有力证据表明：在接近实际生产的现实场景中，主动学习方法能够在性能与标注效率两方面持续超越适用于三维分割的随机基线。我们的开源实现与清晰部署指南使其具备即用性。代码详见：https://github.com/MIC-DKFZ/nnActive。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13677">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13677">arXiv</a></p>
+<hr />
+<h3>31. 基于多智能体指令优化的高效鲁棒性语言情感诊断在心理健康领域的应用研究</h3>
+<p><strong>原文标题：</strong> Towards Efficient and Robust Linguistic Emotion Diagnosis for Mental Health via Multi-Agent Instruction Refinement</p>
+<p><strong>摘要：</strong>
+抑郁、焦虑及创伤相关状态等情感的语言表达广泛存在于临床记录、咨询对话及在线心理健康社区中，准确识别这些情感对于临床分诊、风险评估与及时干预至关重要。尽管大语言模型在情感分析任务中展现出强大的泛化能力，但其在高风险、强语境的医疗场景中的诊断可靠性仍高度依赖于提示设计。现有方法面临两大关键挑战：一是情感共病现象，即多种交织的情感状态使预测复杂化；二是对临床相关线索的探索效率不足。为应对这些挑战，本研究提出APOLO（面向语言情感诊断的自动化提示优化框架），通过系统探索更广维度、更细粒度的提示空间以提升诊断效率与鲁棒性。APOLO将指令优化建模为部分可观测马尔可夫决策过程，采用包含规划者、教师、评判者、学生与目标角色的多智能体协作机制。在此闭环框架中，规划者定义优化轨迹，教师-评判者-学生智能体通过迭代优化提示以增强推理稳定性与有效性，目标智能体则基于性能评估决定是否继续优化。实验结果表明，APOLO在领域特定及分层基准测试中持续提升诊断准确率与鲁棒性，为心理健康领域可信赖的大语言模型应用提供了可扩展、可推广的范式。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13481">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13481">arXiv</a></p>
+<hr />
+<h3>32. RemoteVAR：面向遥感变化检测的自回归视觉建模</h3>
+<p><strong>原文标题：</strong> RemoteVAR: Autoregressive Visual Modeling for Remote Sensing Change Detection</p>
+<p><strong>摘要：</strong>
+遥感变化检测旨在定位并描述两个时间点之间的场景变化，是环境监测与灾害评估等应用的核心任务。与此同时，视觉自回归模型近期展现出卓越的图像生成能力，但由于可控性较弱、密集预测性能欠佳以及曝光偏差等问题，其在像素级判别任务中的应用仍较为有限。本文提出RemoteVAR，一种基于自回归模型的新型变化检测框架。该框架通过跨注意力机制将自回归预测条件化于多分辨率融合的双时相特征，并采用专为变化图预测设计的自回归训练策略，从而有效克服上述限制。在标准变化检测基准数据集上的大量实验表明，RemoteVAR相较于基于扩散模型和Transformer的强基线方法取得了持续且显著的性能提升，为遥感变化检测提供了一种具有竞争力的自回归解决方案。代码将在https://github.com/yilmazkorkmaz1/RemoteVAR发布。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.11898">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.11898">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2026-01-21_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
