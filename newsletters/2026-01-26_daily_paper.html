@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hugging Face 论文日报 - 2026-01-26</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        h1 img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 30px 0;
+        }
+        
+        /* 关键修复:限制图片宽度 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* 确保图片容器也有宽度限制 */
+        p img {
+            max-width: 100%;
+        }
+        
+        /* 论文详情区域样式 */
+        .paper-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 统计信息样式 */
+        .stats {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png" width="30"/> Hugging Face 2026-01-26 论文日报</h1>
+<h2>📊 今日论文统计</h2>
+<ul>
+<li>总论文数：18</li>
+<li>热门领域：LLM, Transformer, RL, GPT</li>
+</ul>
+<h2>📝 论文详情</h2>
+<h3>1. LongCat-Flash-Thinking-2601 技术报告</h3>
+<p><strong>原文标题：</strong> LongCat-Flash-Thinking-2601 Technical Report</p>
+<p><strong>摘要：</strong>
+本文介绍了 LongCat-Flash-Thinking-2601，这是一个拥有 5600 亿参数的开源专家混合推理模型，具备卓越的智能体推理能力。该模型在广泛的智能体基准测试中，包括智能体搜索、智能体工具使用以及工具集成推理，均实现了开源模型中的最先进性能。除了基准测试表现，该模型还展现出对复杂工具交互的强大泛化能力，以及在嘈杂现实环境下的鲁棒行为。其先进能力源于一个统一的训练框架，该框架结合了领域并行专家训练与后续融合，并实现了从预训练到后训练阶段的数据构建、环境、算法和基础设施的端到端协同设计。特别是，模型在复杂工具使用方面的强大泛化能力，得益于我们对环境扩展和原则性任务构建的深入探索。为了优化长尾、偏态生成和多轮智能体交互，并实现在跨越 20 多个领域、超过 10,000 个环境中的稳定训练，我们系统地扩展了异步强化学习框架 DORA，以实现稳定高效的大规模多环境训练。此外，认识到现实世界任务本质上是嘈杂的，我们对现实世界的噪声模式进行了系统性分析和分解，并设计了有针对性的训练流程，明确地将此类不完美因素纳入训练过程，从而提升了模型在现实应用中的鲁棒性。为了进一步提升复杂推理任务的性能，我们引入了“深度思考”模式，该模式通过密集并行思考联合扩展推理深度和宽度，实现了有效的测试时扩展。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.16725">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.16725">arXiv</a></p>
+<hr />
+<h3>2. SWE-Pruner：面向编码智能体的自适应上下文剪枝框架</h3>
+<p><strong>原文标题：</strong> SWE-Pruner: Self-Adaptive Context Pruning for Coding Agents</p>
+<p><strong>摘要：</strong>
+大语言模型智能体在软件开发中展现出卓越能力，但其性能常受限于冗长的交互上下文，导致高昂的API成本与响应延迟。尽管已有如LongLLMLingua等上下文压缩方法应对此挑战，这些方法通常依赖困惑度等固定指标，忽视了代码理解任务特有的本质，往往破坏代码的语法逻辑结构并丢失关键实现细节。本文提出SWE-Pruner——一个专为编码智能体设计的自适应上下文剪枝框架。该框架借鉴人类程序员在开发调试过程中“选择性浏览”源代码的认知机制，针对长上下文执行任务感知的自适应剪枝。智能体根据当前任务生成明确目标提示（如“聚焦异常处理机制”）以指导剪枝方向，并通过训练一个轻量级神经浏览模型（参数量0.6B）动态筛选与目标相关的上下文代码行。在四个基准测试集与多模型上的实验表明，SWE-Pruner在各类场景中均能有效保持性能：在SWE-Bench Verified等智能体任务上实现23-54%的标记量缩减，在LongCodeQA等单轮任务中达到最高14.84倍的压缩率，且对任务性能影响极小。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.16746">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.16746">arXiv</a></p>
+<hr />
+<h3>3. TwinBrainVLA：通过非对称混合Transformer架构释放通用视觉语言模型在具身任务中的潜力</h3>
+<p><strong>原文标题：</strong> TwinBrainVLA: Unleashing the Potential of Generalist VLMs for Embodied Tasks via Asymmetric Mixture-of-Transformers</p>
+<p><strong>摘要：</strong>
+标准的视觉-语言-动作模型通常通过微调一个单一的视觉语言模型主干来显式地适应机器人控制任务。然而，这种方法在保持高层通用语义理解能力与学习低层、细粒度感知运动技能之间产生了关键矛盾，常常导致模型对开放世界能力的“灾难性遗忘”。为解决这一冲突，我们提出了TwinBrainVLA，一种新颖的架构，它协调了一个保留通用语义理解的通用视觉语言模型与一个专用于具身本体感知的专用视觉语言模型，以实现联合机器人控制。TwinBrainVLA通过一种新颖的非对称混合Transformer机制，将保持强大通用视觉推理能力的冻结“左脑”与专精于具身感知的可训练“右脑”协同工作。该设计使得右脑能够动态地从冻结的左脑查询语义知识，并将其与本体感知状态融合，从而为流匹配动作专家提供丰富的条件信息，以生成精确的连续控制信号。在SimplerEnv和RoboCasa基准测试上的大量实验表明，TwinBrainVLA在实现卓越操作性能的同时，明确保留了预训练视觉语言模型的全面视觉理解能力，为构建同时具备高层语义理解和低层物理灵巧性的通用机器人提供了一条有前景的技术路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.14133">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.14133">arXiv</a></p>
+<hr />
+<h3>4. VisGym：面向多模态智能体的多样化、可定制、可扩展环境</h3>
+<p><strong>原文标题：</strong> VisGym: Diverse, Customizable, Scalable Environments for Multimodal Agents</p>
+<p><strong>摘要：</strong>
+现代视觉-语言模型在多步骤视觉交互中的表现仍缺乏深入刻画，尤其是在如何整合长时程的感知、记忆与行动方面。本文提出VisGym——一个包含17种环境的测试平台，用于评估与训练视觉-语言模型。该平台涵盖符号推理、真实图像理解、导航与操作任务，并提供对任务难度、输入表征、规划时域与反馈机制的灵活控制。我们还提供了可生成结构化示范的多步骤求解器，以支持监督式微调。评估结果表明，当前前沿模型在交互式场景中均表现不佳，在简单配置（46.6%）与困难配置（26.0%）下的成功率均较低。实验揭示了若干显著局限：模型难以有效利用长上下文，在历史信息无限制的情况下表现反而差于使用截断窗口时；此外，多个基于文本的符号任务在转换为视觉呈现后难度显著提升。然而，在部分可观测或动态未知的场景中，通过显式目标观察、文本反馈以及用于监督微调的探索性示范，模型性能获得持续提升，这为改进多步骤视觉决策指明了具体失效模式与优化路径。代码、数据与模型可通过以下链接获取：https://visgym.github.io/。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.16973">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.16973">arXiv</a></p>
+<hr />
+<h3>5. Memory-V2V：通过记忆增强视频到视频扩散模型</h3>
+<p><strong>原文标题：</strong> Memory-V2V: Augmenting Video-to-Video Diffusion Models with Memory</p>
+<p><strong>摘要：</strong>
+近期的基础性视频到视频扩散模型在编辑用户提供的视频方面取得了令人瞩目的成果，能够修改外观、运动或摄像机运动。然而，现实世界中的视频编辑通常是一个迭代过程，用户需要通过多轮交互来优化结果。在这种多轮编辑场景下，当前的视频编辑器难以保持连续编辑之间的跨一致性。本研究首次针对多轮视频编辑中的跨一致性问题，提出了Memory-V2V——一个简单而有效的框架，通过显式记忆增强现有的视频到视频模型。基于先前编辑视频的外部缓存，Memory-V2V采用精确检索和动态标记化策略，将当前编辑步骤的条件建立在先前结果之上。为了进一步减少冗余和计算开销，我们在DiT骨干网络中提出了一种可学习的标记压缩器，能够在保留关键视觉线索的同时压缩冗余条件标记，实现整体30%的速度提升。我们在视频新视角合成和文本条件长视频编辑等具有挑战性的任务上验证了Memory-V2V的有效性。大量实验表明，Memory-V2V能以最小的计算开销生成显著更具跨一致性的视频，同时在特定任务性能上保持甚至超越了当前最先进的基线方法。项目页面：https://dohunlee1.github.io/MemoryV2V</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.16296">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.16296">arXiv</a></p>
+<hr />
+<h3>6. 验证的推理时扩展：基于测试时量规引导验证的自演进深度研究智能体</h3>
+<p><strong>原文标题：</strong> Inference-Time Scaling of Verification: Self-Evolving Deep Research Agents via Test-Time Rubric-Guided Verification</p>
+<p><strong>摘要：</strong>
+深度研究智能体（DRAs）的最新进展正在改变自动化知识发现与问题解决的范式。现有研究大多侧重于通过训练后优化提升智能体策略能力，本文提出一种替代范式：通过精心设计的评估量规迭代验证策略模型的输出，从而实现智能体能力的自演进。该方法催生了验证的推理时扩展机制，智能体通过评估自身生成的答案产生迭代反馈与优化，实现自我改进。我们基于自动构建的DRA故障分类体系推导评估量规，该系统将智能体故障系统性地划分为5个主类和13个子类。我们提出DeepVerifier——一个基于量规的结果奖励验证器，其利用验证过程的不对称性，在元评估F1分数上超越原始智能体即法官和LLM法官基线12%-48%。为实现实际自演进，DeepVerifier以即插即用模块形式集成于测试时推理流程。该验证器生成基于量规的详细反馈，反馈至智能体进行迭代自举优化，无需额外训练即可精炼响应。当搭载高性能闭源大语言模型时，该测试时扩展机制在GAIA和XBench-DeepResearch的挑战性子集上实现8%-11%的准确率提升。最后，为促进开源生态发展，我们发布DeepVerifier-4K数据集——包含4,646个聚焦DRA验证的高质量智能体步骤的监督微调数据集。这些示例强调反思与自我批判能力，助力开源模型发展鲁棒的验证能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.15808">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.15808">arXiv</a></p>
+<hr />
+<h3>7. Jet-RL：通过统一的训练与模拟精度流实现基于策略的FP8强化学习</h3>
+<p><strong>原文标题：</strong> Jet-RL: Enabling On-Policy FP8 Reinforcement Learning with Unified Training and Rollout Precision Flow</p>
+<p><strong>摘要：</strong>
+强化学习（RL）对于提升大语言模型（LLM）的复杂推理能力至关重要。然而，现有的强化学习训练流程计算效率低下且资源消耗巨大，其中模拟阶段占据了总训练时间的70%以上。量化强化学习训练，尤其是使用FP8精度，为缓解这一瓶颈提供了一种前景广阔的方法。当前普遍采用的策略是在模拟阶段使用FP8精度，同时在训练阶段保留BF16精度。本研究首次对FP8强化学习训练进行了全面分析，并证明这种广泛使用的“BF16训练 + FP8模拟”策略在长序列模拟和复杂任务下，会遭受严重的训练不稳定性和灾难性的精度崩溃。我们的分析表明，这些失败源于该方法的离策略本质，导致训练与推理之间存在显著的数值不匹配。基于这些观察，我们提出了Jet-RL，一个能够实现稳健、稳定强化学习优化的FP8训练框架。其核心思想是采用统一的FP8精度流贯穿训练与模拟过程，从而最大程度地减少数值差异，并消除对低效的步骤间校准的需求。大量实验验证了Jet-RL的有效性：我们的方法在模拟阶段实现了高达33%的加速，在训练阶段实现了高达41%的加速，相较于BF16训练实现了16%的端到端加速，同时在所有设置下保持稳定的收敛，且带来的精度损失可忽略不计。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.14243">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.14243">arXiv</a></p>
+<hr />
+<h3>8. SALAD：通过高效线性注意力微调实现视频扩散Transformer的高稀疏性注意力机制</h3>
+<p><strong>原文标题：</strong> SALAD: Achieve High-Sparsity Attention via Efficient Linear Attention Tuning for Video Diffusion Transformer</p>
+<p><strong>摘要：</strong>
+扩散Transformer近期在视频生成领域展现出卓越性能。然而，由于完全注意力机制具有二次计算复杂度，长输入序列会导致较高的计算延迟。现有研究提出了多种稀疏注意力机制：免训练的稀疏注意力受限于较低的稀疏度，仅能实现有限的加速效果；而基于训练的方法虽能达到更高稀疏度，但需要大量数据和计算资源进行训练。本研究提出SALAD方法，通过在稀疏注意力旁并行引入轻量级线性注意力分支，并采用输入依赖的门控机制精细平衡两个分支的贡献。该方法在保持与完全注意力基线相当生成质量的同时，实现了90%的稀疏度和1.72倍的推理加速。此外，我们的微调过程具有高效性，仅需2,000个视频样本、1,600个训练步长（批次大小为8）即可完成优化。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.16515">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.16515">arXiv</a></p>
+<hr />
+<h3>9. GameTalk：面向策略性对话的大型语言模型训练框架</h3>
+<p><strong>原文标题：</strong> GameTalk: Training LLMs for Strategic Conversation</p>
+<p><strong>摘要：</strong>
+在多智能体环境中进行策略决策是大型语言模型面临的关键挑战，尤其是在需要通过多轮对话展开协调与谈判的场景中。尽管近期研究探索了大型语言模型在独立决策任务中的应用，但如何通过对话优化长期目标的研究仍显不足。本文提出GameTalk框架，旨在训练大型语言模型通过多轮交互实现策略决策。与以往聚焦单轮目标或静态行为预测的研究不同，我们训练模型在完整对话中优化全局目标。通过改进GRPO、DPO和STaR等微调方法，使其能够整合依赖于完整交互过程的奖励信号，我们实现了这一目标。在一系列复杂度递增的博弈环境中对该方法进行评估，这些环境专门设计用于检验推理、协调与对手建模等不同维度的能力。实验结果表明，GameTalk显著优于未经训练的基线模型，在奖励塑形机制下表现尤为突出，其中DPO方法持续展现出最强的性能提升。这些发现表明，对话式微调为大型语言模型在交互环境中进行推理、谈判与行动提供了可行路径。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.16276">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.16276">arXiv</a></p>
+<hr />
+<h3>10. MeepleLM：模拟多样化主观体验的虚拟游戏测试员</h3>
+<p><strong>原文标题：</strong> MeepleLM: A Virtual Playtester Simulating Diverse Subjective Experiences</p>
+<p><strong>摘要：</strong>
+近年来，大型语言模型在桌面游戏中的角色已从游戏代理扩展至创意协同设计者。然而，当前系统仍存在一个关键缺陷：缺乏基于涌现用户体验的建构性批判能力。弥补这一缺陷对于协调人机协作至关重要，它使设计者能够借助外部视角完善创作，同时引导模型避免产生偏见或不可预测的结果。实现桌面游戏的自动化批判面临两大挑战：一是在缺乏显式游戏引擎的情况下，推断连接规则与游戏过程的潜在动态；二是建模多样化玩家群体的主观异质性。为此，我们构建了一个包含1,727份结构校正规则书和15万条通过质量评分与多维度感知抽样筛选的评论数据集。我们运用“机制-动态-美学”（MDA）推理框架增强数据，以显式弥合书面规则与玩家体验之间的因果鸿沟。进一步地，我们提炼玩家角色原型，并提出了MeepleLM——一个内化了角色特定推理模式的专用模型，能够准确模拟多样化玩家原型的个性化反馈。实验表明，在社区契合度与批判质量方面，MeepleLM显著优于最新的商业模型（如GPT-5.1、Gemini3-Pro），在评估实用性的用户研究中获得了70%的偏好率。MeepleLM可作为通用交互系统的可靠虚拟测试员，标志着面向受众对齐、体验感知的人机协作迈出了关键一步。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.07251">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.07251">arXiv</a></p>
+<hr />
+<h3>11. DSGym：一个用于评估与训练数据科学智能体的综合性框架</h3>
+<p><strong>原文标题：</strong> DSGym: A Holistic Framework for Evaluating and Training Data Science Agents</p>
+<p><strong>摘要：</strong>
+数据科学智能体有望通过将数据转化为可执行的分析与发现，加速科学发现与洞察生成。然而，现有的数据科学基准测试存在不足，主要体现在评估接口碎片化导致跨基准比较困难、任务覆盖范围狭窄以及缺乏严谨的数据基础。特别地，我们发现当前基准测试中相当一部分任务无需使用真实数据即可解决。为应对这些局限，本文提出了DSGym，这是一个在自包含执行环境中评估与训练数据科学智能体的标准化框架。与静态基准不同，DSGym采用模块化架构，便于添加任务、智能体框架及工具，使其成为一个动态可扩展的测试平台。我们构建了DSGym-Tasks，这是一个综合性的任务套件，通过质量和捷径可解性筛选对现有基准进行了标准化与优化。我们进一步通过以下方式扩展了任务覆盖范围：（1）DSBio：基于文献、由专家设计的生物信息学任务；（2）DSPredict：涵盖计算机视觉、分子预测和单细胞扰动等领域的挑战性预测任务。除评估功能外，DSGym还通过执行验证的数据合成流程支持智能体训练。作为案例研究，我们构建了一个包含2000个示例的训练集，并在DSGym中训练了一个40亿参数的模型，该模型在标准化分析基准测试中表现优于GPT-4o。总体而言，DSGym能够对智能体是否能在真实科学场景中规划、实施和验证数据分析进行严谨的端到端评估。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.16344">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.16344">arXiv</a></p>
+<hr />
+<h3>12. Mecellem模型：面向法律领域从头训练与持续预训练的土耳其语模型</h3>
+<p><strong>原文标题：</strong> Mecellem Models: Turkish Models Trained from Scratch and Continually Pre-trained for the Legal Domain</p>
+<p><strong>摘要：</strong>
+本文提出Mecellem模型框架，该框架通过领域自适应策略为土耳其法律领域开发专用语言模型。我们做出两项贡献：（1）从头预训练的编码器模型：基于ModernBERT架构的双向编码器在包含1127亿词符的土耳其语主导语料上进行预训练。我们实施了一种检查点选择策略，通过持续评估训练过程中的下游检索性能，发现最优检查点在预训练损失达到最小值前即可获得最佳检索评分。我们的编码器模型在土耳其语检索排行榜中位列前三，其中较小规模模型（1.55亿参数）的性能可媲美更大规模的参考模型（3.07亿-5.67亿参数）。相较于前沿模型（embeddinggemma-300m: 100.00%、BAAI/bge-m3: 99.54%、newmindai/bge-m3-stsb: 94.38%），我们的方法实现了92.36%的生产效率，在计算资源需求更少的情况下总体排名第四。当前前沿模型依赖多阶段、计算密集的训练流程，而我们采用的单阶段预训练结合高效后训练方法提供了更具成本效益的替代方案；（2）持续预训练的解码器模型：通过受控课程学习将Qwen3-1.7B和Qwen3-4B模型适配至土耳其法律领域。采用四阶段持续预训练与最优样本配比，实现了从通用语言知识到专业法律术语及长上下文推理的渐进式过渡。该方法在土耳其法律文本上使困惑度降低36.2%，充分证明了领域自适应的有效性。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.16018">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.16018">arXiv</a></p>
+<hr />
+<h3>13. 无尽终端：面向终端智能体的可扩展强化学习环境</h3>
+<p><strong>原文标题：</strong> Endless Terminals: Scaling RL Environments for Terminal Agents</p>
+<p><strong>摘要：</strong>
+环境是自进化智能体的发展瓶颈。现有终端基准测试集仅为评估而设计，无法满足训练需求；强化学习需要的是可扩展的生成流程，而非静态数据集。本文提出“无尽终端”——一个无需人工标注、能够程序化生成终端使用任务的完全自主化流程。该流程包含四个阶段：生成多样化任务描述、构建并验证容器化环境、设计完成度测试、以及基于可解性进行任务筛选。通过此流程，我们获得了涵盖文件操作、日志管理、数据处理、脚本编写及数据库操作等领域的3255项任务。我们采用标准PPO算法配合二元回合级奖励进行智能体训练，并采用极简交互循环：无需检索机制、多智能体协作或专用工具。尽管设计简洁，在无尽终端上训练的模型仍展现出显著性能提升：在预留开发集上，Llama-3.2-3B模型准确率从4.0%提升至18.2%，Qwen2.5-7B从10.7%提升至53.3%，Qwen3-8B-openthinker-sft从42.6%提升至59.0%。这些改进同时迁移至人工标注基准测试：在TerminalBench 2.0测试中，Llama-3.2-3B从0.0%提升至2.2%，Qwen2.5-7B从2.2%提升至3.4%，Qwen3-8B-openthinker-sft从1.1%提升至6.7%，所有模型均优于采用复杂智能体框架的替代方案。实验结果表明：当环境实现规模化扩展时，简易强化学习方法即可取得显著成效。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.16443">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.16443">arXiv</a></p>
+<hr />
+<h3>14. ChartVerse：通过可靠程序化合成实现图表推理的规模化扩展</h3>
+<p><strong>原文标题：</strong> ChartVerse: Scaling Chart Reasoning via Reliable Programmatic Synthesis from Scratch</p>
+<p><strong>摘要：</strong>
+图表推理是视觉语言模型（VLM）的关键能力。然而，高质量训练数据的缺乏严重阻碍了开源模型的发展。现有数据集面临双重挑战：合成图表往往过于简单且重复，而相关的问答对则容易出现幻觉，缺乏复杂任务所需的推理深度。为弥补这一差距，我们提出了ChartVerse，一个可扩展的框架，旨在从零开始合成复杂图表与可靠的推理数据。（1）为解决简单模式的瓶颈，我们首先引入Rollout后验熵（RPE），这是一种量化图表复杂度的新指标。在RPE的指导下，我们开发了复杂度感知的图表编码器，通过可执行程序自主合成多样化、高复杂度的图表。（2）为确保推理的严谨性，我们开发了基于真实锚点的逆向问答合成方法。与标准生成方式不同，我们采用答案优先的范式：直接从源代码中提取确定性答案，基于这些锚点生成问题，并执行严格的一致性验证。为进一步提升难度与推理深度，我们根据模型失败率筛选样本，并提炼高质量的思维链（CoT）推理。我们使用Qwen3-VL-30B-A3B-Thinking作为教师模型，构建了ChartVerse-SFT-600K与ChartVerse-RL-40K数据集。实验结果表明，ChartVerse-8B实现了最先进的性能，显著超越了其教师模型，并与更强的Qwen3-VL-32B-Thinking模型相媲美。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13606">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13606">arXiv</a></p>
+<hr />
+<h3>15. 知识并非万能：注入强化学习技能以实现持续适应</h3>
+<p><strong>原文标题：</strong> Knowledge is Not Enough: Injecting RL Skills for Continual Adaptation</p>
+<p><strong>摘要：</strong>
+大语言模型面临“知识截止”挑战，其冻结的参数化记忆阻碍了新信息的直接内化。尽管监督微调常被用于更新模型知识，但该方法通常仅更新事实性内容，而无法可靠提升模型运用新信息进行问答或决策的能力。强化学习对于获取推理技能至关重要，但其高昂的计算成本使其难以实现高效的在线适应。我们通过实证研究发现，监督微调与强化学习引发的参数更新近乎正交。基于这一发现，我们提出参数化技能迁移框架，该框架支持模块化技能迁移，以实现高效的知识适应。通过从源领域提取领域无关的技能向量，我们可以在目标模型完成新数据的轻量级监督微调后，线性注入知识操纵技能。在知识整合问答（SQuAD、LooGLE）和智能体工具使用基准测试（ToolBench）上的实验验证了本方法的有效性。在SQuAD数据集上，本方法较最先进的自主编辑监督微调基线提升高达9.9个点。该框架进一步可扩展至LooGLE长上下文问答任务，获得8.0个点的绝对准确率提升，并在ToolBench基准测试中实现平均10.3个点的零样本成功率增长，且在不同工具类别中均保持稳定增益，这证明了技能向量具备强大的可扩展性与跨领域迁移能力。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.11258">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.11258">arXiv</a></p>
+<hr />
+<h3>16. VISTA-PATH：一种用于计算病理学中病理图像分割与定量分析的交互式基础模型</h3>
+<p><strong>原文标题：</strong> VISTA-PATH: An interactive foundation model for pathology image segmentation and quantitative analysis in computational pathology</p>
+<p><strong>摘要：</strong>
+组织病理学图像的精确语义分割对于定量组织分析和下游临床建模至关重要。现有的分割基础模型通过大规模预训练提升了泛化能力，但由于将分割视为静态视觉预测任务，仍与病理学需求存在偏差。本文提出VISTA-PATH，一种交互式、类别感知的病理分割基础模型，旨在解析异质性组织结构，整合专家反馈，并生成对临床解读具有直接意义的像素级分割结果。该模型通过联合视觉上下文、语义组织描述及可选的专家空间提示来实现分割条件化，从而在异质性病理图像中实现精确的多类别分割。为支撑此范式，我们构建了VISTA-PATH数据集——一个包含超过160万张图像-掩码-文本三元组的大规模病理分割语料库，涵盖9种器官和93种组织类别。在大量留出测试集和外部基准评估中，VISTA-PATH均持续优于现有分割基础模型。值得注意的是，该模型支持动态人机协同优化，能够将稀疏的局部边界框标注反馈传播至全玻片分割。最后，我们证明VISTA-PATH生成的高保真、类别感知分割是计算病理学的优选模型：通过提出的肿瘤相互作用评分（TIS）改进了组织微环境分析，该评分与患者生存期呈现显著强相关性。综上，这些成果确立了VISTA-PATH作为基础模型的地位，将病理图像分割从静态预测提升为数字病理学中具有交互性和临床依据的表征体系。源代码与演示见 https://github.com/zhihuanglab/VISTA-PATH。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.16451">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.16451">arXiv</a></p>
+<hr />
+<h3>17. 镣铐之舞：基于心智理论的学术反驳策略性说服研究</h3>
+<p><strong>原文标题：</strong> Dancing in Chains: Strategic Persuasion in Academic Rebuttal via Theory of Mind</p>
+<p><strong>摘要：</strong>
+尽管人工智能已深度融入研究流程的各个阶段并取得显著进展，学术反驳仍是一个重要且尚未被充分探索的挑战。这是因为反驳是在严重信息不对称下进行的策略性沟通过程，而非简单的技术辩论。现有方法大多仅模仿表层语言特征，难以应对这一挑战，其根本缺陷在于缺乏有效说服所需的核心要素——观点采择能力。本文提出首个基于心智理论的学术反驳框架RebuttalAgent，通过构建"心智建模-策略制定-响应生成"的三阶段流程，系统化建模审稿人心理状态、制定说服策略并生成策略驱动的回应。为训练智能体，我们采用创新的批判-优化方法构建了大规模数据集RebuttalBench。训练过程包含两个阶段：首先通过监督微调使智能体掌握基于心智理论的分析与策略规划能力，继而利用自奖励机制进行强化学习以实现可扩展的自我优化。为实现可靠高效的自动化评估，我们进一步开发了专用评估器Rebuttal-RM，该模型基于超10万条多源反驳数据进行训练，其评分结果与人类偏好的一致性已超越GPT-4.1等强基准模型。大量实验表明，RebuttalAgent在自动化指标上平均超越基础模型18.3%，同时在自动化评估与人工评估中均优于先进的专有模型。免责声明：生成的反驳内容仅供作者启发思路和辅助草拟，不能替代作者自身的批判性分析与回应。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.15715">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.15715">arXiv</a></p>
+<hr />
+<h3>18. 面向代码生成的大语言模型提示指南：一项实证性特征研究</h3>
+<p><strong>原文标题：</strong> Guidelines to Prompt Large Language Models for Code Generation: An Empirical Characterization</p>
+<p><strong>摘要：</strong>
+大语言模型（LLMs）当前已广泛应用于各类软件工程任务，其中代码生成是主要应用场景。已有研究表明，恰当的提示工程能够帮助开发者优化代码生成提示。然而，目前尚缺乏专门指导开发者编写高质量代码生成提示的具体准则。本研究提出并评估了一套面向开发场景的提示优化指南。首先，我们采用迭代式、测试驱动的方法自动优化代码生成提示，并通过分析优化过程的结果，识别出能够通过测试的提示改进要素。基于这些要素，我们归纳出10条提示改进指南，涉及明确输入输出、前置后置条件、提供示例、补充各类细节以及澄清模糊表述等方面。我们邀请了50名从业者进行评估，他们反馈了所归纳提示改进模式的使用情况及其感知有效性，结果显示在了解本指南前，实际使用情况与感知有效性并不完全一致。本研究结果不仅对从业者和教育者具有实践意义，也为开发更高效的LLM辅助软件开发工具提供了参考。</p>
+<p><strong>论文链接：</strong> <a href="https://huggingface.co/papers/2601.13118">HuggingFace</a> | <a href="https://arxiv.org/abs/2601.13118">arXiv</a></p>
+<hr />
+<h2>🔍 关键词云图</h2>
+<p><img alt="关键词云图" src="../images/keywords_wordcloud.png" /></p>
+<h2>📈 近期论文趋势</h2>
+<p><img alt="论文趋势" src="../images/daily_papers.png" /></p>
+<h2>🎙️ 语音播报</h2>
+<ul>
+<li><a href="../audio/2026-01-26_daily_papers.mp3">收听今日论文解读</a></li>
+</ul>
+<h2>📱 订阅渠道</h2>
+<ul>
+<li>GitHub: <a href="https://github.com/2404589803/hf-daily-paper-newsletter-chinese">hf-daily-paper-newsletter-chinese</a></li>
+</ul>
+    </div>
+</body>
+</html>
